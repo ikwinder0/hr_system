@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_admin_login' => 'Đăng nhập bằng',
+'xin_ci_login_to_your_account' => 'Đăng nhập vào tài khoản của bạn',
+'xin_employee_password' => 'Mật khẩu',
+'xin_forgot_password_link' => 'Quên mật khẩu?',
+'xin_login_enter_password' => 'Nhập mật khẩu',
+'xin_login' => 'Đăng nhập',
+'xin_login_username' => 'Tên người dùng của bạn',
+'xin_login_email' => 'Email của bạn',
+'dashboard_username' => 'Tên người dùng',
+'dashboard_email' => 'Email',
+'xin_toast_error_title' => 'Lỗi',
+'xin_toast_success_title' => "Thành công",
+'xin_processing_request' => 'Bạn đang chuyển hướng đến trang tổng quan ..',
+'xin_login_title' => 'Đăng nhập',
+'xin_employee_error_username' => "Trường tên người dùng là bắt buộc.",
+'xin_employee_error_email' => "Trường email là bắt buộc.",
+'xin_employee_error_invalid_email' => "Định dạng email không hợp lệ",
+'xin_employee_error_password' => "Trường mật khẩu là bắt buộc.",
+'xin_min_error_password' => "Mật khẩu của bạn quá ngắn, yêu cầu tối thiểu 6 ký tự.",
+'xin_error_invalid_credentials' => 'Thông tin đăng nhập không hợp lệ.',
+'xin_error_account_not_active' => 'Tài khoản của bạn không hoạt động.',
+'xin_success_logged_in' => 'Đã đăng nhập thành công.',
+'xin_error_max_attempts' => 'Max no. trong số những nỗ lực. Hãy thử lại sau một phút. ',
+'xin_welcome_to' => 'Chào mừng đến với',
+'xin_welcome_back_please_login' => 'Chào mừng bạn trở lại, Vui lòng đăng nhập vào tài khoản',
+'xin_verify_email_use_trial_version' => 'Vui lòng xác minh địa chỉ email của bạn để sử dụng phiên bản dùng thử của TimeHRM.',
+'xin_login' => 'Đăng nhập',
+];

@@ -1,0 +1,31 @@
+<?php
+
+//Dashboard override core en language system validation or define your own en language validation message
+return [
+'xin_attendance_calendar' => 'Katılım Takvimi',
+'xin_daily_attendance_report' => 'Günlük Katılım Raporu',
+'xin_office_shift_not_assigned' => 'Vardiya atanmamış',
+'dashboard_clock_in' => 'Saat GİRİŞİ',
+'dashboard_clock_out' => 'Saat ÇIKIŞI',
+'dashboard_late' => 'Geç',
+'dashboard_early_leaving' => 'Erken Ayrılma',
+'dashboard_overtime' => 'Fazla mesai',
+'dashboard_total_work' => 'Toplam Çalışma',
+'dashboard_total_rest' => 'Toplam Kalan',
+'xin_attendance_date' => 'Katılım Tarihi',
+'xin_attendance_month' => 'Katılım Ayı',
+'xin_edit_attendance' => 'Katılımı Düzenle',
+'xin_add_attendance' => 'Katılım Ekle',
+'xin_overtime_thours' => 'Toplam Saat',
+'xin_add_overtime_request' => 'Fazla Mesai Talebi Ekle',
+'xin_edit_overtime_request' => 'Fazla Mesai Talebini Düzenle',
+'Attance_present' => 'Şu Anda',
+'Attance_absent' => 'Yok',
+'attance_today' => 'Bugün',
+'attance_today' => 'Bugün',
+'no_set_schedule' => 'Çalışma programı yok',
+'dashboard_my_attendance' => 'Katılımım',
+'xin_filter_attendance_month' => 'Aylık Katılımı Filtrele',
+'xin_attendance_information' => 'Katılım Bilgileri',
+'xin_attendance_details' => 'Katılım ayrıntıları',
+];

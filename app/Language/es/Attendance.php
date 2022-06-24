@@ -1,0 +1,31 @@
+<?php
+
+//Dashboard override core en language system validation or define your own en language validation message
+return [
+	'xin_attendance_calendar' => 'Calendario de asistencia',
+	'xin_daily_attendance_report' => 'Informe de asistencia diaria',
+	'xin_office_shift_not_assigned' => 'Turno no asignado',
+	'dashboard_clock_in' => 'Reloj ENTRADA',
+	'dashboard_clock_out' => 'Reloj FUERA',
+	'dashboard_late' => 'Tarde',
+	'dashboard_early_leaving' => 'Salida anticipada',
+	'dashboard_overtime' => 'Horas extras',
+	'dashboard_total_work' => 'Trabajo total',
+	'dashboard_total_rest' => 'Descanso total',
+	'xin_attendance_date' => 'Fecha de asistencia',
+	'xin_attendance_month' => 'Mes de asistencia',
+	'xin_edit_attendance' => 'Editar asistencia',
+	'xin_add_attendance' => 'Agregar asistencia',
+	'xin_overtime_thours' => 'Horas totales',
+	'xin_add_overtime_request' => 'Agregar solicitud de horas extra',
+	'xin_edit_overtime_request' => 'Editar solicitud de horas extra',
+	'assist_present' => 'Presente',
+	'assist_absent' => 'Ausente',
+	'assist_today' => 'Hoy',
+	'assist_today' => 'Hoy',
+	'no_set_schedule' => 'Sin horario de trabajo',
+	'dashboard_my_attendance' => 'Mi asistencia',
+	'xin_filter_attendance_month' => 'Filtrar asistencia mensual',
+	'xin_attendance_information' => 'Información de asistencia',
+	'xin_attendance_details' => 'Detalles de asistencia',
+];

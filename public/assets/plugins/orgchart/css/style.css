@@ -1,0 +1,14 @@
+#chart-container {
+  position: relative;
+  display: inline-block;
+  height: 500px;
+  width: calc(100% - 4px);
+  border-radius: 0px;
+  overflow: auto;
+  text-align: center;
+}
+.avatar {
+	width:50px !important;
+	height:50px !important;
+	border-radius: 50% !important;
+}

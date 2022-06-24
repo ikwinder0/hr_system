@@ -1,0 +1,31 @@
+<?php
+
+//Dashboard override core en language system validation or define your own en language validation message
+return [
+'xin_attendance_calendar' => 'Calendário de Presença',
+'xin_daily_attendance_report' => 'Relatório de comparecimento diário',
+'xin_office_shift_not_assigned' => 'Turno não atribuído',
+'dashboard_clock_in' => 'Clock IN',
+'dashboard_clock_out' => 'Clock OUT',
+'dashboard_late' => 'Atrasado',
+'dashboard_early_leaving' => 'Saída antecipada',
+'dashboard_overtime' => 'Horas extras',
+'dashboard_total_work' => 'Trabalho total',
+'dashboard_total_rest' => 'Resto total',
+'xin_attendance_date' => 'Data de comparecimento',
+'xin_attendance_month' => 'Mês de atendimento',
+'xin_edit_attendance' => 'Editar Presença',
+'xin_add_attendance' => 'Adicionar Presença',
+'xin_overtime_thours' => 'Total de horas',
+'xin_add_overtime_request' => 'Adicionar solicitação de horas extras',
+'xin_edit_overtime_request' => 'Editar solicitação de horas extras',
+'atendimento_presente' => 'Presente',
+'atendimento_absent' => 'Ausente',
+'atendimento_today' => 'Hoje',
+'atendimento_today' => 'Hoje',
+'no_set_schedule' => 'Sem horário de trabalho',
+'dashboard_my_attendance' => 'Minha presença',
+'xin_filter_attendance_month' => 'Filtrar Presença Mensal',
+'xin_attendance_information' => 'Informações de comparecimento',
+'xin_attendance_details' => 'Detalhes de comparecimento',
+];

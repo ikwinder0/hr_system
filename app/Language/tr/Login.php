@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_admin_login' => 'ile giriş yap',
+'xin_ci_login_to_your_account' => 'Hesabınıza giriş yapın',
+'xin_employee_password' => 'Şifre',
+'xin_forgot_password_link' => 'Şifrenizi mi unuttunuz?',
+'xin_login_enter_password' => 'Şifre Girin',
+'xin_login' => 'Giriş Yap',
+'xin_login_username' => 'Kullanıcı Adınız',
+'xin_login_email' => 'E-postanız',
+'dashboard_username' => 'Kullanıcı Adı',
+'dashboard_email' => 'E-posta',
+'xin_toast_error_title' => 'Hata',
+'xin_toast_success_title' => 'Başarı',
+'xin_processing_request' => 'Kontrol paneline yönlendiriyorsunuz ..',
+'xin_login_title' => 'Giriş yap',
+'xin_employee_error_username' => "Kullanıcı adı alanı gereklidir.",
+'xin_employee_error_email' => "E-posta alanı gereklidir.",
+'xin_employee_error_invalid_email' => "Geçersiz e-posta biçimi",
+'xin_employee_error_password' => "Parola alanı gerekli.",
+'xin_min_error_password' => "Şifreniz çok kısa, minimum 6 karakter gerekli.",
+'xin_error_invalid_credentials' => 'Geçersiz Giriş Kimlik Bilgileri.',
+'xin_error_account_not_active' => 'Hesabınız aktif değil.',
+'xin_success_log_in' => 'Başarıyla Oturum Açıldı.',
+'xin_error_max_attempts' => 'Maks. hayır. denemelerin. Bir dakika sonra tekrar deneyin. ',
+'xin_welcome_to' => 'Hoş Geldiniz',
+'xin_welcome_back_please_login' => 'Tekrar hoş geldiniz, Lütfen bir hesaba giriş yapın',
+'xin_verify_email_use_trial_version' => "TimeHRM'nin deneme sürümünü kullanmak için lütfen e-posta adresinizi doğrulayın.",
+'xin_login' => 'Giriş Yap',
+];

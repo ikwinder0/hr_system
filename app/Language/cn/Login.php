@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_admin_login'=>'使用 登录',
+'xin_ci_login_to_your_account'=>'登录到您的帐户',
+'xin_employee_password'=>'密码',
+'xin_forgot_password_link'=>'忘记密码了？',
+'xin_login_enter_password'=>'输入密码',
+'xin_login'=>'登录',
+'xin_login_username'=>'您的用户名',
+'xin_login_email'=>'您的电子邮件',
+'dashboard_username'=>'用户名',
+'dashboard_email'=>'电子邮件',
+'xin_toast_error_title'=>'错误',
+'xin_toast_success_title'=>'成功',
+'xin_processing_request'=>'您正在重定向到仪表板。',
+'xin_login_title'=>'登录',
+'xin_employee_error_username'=>"用户名字段为必填。",
+'xin_employee_error_email'=>"电子邮件字段为必填。",
+'xin_employee_error_invalid_email'=>"无效的电子邮件格式",
+'xin_employee_error_password'=>"密码字段为必填。",
+'xin_min_error_password'=>"您的密码太短,至少需要6个字符。",
+'xin_error_invalid_credentials'=>'无效的登录凭据。',
+'xin_error_account_not_active'=>'您的帐户未激活。',
+'xin_success_logged_in'=>'登录成功。',
+'xin_error_max_attempts'=>'最大编号尝试次数。一分钟后再试一次。',
+'xin_welcome_to'=>'欢迎使用',
+'xin_welcome_back_please_login'=>'欢迎回来，请登录一个帐户',
+'xin_verify_email_use_trial_version'=>'请验证您的电子邮件地址以使用TimeHRM的试用版。',
+'xin_login'=>'登录',
+];

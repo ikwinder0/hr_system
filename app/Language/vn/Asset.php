@@ -1,0 +1,37 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_asset_name' => 'Tên tài sản',
+'xin_company_asset_code' => 'Mã tài sản',
+'xin_is_working' => 'Đang hoạt động?',
+'xin_manosystemurer' => 'Nhà sản xuất',
+'xin_serial_number' => 'Số sê-ri',
+'xin_warranty_end_date' => 'Ngày kết thúc bảo hành',
+'xin_asset_image' => 'Hình ảnh tài sản',
+'xin_asset_allowed_image_formats' => 'Các định dạng được phép: jpg, png, jpeg, gif',
+'xin_asset_note' => 'Ghi chú Tài sản',
+'xin_purchase_date' => 'Ngày mua',
+'xin_error_category_field' => 'Trường danh mục là bắt buộc.',
+'xin_error_brand_field' => 'Trường thương hiệu là bắt buộc.',
+'xin_error_asset_name_field' => 'Trường tên nội dung là bắt buộc.',
+'xin_error_asset_image_field' => 'Trường hình ảnh nội dung là bắt buộc.',
+'xin_success_asset_added' => "Đã thêm nội dung.",
+'xin_success_asset_deleted' => 'Nội dung đã bị xóa.',
+'xin_success_asset_updated' => 'Đã cập nhật nội dung.',
+'xin_edit_asset' => 'Chỉnh sửa Nội dung',
+'xin_view_asset' => 'Xem nội dung',
+'xin_edit_assets_category' => 'Chỉnh sửa danh mục tài sản',
+'xin_edit_assets_brand' => 'Chỉnh sửa Thương hiệu Nội dung',
+'xin_error_cat_name_field' => 'Trường danh mục là bắt buộc.',
+'xin_success_assets_category_added' => 'Đã thêm danh mục tài sản.',
+'xin_success_assets_category_deleted' => 'Đã xóa danh mục tài sản.',
+'xin_success_assets_category_updated' => 'Đã cập nhật Danh mục tài sản.',
+'xin_brand' => 'Thương hiệu',
+'xin_brands' => 'Thương hiệu',
+'xin_asset_brand' => 'Thương hiệu tài sản',
+'xin_asset_category' => 'Danh mục tài sản',
+'xin_asset_brands' => 'Thương hiệu tài sản',
+'xin_asset_categories' => 'Danh mục tài sản',
+
+];

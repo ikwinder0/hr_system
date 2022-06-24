@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_admin_login' => 'Войти с помощью',
+	'xin_ci_login_to_your_account' => 'Войдите в свою учетную запись',
+	'xin_employee_password' => 'Пароль',
+	'xin_forgot_password_link' => 'Забыли пароль?',
+	'xin_login_enter_password' => 'Введите пароль',
+	'xin_login' => 'Войти',
+	'xin_login_username' => 'Ваше имя пользователя',
+	'xin_login_email' => 'Ваш адрес электронной почты',
+	'dashboard_username' => 'Имя пользователя',
+	'dashboard_email' => 'Электронная почта',
+	'xin_toast_error_title' => 'Ошибка',
+	'xin_toast_success_title' => 'Успех',
+	'xin_processing_request' => 'Вы перенаправляетесь на панель инструментов ..',
+	'xin_login_title' => 'Войти',
+	'xin_employee_error_username' => "Поле имени пользователя обязательно.",
+	'xin_employee_error_email' => 'Поле адреса электронной почты является обязательным.',
+	'xin_employee_error_invalid_email' => 'Неверный формат электронной почты',
+	'xin_employee_error_password' => "Поле пароля обязательно.",
+	'xin_min_error_password' => 'Ваш пароль слишком короткий, требуется минимум 6 символов.',
+	'xin_error_invalid_credentials' => 'Недействительные учетные данные для входа.',
+	'xin_error_account_not_active' => 'Ваша учетная запись неактивна.',
+	'xin_success_logged_in' => 'Успешный вход в систему.',
+	'xin_error_max_attempts' => 'Макс. попыток. Повторите попытку через минуту. ',
+	'xin_welcome_to' => 'Добро пожаловать',
+	'xin_welcome_back_please_login' => 'С возвращением, пожалуйста, войдите в свой аккаунт',
+	'xin_verify_email_use_trial_version' => 'Подтвердите свой адрес электронной почты, чтобы использовать пробную версию TimeHRM.',
+	'xin_login' => 'Войти',
+];

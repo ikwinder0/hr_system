@@ -1,0 +1,37 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_asset_name' => 'Asset Name',
+	'xin_company_asset_code' => 'Asset Code',
+	'xin_is_working' => 'Is Working?',
+	'xin_manufacturer' => 'Manufacturer',
+	'xin_serial_number' => 'Serial Number',
+	'xin_warranty_end_date' => 'Warranty End Date',
+	'xin_asset_image' => 'Asset Image',
+	'xin_asset_allowed_image_formats' => 'Allowed Formats : jpg, png, jpeg, gif',
+	'xin_asset_note' => 'Asset Note',
+	'xin_purchase_date' => 'Purchase Date',
+	'xin_error_category_field' => 'The category field is required.',
+	'xin_error_brand_field' => 'The brand field is required.',
+	'xin_error_asset_name_field' => 'The asset name field is required.',
+	'xin_error_asset_image_field' => 'The asset image field is required.',
+	'xin_success_asset_added' => 'Asset added.',
+	'xin_success_asset_deleted' => 'Asset deleted.',
+	'xin_success_asset_updated' => 'Asset updated.',
+	'xin_edit_asset' => 'Edit Asset',
+	'xin_view_asset' => 'View Asset',
+	'xin_edit_assets_category' => 'Edit Asset Category',
+	'xin_edit_assets_brand' => 'Edit Asset Brand',
+	'xin_error_cat_name_field' => 'The category field is required.',
+	'xin_success_assets_category_added' => 'Assets Category added.',
+	'xin_success_assets_category_deleted' => 'Assets Category deleted.',
+	'xin_success_assets_category_updated' => 'Assets Category updated.',
+	'xin_brand' => 'Brand',
+	'xin_brands' => 'Brands',
+	'xin_asset_brand' => 'Asset Brand',
+	'xin_asset_category' => 'Asset Category',
+	'xin_asset_brands' => 'Asset Brands',
+	'xin_asset_categories' => 'Asset Categories',
+	
+];

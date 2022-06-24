@@ -1,0 +1,31 @@
+<?php
+
+//Dashboard override core en language system validation or define your own en language validation message
+return [
+	'xin_attendance_calendar' => 'Календарь посещаемости',
+	'xin_daily_attendance_report' => 'Ежедневный отчет о посещаемости',
+	'xin_office_shift_not_assigned' => 'Смена не назначена',
+	'dashboard_clock_in' => 'Часы IN',
+	'dashboard_clock_out' => 'Часы OUT',
+	'dashboard_late' => 'Поздно',
+	'dashboard_early_leaving' => 'Ранний уход',
+	'dashboard_overtime' => 'Сверхурочные',
+	'dashboard_total_work' => 'Общая работа',
+	'dashboard_total_rest' => 'Полный отдых',
+	'xin_attendance_date' => 'Дата посещения',
+	'xin_attendance_month' => 'Месяц посещаемости',
+	'xin_edit_attendance' => 'Редактировать посещаемость',
+	'xin_add_attendance' => 'Добавить посещаемость',
+	'xin_overtime_thours' => 'Всего часов',
+	'xin_add_overtime_request' => 'Добавить запрос на сверхурочную работу',
+	'xin_edit_overtime_request' => 'Редактировать запрос на сверхурочную работу',
+	'Attendance_present' => 'Подарок',
+	'Attendance_absent' => 'Отсутствует',
+	'Attendance_today' => 'Сегодня',
+	'Attendance_today' => 'Сегодня',
+	'no_set_schedule' => 'Нет графика работы',
+	'dashboard_my_attendance' => 'Моя посещаемость',
+	'xin_filter_attendance_month' => 'Отфильтровать ежемесячную посещаемость',
+	'xin_attendance_information' => 'Информация о посещаемости',
+	'xin_attendance_details' => 'Сведения о посещаемости',
+];

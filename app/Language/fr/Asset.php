@@ -1,0 +1,37 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_asset_name' => 'Nom de actif',
+	'xin_company_asset_code' => 'Code équipement',
+	'xin_is_working' => 'Fonctionne-t-il?',
+	'xin_manufacturer' => 'Fabricant',
+	'xin_serial_number' => 'Numéro de série',
+	'xin_warranty_end_date' => 'Date de fin de garantie',
+	'xin_asset_image' => 'Image de élément',
+	'xin_asset_allowed_image_formats' => 'Formats autorisés: jpg, png, jpeg, gif',
+	'xin_asset_note' => 'Note sur le bien',
+	'xin_purchase_date' => 'Date achat',
+	'xin_error_category_field' => 'Le champ de catégorie est obligatoire.',
+	'xin_error_brand_field' => 'Le champ de la marque est obligatoire.',
+	'xin_error_asset_name_field' => 'Le champ du nom de actif est obligatoire.',
+	'xin_error_asset_image_field' => 'Le champ image de la ressource est obligatoire.',
+	'xin_success_asset_added' => 'Actif ajouté.',
+	'xin_success_asset_deleted' => 'Élément supprimé.',
+	'xin_success_asset_updated' => 'Actif mis à jour.',
+	'xin_edit_asset' => 'Modifier élément',
+	'xin_view_asset' => 'Afficher élément',
+	'xin_edit_assets_category' => 'Modifier la catégorie actif',
+	'xin_edit_assets_brand' => 'Modifier la marque de actif',
+	'xin_error_cat_name_field' => 'Le champ de catégorie est obligatoire.',
+	'xin_success_assets_category_added' => 'Catégorie actifs ajoutée.',
+	'xin_success_assets_category_deleted' => 'Catégorie actifs supprimée.',
+	'xin_success_assets_category_updated' => 'Catégorie actifs mise à jour.',
+	'xin_brand' => 'Marque',
+	'xin_brands' => 'Marques',
+	'xin_asset_brand' => 'Marque actif',
+	'xin_asset_category' => 'Catégorie actif',
+	'xin_asset_brands' => 'Marques actifs',
+	'xin_asset_categories' => 'Catégories actifs',
+	
+];

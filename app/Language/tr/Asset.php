@@ -1,0 +1,37 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_asset_name' => 'Varlık Adı',
+'xin_company_asset_code' => 'Varlık Kodu',
+'xin_is_working' => 'Çalışıyor mu?',
+'xin_manufacturer' => 'Üretici',
+'xin_serial_number' => 'Seri Numarası',
+'xin_warranty_end_date' => 'Garanti Bitiş Tarihi',
+'xin_asset_image' => 'Varlık Resmi',
+'xin_asset_allowed_image_formats' => 'İzin Verilen Biçimler: jpg, png, jpeg, gif',
+'xin_asset_note' => 'Varlık Notu',
+'xin_purchase_date' => 'Satın Alma Tarihi',
+'xin_error_category_field' => 'Kategori alanı gerekli.',
+'xin_error_brand_field' => 'Marka alanı gerekli.',
+'xin_error_asset_name_field' => 'Varlık adı alanı gerekli.',
+'xin_error_asset_image_field' => 'Varlık resmi alanı gerekli.',
+'xin_success_asset_added' => 'Varlık eklendi.',
+'xin_success_asset_deleted' => 'Varlık silindi.',
+'xin_success_asset_updated' => 'Varlık güncellendi.',
+'xin_edit_asset' => 'Varlığı Düzenle',
+'xin_view_asset' => 'Varlığı Görüntüle',
+'xin_edit_assets_category' => 'Varlık Kategorisini Düzenle',
+'xin_edit_assets_brand' => 'Varlık Markasını Düzenle',
+'xin_error_cat_name_field' => 'Kategori alanı gerekli.',
+'xin_success_assets_category_added' => 'Varlık Kategorisi eklendi.',
+'xin_success_assets_category_deleted' => 'Varlık Kategorisi silindi.',
+'xin_success_assets_category_updated' => 'Varlık Kategorisi güncellendi.',
+'xin_brand' => 'Marka',
+'xin_brands' => 'Markalar',
+'xin_asset_brand' => 'Varlık Markası',
+'xin_asset_category' => 'Varlık Kategorisi',
+'xin_asset_brands' => 'Varlık Markaları',
+'xin_asset_categories' => 'Varlık Kategorileri',
+
+];

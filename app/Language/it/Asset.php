@@ -1,0 +1,37 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+'xin_asset_name' => 'Nome risorsa',
+'xin_company_asset_code' => 'Codice risorsa',
+'xin_is_working' => 'Funziona?',
+'xin_manufacturer' => 'Produttore',
+'xin_serial_number' => 'Numero di serie',
+'xin_warranty_end_date' => 'Data di fine garanzia',
+'xin_asset_image' => 'Immagine risorsa',
+'xin_asset_allowed_image_formats' => 'Formati consentiti: jpg, png, jpeg, gif',
+'xin_asset_note' => 'Nota patrimoniale',
+'xin_purchase_date' => 'Data di acquisto',
+'xin_error_category_field' => 'Il campo della categoria è obbligatorio.',
+'xin_error_brand_field' => 'Il campo del marchio è obbligatorio.',
+'xin_error_asset_name_field' => 'Il campo del nome della risorsa è obbligatorio.',
+'xin_error_asset_image_field' => 'Il campo immagine risorsa è obbligatorio.',
+'xin_success_asset_added' => 'Asset aggiunto.',
+'xin_success_asset_deleted' => 'Risorsa eliminata.',
+'xin_success_asset_updated' => 'Risorsa aggiornata.',
+'xin_edit_asset' => 'Modifica asset',
+'xin_view_asset' => 'Visualizza risorse',
+'xin_edit_assets_category' => 'Modifica categoria asset',
+'xin_edit_assets_brand' => 'Modifica marchio asset',
+'xin_error_cat_name_field' => 'Il campo della categoria è obbligatorio.',
+'xin_success_assets_category_added' => 'Categoria risorse aggiunta.',
+'xin_success_assets_category_deleted' => 'Categoria risorse cancellata.',
+'xin_success_assets_category_updated' => 'Categoria risorse aggiornata.',
+'xin_brand' => 'Marchio',
+'xin_brands' => 'Marche',
+'xin_asset_brand' => 'Marchio di asset',
+'xin_asset_category' => 'Categoria asset',
+'xin_asset_brands' => 'Marchi di asset',
+'xin_asset_categories' => 'Categorie di asset',
+
+];

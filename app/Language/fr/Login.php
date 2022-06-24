@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_admin_login' => 'Connectez-vous avec',
+	'xin_ci_login_to_your_account' => 'Connectez-vous à votre compte',
+	'xin_employee_password' => 'Mot de passe',
+	'xin_forgot_password_link' => 'Mot de passe oublié?',
+	'xin_login_enter_password' => 'Entrez le mot de passe',
+	'xin_login' => 'Connexion',
+	'xin_login_username' => 'Votre nom utilisateur',
+	'xin_login_email' => 'Votre e-mail',
+	'dashboard_username' => 'Nom utilisateur',
+	'dashboard_email' => 'E-mail',
+	'xin_toast_error_title' => 'Erreur',
+	'xin_toast_success_title' => 'Succès',
+	'xin_processing_request' => 'Vous êtes redirigé vers le tableau de bord ..',
+	'xin_login_title' => 'Connectez-vous',
+	'xin_employee_error_username' => "Le champ du nom d'utilisateur est obligatoire.",
+	'xin_employee_error_email' => "Le champ email est obligatoire.",
+	'xin_employee_error_invalid_email' => "Format d'e-mail invalide",
+	'xin_employee_error_password' => "Le champ du mot de passe est obligatoire.",
+	'xin_min_error_password' => "Votre mot de passe est trop court, minimum de 6 caractères requis.",
+	'xin_error_invalid_credentials' => 'Identifiants de connexion invalides.',
+	'xin_error_account_not_active' => "Votre compte n'est pas actif.",
+	'xin_success_logged_in' => 'Connexion réussie.',
+	'xin_error_max_attempts' => 'Nombre max. de tentatives. Réessayez après une minute. ',
+	'xin_welcome_to' => 'Bienvenue dans',
+	'xin_welcome_back_please_login' => 'Bienvenue à nouveau, veuillez vous connecter à un compte',
+	'xin_verify_email_use_trial_version' => 'Veuillez vérifier votre adresse e-mail pour utiliser la version essai de TimeHRM.',
+	'xin_login' => 'Connexion',
+];

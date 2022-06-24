@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_admin_login' => 'Inloggen met',
+	'xin_ci_login_to_your_account' => 'Log in op je account',
+	'xin_employee_password' => 'Wachtwoord',
+	'xin_forgot_password_link' => 'Wachtwoord vergeten?',
+	'xin_login_enter_password' => 'Voer wachtwoord in',
+	'xin_login' => 'Inloggen',
+	'xin_login_username' => 'Uw gebruikersnaam',
+	'xin_login_email' => 'Uw e-mail',
+	'dashboard_username' => 'Gebruikersnaam',
+	'dashboard_email' => 'E-mail',
+	'xin_toast_error_title' => 'Fout',
+	'xin_toast_success_title' => 'Succes',
+	'xin_processing_request' => 'U wordt doorverwezen naar dashboard ..',
+	'xin_login_title' => 'Inloggen',
+	'xin_employee_error_username' => "Het gebruikersnaam veld is verplicht.",
+	'xin_employee_error_email' => "Het e-mailadres is verplicht.",
+	'xin_employee_error_invalid_email' => "Ongeldig e-mailformaat",
+	'xin_employee_error_password' => "Het wachtwoordveld is verplicht.",
+	'xin_min_error_password' => "Uw wachtwoord is te kort, minimaal 6 karakters vereist.",
+	'xin_error_invalid_credentials' => 'Ongeldige inloggegevens.',
+	'xin_error_account_not_active' => 'Uw account is niet actief.',
+	'xin_success_logged_in' => 'Succesvol ingelogd.',
+	'xin_error_max_attempts' => 'Max. nr. van pogingen. Probeer het na een minuut opnieuw. ',
+	'xin_welcome_to' => 'Welkom bij',
+	'xin_welcome_back_please_login' => 'Welkom terug, log in op een account',
+	'xin_verify_email_use_trial_version' => 'Verifieer je e-mailadres om de proefversie van TimeHRM te gebruiken.',
+	'xin_login' => 'Inloggen',
+];

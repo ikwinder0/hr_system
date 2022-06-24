@@ -1,0 +1,31 @@
+<?php
+
+//Dashboard override core en language system validation or define your own en language validation message
+return [
+'xin_attendance_calendar'=>'出勤日历',
+'xin_daily_attendance_report'=>'每日出勤报告',
+'xin_office_shift_not_assigned'=>'未分配班次',
+'dashboard_clock_in'=>'时钟输入',
+'dashboard_clock_out'=>'时钟输出',
+'dashboard_late'=>'后期',
+'dashboard_early_leaving'=>'提前离开',
+'dashboard_overtime'=>'加班',
+'dashboard_total_work'=>'总工作量',
+'dashboard_total_rest'=>'完全休息',
+'xin_attendance_date'=>'出勤日期',
+'xin_attendance_month'=>'出勤月',
+'xin_edit_attendance'=>'编辑出席',
+'xin_add_attendance'=>'增加出勤率',
+'xin_overtime_thours'=>'总时间',
+'xin_add_overtime_request'=>'添加超时请求',
+'xin_edit_overtime_request'=>'编辑加班请求',
+'attendance_present'=>'现在',
+'attendance_absent'=>'缺席',
+'attendance_today'=>'今天',
+'attendance_today'=>'今天',
+'no_set_schedule'=>'没有工作时间表',
+'dashboard_my_attendance'=>'我的出勤',
+'xin_filter_attendance_month'=>'筛选器每月出勤率',
+'xin_attendance_information'=>'出勤信息',
+'xin_attendance_details'=>'出勤详情',
+];

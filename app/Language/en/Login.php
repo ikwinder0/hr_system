@@ -1,0 +1,32 @@
+<?php
+
+// override core en language system validation or define your own en language validation message
+return [
+	'xin_admin_login' => 'Login with ',
+	'xin_ci_login_to_your_account' => 'Login to your account',
+	'xin_employee_password' => 'Password',
+	'xin_forgot_password_link' => 'Forgot password?',
+	'xin_login_enter_password' => 'Enter Password',
+	'xin_login' => 'Login',
+	'xin_login_username' => 'Your Username',
+	'xin_login_email' => 'Your Email',
+	'dashboard_username' => 'Username',
+	'dashboard_email' => 'Email',
+	'xin_toast_error_title' => 'Error',
+	'xin_toast_success_title' => 'Success',
+	'xin_processing_request' => 'You are redirecting to dashboard..',
+	'xin_login_title' => 'Log in',
+	'xin_employee_error_username' => "The username field is required.",
+	'xin_employee_error_email' => "The email field is required.",
+	'xin_employee_error_invalid_email' => "Invalid email format",
+	'xin_employee_error_password' => "The password field is required.",
+	'xin_min_error_password' => "Your password is too short, minimum 6 characters required.",
+	'xin_error_invalid_credentials' => 'Invalid Login Credentials.',
+	'xin_error_account_not_active' => 'Your account is not active.',
+	'xin_success_logged_in' => 'Logged In Successfully.',
+	'xin_error_max_attempts' => 'Max no. of attempts. Try again after a minute.',
+	'xin_welcome_to' => 'Welcome to',
+	'xin_welcome_back_please_login' => 'Welcome back, Please login into an account',
+	'xin_verify_email_use_trial_version' => 'Please verify your email address to use the trial version of TimeHRM.',
+	'xin_login' => 'Login',
+];
