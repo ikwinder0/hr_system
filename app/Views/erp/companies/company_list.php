@@ -90,21 +90,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                  <label for="logo">
-                    <?= lang('Company.xin_company_logo');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="file">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small> </div>
-                </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
                     <label for="password">
                       <?= lang('Main.xin_employee_password');?>
                       <span class="text-danger">*</span> </label>
