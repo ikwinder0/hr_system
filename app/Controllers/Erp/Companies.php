@@ -168,7 +168,7 @@ class Companies extends BaseController {
 					'contact_number' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
 					'country' => 'required',
-					'address' => 'required',
+					'address_1' => 'required',
 					'username' => 'required|min_length[6]|is_unique[ci_erp_users.username]',
 					'password' => 'required|min_length[6]',
 					'contact_person' => 'required',
@@ -190,7 +190,7 @@ class Companies extends BaseController {
 					'country' => [
 						'required' => lang('Main.xin_error_country_field'),
 					],
-					'address' => [
+					'address_1' => [
 						'required' => lang('Main.xin_error_company_address'),
 					],
 					'username' => [
@@ -218,8 +218,8 @@ class Companies extends BaseController {
 			//check error
 			if ($validation->hasError('company_name')) {
 				$Return['error'] = $validation->getError('company_name');
-			} elseif($validation->hasError('address')){
-				$Return['error'] = $validation->getError('address');
+			} elseif($validation->hasError('address_1')){
+				$Return['error'] = $validation->getError('address_1');
 			} elseif($validation->hasError('contact_person')) {
 				$Return['error'] = $validation->getError('contact_person');
 			} elseif($validation->hasError('contact_person_phone')){
@@ -265,7 +265,7 @@ class Companies extends BaseController {
 			
 			
 			
-			$address = $this->request->getPost('address',FILTER_SANITIZE_STRING);
+			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
 			$contact_person = $this->request->getPost('contact_person',FILTER_SANITIZE_STRING);
 			$contact_person_phone = $this->request->getPost('contact_person_phone',FILTER_SANITIZE_STRING);
 			$website = $this->request->getPost('website',FILTER_SANITIZE_STRING);
@@ -275,7 +275,6 @@ class Companies extends BaseController {
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
 			$xin_gtax = '';
 			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
-			$address_1 = '';
 			$address_2 = '';
 			$city = '';
 			$state = '';
@@ -298,7 +297,7 @@ class Companies extends BaseController {
 				'contact_number'  => $contact_number,
 				'email'  => $email,
 				'government_tax' => $xin_gtax,
-				'address_1'  => $address,
+				'address_1'  => $address_1,
 				'address_2'  => $address_2,
 				'city'  => $city,
 				'profile_photo'  => $file_name,

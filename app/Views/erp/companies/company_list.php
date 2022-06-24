@@ -82,10 +82,18 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
                     <label for="company_name">
                       <?= lang('Company.xin_company_address');?>
                       <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="address_1" type="text">
                   </div>
 				</div>
               </div>
+			  <div class="col-md-6">
+					<div class="form-group">
+                    <label for="company_name">
+                      <?= lang('Company.dashboard_username');?>
+                      <span class="text-danger">*</span> </label>
+                    <input class="form-control" placeholder="<?= lang('Company.dashboard_username');?>" name="username" type="text">
+                  </div>
+				</div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
