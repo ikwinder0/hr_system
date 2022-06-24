@@ -26,4 +26,6 @@ return [
 	'xin_small_text_companies' => 'companies',
 	'xin_company_website' => 'Company Website',
 	'xin_company_address' => 'Address',
+	'xin_contact_person' => 'Contact Person',
+	'xin_contact_person_phone' => 'Contact Person Phone',
 ];
