@@ -158,7 +158,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
 						</label>
 						<small>
 						<?= lang('Main.xin_company_file_type');?>
-						</small> </div>
+						</small>
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
 						</label>
 						<small>
 						<?= lang('Main.xin_company_file_type');?>
-						</small> </div>
+						</small>
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
 						</label>
 						<small>
 						<?= lang('Main.xin_company_file_type');?>
-						</small> </div>
+						</small>
                       </div>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
 						</label>
 						<small>
 						<?= lang('Main.xin_company_file_type');?>
-						</small> </div>
+						</small>
                       </div>
                     </div>
                   </div>
