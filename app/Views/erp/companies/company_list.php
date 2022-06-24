@@ -172,32 +172,35 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h5>
-              <?= lang('Company.xin_company_logo');?>
-            </h5>
-          </div>
-          <div class="card-body py-2">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="logo">
-                    <?= lang('Company.xin_company_logo');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="file">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small> </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>
+                  <?= lang('Company.xin_company_logo');?>
+                </h5>
+              </div>
+              <div class="card-body py-2">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="logo">
+                        <?= lang('Company.xin_company_logo');?>
+                        <span class="text-danger">*</span> </label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="file">
+                        <label class="custom-file-label">
+                          <?= lang('Main.xin_choose_file');?>
+                        </label>
+                        <small>
+                        <?= lang('Main.xin_company_file_type');?>
+                        </small> </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
