@@ -11,18 +11,17 @@ $MainModel = new MainModel();
 $CompanymembershipModel = new CompanymembershipModel();
 $company_types = $ConstantsModel->where('type','company_type')->orderBy('constants_id', 'ASC')->findAll();
 $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
-$membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll();
 /* Company list
 */		
 ?>
-
+<?php $get_animate = '';?>
 <div id="add_form" class="collapse add-form <?php echo $get_animate;?>" data-parent="#accordion" style="">
   <?php $attributes = array('name' => 'add_company', 'id' => 'xin-form', 'autocomplete' => 'off');?>
   <?php $hidden = array('user_id' => 0);?>
   <?= form_open_multipart('erp/companies/add_company', $attributes, $hidden);?>
   <div id="accordion">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card mb-2">
           <div class="card-header">
             <h5>
@@ -46,6 +45,21 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                     <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text">
                   </div>
                 </div>
+				<div class="col-md-6">
+                  <div class="form-group">
+					  <label for="logo">
+						<?= lang('Company.xin_company_logo');?>
+						<span class="text-danger">*</span> </label>
+					  <div class="custom-file">
+						<input type="file" class="custom-file-input" name="file">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
+					</div>
+                </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="address">
@@ -63,6 +77,14 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                     </select>
                   </div>
                 </div>
+				<div class="col-md-6">
+					<div class="form-group">
+                    <label for="company_name">
+                      <?= lang('Company.xin_company_address');?>
+                      <span class="text-danger">*</span> </label>
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
+                  </div>
+				</div>
               </div>
               <div class="row">
                 <div class="col-md-6">
@@ -71,14 +93,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       <?= lang('Main.xin_email');?>
                       <span class="text-danger">*</span> </label>
                     <input class="form-control" placeholder="<?= lang('Main.xin_email');?>" name="email" type="text">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="username">
-                      <?= lang('Main.dashboard_username');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Main.dashboard_username');?>" name="username" type="text">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -97,9 +111,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                     <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text">
                   </div>
                 </div>
-              </div>
-			  <div class="row">
-                <div class="col-md-12">
+				<div class="col-md-6">
 					<div class="form-group">
                     <label for="company_name">
                       <?= lang('Company.xin_company_website');?>
@@ -107,17 +119,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                     <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="company_website" type="text">
                   </div>
 				</div>
-			  </div>
-			  <div class="row">
-                <div class="col-md-12">
-					<div class="form-group">
-                    <label for="company_name">
-                      <?= lang('Company.xin_company_address');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
-                  </div>
-				</div>
-			  </div>
+              </div>
 			  <hr class="m-0 mb-3">
 			  <div class="row">
                 <div class="col-md-6">
@@ -138,6 +140,83 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                 </div>
               </div>
             </div>
+			<hr class="m-0 mb-3">
+			<span class="preview-title-lg">
+			<?= lang('Company.xin_company_attachments');?>
+			</span>
+			<div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="invoice_date">
+                        <?= lang('Agency.xin_cr_and_tax_card');?>
+                      </label>
+                      <div class="custom-file">
+                        <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="project">
+                        <?= lang('Agency.xin_beneficiary_and_bank_account');?>
+                      </label>
+					  
+                      <div class="custom-file">
+                        <input class="custom-file-input bank_account" name="bank_account" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="row">
+                  
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="project">
+                        <?= lang('Agency.xin_bank_account_with_seal');?>
+                      </label>
+					  
+                      <div class="custom-file">
+                        <input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="invoice_date">
+                        <?= lang('Agency.xin_bank_certificate');?>
+                      </label>
+                      <div class="custom-file">
+                        <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             <div class="card-footer text-right">
               <button type="reset" class="btn btn-light" href="#add_form" data-toggle="collapse" aria-expanded="false">
               <?= lang('Main.xin_reset');?>
@@ -146,34 +225,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
               <button type="submit" class="btn btn-primary">
               <?= lang('Main.xin_save');?>
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h5>
-              <?= lang('Company.xin_company_attachments'); ?>
-            </h5>
-          </div>
-          <div class="card-body py-2">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="logo">
-                    <?= lang('Company.xin_company_logo');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="file">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small> </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
