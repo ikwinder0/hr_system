@@ -173,7 +173,7 @@ class Companies extends BaseController {
 					'password' => 'required|min_length[6]',
 					'contact_person' => 'required',
 					'contact_person_phone' => 'required',
-					'website' => 'required|valid_url_strict',
+					'website' => 'required',
 				],
 				[   // Errors
 					'company_name' => [
