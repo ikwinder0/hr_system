@@ -262,6 +262,7 @@ class Companies extends BaseController {
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
+			
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
 			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
 			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);

@@ -44,10 +44,7 @@ $setup_modules = unserialize($xin_com_system['setup_modules']);
   <li class="pc-item"><a href="<?= site_url('erp/staff-list');?>" class="pc-link "><span class="pc-micon"><i data-feather="users"></i></span><span class="pc-mtext">
     <?= lang('Dashboard.dashboard_employees');?>
     </span></a></li>
-  <!-- Agencies -->
-  <li class="pc-item"><a href="<?= site_url('erp/create-agency');?>" class="pc-link "><span class="pc-micon"><i class="fas fa-building"></i></span><span class="pc-mtext">
-    <?= lang('Dashboard.manage_agencies');?>
-    </span></a></li>
+
   <!-- CoreHR -->
   <li class="pc-item <?php if(!empty($arr_mod['corehr_open']))echo $arr_mod['corehr_open'];?>"> <a href="#" class="pc-link sidenav-toggle"> <span class="pc-micon"><i data-feather="crosshair"></i></span>
     <?= lang('Dashboard.dashboard_core_hr');?>
