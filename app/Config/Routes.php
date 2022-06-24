@@ -342,6 +342,7 @@ $routes->get('erp/print-quote/(:segment)', 'Orderquotes::view_quote_order', ['na
 //Agencies
 $routes->get('erp/create-company/', 'Companies::create_agency', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 $routes->get('erp/companies-list/', 'Companies::index', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+$routes->get('erp/company-detail/(:segment)', 'Companies::company_details', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 
 
 /**
