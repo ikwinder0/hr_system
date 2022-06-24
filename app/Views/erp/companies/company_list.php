@@ -64,26 +64,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   </div>
                 </div>
               </div>
-			  <div class="row">
-                <div class="col-md-12">
-					<div class="form-group">
-                    <label for="company_name">
-                      <?= lang('Company.xin_company_website');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="company_website" type="text">
-                  </div>
-				</div>
-			  </div>
-			  <div class="row">
-                <div class="col-md-12">
-					<div class="form-group">
-                    <label for="company_name">
-                      <?= lang('Company.xin_company_address');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
-                  </div>
-				</div>
-			  </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -118,6 +98,26 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   </div>
                 </div>
               </div>
+			  <div class="row">
+                <div class="col-md-12">
+					<div class="form-group">
+                    <label for="company_name">
+                      <?= lang('Company.xin_company_website');?>
+                      <span class="text-danger">*</span> </label>
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="company_website" type="text">
+                  </div>
+				</div>
+			  </div>
+			  <div class="row">
+                <div class="col-md-12">
+					<div class="form-group">
+                    <label for="company_name">
+                      <?= lang('Company.xin_company_address');?>
+                      <span class="text-danger">*</span> </label>
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
+                  </div>
+				</div>
+			  </div>
 			  <hr class="m-0 mb-3">
             </div>
             <div class="card-footer text-right">

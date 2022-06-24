@@ -25,5 +25,5 @@ return [
 	'xin_success_update_company_subscription' => 'Company subscription updated.',
 	'xin_small_text_companies' => 'companies',
 	'xin_company_website' => 'Company Website',
-	'xin_company_address' => 'Company Address',
+	'xin_company_address' => 'Address',
 ];
