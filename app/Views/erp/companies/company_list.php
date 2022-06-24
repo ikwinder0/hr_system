@@ -22,7 +22,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
   <?= form_open_multipart('erp/companies/add_company', $attributes, $hidden);?>
   <div id="accordion">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card mb-2">
           <div class="card-header">
             <h5>
@@ -45,6 +45,21 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       <span class="text-danger">*</span> </label>
                     <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text">
                   </div>
+                </div>
+				<div class="col-md-6">
+                  <div class="form-group">
+					  <label for="logo">
+						<?= lang('Company.xin_company_logo');?>
+						<span class="text-danger">*</span> </label>
+					  <div class="custom-file">
+						<input type="file" class="custom-file-input" name="file">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
+					</div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
@@ -75,11 +90,18 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="username">
-                      <?= lang('Main.dashboard_username');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Main.dashboard_username');?>" name="username" type="text">
-                  </div>
+                  <label for="logo">
+                    <?= lang('Company.xin_company_logo');?>
+                    <span class="text-danger">*</span> </label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="file">
+                    <label class="custom-file-label">
+                      <?= lang('Main.xin_choose_file');?>
+                    </label>
+                    <small>
+                    <?= lang('Main.xin_company_file_type');?>
+                    </small> </div>
+                </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
@@ -89,6 +111,14 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                     <input class="form-control" placeholder="<?= lang('Main.xin_employee_password');?>" name="password" type="text">
                   </div>
                 </div>
+				<div class="col-md-6">
+					<div class="form-group">
+                    <label for="company_name">
+                      <?= lang('Company.xin_company_address');?>
+                      <span class="text-danger">*</span> </label>
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
+                  </div>
+				</div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="contact_number">
@@ -105,16 +135,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       <?= lang('Company.xin_company_website');?>
                       <span class="text-danger">*</span> </label>
                     <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="company_website" type="text">
-                  </div>
-				</div>
-			  </div>
-			  <div class="row">
-                <div class="col-md-12">
-					<div class="form-group">
-                    <label for="company_name">
-                      <?= lang('Company.xin_company_address');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="company_address" type="text">
                   </div>
 				</div>
 			  </div>
@@ -146,34 +166,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
               <button type="submit" class="btn btn-primary">
               <?= lang('Main.xin_save');?>
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h5>
-              <?= lang('Company.xin_company_attachments'); ?>
-            </h5>
-          </div>
-          <div class="card-body py-2">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="logo">
-                    <?= lang('Company.xin_company_logo');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="file">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small> </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
