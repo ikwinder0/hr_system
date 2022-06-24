@@ -131,3 +131,8 @@ $( document ).on( "click", ".delete", function() {
 	$('input[name=_token]').val($(this).data('record-id'));
 	$('#delete_record').attr('action',main_url+'companies/delete_company');
 });
+
+$('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+});
