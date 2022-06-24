@@ -340,8 +340,8 @@ $routes->get('erp/quote-detail/(:segment)', 'Orderquotes::quote_details', ['name
 $routes->get('erp/edit-quote/(:segment)', 'Orderquotes::edit_quote', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/print-quote/(:segment)', 'Orderquotes::view_quote_order', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 //Agencies
-$routes->get('erp/create-company/', 'Companies::create_agency', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
-$routes->get('erp/companies-list/', 'Companies::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+$routes->get('erp/create-company/', 'Companies::create_agency', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+$routes->get('erp/companies-list/', 'Companies::index', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 
 
 /**
