@@ -23,7 +23,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://thetruecode-com.preview-domain.com/';
+	public $baseURL = 'http://thetruecode-com.preview-domain.com/vishal';
 
 	/*
 	|--------------------------------------------------------------------------
