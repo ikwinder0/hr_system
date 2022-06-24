@@ -98,20 +98,21 @@ class Companies extends BaseController {
 			$company_types = $ConstantsModel->where('constants_id', $r['company_type_id'])->first();
 			$all_countries = $CountryModel->where('country_id', $r['country'])->first();
 			// membership
-			$company_membership = $CompanymembershipModel->where('company_id', $r['user_id'])->first();
-			$membership = $MembershipModel->where('membership_id', $company_membership['membership_id'])->first();
-			if($membership['plan_duration'] == '1'){
-				$subscription = '<span class="text-success">'.lang('Membership.xin_subscription_monthly').'</span>';
-				$iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
+			// $company_membership = $CompanymembershipModel->where('company_id', $r['user_id'])->first();
+			// $membership = $MembershipModel->where('membership_id', $company_membership['membership_id'])->first();
+			// if($membership['plan_duration'] == '1'){
+				// $subscription = '<span class="text-success">'.lang('Membership.xin_subscription_monthly').'</span>';
+				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
 			
-			} elseif($membership['plan_duration'] == '2') {
-				$subscription = '<span class="text-info">'.lang('Membership.xin_subscription_yearly').'</span>';
-				$iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
-			} elseif($membership['plan_duration'] == '3') {
-				$subscription = '<span class="text-info">'.lang('Membership.xin_subscription_unlimit').'</span>';
-				$iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
-			}
-			$mp_subs = $membership['membership_type'].'<br><div class="small">'.$iprice.'/'.$subscription.'</div>';
+			// } elseif($membership['plan_duration'] == '2') {
+				// $subscription = '<span class="text-info">'.lang('Membership.xin_subscription_yearly').'</span>';
+				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
+			// } elseif($membership['plan_duration'] == '3') {
+				// $subscription = '<span class="text-info">'.lang('Membership.xin_subscription_unlimit').'</span>';
+				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
+			// }
+			// $mp_subs = $membership['membership_type'].'<br><div class="small">'.$iprice.'/'.$subscription.'</div>';
+			$mp_subs='';
 			$combhr = $edit.$view.$delete;
 			if($r['profile_photo']=='no'){
 				$profile_picture = base_url().'/public/uploads/default_profile.jpg';
