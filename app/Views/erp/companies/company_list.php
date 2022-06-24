@@ -141,6 +141,63 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                 </div>
               </div>
             </div>
+			<hr class="m-0 mb-3">
+			<span class="preview-title-lg">
+			<?= lang('Company.xin_company_attachments');?>
+			</span>
+			<div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="invoice_date">
+                        <?= lang('Agency.xin_cr_and_tax_card');?> <span class="text-danger">*</span>
+                      </label>
+                      <div class="input-group">
+					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-address-card"></i></span></div>
+                        <input class="form-control cr_tax_card" name="cr_tax_card" type="file" >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="project">
+                        <?= lang('Agency.xin_beneficiary_and_bank_account');?> <span class="text-danger">*</span>
+                      </label>
+					  
+                      <div class="input-group">
+					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-book-user"></i></span></div>
+                        <input class="form-control bank_account" name="bank_account" type="file" value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="row">
+                  
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="project">
+                        <?= lang('Agency.xin_bank_account_with_seal');?> <span class="text-danger">*</span>
+                      </label>
+					  
+                      <div class="input-group">
+					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-stamp"></i></span></div>
+                        <input class="form-control bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="invoice_date">
+                        <?= lang('Agency.xin_bank_certificate');?> <span class="text-danger">*</span>
+                      </label>
+                      <div class="input-group">
+					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-file-certificate"></i></span></div>
+                        <input class="form-control bank_certificate" name="bank_certificate" type="file" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
             <div class="card-footer text-right">
               <button type="reset" class="btn btn-light" href="#add_form" data-toggle="collapse" aria-expanded="false">
               <?= lang('Main.xin_reset');?>
