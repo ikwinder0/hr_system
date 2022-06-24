@@ -2,7 +2,6 @@
 use App\Models\SystemModel;
 use App\Models\UsersModel;
 use App\Models\LanguageModel;
-die;
 $SystemModel = new SystemModel();
 $UsersModel = new UsersModel();
 $LanguageModel = new LanguageModel();
