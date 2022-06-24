@@ -149,6 +149,8 @@ class Companies extends BaseController {
                //"draw" => $draw,
 			   "data" => $data
             );
+			print_r($output);
+			die;
           echo json_encode($output);
           exit();
      }
