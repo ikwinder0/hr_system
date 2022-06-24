@@ -30,12 +30,12 @@ class Agency extends BaseController {
 		$UsersModel = new UsersModel();
 		$session = \Config\Services::session();
 		$usession = $session->get('sup_username');
-		$xin_system = $SystemModel->where('setting_id', 1)->first();
-		$data['title'] = lang('Invoices.xin_billing_invoices').' | '.$xin_system['application_name'];
-		$data['path_url'] = 'payment_history';
-		$data['breadcrumbs'] = lang('Invoices.xin_billing_invoices');
+		$xin_system = $SystemModel->where('setting_id', 2)->first();
+		$data['title'] = lang('Main.xin_agency_list_page').' | '.$xin_system['application_name'];
+		$data['path_url'] = 'create-agency';
+		$data['breadcrumbs'] = lang('Invoices.xin_agency_list_page');
         
-		$data['subview'] = view('erp/invoices/payment_history_list', $data);
+		$data['subview'] = view('erp/admin/agency/agency_list', $data);
 		return view('erp/layout/layout_main', $data); //page load
 		
 	}
@@ -51,7 +51,7 @@ class Agency extends BaseController {
 		$data['path_url'] = 'create-agency';
 		$data['breadcrumbs'] = lang('Agency.create_agency');
 
-		$data['subview'] = view('erp/agency/create', $data);
+		$data['subview'] = view('erp/admin/agency/create', $data);
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	
