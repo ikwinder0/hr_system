@@ -164,29 +164,19 @@ class Companies extends BaseController {
 			// set rules
 			$validation->setRules([
 					'company_name' => 'required',
-					'company_type' => 'required',
-					'first_name' => 'required',
-					'last_name' => 'required',
 					'contact_number' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_app_users.email]',
-					'membership_type' => 'required',
 					'country' => 'required',
+					'address' => 'required',
 					'username' => 'required|min_length[6]|is_unique[ci_app_users.username]',
 					'password' => 'required|min_length[6]',
-					//'logo' => 'required'
+					'contact_person' => 'required',
+					'contact_person_phone' => 'required',
+					'website' => 'required|valid_url_strict',
 				],
 				[   // Errors
 					'company_name' => [
 						'required' => lang('Company.xin_error_name_field'),
-					],
-					'company_type' => [
-						'required' => lang('Company.xin_error_ctype_field'),
-					],
-					'first_name' => [
-						'required' => lang('Main.xin_contact_error_first_name'),
-					],
-					'last_name' => [
-						'required' => lang('Main.xin_contact_error_last_name'),
 					],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
@@ -196,11 +186,11 @@ class Companies extends BaseController {
 						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
 						'is_unique' => lang('Main.xin_already_exist_error_email'),
 					],
-					'membership_type' => [
-						'required' => lang('Company.xin_error_membership_type_field'),
-					],
 					'country' => [
 						'required' => lang('Main.xin_error_country_field'),
+					],
+					'address' => [
+						'required' => lang('Main.xin_error_company_address'),
 					],
 					'username' => [
 						'required' => lang('Main.xin_employee_error_username'),
@@ -210,6 +200,15 @@ class Companies extends BaseController {
 					'password' => [
 						'required' => lang('Main.xin_employee_error_password'),
 						'min_length' => lang('Login.xin_min_error_password')
+					],
+					'contact_person' => [
+						'required' => lang('Main.xin_agency_error_contact_person_field'),
+					],
+					'contact_person_phone' => [
+						'required' => lang('Main.xin_agency_error_contact_person_phone_field'),
+					]
+					'website' => [
+						'required' => lang('Main.xin_agency_error_website_field'),
 					]
 				]
 			);
@@ -218,16 +217,16 @@ class Companies extends BaseController {
 			//check error
 			if ($validation->hasError('company_name')) {
 				$Return['error'] = $validation->getError('company_name');
-			} elseif($validation->hasError('company_type')){
-				$Return['error'] = $validation->getError('company_type');
-			} elseif($validation->hasError('first_name')) {
-				$Return['error'] = $validation->getError('first_name');
-			} elseif($validation->hasError('last_name')){
-				$Return['error'] = $validation->getError('last_name');
+			} elseif($validation->hasError('address')){
+				$Return['error'] = $validation->getError('address');
+			} elseif($validation->hasError('contact_person')) {
+				$Return['error'] = $validation->getError('contact_person');
+			} elseif($validation->hasError('contact_person_phone')){
+				$Return['error'] = $validation->getError('contact_person_phone');
 			} elseif($validation->hasError('country')){
 				$Return['error'] = $validation->getError('country');
-			} elseif($validation->hasError('membership_type')){
-				$Return['error'] = $validation->getError('membership_type');
+			} elseif($validation->hasError('website')){
+				$Return['error'] = $validation->getError('website');
 			} elseif($validation->hasError('email')){
 				$Return['error'] = $validation->getError('email');
 			} elseif($validation->hasError('username')){
@@ -263,17 +262,18 @@ class Companies extends BaseController {
 				$this->output($Return);
 			}
 			
-			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
-			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
-			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
-			$company_type = $this->request->getPost('company_type',FILTER_SANITIZE_STRING);
+			
+			
+			$address = $this->request->getPost('address',FILTER_SANITIZE_STRING);
+			$contact_person = $this->request->getPost('contact_person',FILTER_SANITIZE_STRING);
+			$contact_person_phone = $this->request->getPost('contact_person_phone',FILTER_SANITIZE_STRING);
+			$website = $this->request->getPost('website',FILTER_SANITIZE_STRING);
 			$trading_name = '';
 			$registration_no = '';
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
 			$xin_gtax = '';
-			$membership_type = $this->request->getPost('membership_type',FILTER_SANITIZE_STRING);
-			//$subscription = $this->request->getPost('subscription',FILTER_SANITIZE_STRING);
+			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
 			$address_1 = '';
 			$address_2 = '';
 			$city = '';
@@ -288,16 +288,16 @@ class Companies extends BaseController {
 			$data = [
 				'company_id' => 0,
 				'company_name' => $company_name,
-				'first_name' => $first_name,
-				'last_name'  => $last_name,
-				'company_type_id'  => $company_type,
+				'contact_person' => $contact_person,
+				'contact_person_phone'  => $contact_person_phone,
+				'website'  => $website,
 				'trading_name'  => $trading_name,
 				'user_type'  => 'company',
 				'registration_no'  => $registration_no,
 				'contact_number'  => $contact_number,
 				'email'  => $email,
 				'government_tax' => $xin_gtax,
-				'address_1'  => $address_1,
+				'address_1'  => $address,
 				'address_2'  => $address_2,
 				'city'  => $city,
 				'profile_photo'  => $file_name,
@@ -324,18 +324,16 @@ class Companies extends BaseController {
 			$MembershipModel = new MembershipModel();
 			$EmailtemplatesModel = new EmailtemplatesModel();
 			$CompanysettingsModel = new CompanysettingsModel();
-			$CompanymembershipModel = new CompanymembershipModel();
-			$membership_info = $MembershipModel->where('membership_id', $membership_type)->first();
 			$xin_system = $SystemModel->where('setting_id', 1)->first();
 			
-			$data2 = array(
-				'company_id'  => $user_id,
-				'membership_id'  => $membership_type,
-				'subscription_type'  => $membership_info['plan_duration'],
-				'update_at'  => date('d-m-Y h:i:s'),
-				'created_at'  => date('d-m-Y h:i:s')
-			);
-			$CompanymembershipModel->insert($data2);
+			// $data2 = array(
+				// 'company_id'  => $user_id,
+				// 'membership_id'  => $membership_type,
+				// 'subscription_type'  => $membership_info['plan_duration'],
+				// 'update_at'  => date('d-m-Y h:i:s'),
+				// 'created_at'  => date('d-m-Y h:i:s')
+			// );
+			//$CompanymembershipModel->insert($data2);
 			$data3 = array(
 				'company_id'  => $user_id,
 				'default_currency'  => 'USD',

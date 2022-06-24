@@ -149,7 +149,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="invoice_date">
-                        <?= lang('Agency.xin_cr_and_tax_card');?> <span class="text-danger">*</span>
+                        <?= lang('Agency.xin_cr_and_tax_card');?>
                       </label>
                       <div class="custom-file">
                         <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
@@ -165,7 +165,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="project">
-                        <?= lang('Agency.xin_beneficiary_and_bank_account');?> <span class="text-danger">*</span>
+                        <?= lang('Agency.xin_beneficiary_and_bank_account');?>
                       </label>
 					  
                       <div class="custom-file">
@@ -185,7 +185,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="project">
-                        <?= lang('Agency.xin_bank_account_with_seal');?> <span class="text-danger">*</span>
+                        <?= lang('Agency.xin_bank_account_with_seal');?>
                       </label>
 					  
                       <div class="custom-file">
@@ -204,7 +204,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="invoice_date">
-                        <?= lang('Agency.xin_bank_certificate');?> <span class="text-danger">*</span>
+                        <?= lang('Agency.xin_bank_certificate');?>
                       </label>
                       <div class="custom-file">
                         <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >

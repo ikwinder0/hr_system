@@ -18,6 +18,7 @@ return [
 	'xin_error_name_field' => "The company name field is required.",
 	'xin_error_ctype_field' => "The company type field is required.",
 	'xin_error_membership_type_field' => "The plan title field is required.",
+	'xin_error_company_address' => 'Address field id required.',
 	'xin_error_subscription_field' => "The subscription type field is required.",
 	'xin_success_add_company' => 'Company added.',
 	'xin_success_update_company' => 'Company updated.',
@@ -29,4 +30,5 @@ return [
 	'xin_company_address' => 'Address',
 	'xin_contact_person' => 'Contact Person',
 	'xin_contact_person_phone' => 'Contact Person Phone',
+	
 ];
