@@ -48,39 +48,6 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="email">
-                      <?= lang('Company.xin_company_type');?>
-                      <span class="text-danger">*</span> </label>
-                    <select class="form-control form-select" name="company_type" data-plugin="select_hrm" data-placeholder="<?= lang('Company.xin_company_type');?>">
-                      <option value="">
-                      <?= lang('Main.xin_select_one');?>
-                      </option>
-                      <?php foreach($company_types as $ctype) {?>
-                      <option value="<?= $ctype['constants_id'];?>">
-                      <?= $ctype['category_name'];?>
-                      </option>
-                      <?php } ?>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="first_name">
-                      <?= lang('Main.contact_first_name_error');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Main.contact_first_name_error');?>" name="first_name" type="text">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="last_name">
-                      <?= lang('Main.contact_last_name_error');?>
-                      <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Main.contact_last_name_error');?>" name="last_name" type="text">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
                     <label for="address">
                       <?= lang('Main.xin_country');?>
                       <span class="text-danger">*</span> </label>
@@ -175,7 +142,7 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
         <div class="card">
           <div class="card-header">
             <h5>
-              <?= lang('Company.xin_company_logo');?>
+              <?= lang('Company.xin_company_attachments'); ?>
             </h5>
           </div>
           <div class="card-body py-2">
