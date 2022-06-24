@@ -152,8 +152,13 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                         <?= lang('Agency.xin_cr_and_tax_card');?> <span class="text-danger">*</span>
                       </label>
                       <div class="custom-file">
-					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-address-card"></i></span></div>
                         <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
                       </div>
                     </div>
                   </div>
@@ -164,8 +169,13 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       </label>
 					  
                       <div class="custom-file">
-					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-book-user"></i></span></div>
                         <input class="custom-file-input bank_account" name="bank_account" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
                       </div>
                     </div>
                   </div>
@@ -179,8 +189,13 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       </label>
 					  
                       <div class="custom-file">
-					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-stamp"></i></span></div>
                         <input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
                       </div>
                     </div>
                   </div>
@@ -192,8 +207,13 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                         <?= lang('Agency.xin_bank_certificate');?> <span class="text-danger">*</span>
                       </label>
                       <div class="custom-file">
-					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-file-certificate"></i></span></div>
                         <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small> </div>
                       </div>
                     </div>
                   </div>
