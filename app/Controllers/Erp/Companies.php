@@ -92,7 +92,7 @@ class Companies extends BaseController {
 		$data = array();
 		
           foreach($company as $r) {						
-		  			
+		  		$edit = '';
 				$view = '<a href="'.site_url('erp/company-detail/'). uencode($r['user_id']) . '"><span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></span></a>';
 				$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
 			$company_types = $ConstantsModel->where('constants_id', $r['company_type_id'])->first();
@@ -149,8 +149,7 @@ class Companies extends BaseController {
                //"draw" => $draw,
 			   "data" => $data
             );
-			print_r($output);
-			die;
+			
           echo json_encode($output);
           exit();
      }
