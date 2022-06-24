@@ -124,7 +124,7 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
                     <label for="company_name">
                       <?= lang('Company.xin_company_website');?>
                       <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="company_website" type="text">
+                    <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="website" type="text">
                   </div>
 				</div>
               </div>
