@@ -165,10 +165,10 @@ class Companies extends BaseController {
 			$validation->setRules([
 					'company_name' => 'required',
 					'contact_number' => 'required',
-					'email' => 'required|valid_email|is_unique[ci_app_users.email]',
+					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
 					'country' => 'required',
 					'address' => 'required',
-					'username' => 'required|min_length[6]|is_unique[ci_app_users.username]',
+					'username' => 'required|min_length[6]|is_unique[ci_erp_users.username]',
 					'password' => 'required|min_length[6]',
 					'contact_person' => 'required',
 					'contact_person_phone' => 'required',
@@ -206,7 +206,7 @@ class Companies extends BaseController {
 					],
 					'contact_person_phone' => [
 						'required' => lang('Main.xin_agency_error_contact_person_phone_field'),
-					]
+					],
 					'website' => [
 						'required' => lang('Main.xin_agency_error_website_field'),
 					]
