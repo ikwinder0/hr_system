@@ -151,9 +151,9 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       <label for="invoice_date">
                         <?= lang('Agency.xin_cr_and_tax_card');?> <span class="text-danger">*</span>
                       </label>
-                      <div class="input-group">
+                      <div class="custom-file">
 					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-address-card"></i></span></div>
-                        <input class="form-control cr_tax_card" name="cr_tax_card" type="file" >
+                        <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
                       </div>
                     </div>
                   </div>
@@ -163,9 +163,9 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                         <?= lang('Agency.xin_beneficiary_and_bank_account');?> <span class="text-danger">*</span>
                       </label>
 					  
-                      <div class="input-group">
+                      <div class="custom-file">
 					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-book-user"></i></span></div>
-                        <input class="form-control bank_account" name="bank_account" type="file" value="">
+                        <input class="custom-file-input bank_account" name="bank_account" type="file" value="">
                       </div>
                     </div>
                   </div>
@@ -178,9 +178,9 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                         <?= lang('Agency.xin_bank_account_with_seal');?> <span class="text-danger">*</span>
                       </label>
 					  
-                      <div class="input-group">
+                      <div class="custom-file">
 					    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-stamp"></i></span></div>
-                        <input class="form-control bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+                        <input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
                       </div>
                     </div>
                   </div>
@@ -191,9 +191,9 @@ $membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll()
                       <label for="invoice_date">
                         <?= lang('Agency.xin_bank_certificate');?> <span class="text-danger">*</span>
                       </label>
-                      <div class="input-group">
+                      <div class="custom-file">
 					    <div class="input-group-prepend"><span class="input-group-text"><i class="fad fa-file-certificate"></i></span></div>
-                        <input class="form-control bank_certificate" name="bank_certificate" type="file" >
+                        <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
                       </div>
                     </div>
                   </div>
