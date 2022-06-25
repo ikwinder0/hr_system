@@ -95,23 +95,7 @@ class Companies extends BaseController {
 		  		$edit = '';
 				$view = '<a href="'.site_url('erp/company-detail/'). uencode($r['user_id']) . '"><span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></span></a>';
 				$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
-			//$company_types = $ConstantsModel->where('constants_id', $r['company_type_id'])->first();
 			$all_countries = $CountryModel->where('country_id', $r['country'])->first();
-			// membership
-			// $company_membership = $CompanymembershipModel->where('company_id', $r['user_id'])->first();
-			// $membership = $MembershipModel->where('membership_id', $company_membership['membership_id'])->first();
-			// if($membership['plan_duration'] == '1'){
-				// $subscription = '<span class="text-success">'.lang('Membership.xin_subscription_monthly').'</span>';
-				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
-			
-			// } elseif($membership['plan_duration'] == '2') {
-				// $subscription = '<span class="text-info">'.lang('Membership.xin_subscription_yearly').'</span>';
-				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
-			// } elseif($membership['plan_duration'] == '3') {
-				// $subscription = '<span class="text-info">'.lang('Membership.xin_subscription_unlimit').'</span>';
-				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
-			// }
-			// $mp_subs = $membership['membership_type'].'<br><div class="small">'.$iprice.'/'.$subscription.'</div>';
 			$contact=$r['contact_number'];
 			$combhr = $edit.$view.$delete;
 			if($r['profile_photo']=='no'){
@@ -259,16 +243,41 @@ class Companies extends BaseController {
 				->save('public/uploads/users/thumb/'.$file_name);
 
 			}
+
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
-			
-			
+
+			$cr_tax_card ='';
+			$bank_account='';
+			$bank_account_with_seal='';
+			$bank_certificate='';
+
+			if($this->request->getFile('cr_tax_card')){
+				$cr = $this->request->getFile('cr_tax_card');
+				$cr->move('public/uploads/company_documents/');
+				$cr_tax_card = time().$cr->getName();
+			}
+			if($this->request->getFile('bank_account')){
+				$bnk = $this->request->getFile('bank_account');
+				$bnk->move('public/uploads/company_documents/');
+				$bank_account = time().$bnk->getName();
+			}
+			if($this->request->getFile('bank_account_with_seal')){
+				$with_seal = $this->request->getFile('bank_account_with_seal');
+				$with_seal->move('public/uploads/company_documents/');
+				$bank_account_with_seal = time().$with_seal->getName();
+			}
+			if($this->request->getFile('bank_certificate')){
+				$certificate = $this->request->getFile('bank_certificate');
+				$certificate->move('public/uploads/company_documents/');
+				$bank_certificate = time().$certificate->getName();
+			}
 			
 			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
 			$contact_person = $this->request->getPost('contact_person',FILTER_SANITIZE_STRING);
 			$contact_person_phone = $this->request->getPost('contact_person_phone',FILTER_SANITIZE_STRING);
-			$website = $this->request->getPost('website',FILTER_SANITIZE_STRING);
+			$website = $this->request->getPost('website');
 			$trading_name = '';
 			$registration_no = '';
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
@@ -291,6 +300,10 @@ class Companies extends BaseController {
 				'contact_person' => $contact_person,
 				'contact_person_phone'  => $contact_person_phone,
 				'website'  => $website,
+				'cr_tax_card' => $cr_tax_card,
+				'bank_account' => $bank_account,
+				'bank_account_with_seal' => $bank_account_with_seal,
+				'bank_certificate' => $bank_certificate,
 				'trading_name'  => $trading_name,
 				'user_type'  => 'company',
 				'registration_no'  => $registration_no,
