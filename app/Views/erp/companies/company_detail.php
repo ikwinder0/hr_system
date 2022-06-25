@@ -171,7 +171,7 @@ if($result['is_active'] == 1){
                 <label for="company_name">
                   <?= lang('Company.xin_contact_person');?>
                   <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person');?>" name="contact_person" type="text" value="<?= $result['contact_persong']?>">
+                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person');?>" name="contact_person" type="text" value="<?= $result['contact_person']?>">
               </div>
             </div>
             <div class="col-md-6">
