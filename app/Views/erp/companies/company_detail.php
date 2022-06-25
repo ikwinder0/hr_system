@@ -66,9 +66,7 @@ if($result['is_active'] == 1){
           <?= $result['contact_number'];?>
           </a> </li>
       </ul>
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action " id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i><?= lang('Main.xin_personal_info');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-companyinfo-tab" data-toggle="pill" href="#user-companyinfo" role="tab" aria-controls="user-companyinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i>
-        <?= lang('Main.xin_company_info');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i><?= lang('Main.xin_e_details_profile_picture');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> </div>
+      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action " id="user-edit-account-tab active" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i><?= lang('Main.xin_company_info');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a><a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i><?= lang('Main.xin_e_details_profile_picture');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> </div>
     </div>
   </div>
   <div class="col-xl-8 col-lg-12">
@@ -88,40 +86,16 @@ if($result['is_active'] == 1){
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="email">
-                  <?= lang('Company.xin_company_type');?>
-                  <span class="text-danger">*</span> </label>
-                <select class="form-control" name="company_type" data-plugin="select_hrm" data-placeholder="<?= lang('Company.xin_company_type');?>">
-                  <option value="">
-                  <?= lang('Main.xin_select_one');?>
-                  </option>
-                </select>
-              </div>
+          
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="registration_no">
-                  <?= lang('Company.xin_company_registration');?>
-                </label>
-                <input class="form-control" placeholder="<?= lang('Company.xin_company_registration');?>" name="registration_no" type="text" value="<?= $result['registration_no']?>">
-              </div>
+              
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="first_name">
-                  <?= lang('Main.contact_first_name_error');?>
-                  <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Main.contact_first_name_error');?>" name="first_name" type="text" value="<?= $result['first_name']?>">
-              </div>
+              
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="last_name">
-                  <?= lang('Main.contact_last_name_error');?>
-                  <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Main.contact_last_name_error');?>" name="last_name" type="text" value="<?= $result['last_name']?>">
-              </div>
+              
             </div>
             <div class="col-md-4">
               <div class="form-group">
@@ -141,20 +115,10 @@ if($result['is_active'] == 1){
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="trading_name">
-                  <?= lang('Company.xin_company_trading');?>
-                </label>
-                <input class="form-control" placeholder="<?= lang('Company.xin_company_trading');?>" name="trading_name" type="text" value="<?= $result['trading_name']?>">
-              </div>
+              
             </div>
             <div class="col-md-4">
-              <div class="form-group">
-                <label for="xin_gtax">
-                  <?= lang('Company.xin_gtax');?>
-                </label>
-                <input class="form-control" placeholder="<?= lang('Company.xin_gtax');?>" name="xin_gtax" type="text" value="<?= $result['government_tax']?>">
-              </div>
+              
             </div>
             <div class="col-md-4">
               <div class="form-group">
@@ -237,69 +201,6 @@ if($result['is_active'] == 1){
         </div>
         <?= form_close(); ?>
       </div>
-      <div class="tab-pane fade" id="user-companyinfo">
-        <div class="card-body pb-2">
-          <?php $attributes = array('name' => 'company_info', 'id' => 'company_info', 'autocomplete' => 'off');?>
-          <?php $hidden = array('token' => $segment_id);?>
-          <?= form_open('erp/companies/update_company_info', $attributes, $hidden);?>
-          <div class="form-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="company_name">
-                    <?= lang('Company.xin_company_name');?>
-                    <span class="text-danger">*</span> </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text" value="<?= $result['company_name'];?>">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">
-                    <?= lang('Company.xin_company_type');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="company_type" data-plugin="select_hrm" data-placeholder="<?= lang('Company.xin_company_type');?>">
-                    <option value="">
-                    <?= lang('Main.xin_select_one');?>
-                    </option>
-                   
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="trading_name">
-                    <?= lang('Company.xin_company_trading');?>
-                  </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_trading');?>" name="trading_name" type="text" value="<?= $result['trading_name'];?>">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="xin_gtax">
-                    <?= lang('Company.xin_gtax');?>
-                  </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_gtax');?>" name="xin_gtax" type="text" value="<?= $result['government_tax'];?>">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="registration_no">
-                    <?= lang('Company.xin_company_registration');?>
-                  </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_registration');?>" name="registration_no" type="text" value="<?= $result['registration_no'];?>">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-right">
-            <button type="submit" class="btn btn-primary">
-            <?= lang('Main.xin_save');?>
-            </button>
-          </div>
-          <?= form_close(); ?>
-        </div>
       </div>
     </div>
   </div>
