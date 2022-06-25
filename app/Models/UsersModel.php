@@ -10,7 +10,7 @@ class UsersModel extends Model {
     protected $primaryKey = 'user_id';
     
 	// get all fields of user roles table
-    protected $allowedFields = ['user_id','user_role_id','user_type','company_id','first_name','last_name','email','username','password','company_name','trading_name','registration_no','government_tax','company_type_id','profile_photo','contact_number','gender','address_1','address_2','city','state','zipcode','country','last_login_date','last_logout_date','last_login_ip','is_logged_in','is_active','created_at','website','cr_tax_card','bank_account','bank_account_with_seal','bank_certificate'];
+    protected $allowedFields = ['user_id','user_role_id','user_type','company_id','first_name','last_name','email','username','password','company_name','trading_name','registration_no','government_tax','company_type_id','profile_photo','contact_number','gender','address_1','address_2','city','state','zipcode','country','last_login_date','last_logout_date','last_login_ip','is_logged_in','is_active','created_at','website','cr_tax_card','bank_account','bank_account_with_seal','bank_certificate','contact_person','contact_person_phone'];
 	
 	protected $validationRules = [];
 	protected $validationMessages = [];
