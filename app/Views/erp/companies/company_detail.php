@@ -73,7 +73,7 @@ if($result['is_active'] == 1){
   </div>
   <div class="col-xl-8 col-lg-12">
     <div class="card tab-content">
-      <div class="tab-pane fade" id="user-edit-account">
+      <div class="tab-pane fade active show" id="user-edit-account">
         <?php $attributes = array('name' => 'basic_info', 'id' => 'cibasic_info', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => 0, 'token' => $segment_id);?>
         <?= form_open('erp/companies/update_basic_info', $attributes, $hidden);?>
