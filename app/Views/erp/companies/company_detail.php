@@ -164,7 +164,6 @@ if($result['is_active'] == 1){
               </div>
             </div>
           </div>
-          
         </div>
         <div class="card-footer text-right">
             <button type="submit" class="btn btn-primary">
@@ -211,41 +210,41 @@ if($result['is_active'] == 1){
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="company_name">
-                    <?= lang('Company.xin_company_name');?>
-                    <span class="text-danger">*</span> </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text" value="<?= $result['company_name'];?>">
+                    <?= lang('Company.Agency.xin_cr_and_tax_card');?>
+                   </label>
+                   <div class="custom-file">
+                      <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
+                      <label class="custom-file-label">
+                        <?= lang('Main.xin_choose_file');?>
+                      </label>
+                      <small>
+                      <?= lang('Main.xin_company_file_type');?>
+                      </small>
+                   </div>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">
-                    <?= lang('Company.xin_company_type');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="company_type" data-plugin="select_hrm" data-placeholder="<?= lang('Company.xin_company_type');?>">
-                    <option value="">
-                    <?= lang('Main.xin_select_one');?>
-                    </option>
-                   
-                  </select>
-                </div>
+               
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label for="trading_name">
-                    <?= lang('Company.xin_company_trading');?>
+                  <label for="project">
+                    <?= lang('Agency.xin_beneficiary_and_bank_account');?>
                   </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_trading');?>" name="trading_name" type="text" value="<?= $result['trading_name'];?>">
-                </div>
+					        <div class="custom-file">
+                    <input class="custom-file-input bank_account" name="bank_account" type="file" value="">
+                    <label class="custom-file-label">
+                      <?= lang('Main.xin_choose_file');?>
+                    </label>
+                    <small>
+                    <?= lang('Main.xin_company_file_type');?>
+                    </small>
+                  </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="xin_gtax">
-                    <?= lang('Company.xin_gtax');?>
-                  </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_gtax');?>" name="xin_gtax" type="text" value="<?= $result['government_tax'];?>">
-                </div>
+              <div class="col-md-6">
+                
               </div>
               <div class="col-md-4">
                 <div class="form-group">
