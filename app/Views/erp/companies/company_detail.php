@@ -79,7 +79,7 @@ if($result['is_active'] == 1){
         <?= form_open('erp/companies/update_basic_info', $attributes, $hidden);?>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="company_name">
                   <?= lang('Company.xin_company_name');?>
@@ -87,20 +87,8 @@ if($result['is_active'] == 1){
                 <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text" value="<?= $result['company_name']?>">
               </div>
             </div>
-            <div class="col-md-4">
-          
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
+            <div class="col-md-6">
+            <div class="form-group">
                 <label for="address">
                   <?= lang('Main.xin_country');?>
                   <span class="text-danger">*</span> </label>
@@ -115,6 +103,28 @@ if($result['is_active'] == 1){
                   <?php } ?>
                 </select>
               </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_company_address');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="address_1" type="text" value="<?= $result['address_1']?>">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_company_website');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="website" type="text" value="<?= $result['website']?>"> 
+              </div>
+            </div>
+            <div class="col-md-4">
+              
+            </div>
+            <div class="col-md-4">
+              
             </div>
             <div class="col-md-4">
               
