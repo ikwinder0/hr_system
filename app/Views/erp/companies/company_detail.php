@@ -214,14 +214,9 @@ if($result['is_active'] == 1){
         <?php $hidden = array('user_id' => 0, 'token' => $segment_id);?>
         <?= form_open_multipart('erp/companies/update_plan', $attributes, $hidden);?>
         <?php
-		$subs_price = $subs_plan['price'];
-		if($subs_plan['plan_duration']==1){
-			$plan_duration = lang('Membership.xin_subscription_monthly');
-		} else if($subs_plan['plan_duration']==2){
+		
 			$plan_duration = lang('Membership.xin_subscription_yearly');
-		} else {
-			$plan_duration = lang('Membership.xin_subscription_unlimit');
-		}
+		
 		?>
         <div class="card-body pb-2">
           <div class="row">
