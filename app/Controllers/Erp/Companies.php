@@ -255,23 +255,27 @@ class Companies extends BaseController {
 
 			if($this->request->getFile('cr_tax_card')){
 				$cr = $this->request->getFile('cr_tax_card');
-				$cr->move('public/uploads/company_documents/');
-				$cr_tax_card = time().$cr->getName();
+				$cr_tax_card = 'cr_tax_card_'.time().$cr->getName();
+				$cr->move('public/uploads/company_documents/'.$cr_tax_card);
+				
 			}
 			if($this->request->getFile('bank_account')){
 				$bnk = $this->request->getFile('bank_account');
-				$bnk->move('public/uploads/company_documents/');
-				$bank_account = time().$bnk->getName();
+				$bank_account = 'bank_account_'.time().$bnk->getName();
+				$bnk->move('public/uploads/company_documents/'.$bank_account);
+				
 			}
 			if($this->request->getFile('bank_account_with_seal')){
 				$with_seal = $this->request->getFile('bank_account_with_seal');
-				$with_seal->move('public/uploads/company_documents/');
-				$bank_account_with_seal = time().$with_seal->getName();
+				$bank_account_with_seal = 'bank_account_with_seal_'.time().$with_seal->getName();
+				$with_seal->move('public/uploads/company_documents/'.$bank_account_with_seal);
+				
 			}
 			if($this->request->getFile('bank_certificate')){
 				$certificate = $this->request->getFile('bank_certificate');
-				$certificate->move('public/uploads/company_documents/');
-				$bank_certificate = time().$certificate->getName();
+				$bank_certificate = 'bank_certificate_'.time().$certificate->getName();
+				$certificate->move('public/uploads/company_documents/'.$bank_certificate);
+				
 			}
 			
 			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
