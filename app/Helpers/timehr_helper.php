@@ -146,6 +146,22 @@ if( !function_exists('user_attendance_monthly_value') ){
 		return $get_data;
 	}
 }
+//Company Document
+// single user
+if( !function_exists('company_document') ){
+	function company_document($company_id, $field){
+		
+		
+		$UsersModel = new \App\Models\UsersModel();
+		$user_info = $UsersModel->where('user_id', $company_id)->first();
+		
+			
+	    $user_img = base_url().'/public/uploads/company_documents/'.$user_info[$field];
+		
+	
+		return $user_img;
+	}
+}
 // single user
 if( !function_exists('staff_profile_photo') ){
 	function staff_profile_photo($user_id){
