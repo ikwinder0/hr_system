@@ -259,7 +259,7 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
             <thead>
               <tr>
                 <th><?= lang('Company.xin_company_name');?></th>
-                <th><?= lang('Membership.xin_membership_type');?></th>
+                <th><?= lang('Main.xin_contact_number');?></th>
                 <th><?= lang('Main.xin_country');?></th>
                 <th><?= lang('Main.dashboard_xin_status');?></th>
               </tr>

@@ -112,7 +112,7 @@ class Companies extends BaseController {
 				// $iprice = number_to_currency($membership['price'], $xin_system['default_currency'],null,2);
 			// }
 			// $mp_subs = $membership['membership_type'].'<br><div class="small">'.$iprice.'/'.$subscription.'</div>';
-			$mp_subs='';
+			$contact=$r['contact_number'];
 			$combhr = $edit.$view.$delete;
 			if($r['profile_photo']=='no'){
 				$profile_picture = base_url().'/public/uploads/default_profile.jpg';
@@ -140,7 +140,7 @@ class Companies extends BaseController {
 			';						 			  				
 			$data[] = array(
 				$links,
-				$mp_subs,
+				$contact,
 				$all_countries['country_name'],
 				$status,
 			);
