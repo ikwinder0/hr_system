@@ -259,6 +259,7 @@ if($result['is_active'] == 1){
                     <small>
                     <?= lang('Main.xin_company_file_type');?>
                     </small>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
@@ -276,6 +277,7 @@ if($result['is_active'] == 1){
                   <small>
                   <?= lang('Main.xin_company_file_type');?>
                   </small>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
