@@ -241,7 +241,7 @@ if($result['is_active'] == 1){
                     <tr>
                       <td><i class="far fa-credit-card m-r-5"></i> <?= lang('Main.xin_price');?>:</td>
                       <td class="text-right"><div class="btn-group text-success">
-                          <?= number_to_currency($subs_price, $xin_system['default_currency'],null,2);?>
+                          <?= number_to_currency(233, $xin_system['default_currency'],null,2);?>
                         </div></td>
                     </tr>
                     <tr>
