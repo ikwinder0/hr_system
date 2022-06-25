@@ -44,6 +44,7 @@ return [
 	'dashboard_username' => 'Username',
 	'xin_website' => 'Website',
 	'xin_employee_password' => "Password",
+	'xin_company_dicument' => 'Company Document',
 	'xin_company_file_type' => 'Upload files only: gif,png,jpg,jpeg',
 	'xin_error_contact_field' => "The contact number field is required.",
 	'xin_error_cemail_field' => "The email field is required.",
