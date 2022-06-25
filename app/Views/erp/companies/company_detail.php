@@ -66,7 +66,7 @@ if($result['is_active'] == 1){
           <?= $result['contact_number'];?>
           </a> </li>
       </ul>
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action active" id="change_subscription-tab" data-toggle="pill" href="#change_subscription" role="tab" aria-controls="change_subscription" aria-selected="false"> <span class="f-w-500"><i class="feather icon-calendar m-r-10 h5 "></i><?= lang('Membership.xin_membership_change');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action " id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i><?= lang('Main.xin_personal_info');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-companyinfo-tab" data-toggle="pill" href="#user-companyinfo" role="tab" aria-controls="user-companyinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i>
+      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action " id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i><?= lang('Main.xin_personal_info');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-companyinfo-tab" data-toggle="pill" href="#user-companyinfo" role="tab" aria-controls="user-companyinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i>
         <?= lang('Main.xin_company_info');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i><?= lang('Main.xin_e_details_profile_picture');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> </div>
     </div>
@@ -207,88 +207,6 @@ if($result['is_active'] == 1){
             <?= lang('Main.xin_save');?>
             </button>
           </div>
-        <?= form_close(); ?>
-      </div>
-      <div class="tab-pane fade active show" id="change_subscription">
-        <?php $attributes = array('name' => 'update_plan', 'id' => 'ci_plan', 'autocomplete' => 'off');?>
-        <?php $hidden = array('user_id' => 0, 'token' => $segment_id);?>
-        <?= form_open_multipart('erp/companies/update_plan', $attributes, $hidden);?>
-        <?php
-		
-			$plan_duration = lang('Membership.xin_subscription_yearly');
-		
-		?>
-        <div class="card-body pb-2">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="border1 p-3">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td><i class="fas fa-adjust m-r-5"></i> <?= lang('Membership.xin_current_plan');?>:</td>
-                      <td class="text-right"><span class="float-right text-success">
-                        yearly
-                        </span></td>
-                    </tr>
-                    <tr>
-                      <td><i class="fas fa-chart-line m-r-5"></i> <?= lang('Membership.xin_subscription_id');?>:</td>
-                      <td class="text-right text-primary">123</td>
-                    </tr>
-                    <tr>
-                      <td><i class="far fa-clock m-r-5"></i> <?= lang('Membership.xin_plan_duration');?>:</td>
-                      <td class="text-right">duration</td>
-                    </tr>
-                    <tr>
-                      <td><i class="far fa-credit-card m-r-5"></i> <?= lang('Main.xin_price');?>:</td>
-                      <td class="text-right"><div class="btn-group text-success">
-                          <?= number_to_currency(233, $xin_system['default_currency'],null,2);?>
-                        </div></td>
-                    </tr>
-                    <tr>
-                      <td><i class="far fa-calendar-alt m-r-5"></i> <?= lang('Membership.xin_started_on');?>:</td>
-                      <td class="text-right">1234</td>
-                    </tr>
-                    <tr>
-                      <td><i class="fas fa-user-plus m-r-5"></i> <?= lang('Employees.xin_total_employees');?>:</td>
-                      <td class="text-right">
-                        
-                        </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="form-group mb-1">
-                <label><?= lang('Membership.xin_membership_change');?> :</label>
-              </div>
-              <div class="alert alert-primary" role="alert"> <?= lang('Membership.xin_this_change_will_affect_on');?>
-                <?= date('F d, Y');?>
-                <?= lang('Membership.xin_on_acccount');?> </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="membership_type">
-                      <?= lang('Membership.xin_membership_type');?>
-                      <span class="text-danger">*</span> </label>
-                    <select class="form-control" name="membership_type" data-plugin="select_hrm" data-placeholder="<?= lang('Membership.xin_membership_type');?>">
-                      <option value="">
-                      <?= lang('Main.xin_select_one');?>
-                      </option>
-                     
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="card-footer text-right">
-            <button type="submit" class="btn btn-primary">
-            <?= lang('Main.xin_save');?>
-            </button>
-          </div>
-        </div>
         <?= form_close(); ?>
       </div>
       <div class="tab-pane fade" id="user-profile-logo">
