@@ -228,61 +228,61 @@ if($result['is_active'] == 1){
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="project">
-                    <?= lang('Agency.xin_beneficiary_and_bank_account');?>
-                  </label>
-					        <div class="custom-file">
-                    <input class="custom-file-input bank_account" name="bank_account" type="file" value="">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small>
-                  </div>
-              </div>
-              <div class="col-md-6">
+                <div class="col-md-6">
+					<div class="form-group">
+						<label for="project">
+							<?= lang('Agency.xin_beneficiary_and_bank_account');?>
+						</label>
+						<div class="custom-file">
+							<input class="custom-file-input bank_account" name="bank_account" type="file" value="">
+							<label class="custom-file-label">
+							  <?= lang('Main.xin_choose_file');?>
+							</label>
+							<small>
+							<?= lang('Main.xin_company_file_type');?>
+							</small>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-6">
                 
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="project">
-                    <?= lang('Agency.xin_bank_account_with_seal');?>
-                  </label>
-					        <div class="custom-file">
-                    <input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Main.xin_company_file_type');?>
-                    </small>
-                  </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="invoice_date">
-                    <?= lang('Agency.xin_bank_certificate');?>
-                  </label>
-                  <div class="custom-file">
-                    <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
-                  <label class="custom-file-label">
-                    <?= lang('Main.xin_choose_file');?>
-                  </label>
-                  <small>
-                  <?= lang('Main.xin_company_file_type');?>
-                  </small>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-              </div>
-
+				<div class="col-md-6">
+					<div class="form-group">
+					  <label for="project">
+						<?= lang('Agency.xin_bank_account_with_seal');?>
+					  </label>
+								<div class="custom-file">
+						<input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-6">
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+					  <label for="invoice_date">
+						<?= lang('Agency.xin_bank_certificate');?>
+					  </label>
+					  <div class="custom-file">
+						<input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
+					  <label class="custom-file-label">
+						<?= lang('Main.xin_choose_file');?>
+					  </label>
+					  <small>
+					  <?= lang('Main.xin_company_file_type');?>
+					  </small>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-6">
+				</div>
             </div>
           </div>
           <div class="card-footer text-right">
