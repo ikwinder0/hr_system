@@ -224,7 +224,7 @@ if($result['is_active'] == 1){
                 </div>
               </div>
               <div class="col-md-6">
-              <img src="<?= company_document($result['user_id'],'cr_tax_card');?>" alt="" class="d-block img-radius img-fluid wid-80">
+              <img src="<?= company_document($result['user_id'],'cr_tax_card');?>" alt="" class="d-block  img-fluid wid-80">
               </div>
             </div>  
             <hr class="m-0 mb-3">
@@ -246,7 +246,7 @@ if($result['is_active'] == 1){
 					</div>
 				</div>
         <div class="col-md-6">
-        <img src="<?= company_document($result['user_id'],'bank_account');?>" alt="" class="d-block img-radius img-fluid wid-80">
+        <img src="<?= company_document($result['user_id'],'bank_account');?>" alt="" class="d-block  img-fluid wid-80">
         </div>
         </div>
         <hr class="m-0 mb-3">
@@ -268,7 +268,7 @@ if($result['is_active'] == 1){
 					</div>
 				</div>
 				<div class="col-md-6">
-        <img src="<?= company_document($result['user_id'],'bank_account_with_seal');?>" alt="" class="d-block img-radius img-fluid wid-80">
+        <img src="<?= company_document($result['user_id'],'bank_account_with_seal');?>" alt="" class="d-block img-fluid wid-80">
 				</div>
         </div>
         <hr class="m-0 mb-3">
@@ -290,7 +290,7 @@ if($result['is_active'] == 1){
 					</div>
 				</div>
 				<div class="col-md-6">
-        <img src="<?= company_document($result['user_id'],'bank_certificate');?>" alt="" class="d-block img-radius img-fluid wid-80">
+        <img src="<?= company_document($result['user_id'],'bank_certificate');?>" alt="" class="d-block  img-fluid wid-80">
 				</div>
         </div>
           </div>
