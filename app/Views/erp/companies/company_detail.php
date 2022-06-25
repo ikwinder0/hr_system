@@ -104,15 +104,7 @@ if($result['is_active'] == 1){
                 </select>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="company_name">
-                  <?= lang('Company.xin_company_address');?>
-                  <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="address_1" type="text" value="<?= $result['address_1']?>">
-              </div>
-            </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="company_name">
                   <?= lang('Company.xin_company_website');?>
@@ -120,19 +112,7 @@ if($result['is_active'] == 1){
                 <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="website" type="text" value="<?= $result['website']?>"> 
               </div>
             </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
-              
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="membership_type">
                   <?= lang('Main.dashboard_xin_status');?>
@@ -145,6 +125,14 @@ if($result['is_active'] == 1){
                   <?= lang('Main.xin_employees_inactive');?>
                   </option>
                 </select>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_company_address');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="address_1" type="text" value="<?= $result['address_1']?>">
               </div>
             </div>
           </div>
