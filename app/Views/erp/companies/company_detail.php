@@ -164,6 +164,25 @@ if($result['is_active'] == 1){
               </div>
             </div>
           </div>
+          <hr class="m-0 mb-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_contact_person');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person');?>" name="contact_person" type="text" value="<?= $result['contact_persong']?>">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_contact_person_phone');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person_phone');?>" name="contact_person_phone" type="text" value="<?= $result['contact_person_phone']?>">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="card-footer text-right">
             <button type="submit" class="btn btn-primary">
