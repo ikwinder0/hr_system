@@ -210,7 +210,7 @@ if($result['is_active'] == 1){
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="company_name">
-                    <?= lang('Company.Agency.xin_cr_and_tax_card');?>
+                    <?= lang('Agency.xin_cr_and_tax_card');?>
                    </label>
                    <div class="custom-file">
                       <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
@@ -246,14 +246,41 @@ if($result['is_active'] == 1){
               <div class="col-md-6">
                 
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label for="registration_no">
-                    <?= lang('Company.xin_company_registration');?>
+                  <label for="project">
+                    <?= lang('Agency.xin_bank_account_with_seal');?>
                   </label>
-                  <input class="form-control" placeholder="<?= lang('Company.xin_company_registration');?>" name="registration_no" type="text" value="<?= $result['registration_no'];?>">
+					        <div class="custom-file">
+                    <input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+                    <label class="custom-file-label">
+                      <?= lang('Main.xin_choose_file');?>
+                    </label>
+                    <small>
+                    <?= lang('Main.xin_company_file_type');?>
+                    </small>
                 </div>
               </div>
+              <div class="col-md-6">
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="invoice_date">
+                    <?= lang('Agency.xin_bank_certificate');?>
+                  </label>
+                  <div class="custom-file">
+                    <input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
+                  <label class="custom-file-label">
+                    <?= lang('Main.xin_choose_file');?>
+                  </label>
+                  <small>
+                  <?= lang('Main.xin_company_file_type');?>
+                  </small>
+                </div>
+              </div>
+              <div class="col-md-6">
+              </div>
+
             </div>
           </div>
           <div class="card-footer text-right">
