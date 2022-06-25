@@ -31,7 +31,7 @@ if($result['is_active'] == 1){
 	$status_label = '<i class="fas fa-certificate text-danger bg-icon"></i><i class="fas fa-times-circle front-icon text-white"></i>';
 }
 ?>
-<?php $subs_plan = '';
+<?php $subs_plan = '' ?>;
 
 <div class="row">
   <div class="col-lg-4">
