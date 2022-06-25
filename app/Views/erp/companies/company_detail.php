@@ -13,11 +13,7 @@ $MembershipModel = new MembershipModel();
 $MainModel = new MainModel();
 $UsersModel = new UsersModel();
 $SystemModel = new SystemModel();
-$CompanymembershipModel = new CompanymembershipModel();
-
-$company_types = $ConstantsModel->where('type','company_type')->orderBy('constants_id', 'ASC')->findAll();
 $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
-$membership_plans = $MembershipModel->orderBy('membership_id', 'ASC')->findAll();
 /* Company Details view
 */		
 $session = \Config\Services::session();
@@ -25,10 +21,8 @@ $usession = $session->get('sup_username');
 $request = \Config\Services::request();
 $segment_id = $request->uri->getSegment(3);
 $field_id = udecode($segment_id);
-/////
 $xin_system = $SystemModel->where('setting_id', 1)->first();
 $result = $UsersModel->where('user_id', $field_id)->first();
-$company_membership = $CompanymembershipModel->where('company_id', $field_id)->first();
 if($result['is_active'] == 1){
 	$status = '<span class="badge badge-light-success"><em class="icon ni ni-check-circle"></em> '.lang('Main.xin_employees_active').'</span>';
 	$status_label = '<i class="fas fa-certificate text-success bg-icon"></i><i class="fas fa-check front-icon text-white"></i>';
@@ -37,7 +31,7 @@ if($result['is_active'] == 1){
 	$status_label = '<i class="fas fa-certificate text-danger bg-icon"></i><i class="fas fa-times-circle front-icon text-white"></i>';
 }
 ?>
-<?php $subs_plan = $MembershipModel->where('membership_id', $company_membership['membership_id'])->first(); ?>
+<?php $subs_plan = '';
 
 <div class="row">
   <div class="col-lg-4">
