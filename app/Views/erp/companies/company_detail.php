@@ -227,16 +227,16 @@ if($result['is_active'] == 1){
                     <tr>
                       <td><i class="fas fa-adjust m-r-5"></i> <?= lang('Membership.xin_current_plan');?>:</td>
                       <td class="text-right"><span class="float-right text-success">
-                        <?= $subs_plan['membership_type']?>
+                        yearly
                         </span></td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-chart-line m-r-5"></i> <?= lang('Membership.xin_subscription_id');?>:</td>
-                      <td class="text-right text-primary"><?= $subs_plan['subscription_id']?></td>
+                      <td class="text-right text-primary">123</td>
                     </tr>
                     <tr>
                       <td><i class="far fa-clock m-r-5"></i> <?= lang('Membership.xin_plan_duration');?>:</td>
-                      <td class="text-right"><?= $plan_duration;?></td>
+                      <td class="text-right">duration</td>
                     </tr>
                     <tr>
                       <td><i class="far fa-credit-card m-r-5"></i> <?= lang('Main.xin_price');?>:</td>
@@ -246,12 +246,12 @@ if($result['is_active'] == 1){
                     </tr>
                     <tr>
                       <td><i class="far fa-calendar-alt m-r-5"></i> <?= lang('Membership.xin_started_on');?>:</td>
-                      <td class="text-right"><?= $company_membership['update_at'];?></td>
+                      <td class="text-right">1234</td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-user-plus m-r-5"></i> <?= lang('Employees.xin_total_employees');?>:</td>
                       <td class="text-right">
-                        <?= $subs_plan['total_employees']?>
+                        
                         </td>
                     </tr>
                   </tbody>
@@ -275,15 +275,7 @@ if($result['is_active'] == 1){
                       <option value="">
                       <?= lang('Main.xin_select_one');?>
                       </option>
-                      <?php foreach($membership_plans as $plans) {?>
-                      <?php if($plans['membership_id']!=23423) {?>
-                      <option value="<?= $plans['membership_id'];?>" <?php if($company_membership['membership_id']==$plans['membership_id']):?> selected="selected"<?php endif;?>>
-                      <?= $plans['membership_type'];?>
-                      (
-                      <?= number_to_currency($plans['price'], $xin_system['default_currency'],null,2);?>
-                      ) </option>
-                      <?php } ?>
-                      <?php } ?>
+                     
                     </select>
                   </div>
                 </div>
@@ -351,11 +343,7 @@ if($result['is_active'] == 1){
                     <option value="">
                     <?= lang('Main.xin_select_one');?>
                     </option>
-                    <?php foreach($company_types as $ctype) {?>
-                    <option value="<?= $ctype['constants_id'];?>" <?php if($result['company_type_id']==$ctype['constants_id']){?> selected="selected" <?php } ?>>
-                    <?= $ctype['category_name'];?>
-                    </option>
-                    <?php } ?>
+                   
                   </select>
                 </div>
               </div>
