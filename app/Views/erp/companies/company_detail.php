@@ -96,11 +96,6 @@ if($result['is_active'] == 1){
                   <option value="">
                   <?= lang('Main.xin_select_one');?>
                   </option>
-                  <?php foreach($company_types as $ctype) {?>
-                  <option value="<?= $ctype['constants_id'];?>" <?php if($result['company_type_id']==$ctype['constants_id']){?> selected="selected" <?php } ?>>
-                  <?= $ctype['category_name'];?>
-                  </option>
-                  <?php } ?>
                 </select>
               </div>
             </div>
