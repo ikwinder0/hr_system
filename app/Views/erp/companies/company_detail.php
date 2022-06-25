@@ -229,7 +229,7 @@ if($result['is_active'] == 1){
             </div>  
             <hr class="m-0 mb-3">
             <div class="row">
-                <div class="col-md-6">
+            <div class="col-md-6">
 					<div class="form-group">
 						<label for="project">
 							<?= lang('Agency.xin_beneficiary_and_bank_account');?>
@@ -245,10 +245,12 @@ if($result['is_active'] == 1){
 						</div>
 					</div>
 				</div>
-                <div class="col-md-6">
-                
-                </div>
-                <hr class="m-0 mb-3">
+        <div class="col-md-6">
+        
+        </div>
+        </div>
+        <hr class="m-0 mb-3">
+        <div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
 					  <label for="project">
@@ -267,7 +269,9 @@ if($result['is_active'] == 1){
 				</div>
 				<div class="col-md-6">
 				</div>
+        </div>
         <hr class="m-0 mb-3">
+        <div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
 					  <label for="invoice_date">
@@ -286,7 +290,8 @@ if($result['is_active'] == 1){
 				</div>
 				<div class="col-md-6">
 				</div>
-            </div>
+        </div>
+          </div>
           </div>
           <div class="card-footer text-right">
             <button type="submit" class="btn btn-primary">
