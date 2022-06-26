@@ -155,7 +155,6 @@ $get_animate='';
                         <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text">
                       </div>
                     </div>
-                </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
