@@ -754,7 +754,7 @@ class Companies extends BaseController {
 				
 				$Return['result'] = lang('Main.xin_company_update_document');
 				$Return['csrf_hash'] = csrf_hash();
-			}
+				
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
