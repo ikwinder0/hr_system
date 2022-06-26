@@ -93,7 +93,9 @@ $(document).ready(function() {
 				} else {
 					toastr.success(JSON.result);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					window.location.reload();
 					Ladda.stopAll();
+
 				}
 			},
 			error: function() 
