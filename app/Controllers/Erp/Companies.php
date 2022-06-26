@@ -705,6 +705,67 @@ class Companies extends BaseController {
 			exit;
 		}		
 	} 
+	//update company document
+	// update record
+	public function update_document() {
+			
+		$validation =  \Config\Services::validation();
+		$session = \Config\Services::session();
+		$request = \Config\Services::request();
+		$usession = $session->get('sup_username');
+		if ($this->request->getPost('type') === 'edit_record') {
+			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
+			$Return['csrf_hash'] = csrf_hash();
+			//$image = service('image');
+			// set rules
+			$image = service('image');
+			$UsersModel = new UsersModel();
+			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+			if($this->request->getFile('cr_tax_card')){
+				$cr = $this->request->getFile('cr_tax_card');
+				$cr_tax_card = time().$cr->getName();
+				$cr->move('public/uploads/company_documents/',$cr_tax_card);
+				$data['cr_tax_card'] = $cr_tax_card;
+				$UsersModel->update($id, $data);
+				
+				
+			}
+			if($this->request->getFile('bank_account')){
+				$bnk = $this->request->getFile('bank_account');
+				$bank_account = time().$bnk->getName();
+				$bnk->move('public/uploads/company_documents/',$bank_account);
+				$data['bank_account'] = $bank_account;
+				$UsersModel->update($id, $data);
+			}
+			if($this->request->getFile('bank_account_with_seal')){
+				$with_seal = $this->request->getFile('bank_account_with_seal');
+				$bank_account_with_seal = time().$with_seal->getName();
+				$with_seal->move('public/uploads/company_documents/',$bank_account_with_seal);
+				$data['bank_account_with_seal'] = $bank_account_with_seal;
+				$UsersModel->update($id, $data);
+			}
+			if($this->request->getFile('bank_certificate')){
+				$certificate = $this->request->getFile('bank_certificate');
+				$bank_certificate = time().$certificate->getName();
+				$certificate->move('public/uploads/company_documents/',$bank_certificate);
+				$data['bank_certificate'] = $bank_certificate;
+				$UsersModel->update($id, $data);
+			}
+				
+				$Return['result'] = lang('Main.xin_company_update_document');
+				$Return['csrf_hash'] = csrf_hash();
+			}
+			if($Return['error']!=''){
+				$this->output($Return);
+			}
+			$this->output($Return);
+			exit;
+		} else {
+			$Return['error'] = lang('Main.xin_error_msg');
+			$this->output($Return);
+			exit;
+		}
+	}
 	// update record
 	public function update_company_photo() {
 			

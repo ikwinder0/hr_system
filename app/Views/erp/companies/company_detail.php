@@ -223,7 +223,7 @@ if($result['is_active'] == 1){
         <div class="card-body pb-2">
           <?php $attributes = array('name' => 'company_info', 'id' => 'company_info', 'autocomplete' => 'off');?>
           <?php $hidden = array('token' => $segment_id);?>
-          <?= form_open('erp/companies/update_company_info', $attributes, $hidden);?>
+          <?= form_open_multipart('erp/companies/update_document', $attributes, $hidden);?>
           <div class="form-body">
             <div class="row">
               <div class="col-md-6">
