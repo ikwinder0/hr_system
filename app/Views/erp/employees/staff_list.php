@@ -120,7 +120,18 @@ $get_animate='';
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">
+                    <?= lang('Main.xin_email');?>
+                    <span class="text-danger">*</span> </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-envelope"></i></span></div>
+                    <input class="form-control" placeholder="<?= lang('Main.xin_email');?>" name="email" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="contact_number">
                     <?= lang('Main.xin_contact_number');?>
@@ -141,17 +152,6 @@ $get_animate='';
                     <?= lang('Main.xin_gender_female');?>
                     </option>
                   </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">
-                    <?= lang('Main.xin_email');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="input-group">
-                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-envelope"></i></span></div>
-                    <input class="form-control" placeholder="<?= lang('Main.xin_email');?>" name="email" type="text">
-                  </div>
                 </div>
               </div>
             </div>
