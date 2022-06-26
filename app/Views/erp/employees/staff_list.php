@@ -200,10 +200,10 @@ $get_animate='';
                     <span class="text-danger">*</span></label>
                     <select class="form-control" name="marital_status" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_employee_gender');?>">
                     <option value="1">
-                    <?= lang('Main.xin_gender_male');?>
+                    <?= lang('Main.xin_marital_single');?>
                     </option>
                     <option value="2">
-                    <?= lang('Main.xin_gender_female');?>
+                    <?= lang('Main.xin_marital_married');?>
                     </option>
                   </select>
                 </div>

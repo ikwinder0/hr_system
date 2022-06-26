@@ -535,6 +535,8 @@ return [
 	'xin_dob' => 'Date of Birth',
 	'xin_nationality' => 'Nationality',
 	'xin_marital_status' => 'Marital Status',
+	'xin_marital_single' => 'Single',
+	'xin_marital_married' => 'Married',
 	'xin_religion' => 'Religion',
 	'xin_home_address' => 'Home Address',
 ];
