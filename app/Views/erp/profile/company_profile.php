@@ -84,9 +84,9 @@ $xin_system = erp_company_settings();
         
         <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-image m-r-10 h5 "></i>
         <?= lang('Main.xin_e_details_profile_picture');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-companyinfo-tab" data-toggle="pill" href="#user-companyinfo" role="tab" aria-controls="user-companyinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
-        <?= lang('Main.xin_company_info');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-password-tab" data-toggle="pill" href="#user-password" role="tab" aria-controls="user-password" aria-selected="false"> <span class="f-w-500"><i class="feather icon-shield m-r-10 h5 "></i>
+        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>  
+        
+        <a class="nav-link list-group-item list-group-item-action" id="user-password-tab" data-toggle="pill" href="#user-password" role="tab" aria-controls="user-password" aria-selected="false"> <span class="f-w-500"><i class="feather icon-shield m-r-10 h5 "></i>
         <?= lang('Main.header_change_password');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> </div>
     </div>
