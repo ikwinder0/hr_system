@@ -35,16 +35,6 @@ $total_tickets = $TicketsModel->where('company_id',$company_id)->countAllResults
 $open = $TicketsModel->where('company_id',$company_id)->where('ticket_status', 1)->countAllResults();
 $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status', 2)->countAllResults();
 	
-// membership
-$company_membership = $CompanymembershipModel->where('company_id', $usession['sup_user_id'])->first();
-$subs_plan = $MembershipModel->where('membership_id', $company_membership['membership_id'])->first();
-$current_time = Time::now('Asia/Karachi');
-$company_membership_details = company_membership_details();
-if($company_membership_details['diff_days'] < 8){
-	$alert_bg = 'alert-danger';
-} else {
-	$alert_bg = 'alert-warning';
-}	
 ?>
 
 <div class="row">
