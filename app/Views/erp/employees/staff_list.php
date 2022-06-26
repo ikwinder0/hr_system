@@ -222,7 +222,7 @@ $get_animate='';
 			  </div>
               <hr class="m-0 mb-3">
               <span class="preview-title-lg">
-                <?= lang('Main.xin_experience');?>
+                <b><?= lang('Main.xin_experience');?></b>
               </span>
 			  <div class="row">
               <div class="col-md-4">
