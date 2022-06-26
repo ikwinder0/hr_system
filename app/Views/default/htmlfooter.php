@@ -72,6 +72,15 @@ $user_info = $UsersModel->where('user_id', $session['sup_user_id'])->first();
 	</script>
     <?php } ?>
      <script>
+	$('.maxdate').bootstrapMaterialDatePicker({
+		weekStart: 0,
+		time: false,
+		clearButton: false,
+		format: '<?= js_set_date_format();?>',
+		lang: '<?= $xin_com_system['datepicker_locale'];?>',
+		maxDate : new Date()
+	});
+
 	$('.date').bootstrapMaterialDatePicker({
 		weekStart: 0,
 		time: false,
