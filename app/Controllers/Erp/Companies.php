@@ -708,7 +708,7 @@ class Companies extends BaseController {
 	//update company document
 	// update record
 	public function update_document() {
-		print_r($this->request->getPost());
+		print_r($this->request->getFile('cr_tax_card'));
 		die;
 		$validation =  \Config\Services::validation();
 		$session = \Config\Services::session();
