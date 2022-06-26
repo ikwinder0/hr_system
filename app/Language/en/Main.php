@@ -532,5 +532,9 @@ return [
 	'xin_agency_error_bank_account_format_field' => "Beneficiary Name & Bank Account Details file type should be: png,jpg,jpeg.",
 	'xin_agency_error_bank_account_size_field' => "Beneficiary Name & Bank Account Details file size should be upto 4mb.",
 	'xin_agency_list_page' => 'Agencies List',
-	'xin_dob' => 'Date of Birth'
+	'xin_dob' => 'Date of Birth',
+	'xin_nationality' => 'Nationality',
+	'xin_marital_status' => 'Marital Status',
+	'xin_religion' => 'Religion',
+	'xin_home_address' => 'Home Address',
 ];

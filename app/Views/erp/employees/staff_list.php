@@ -182,6 +182,42 @@ $get_animate='';
                   </select>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_nationality');?>
+                    <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-birthday-cake"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_nationality');?>" name="nationality" type="text">
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_marital_status');?>
+                    <span class="text-danger">*</span></label>
+                    <select class="form-control" name="marital_status" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_employee_gender');?>">
+                    <option value="1">
+                    <?= lang('Main.xin_gender_male');?>
+                    </option>
+                    <option value="2">
+                    <?= lang('Main.xin_gender_female');?>
+                    </option>
+                  </select>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_religion');?>
+                    <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-birthday-cake"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_religion');?>" name="religion" type="text">
+                      </div>
+                    </div>
+              </div>
             </div>
           </div>
           <div class="card-footer text-right">
