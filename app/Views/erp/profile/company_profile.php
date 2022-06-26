@@ -78,7 +78,7 @@ $xin_system = erp_company_settings();
       
 
 
-        <a class="nav-link list-group-item list-group-item-action" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
+        <a class="nav-link list-group-item list-group-item-action active" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
         <?= lang('Main.xin_company_info');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> 
         
@@ -93,7 +93,7 @@ $xin_system = erp_company_settings();
   </div>
   <div class="col-xl-8 col-lg-12">
     <div class="card tab-content">
-    <div class="tab-pane fade" id="user-edit-account">
+    <div class="tab-pane fade active show" id="user-edit-account">
       <div class="card-header">
           <h5><i data-feather="user" class="icon-svg-primary wid-20"></i><span class="p-l-5">
             <?= lang('Main.xin_personal_info');?>
