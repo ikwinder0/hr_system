@@ -112,7 +112,7 @@ $get_animate='';
                   </small> 
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="company_name">
                     <?= lang('Main.xin_employee_first_name');?>
@@ -123,7 +123,7 @@ $get_animate='';
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="last_name" class="control-label">
                     <?= lang('Main.xin_employee_last_name');?>
@@ -134,7 +134,7 @@ $get_animate='';
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="email">
                     <?= lang('Main.xin_email');?>
@@ -145,7 +145,7 @@ $get_animate='';
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   <label for="contact_number">
                     <?= lang('Main.xin_contact_number');?>
