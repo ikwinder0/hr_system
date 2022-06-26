@@ -206,6 +206,7 @@ $get_animate='';
                     <?= lang('Main.xin_gender_female');?>
                     </option>
                   </select>
+                </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
