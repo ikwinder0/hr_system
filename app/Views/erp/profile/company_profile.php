@@ -74,10 +74,7 @@ $xin_system = erp_company_settings();
           <?= $result['contact_number'];?>
           </a> </li>
       </ul>
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">  
-      
-
-
+      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> 
         <a class="nav-link list-group-item list-group-item-action active" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
         <?= lang('Main.xin_company_info');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> 
