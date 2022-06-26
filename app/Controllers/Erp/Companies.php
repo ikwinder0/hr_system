@@ -722,7 +722,7 @@ class Companies extends BaseController {
 			$image = service('image');
 			$UsersModel = new UsersModel();
 			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
-			if($this->request->getFile('cr_tax_card')){
+			if(isset($this->request->getFile('cr_tax_card'))){
 				$cr = $this->request->getFile('cr_tax_card');
 				$cr_tax_card = time().$cr->getName();
 				$cr->move('public/uploads/company_documents/',$cr_tax_card);
@@ -731,21 +731,21 @@ class Companies extends BaseController {
 				
 				
 			}
-			if($this->request->getFile('bank_account')){
+			if(isset($this->request->getFile('bank_account'))){
 				$bnk = $this->request->getFile('bank_account');
 				$bank_account = time().$bnk->getName();
 				$bnk->move('public/uploads/company_documents/',$bank_account);
 				$data['bank_account'] = $bank_account;
 				$UsersModel->update($id, $data);
 			}
-			if($this->request->getFile('bank_account_with_seal')){
+			if(isset($this->request->getFile('bank_account_with_seal'))){
 				$with_seal = $this->request->getFile('bank_account_with_seal');
 				$bank_account_with_seal = time().$with_seal->getName();
 				$with_seal->move('public/uploads/company_documents/',$bank_account_with_seal);
 				$data['bank_account_with_seal'] = $bank_account_with_seal;
 				$UsersModel->update($id, $data);
 			}
-			if($this->request->getFile('bank_certificate')){
+			if(isset($this->request->getFile('bank_certificate'))){
 				$certificate = $this->request->getFile('bank_certificate');
 				$bank_certificate = time().$certificate->getName();
 				$certificate->move('public/uploads/company_documents/',$bank_certificate);
