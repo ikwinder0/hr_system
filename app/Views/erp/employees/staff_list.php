@@ -230,7 +230,7 @@ $get_animate='';
                   <label for="contact_number">
                     <?= lang('Main.xin_experience_1');?>
                     <div class="input-group">
-                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-calendar-star"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_experience_1');?>" name="experience_1" type="text">
                       </div>
                     </div>
@@ -240,7 +240,7 @@ $get_animate='';
                   <label for="contact_number">
                     <?= lang('Main.xin_experience_2');?>
                     <div class="input-group">
-                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-calendar-star"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_experience_2');?>" name="experience_2" type="text">
                       </div>
                     </div>
@@ -250,7 +250,7 @@ $get_animate='';
                   <label for="contact_number">
                     <?= lang('Main.xin_experience_3');?>
                     <div class="input-group">
-                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-calendar-star"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_experience_3');?>" name="experience_3" type="text">
                       </div>
                     </div>
