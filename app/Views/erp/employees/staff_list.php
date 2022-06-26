@@ -98,7 +98,7 @@ $get_animate='';
           </div>
           <div class="card-body">
             <div class="row">
-            <div class="col-md-12">
+             <div class="col-md-12">
                 <label for="logo">
                   <?= lang('Main.xin_e_details_profile_picture');?>
                   <span class="text-danger">*</span> </label>
@@ -153,6 +153,18 @@ $get_animate='';
                     <div class="input-group">
                       <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-phone"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text">
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_dob');?>
+                    <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_dob');?>" name="dob" type="text">
                       </div>
                     </div>
                 </div>
