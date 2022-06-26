@@ -163,7 +163,7 @@ $get_animate='';
                     <span class="text-danger">*</span></label>
                     <div class="input-group">
                       <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-birthday-cake"></i></span></div>
-                        <input class="form-control" placeholder="<?= lang('Main.xin_dob');?>" name="dob" type="text">
+                        <input class="form-control date" placeholder="<?= lang('Main.xin_dob');?>" name="dob" type="text">
                       </div>
                     </div>
               </div>
