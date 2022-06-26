@@ -402,36 +402,27 @@ class Companies extends BaseController {
 		$validation =  \Config\Services::validation();
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
-		$usession = $session->get('sup_username');	
+		$usession = $session->get('sup_username');
+		$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
 		if ($this->request->getPost('type') === 'edit_record') {
 			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 			$Return['csrf_hash'] = csrf_hash();
 			// set rules
 			$validation->setRules([
 					'company_name' => 'required',
-					'company_type' => 'required',
-					'first_name' => 'required',
-					'last_name' => 'required',
 					'contact_number' => 'required',
-					'email' => 'required|valid_email',
-					'membership_type' => 'required',
-					'subscription' => 'required',
+					'email' => "required|valid_email|is_unique[ci_erp_users.email,id,$id]",
 					'country' => 'required',
-					'username' => 'required|min_length[6]'
-					//'logo' => 'required'
+					'address_1' => 'required',
+					'username' => "required|min_length[6]|is_unique[ci_erp_users.username,id,$id]",
+					// 'password' => 'required|min_length[6]',
+					'contact_person' => 'required',
+					'contact_person_phone' => 'required',
+					'website' => 'required',
 				],
 				[   // Errors
 					'company_name' => [
 						'required' => lang('Company.xin_error_name_field'),
-					],
-					'company_type' => [
-						'required' => lang('Company.xin_error_ctype_field'),
-					],
-					'first_name' => [
-						'required' => lang('Main.xin_contact_error_first_name'),
-					],
-					'last_name' => [
-						'required' => lang('Main.xin_contact_error_last_name'),
 					],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
@@ -439,19 +430,31 @@ class Companies extends BaseController {
 					'email' => [
 						'required' => lang('Main.xin_error_cemail_field'),
 						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
-					],
-					'membership_type' => [
-						'required' => lang('Company.xin_error_membership_type_field'),
-					],
-					'subscription' => [
-						'required' => lang('Company.xin_error_subscription_field'),
+						'is_unique' => lang('Main.xin_already_exist_error_email'),
 					],
 					'country' => [
 						'required' => lang('Main.xin_error_country_field'),
 					],
+					'address_1' => [
+						'required' => lang('Main.xin_error_company_address'),
+					],
 					'username' => [
 						'required' => lang('Main.xin_employee_error_username'),
 						'min_length' => lang('Main.xin_min_error_username'),
+						'is_unique' => lang('Main.xin_already_exist_error_username')
+					],
+					// 'password' => [
+					// 	'required' => lang('Main.xin_employee_error_password'),
+					// 	'min_length' => lang('Login.xin_min_error_password')
+					// ],
+					'contact_person' => [
+						'required' => lang('Main.xin_agency_error_contact_person_field'),
+					],
+					'contact_person_phone' => [
+						'required' => lang('Main.xin_agency_error_contact_person_phone_field'),
+					],
+					'website' => [
+						'required' => lang('Main.xin_agency_error_website_field'),
 					]
 				]
 			);
@@ -460,118 +463,60 @@ class Companies extends BaseController {
 			//check error
 			if ($validation->hasError('company_name')) {
 				$Return['error'] = $validation->getError('company_name');
-			} elseif($validation->hasError('company_type')){
-				$Return['error'] = $validation->getError('company_type');
-			} elseif($validation->hasError('membership_type')){
-				$Return['error'] = $validation->getError('membership_type');
-			} elseif($validation->hasError('subscription')){
-				$Return['error'] = $validation->getError('subscription');
-			} elseif($validation->hasError('first_name')) {
-				$Return['error'] = $validation->getError('first_name');
-			} elseif($validation->hasError('last_name')){
-				$Return['error'] = $validation->getError('last_name');
-			}  elseif($validation->hasError('contact_number')){
-				$Return['error'] = $validation->getError('contact_number');
+			} elseif($validation->hasError('address_1')){
+				$Return['error'] = $validation->getError('address_1');
+			} elseif($validation->hasError('contact_person')) {
+				$Return['error'] = $validation->getError('contact_person');
+			} elseif($validation->hasError('contact_person_phone')){
+				$Return['error'] = $validation->getError('contact_person_phone');
+			} elseif($validation->hasError('country')){
+				$Return['error'] = $validation->getError('country');
+			} elseif($validation->hasError('website')){
+				$Return['error'] = $validation->getError('website');
 			} elseif($validation->hasError('email')){
 				$Return['error'] = $validation->getError('email');
 			} elseif($validation->hasError('username')){
 				$Return['error'] = $validation->getError('username');
-			} elseif($validation->hasError('country')){
-				$Return['error'] = $validation->getError('country');
+			// } elseif($validation->hasError('password')){
+			// 	$Return['error'] = $validation->getError('password');
+			} elseif($validation->hasError('contact_number')){
+				$Return['error'] = $validation->getError('contact_number');
 			}
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
-			$image = service('image');
-			$validated = $this->validate([
-				'file' => [
-					'uploaded[file]',
-					'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
-					'max_size[file,4096]',
-				],
-			]);
-			if ($validated) {
-				$avatar = $this->request->getFile('file');
-				$avatar->move('public/uploads/users/');
-				$file_name = $avatar->getName();
-				$image->withFile(filesrc($file_name))
-				->fit(100, 100, 'center')
-				->save('public/uploads/users/thumb/'.$file_name);
-			}
-			if($Return['error']!=''){
-				$this->output($Return);
-			}
-			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
-			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
-			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
-			$company_type = $this->request->getPost('company_type',FILTER_SANITIZE_STRING);
-			$trading_name = $this->request->getPost('trading_name',FILTER_SANITIZE_STRING);
-			$registration_no = $this->request->getPost('registration_no',FILTER_SANITIZE_STRING);
+			
+		
+			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
+			$contact_person = $this->request->getPost('contact_person',FILTER_SANITIZE_STRING);
+			$contact_person_phone = $this->request->getPost('contact_person_phone',FILTER_SANITIZE_STRING);
+			$website = $this->request->getPost('website');
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
-			$xin_gtax = $this->request->getPost('xin_gtax',FILTER_SANITIZE_STRING);
-			$membership_type = $this->request->getPost('membership_type',FILTER_SANITIZE_STRING);
-			$subscription = $this->request->getPost('subscription',FILTER_SANITIZE_STRING);
-			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
-			$address_2 = $this->request->getPost('address_2',FILTER_SANITIZE_STRING);
-			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
-			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
-			$zipcode = $this->request->getPost('zipcode',FILTER_SANITIZE_STRING);
+			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
 			$country = $this->request->getPost('country',FILTER_SANITIZE_STRING);		
 			$username = $this->request->getPost('username',FILTER_SANITIZE_STRING);
+			//$password = $this->request->getPost('password',FILTER_SANITIZE_STRING);
 			
-			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
-			if ($validated) {
+			
+			
 			$data = [
 				'company_name' => $company_name,
-				'company_type_id'  => $company_type,
-				'first_name' => $first_name,
-				'last_name'  => $last_name,
-				'trading_name'  => $trading_name,
-				'registration_no'  => $registration_no,
+				'contact_person' => $contact_person,
+				'contact_person_phone'  => $contact_person_phone,
+				'website'  => $website,
 				'contact_number'  => $contact_number,
 				'email'  => $email,
-				'government_tax' => $xin_gtax,
 				'address_1'  => $address_1,
-				'address_2'  => $address_2,
-				'city'  => $city,
-				'profile_photo'  => $file_name,
-				'state'  => $state,
-				'zipcode' => $zipcode,
 				'country'  => $country,
-				'username'  => $username
-				];
-			} else {
-				$data = [
-					'company_name' => $company_name,
-					'company_type_id'  => $company_type,
-					'first_name' => $first_name,
-					'last_name'  => $last_name,
-					'trading_name'  => $trading_name,
-					'registration_no'  => $registration_no,
-					'contact_number'  => $contact_number,
-					'email'  => $email,
-					'government_tax' => $xin_gtax,
-					'address_1'  => $address_1,
-					'address_2'  => $address_2,
-					'city'  => $city,
-					'state'  => $state,
-					'zipcode' => $zipcode,
-					'country'  => $country,
-					'username'  => $username
-				];
-			}
+				'username'  => $username,
+			];
+			
 			$UsersModel = new UsersModel();
-			$CompanymembershipModel = new CompanymembershipModel();
 			$result = $UsersModel->update($id, $data);			
 			
 			$Return['csrf_hash'] = csrf_hash();	
 			if ($result == TRUE) {
-				$data2 = array(
-					'membership_id'  => $membership_type
-				);
-				$MainModel = new MainModel();
-				$MainModel->update_company_membership($data2,$id);
 				$Return['result'] = lang('Company.xin_success_update_company');
 			} else {
 				$Return['error'] = lang('Main.xin_error_msg');
