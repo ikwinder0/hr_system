@@ -188,7 +188,7 @@ $get_animate='';
                     <?= lang('Main.xin_nationality');?>
                     <span class="text-danger">*</span></label>
                     <div class="input-group">
-                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-birthday-cake"></i></span></div>
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-flag"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_nationality');?>" name="nationality" type="text">
                       </div>
                     </div>
@@ -214,7 +214,7 @@ $get_animate='';
                     <?= lang('Main.xin_religion');?>
                     <span class="text-danger">*</span></label>
                     <div class="input-group">
-                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-birthday-cake"></i></span></div>
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_religion');?>" name="religion" type="text">
                       </div>
                     </div>
