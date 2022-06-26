@@ -403,18 +403,20 @@ class Companies extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');
-		$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+		
 		if ($this->request->getPost('type') === 'edit_record') {
+			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+
 			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 			$Return['csrf_hash'] = csrf_hash();
 			// set rules
 			$validation->setRules([
 					'company_name' => 'required',
 					'contact_number' => 'required',
-					'email' => "required|valid_email|is_unique[ci_erp_users.email,id,$id]",
+					'email' => "required|valid_email|is_unique[ci_erp_users.email,user_id,$id]",
 					'country' => 'required',
 					'address_1' => 'required',
-					'username' => "required|min_length[6]|is_unique[ci_erp_users.username,id,$id]",
+					'username' => "required|min_length[6]|is_unique[ci_erp_users.username,user_id,$id]",
 					// 'password' => 'required|min_length[6]',
 					'contact_person' => 'required',
 					'contact_person_phone' => 'required',
