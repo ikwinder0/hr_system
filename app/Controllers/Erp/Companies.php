@@ -708,7 +708,8 @@ class Companies extends BaseController {
 	//update company document
 	// update record
 	public function update_document() {
-			
+		print_r($this->request->getPost());
+		die;
 		$validation =  \Config\Services::validation();
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
@@ -754,7 +755,7 @@ class Companies extends BaseController {
 				
 				$Return['result'] = lang('Main.xin_company_update_document');
 				$Return['csrf_hash'] = csrf_hash();
-				
+
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
