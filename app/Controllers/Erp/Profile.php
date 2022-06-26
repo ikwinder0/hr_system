@@ -50,6 +50,141 @@ class Profile extends BaseController {
 		
 	}
 	// update record
+	public function update_company_profile() {
+		
+		$validation =  \Config\Services::validation();
+		$session = \Config\Services::session();
+		$request = \Config\Services::request();
+		$usession = $session->get('sup_username');
+		
+		if ($this->request->getPost('type') === 'edit_record') {
+			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+
+			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
+			$Return['csrf_hash'] = csrf_hash();
+			// set rules
+			$validation->setRules([
+					'company_name' => 'required',
+					'contact_number' => 'required',
+					'email' => "required|valid_email|is_unique[ci_erp_users.email,user_id,$id]",
+					'country' => 'required',
+					'address_1' => 'required',
+					'username' => "required|min_length[6]|is_unique[ci_erp_users.username,user_id,$id]",
+					// 'password' => 'required|min_length[6]',
+					'contact_person' => 'required',
+					'contact_person_phone' => 'required',
+					'website' => 'required',
+				],
+				[   // Errors
+					'company_name' => [
+						'required' => lang('Company.xin_error_name_field'),
+					],
+					'contact_number' => [
+						'required' => lang('Main.xin_error_contact_field'),
+					],
+					'email' => [
+						'required' => lang('Main.xin_error_cemail_field'),
+						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
+						'is_unique' => lang('Main.xin_already_exist_error_email'),
+					],
+					'country' => [
+						'required' => lang('Main.xin_error_country_field'),
+					],
+					'address_1' => [
+						'required' => lang('Main.xin_error_company_address'),
+					],
+					'username' => [
+						'required' => lang('Main.xin_employee_error_username'),
+						'min_length' => lang('Main.xin_min_error_username'),
+						'is_unique' => lang('Main.xin_already_exist_error_username')
+					],
+					// 'password' => [
+					// 	'required' => lang('Main.xin_employee_error_password'),
+					// 	'min_length' => lang('Login.xin_min_error_password')
+					// ],
+					'contact_person' => [
+						'required' => lang('Main.xin_agency_error_contact_person_field'),
+					],
+					'contact_person_phone' => [
+						'required' => lang('Main.xin_agency_error_contact_person_phone_field'),
+					],
+					'website' => [
+						'required' => lang('Main.xin_agency_error_website_field'),
+					]
+				]
+			);
+			
+			$validation->withRequest($this->request)->run();
+			//check error
+			if ($validation->hasError('company_name')) {
+				$Return['error'] = $validation->getError('company_name');
+			} elseif($validation->hasError('address_1')){
+				$Return['error'] = $validation->getError('address_1');
+			} elseif($validation->hasError('contact_person')) {
+				$Return['error'] = $validation->getError('contact_person');
+			} elseif($validation->hasError('contact_person_phone')){
+				$Return['error'] = $validation->getError('contact_person_phone');
+			} elseif($validation->hasError('country')){
+				$Return['error'] = $validation->getError('country');
+			} elseif($validation->hasError('website')){
+				$Return['error'] = $validation->getError('website');
+			} elseif($validation->hasError('email')){
+				$Return['error'] = $validation->getError('email');
+			} elseif($validation->hasError('username')){
+				$Return['error'] = $validation->getError('username');
+			// } elseif($validation->hasError('password')){
+			// 	$Return['error'] = $validation->getError('password');
+			} elseif($validation->hasError('contact_number')){
+				$Return['error'] = $validation->getError('contact_number');
+			}
+			if($Return['error']!=''){
+				$this->output($Return);
+			}
+			
+		
+			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
+			$contact_person = $this->request->getPost('contact_person',FILTER_SANITIZE_STRING);
+			$contact_person_phone = $this->request->getPost('contact_person_phone',FILTER_SANITIZE_STRING);
+			$website = $this->request->getPost('website');
+			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
+			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
+			$company_name = $this->request->getPost('company_name',FILTER_SANITIZE_STRING);
+			$country = $this->request->getPost('country',FILTER_SANITIZE_STRING);		
+			$username = $this->request->getPost('username',FILTER_SANITIZE_STRING);
+			//$password = $this->request->getPost('password',FILTER_SANITIZE_STRING);
+			
+			
+			
+			$data = [
+				'company_name' => $company_name,
+				'contact_person' => $contact_person,
+				'contact_person_phone'  => $contact_person_phone,
+				'website'  => $website,
+				'contact_number'  => $contact_number,
+				'email'  => $email,
+				'address_1'  => $address_1,
+				'country'  => $country,
+				'username'  => $username,
+			];
+			
+			$UsersModel = new UsersModel();
+			$result = $UsersModel->update($id, $data);			
+			
+			$Return['csrf_hash'] = csrf_hash();	
+			if ($result == TRUE) {
+				$Return['result'] = lang('Company.xin_success_update_company');
+			} else {
+				$Return['error'] = lang('Main.xin_error_msg');
+			}
+			$this->output($Return);
+			exit;
+		} else {
+			$Return['error'] = lang('Main.xin_error_msg');
+			$this->output($Return);
+			exit;
+		}		
+	} 
+
 	public function update_profile() {
 			
 		$validation =  \Config\Services::validation();

@@ -74,11 +74,15 @@ $xin_system = erp_company_settings();
           <?= $result['contact_number'];?>
           </a> </li>
       </ul>
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action active" id="account-settings-tab" data-toggle="pill" href="#account-settings" role="tab" aria-controls="account-settings" aria-selected="true"> <span class="f-w-500"><i class="feather icon-disc m-r-10 h5 "></i>
-      <?= lang('Main.xin_account_settings');?>
-      </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
-        <?= lang('Main.xin_personal_info');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-image m-r-10 h5 "></i>
+      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">  
+      
+
+
+        <a class="nav-link list-group-item list-group-item-action" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
+        <?= lang('Main.xin_company_info');?>
+        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> 
+        
+        <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-image m-r-10 h5 "></i>
         <?= lang('Main.xin_e_details_profile_picture');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-companyinfo-tab" data-toggle="pill" href="#user-companyinfo" role="tab" aria-controls="user-companyinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
         <?= lang('Main.xin_company_info');?>
@@ -89,107 +93,6 @@ $xin_system = erp_company_settings();
   </div>
   <div class="col-xl-8 col-lg-12">
     <div class="card tab-content">
-      <div class="tab-pane fade active show" id="account-settings" role="tabpanel" aria-labelledby="account-settings-tab">
-        <div class="card-header">
-          <h5><i data-feather="disc" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-            <?= lang('Main.xin_account_settings');?>
-            </span></h5>
-        </div>
-        <div class="card-body">
-          <?php $attributes = array('name' => 'system_info', 'id' => 'system_info', 'autocomplete' => 'off');?>
-          <?php $hidden = array('token' => uencode($usession['sup_user_id']));?>
-          <?= form_open('erp/profile/system_info', $attributes, $hidden);?>
-          <div class="bg-white">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">
-                    <?= lang('Main.xin_ci_default_language');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="default_language" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_ci_default_language');?>">
-                    <?php foreach($language as $lang):?>
-                    <option value="<?= $lang['language_code'];?>" <?php if($xin_system['default_language']==$lang['language_code']){?> selected <?php }?>>
-                    <?= $lang['language_name'];?>
-                    </option>
-                    <?php endforeach;?>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">
-                    <?= lang('Main.xin_date_format');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="date_format" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_date_format');?>">
-                    <option value="">
-                    <?= lang('Main.xin_select_one');?>
-                    </option>
-                    <option value="Y-m-d" <?php if($xin_system['date_format_xi']=='Y-m-d'){?> selected <?php }?>>Format: <?= date('Y-m-d');?></option>
-                    <option value="Y-d-m" <?php if($xin_system['date_format_xi']=='Y-d-m'){?> selected <?php }?>>Format: <?= date('Y-d-m');?></option>
-                    <option value="d-m-Y" <?php if($xin_system['date_format_xi']=='d-m-Y'){?> selected <?php }?>>Format: <?= date('d-m-Y');?></option>
-                    <option value="m-d-Y" <?php if($xin_system['date_format_xi']=='m-d-Y'){?> selected <?php }?>>Format: <?= date('m-d-Y');?></option>
-                    <option value="Y/m/d" <?php if($xin_system['date_format_xi']=='Y/m/d'){?> selected <?php }?>>Format: <?= date('Y/m/d');?></option>
-                    <option value="Y/d/m" <?php if($xin_system['date_format_xi']=='Y/d/m'){?> selected <?php }?>>Format: <?= date('Y/d/m');?></option>
-                    <option value="d/m/Y" <?php if($xin_system['date_format_xi']=='d/m/Y'){?> selected <?php }?>>Format: <?= date('d/m/Y');?></option>
-                    <option value="m/d/Y" <?php if($xin_system['date_format_xi']=='m/d/Y'){?> selected <?php }?>>Format: <?= date('m/d/Y');?></option>
-                    <option value="Y.m.d" <?php if($xin_system['date_format_xi']=='Y.m.d'){?> selected <?php }?>>Format: <?= date('Y.m.d');?></option>
-                    <option value="Y.d.m" <?php if($xin_system['date_format_xi']=='Y.d.m'){?> selected <?php }?>>Format: <?= date('Y.d.m');?></option>
-                    <option value="d.m.Y" <?php if($xin_system['date_format_xi']=='d.m.Y'){?> selected <?php }?>>Format: <?= date('d.m.Y');?></option>
-                    <option value="m.d.Y" <?php if($xin_system['date_format_xi']=='m.d.Y'){?> selected <?php }?>>Format: <?= date('m.d.Y');?></option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">
-                    <?= lang('Main.xin_default_currency');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="default_currency" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_default_currency');?>">
-                   <?php foreach($currency_list as $_currency):?>
-   					<option value="<?= $_currency['currency_code'];?>" <?php if($xin_system['default_currency']==$_currency['currency_code']):?> selected="selected"<?php endif;?>>
-					<?= $_currency['currency_name'].' - '.$_currency['currency_code'];?></option>
-                	<?php endforeach;?>
-                </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label">
-                    <?= lang('Main.xin_setting_timezone');?>
-                    <span class="text-danger">*</span> </label>
-                  <select class="form-control" name="system_timezone" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_setting_timezone');?>">
-                    <option value="">
-                    <?= lang('Main.xin_select_one');?>
-                    </option>
-                    <?php foreach(generate_timezone_list() as $tval=>$labels):?>
-                    <option value="<?= $tval;?>" <?php if($xin_system['system_timezone']==$tval){?> selected <?php }?>>
-                    <?= $labels;?>
-                    </option>
-                    <?php endforeach;?>
-                  </select>
-                </div>
-              </div>
-            </div> 
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="form-label">
-                    <?= lang('Main.xin_invoice_terms_condition');?>
-                    <span class="text-danger">*</span> </label>
-                  <textarea class="form-control" name="invoice_terms_condition" rows="3"><?= $xin_system['invoice_terms_condition'];?>
-</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer text-right">
-          <button type="submit" class="btn btn-primary">
-          <?= lang('Main.xin_save');?>
-          </button>
-        </div>
-        <?= form_close(); ?>
-    </div>
     <div class="tab-pane fade" id="user-edit-account">
       <div class="card-header">
           <h5><i data-feather="user" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -198,67 +101,20 @@ $xin_system = erp_company_settings();
         </div>
         <?php $attributes = array('name' => 'edit_user', 'id' => 'edit_user', 'autocomplete' => 'off');?>
         <?php $hidden = array('token' => uencode($usession['sup_user_id']));?>
-        <?= form_open('erp/profile/update_profile', $attributes, $hidden);?>
+        <?= form_open('erp/profile/update_company_profile', $attributes, $hidden);?>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="company_name">
-                  <?= lang('Main.xin_employee_first_name');?>
+                  <?= lang('Company.xin_company_name');?>
                   <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_employee_first_name');?>" name="first_name" type="text" value="<?= $result['first_name'];?>">
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_name');?>" name="company_name" type="text" value="<?= $result['company_name']?>">
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="last_name" class="control-label">
-                  <?= lang('Main.xin_employee_last_name');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_employee_last_name');?>" name="last_name" type="text" value="<?= $result['last_name'];?>">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="email">
-                  <?= lang('Main.xin_email');?>
-                  <span class="text-danger">*</span> </label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_email');?>" name="email" type="email" value="<?= $result['email'];?>">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="email">
-                  <?= lang('Main.dashboard_username');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.dashboard_username');?>" name="username" type="text" value="<?= $result['username'];?>">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="contact_number">
-                  <?= lang('Main.xin_contact_number');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text" value="<?= $result['contact_number'];?>">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="gender" class="control-label">
-                  <?= lang('Main.xin_employee_gender');?>
-                </label>
-                <select class="form-control" name="gender" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                  <option value="1" <?php if('1'==$result['gender']):?> selected="selected"<?php endif;?>>
-                  <?= lang('Main.xin_gender_male');?>
-                  </option>
-                  <option value="2"<?php if('2'==$result['gender']):?> selected="selected"<?php endif;?>>
-                  <?= lang('Main.xin_gender_female');?>
-                  </option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="country">
+            <div class="col-md-6">
+            <div class="form-group">
+                <label for="address">
                   <?= lang('Main.xin_country');?>
                   <span class="text-danger">*</span> </label>
                 <select class="form-control" name="country" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_country');?>">
@@ -266,7 +122,7 @@ $xin_system = erp_company_settings();
                   <?= lang('Main.xin_select_one');?>
                   </option>
                   <?php foreach($all_countries as $country) {?>
-                  <option value="<?= $country['country_id'];?>" <?php if($country['country_id']==$result['country']):?> selected="selected"<?php endif;?>>
+                  <option value="<?= $country['country_id'];?>" <?php if($result['country']==$country['country_id']):?> selected="selected"<?php endif;?>>
                   <?= $country['country_name'];?>
                   </option>
                   <?php } ?>
@@ -275,40 +131,80 @@ $xin_system = erp_company_settings();
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="address_1">
-                  <?= lang('Main.xin_address');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_address');?>" name="address_1" type="text" value="<?= $result['address_1'];?>">
+                <label for="company_name">
+                  <?= lang('Company.xin_company_website');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="website" type="text" value="<?= $result['website']?>"> 
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="address_2"> &nbsp;</label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_address_2');?>" name="address_2" type="text" value="<?= $result['address_2'];?>">
+                <label for="membership_type">
+                  <?= lang('Main.dashboard_xin_status');?>
+                  <span class="text-danger">*</span> </label>
+                <select class="form-select form-control" name="status" data-plugin="select_hrm" data-placeholder="<?= lang('Main.dashboard_xin_status');?>">
+                  <option value="1" <?php if($result['is_active']=='1'):?> selected="selected"<?php endif;?>>
+                  <?= lang('Main.xin_employees_active');?>
+                  </option>
+                  <option value="2" <?php if($result['is_active']=='2'):?> selected="selected"<?php endif;?>>
+                  <?= lang('Main.xin_employees_inactive');?>
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_company_address');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_company_address');?>" name="address_1" type="text" value="<?= $result['address_1']?>">
+              </div>
+            </div>
+          </div>
+          <hr class="m-0 mb-3">
+          <span class="preview-title-lg"><?= lang('Main.xin_employee_other_info');?></span>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="email">
+                  <?= lang('Main.xin_email');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Main.xin_email');?>" name="email" type="text" value="<?= $result['email']?>">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <label for="city">
-                  <?= lang('Main.xin_city');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_city');?>" name="city" type="text" value="<?= $result['city'];?>">
+                <label for="username">
+                  <?= lang('Main.dashboard_username');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Main.dashboard_username');?>" name="username" type="text" value="<?= $result['username']?>">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <label for="state">
-                  <?= lang('Main.xin_state');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_state');?>" name="state" type="text" value="<?= $result['state'];?>">
+                <label for="contact_number">
+                  <?= lang('Main.xin_contact_number');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text" value="<?= $result['contact_number']?>">
               </div>
             </div>
-            <div class="col-md-4">
+          </div>
+          <hr class="m-0 mb-3">
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
-                <label for="zipcode">
-                  <?= lang('Main.xin_zipcode');?>
-                  <span class="text-danger">*</span></label>
-                <input class="form-control" placeholder="<?= lang('Main.xin_zipcode');?>" name="zipcode" type="text" value="<?= $result['zipcode'];?>">
+                <label for="company_name">
+                  <?= lang('Company.xin_contact_person');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person');?>" name="contact_person" type="text" value="<?= $result['contact_person']?>">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company_name">
+                  <?= lang('Company.xin_contact_person_phone');?>
+                  <span class="text-danger">*</span> </label>
+                <input class="form-control" placeholder="<?= lang('Company.xin_contact_person_phone');?>" name="contact_person_phone" type="text" value="<?= $result['contact_person_phone']?>">
               </div>
             </div>
           </div>
