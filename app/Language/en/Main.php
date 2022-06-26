@@ -539,4 +539,8 @@ return [
 	'xin_marital_married' => 'Married',
 	'xin_religion' => 'Religion',
 	'xin_home_address' => 'Home Address',
+	'xin_experience' => 'Experience',
+	'xin_experience_1' => 'Experience 1',
+	'xin_experience_2' => 'Experience 2',
+	'xin_experience_3' => 'Experience 3',
 ];

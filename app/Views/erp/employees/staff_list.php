@@ -219,6 +219,40 @@ $get_animate='';
                       </div>
                     </div>
               </div>
+              <hr class="m-0 mb-3">
+              <span class="preview-title-lg">
+                <?= lang('Main.xin_experience');?>
+              </span>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_experience_1');?>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_experience_1');?>" name="experience_1" type="text">
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_experience_2');?>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_experience_2');?>" name="experience_2" type="text">
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="contact_number">
+                    <?= lang('Main.xin_experience_3');?>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-atom"></i></span></div>
+                        <input class="form-control" placeholder="<?= lang('Main.xin_experience_3');?>" name="experience_3" type="text">
+                      </div>
+                    </div>
+              </div>
             </div>
           </div>
           <div class="card-footer text-right">
