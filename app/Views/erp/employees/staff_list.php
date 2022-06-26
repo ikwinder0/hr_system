@@ -166,7 +166,6 @@ $get_animate='';
                         <input class="form-control" placeholder="<?= lang('Main.xin_dob');?>" name="dob" type="text">
                       </div>
                     </div>
-                </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
