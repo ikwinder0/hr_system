@@ -219,10 +219,12 @@ $get_animate='';
                       </div>
                     </div>
               </div>
+			  </div>
               <hr class="m-0 mb-3">
               <span class="preview-title-lg">
                 <?= lang('Main.xin_experience');?>
               </span>
+			  <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="contact_number">
