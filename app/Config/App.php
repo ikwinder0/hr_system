@@ -23,7 +23,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://thecodehub-tech.preview-domain.com/';
+	public $baseURL = 'http://thecodehub.tech/';
 
 	/*
 	|--------------------------------------------------------------------------
