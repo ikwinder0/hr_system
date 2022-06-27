@@ -543,4 +543,7 @@ return [
 	'xin_experience_1' => 'Experience 1',
 	'xin_experience_2' => 'Experience 2',
 	'xin_experience_3' => 'Experience 3',
+	'xin_education_details' => 'Education Details',
+	'xin_education_high_school' => 'High School',
+	'xin_education_degree' => 'Degree',
 ];
