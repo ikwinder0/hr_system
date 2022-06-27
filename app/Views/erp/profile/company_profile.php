@@ -255,7 +255,7 @@ $xin_system = erp_company_settings();
       <div class="tab-pane fade" id="company-document"> 
         <div class="card-body pb-2">
           <?php $attributes = array('name' => 'company_info', 'id' => 'company_info', 'autocomplete' => 'off');?>
-          <?php $hidden = array('token' => $segment_id);?>
+          <?php $hidden = array('token' => uencode($usession['sup_user_id']));?>
           <?= form_open_multipart('erp/companies/update_document', $attributes, $hidden);?>
           <div class="form-body">
             <div class="row">
