@@ -253,26 +253,26 @@ class Companies extends BaseController {
 			$bank_account_with_seal='';
 			$bank_certificate='';
 
-			if($this->request->getFile('cr_tax_card')){
+			if(!empty($this->request->getFile('cr_tax_card')->getName())){
 				$cr = $this->request->getFile('cr_tax_card');
 				$cr_tax_card = time().$cr->getName();
 				$cr->move('public/uploads/company_documents/',$cr_tax_card);
 				
 				
 			}
-			if($this->request->getFile('bank_account')){
+			if(!empty($this->request->getFile('bank_account')->getName())){
 				$bnk = $this->request->getFile('bank_account');
 				$bank_account = time().$bnk->getName();
 				$bnk->move('public/uploads/company_documents/',$bank_account);
 				
 			}
-			if($this->request->getFile('bank_account_with_seal')){
+			if(!empty($this->request->getFile('bank_account_with_seal')->getName())){
 				$with_seal = $this->request->getFile('bank_account_with_seal');
 				$bank_account_with_seal = time().$with_seal->getName();
 				$with_seal->move('public/uploads/company_documents/',$bank_account_with_seal);
 				
 			}
-			if($this->request->getFile('bank_certificate')){
+			if(!empty($this->request->getFile('bank_certificate')->getName())){
 				$certificate = $this->request->getFile('bank_certificate');
 				$bank_certificate = time().$certificate->getName();
 				$certificate->move('public/uploads/company_documents/',$bank_certificate);
