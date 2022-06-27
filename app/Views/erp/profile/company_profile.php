@@ -252,7 +252,7 @@ $xin_system = erp_company_settings();
         </div>
         <?= form_close(); ?>
       </div>
-      <div class="tab-pane fade" id="company-document">
+      <div class="tab-pane fade" id="company-document"> 
         <div class="card-body pb-2">
           <?php $attributes = array('name' => 'company_info', 'id' => 'company_info', 'autocomplete' => 'off');?>
           <?php $hidden = array('token' => $segment_id);?>
