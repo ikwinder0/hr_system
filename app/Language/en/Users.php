@@ -39,7 +39,7 @@ return [
 	'xin_strole_success_updated' => 'Staff Role updated.',
 	'xin_role_note_title' => 'NOTE:',
 	'xin_role_note1' => '1: If you enable the module for an employee, it means employee will only see their related record of assigned module.',
-	'xin_role_note2' => '2: If you check for a company view, it means employee will be able to see all record of his/her company of assigned module.',
+	'xin_role_note2' => '2: If you check for a agency view, it means employee will be able to see all record of his/her agency of assigned module.',
 	'xin_role_resource' => "Resources",
 	'xin_staff_roles' => "Staff Roles",
 	'xin_clocked_in_success' => "Clocked IN Successfully.",
