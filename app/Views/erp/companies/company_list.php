@@ -108,7 +108,7 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
                     <label for="password">
                       <?= lang('Main.xin_employee_password');?>
                       <span class="text-danger">*</span> </label>
-                    <input class="form-control" placeholder="<?= lang('Main.xin_employee_password');?>" name="password" type="text">
+                    <input class="form-control" placeholder="<?= lang('Main.xin_employee_password');?>" name="password" type="password">
                   </div>
                 </div>
                 <div class="col-md-6">
