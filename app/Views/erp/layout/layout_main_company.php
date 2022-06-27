@@ -32,7 +32,7 @@ $company_types = $ConstantsModel->where('type','company_type')->orderBy('constan
 <!-- [ Pre-loader ] End --> 
 <!-- [ Mobile header ] start -->
 <div class="pc-mob-header pc-header">
-  <div class="pcm-logo"> 
+  <div class="pcm-logo text-white"> 
     <!-- <img src="<?= base_url();?>/public/uploads/logo/<?= $xin_system['logo'];?>" alt="" class="logo logo-lg">  -->
     HR SYSTEM
   </div>
