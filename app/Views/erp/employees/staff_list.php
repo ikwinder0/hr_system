@@ -368,7 +368,7 @@ $get_animate='';
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-calendar-star"></i></span></div>
+                                                <i class="fas fa-school"></i></span></div>
                                             <input
                                                 class="form-control"
                                                 placeholder="<?= lang('Main.xin_education_high_school');?>"
@@ -384,7 +384,7 @@ $get_animate='';
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">
-                                                        <i class="fas fa-calendar-star"></i></span></div>
+                                                    <i class="fas fa-graduation-cap"></i></span></div>
                                                 <input
                                                     class="form-control"
                                                     placeholder="<?= lang('Main.xin_education_degree');?>"
@@ -400,7 +400,7 @@ $get_animate='';
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
-                                                            <i class="fas fa-calendar-star"></i></span></div>
+                                                        <i class="fas fa-circle"></i></span></div>
                                                     <input
                                                         class="form-control"
                                                         placeholder="<?= lang('Main.xin_education_other');?>"
