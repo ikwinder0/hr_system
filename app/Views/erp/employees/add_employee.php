@@ -45,7 +45,7 @@ $get_animate='';
             <a href="<?= site_url('erp/staff-list');?>" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-user-friends"></span>
-                <?= lang('Dashboard.xin_personal_info');?>
+                <?= lang('Main.xin_personal_info');?>
                 <div class="text-muted small">
                     <?= lang('Main.xin_info');?>
                 </div>
@@ -57,7 +57,7 @@ $get_animate='';
                 <span class="sw-icon fas fa-user-lock"></span>
                 <?= lang('Main.xin_experience_and_education');?>
                 <div class="text-muted small">
-                    <?= lang('Dashboard.xin_experience_and_education');?>
+                    <?= lang('Main.xin_experience_and_education');?>
                 </div>
             </a>
         </li>
@@ -65,9 +65,9 @@ $get_animate='';
             <a href="<?= site_url('erp/office-shifts');?>" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon feather icon-clock"></span>
-                <?= lang('Dashboard.xin_interview_details');?>
+                <?= lang('Main.xin_interview_details');?>
                 <div class="text-muted small">
-                    <?= lang('Dashboard.xin_interview_details');?>
+                    <?= lang('Main.xin_interview_details');?>
                 </div>
             </a>
         </li>
@@ -75,10 +75,10 @@ $get_animate='';
             <a href="<?= site_url('erp/employee-exit');?>" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon feather icon-log-out"></span>
-                <?= lang('Dashboard.xin_attachment');?>
+                <?= lang('Main.xin_attachment');?>
                 <div class="text-muted small">
                     <?= lang('Main.xin_add');?>
-                    <?= lang('Dashboard.xin_attachment');?>
+                    <?= lang('Main.xin_attachment');?>
                 </div>
             </a>
         </li>
