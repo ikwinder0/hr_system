@@ -72,6 +72,25 @@ class Employees extends BaseController {
 		$data['subview'] = view('erp/employees/staff_list', $data);
 		return view('erp/layout/layout_main', $data); //page load
 	}
+	
+	public function create()
+	{		
+		$RolesModel = new RolesModel();
+		$UsersModel = new UsersModel();
+		$SystemModel = new SystemModel();
+		//$AssetsModel = new AssetsModel();
+		$session = \Config\Services::session();
+		$usession = $session->get('sup_username');
+		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
+		$data['path_url'] = 'employees';
+		$data['breadcrumbs'] = lang('Dashboard.dashboard_employees');
+
+		$data['subview'] = view('erp/employees/add_employee', $data);
+		return view('erp/layout/layout_main', $data); //page load
+	}
+	
 	public function staff_grid()
 	{		
 		$RolesModel = new RolesModel();

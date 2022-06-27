@@ -129,6 +129,7 @@ $routes->get('erp/announcement-view/(:segment)', 'Announcements::announcement_vi
 $routes->get('erp/policies-list/', 'Policies::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/all-policies/', 'Policies::staff_policies_all', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 // staff
+$routes->get('erp/create-employee/', 'Employees::create', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/staff-list/', 'Employees::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/staff-grid/', 'Employees::staff_grid', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/staff-dashboard/', 'Employees::staff_dashboard', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);

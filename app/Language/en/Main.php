@@ -547,4 +547,7 @@ return [
 	'xin_education_high_school' => 'High School',
 	'xin_education_degree' => 'Degree',
 	'xin_education_other' => 'Other',
+	'xin_info' => 'Info',
+	'xin_experience_and_education' => 'Education & Experience',
+	'xin_interview_details' => 'Interview Details',
 ];
