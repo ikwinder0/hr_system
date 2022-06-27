@@ -78,7 +78,10 @@ $xin_system = erp_company_settings();
         <a class="nav-link list-group-item list-group-item-action active" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i>
         <?= lang('Main.xin_company_info');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> 
-        
+        <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical"> <a class="nav-link list-group-item list-group-item-action active" id="user-edit-account-tab" data-toggle="pill" href="#user-edit-account" role="tab" aria-controls="user-edit-account" aria-selected="true"> <span class="f-w-500"><i class="feather icon-user m-r-10 h5 "></i><?= lang('Main.xin_company_info');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="company-document-tab" data-toggle="pill" href="#company-document" role="tab" aria-controls="company-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i>
+        <?= lang('Main.xin_company_dicument');?>
+        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-mail m-r-10 h5 "></i><?= lang('Main.xin_e_details_profile_picture');?></span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a> </div>
+        </div>
         <a class="nav-link list-group-item list-group-item-action" id="user-profile-logo-tab" data-toggle="pill" href="#user-profile-logo" role="tab" aria-controls="user-profile-logo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-image m-r-10 h5 "></i>
         <?= lang('Main.xin_e_details_profile_picture');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>  
@@ -377,5 +380,108 @@ $xin_system = erp_company_settings();
         </div>
       </div>
     </div>
+    <div class="tab-pane fade" id="company-document">
+        <div class="card-body pb-2">
+          <?php $attributes = array('name' => 'company_info', 'id' => 'company_info', 'autocomplete' => 'off');?>
+          <?php $hidden = array('token' => $segment_id);?>
+          <?= form_open_multipart('erp/companies/update_document', $attributes, $hidden);?>
+          <div class="form-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="company_name">
+                    <?= lang('Agency.xin_cr_and_tax_card');?>
+                   </label>
+                   <div class="custom-file">
+                      <input class="custom-file-input cr_tax_card" name="cr_tax_card" type="file" >
+                      <label class="custom-file-label">
+                        <?= lang('Main.xin_choose_file');?>
+                      </label>
+                      <small>
+                      <?= lang('Main.xin_company_file_type');?>
+                      </small>
+                   </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+              <img src="<?= company_document($result['user_id'],'cr_tax_card');?>" alt="" class="d-block  img-fluid wid-80">
+              </div>
+            </div>  
+            <hr class="m-0 mb-3">
+            <div class="row">
+            <div class="col-md-6">
+					<div class="form-group">
+						<label for="project">
+							<?= lang('Agency.xin_beneficiary_and_bank_account');?>
+						</label>
+						<div class="custom-file">
+							<input class="custom-file-input bank_account" name="bank_account" type="file" value="">
+							<label class="custom-file-label">
+							  <?= lang('Main.xin_choose_file');?>
+							</label>
+							<small>
+							<?= lang('Main.xin_company_file_type');?>
+							</small>
+						</div>
+					</div>
+				</div>
+        <div class="col-md-6">
+        <img src="<?= company_document($result['user_id'],'bank_account');?>" alt="" class="d-block  img-fluid wid-80">
+        </div>
+        </div>
+        <hr class="m-0 mb-3">
+        <div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+					  <label for="project">
+						<?= lang('Agency.xin_bank_account_with_seal');?>
+					  </label>
+								<div class="custom-file">
+						<input class="custom-file-input bank_account_with_seal" name="bank_account_with_seal" type="file" value="">
+						<label class="custom-file-label">
+						  <?= lang('Main.xin_choose_file');?>
+						</label>
+						<small>
+						<?= lang('Main.xin_company_file_type');?>
+						</small>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-6">
+        <img src="<?= company_document($result['user_id'],'bank_account_with_seal');?>" alt="" class="d-block img-fluid wid-80">
+				</div>
+        </div>
+        <hr class="m-0 mb-3">
+        <div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+					  <label for="invoice_date">
+						<?= lang('Agency.xin_bank_certificate');?>
+					  </label>
+					  <div class="custom-file">
+						<input class="custom-file-input bank_certificate" name="bank_certificate" type="file" >
+					  <label class="custom-file-label">
+						<?= lang('Main.xin_choose_file');?>
+					  </label>
+					  <small>
+					  <?= lang('Main.xin_company_file_type');?>
+					  </small>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-6">
+        <img src="<?= company_document($result['user_id'],'bank_certificate');?>" alt="" class="d-block  img-fluid wid-80">
+				</div>
+        </div>
+          </div>
+          </div>
+          <div class="card-footer text-right">
+            <button type="submit" class="btn btn-primary">
+            <?= lang('Main.xin_save');?>
+            </button>
+          </div>
+          <?= form_close(); ?>
+        </div>
+      </div>
   </div>
 </div>
