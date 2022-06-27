@@ -125,11 +125,11 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
                       <?= lang('Company.xin_company_website');?>
                       <span class="text-danger">*</span> </label>
                     <input class="form-control" placeholder="<?= lang('Company.xin_company_website');?>" name="website" type="text"> 
-                  </div>
-				</div>
-              </div>
+            </div>
+				  </div>
+        </div>
 			  <hr class="m-0 mb-3">
-			  <div class="row">
+			    <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="company_name">
@@ -249,7 +249,7 @@ $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
           <?= lang('Main.xin_list_all');?>
           <?= lang('Company.xin_companies');?>
         </h5>
-        <div class="card-header-right"> <a  data-toggle="collapse" href="#add_form" aria-expanded="false" class="collapsed btn waves-effect waves-light btn-primary btn-sm m-0"> <i data-feather="plus"></i>
+        <div class=""> <a  data-toggle="collapse" href="#add_form" aria-expanded="false" class="collapsed btn waves-effect waves-light btn-primary btn-sm m-0"> <i data-feather="plus"></i>
           <?= lang('Main.xin_add_new');?>
           </a> </div>
       </div>
