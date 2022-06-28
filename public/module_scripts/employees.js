@@ -150,17 +150,13 @@ $(".next").click(function () {
 	}, {
 		step: function (now, mx) {
 			
-			scale = 0.8 + (1 - now) * 0.2;
-			
-			
-			
+			scale = 1 - (1 - now) * 0.2;
 			opacity = 1 - now;
 			current_fs.css({
 				'transform': 'scale(' + scale + ')',
 				'position': 'absolute'
 			});
 			next_fs.css({
-				
 				'opacity': opacity
 			});
 		},
