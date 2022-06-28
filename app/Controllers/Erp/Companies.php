@@ -412,7 +412,7 @@ class Companies extends BaseController {
 			// set rules
 			$validation->setRules([
 					'company_name' => 'required',
-					'contact_number' => 'required',
+					'contact_number' => 'required|numeric',
 					'email' => "required|valid_email|is_unique[ci_erp_users.email,user_id,$id]",
 					'country' => 'required',
 					'address_1' => 'required',

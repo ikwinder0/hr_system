@@ -104,7 +104,7 @@ $get_animate='';
                     </div>
                     <div class="card-body"> 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="logo">
                                     <?= lang('Main.xin_e_details_profile_picture');?>
                                     <span class="text-danger">*</span>
@@ -119,6 +119,8 @@ $get_animate='';
                                     </small>
                                 </div>
                             </div>
+						</div>
+						<div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="company_name">
@@ -506,16 +508,14 @@ $get_animate='';
 								<div class="form-group">
 									<label for="contact_number">
 										<?= lang('Main.xin_interviewer');?>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-												<i class="fas fa-user"></i></span></div>
+								    </label>
+									<div class="custom-file">		
 											<input
 												class="form-control"
 												placeholder="<?= lang('Main.xin_interviewer');?>"
 												name="interviewer"
 												type="text">
-										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -631,8 +631,8 @@ $get_animate='';
 							<?= lang('Main.back');?>
 						</button>
 						&nbsp;
-						<button type="button" class="btn btn-primary next">
-							<?= lang('Main.next');?>
+						<button type="submit" class="btn btn-primary next">
+							<?= lang('Main.save');?>
 						</button>
 					</div>
 				</div>
