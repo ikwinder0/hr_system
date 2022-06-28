@@ -428,10 +428,8 @@ $get_animate='';
 								<div class="form-group">
 									<label for="contact_number">
 										<?= lang('Main.xin_resume');?>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="fas fa-file-user"></i></span></div>
+                                    </label>
+										<div class="custom-file">
 											<input
 												class="form-control"
 												name="resume"
