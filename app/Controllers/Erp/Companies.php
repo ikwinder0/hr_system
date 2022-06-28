@@ -419,7 +419,7 @@ class Companies extends BaseController {
 					'username' => "required|min_length[6]|is_unique[ci_erp_users.username,user_id,$id]",
 					// 'password' => 'required|min_length[6]',
 					'contact_person' => 'required',
-					'contact_person_phone' => 'required',
+					'contact_person_phone' => 'required|numeric',
 					'website' => 'required',
 				],
 				[   // Errors
@@ -455,6 +455,7 @@ class Companies extends BaseController {
 					],
 					'contact_person_phone' => [
 						'required' => lang('Main.xin_agency_error_contact_person_phone_field'),
+						'numeric' => lang('Main.xin_error_contact_person_numeric'),
 					],
 					'website' => [
 						'required' => lang('Main.xin_agency_error_website_field'),
