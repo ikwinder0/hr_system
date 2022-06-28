@@ -152,7 +152,7 @@ $(".next").click(function () {
 			
 			scale = 1 - (1 - now) * 0.2;
 			
-			left = (now * 50) + "%";
+			
 			
 			opacity = 1 - now;
 			current_fs.css({
@@ -160,7 +160,7 @@ $(".next").click(function () {
 				'position': 'absolute'
 			});
 			next_fs.css({
-				'left': left,
+				
 				'opacity': opacity
 			});
 		},
@@ -184,11 +184,9 @@ $(".previous").click(function () {
 	}, {
 		step: function (now, mx) {
 			scale = 0.8 + (1 - now) * 0.2;
-			left = ((1 - now) * 50) + "%";
+			
 			opacity = 1 - now;
-			current_fs.css({
-				'left': left
-			});
+	
 			previous_fs.css({
 				'transform': 'scale(' + scale + ')',
 				'opacity': opacity
