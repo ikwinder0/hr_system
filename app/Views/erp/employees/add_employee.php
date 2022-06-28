@@ -74,7 +74,7 @@ $get_animate='';
         <li class="nav-item clickable">
             <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
-                <i class="fas fa-paperclip"></i>
+                <span class="sw-icon fas fa-paperclip"></span>
                 <?= lang('Main.xin_attachment');?>
                 <div class="text-muted small">
                     <?= lang('Main.xin_add');?>
