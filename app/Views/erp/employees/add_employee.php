@@ -41,7 +41,7 @@ $get_animate='';
     id="smartwizard-2"
     class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
     <ul class="nav nav-tabs step-anchor">
-        <li class="nav-item active">
+        <li class="nav-item step1 active">
             <a href="#">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-user-friends"></span>
@@ -51,7 +51,7 @@ $get_animate='';
                 </div>
             </a>
         </li>
-        <li class="nav-item clickable">
+        <li class="nav-item step2 clickable">
             <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-user-lock"></span>
@@ -61,7 +61,7 @@ $get_animate='';
                 </div>
             </a>
         </li>
-        <li class="nav-item clickable">
+        <li class="nav-item step3 clickable">
             <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-paperclip"></span>

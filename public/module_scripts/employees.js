@@ -109,6 +109,8 @@ $(document).ready(function() {
 					$('.fieldset_1').css({
 						'opacity': 1
 					});
+					$('ul.step-anchor nav-item').find('li.active').removeClass('active');
+					$('ul.step-anchor nav-item').find('li.step1').addClass('active');
 					console.log('here123');
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
