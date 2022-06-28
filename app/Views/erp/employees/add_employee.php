@@ -101,7 +101,7 @@ $get_animate='';
                             <?= lang('Dashboard.xin_personal_info');?>
                         </h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body"> 
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="logo">
