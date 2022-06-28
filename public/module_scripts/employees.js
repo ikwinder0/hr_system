@@ -106,6 +106,7 @@ $(document).ready(function() {
 			success: function(JSON)
 			{
 				if (JSON.error != '') {
+					$('fieldset.ref_display:gt(0)').hide();
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
 					Ladda.stopAll();
@@ -196,7 +197,3 @@ $(".previous").click(function () {
 		easing: 'easeInOutBack'
 	});
 });
-
-$(".submit").click(function () {
-	return false;
-})

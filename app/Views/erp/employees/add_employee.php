@@ -82,7 +82,7 @@ $get_animate='';
         <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => 0);?>
         <?= form_open_multipart('erp/employees/add_employee', $attributes, $hidden);?>
-		<fieldset>
+		<fieldset class="fieldset_1">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
@@ -281,7 +281,7 @@ $get_animate='';
 			</div>
 		</div>
 		</fieldset>
-		<fieldset>
+		<fieldset class="fieldset_2">
 		<div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
@@ -412,7 +412,7 @@ $get_animate='';
 			</div>
 		</div>
 		</fieldset>
-		<fieldset>
+		<fieldset class="fieldset_3">
 		<div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
