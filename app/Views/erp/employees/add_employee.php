@@ -535,6 +535,110 @@ $get_animate='';
 			</div>
 		</div>
 		</fieldset>
+		<fieldset>
+		<div class="row">
+            <div class="col-md-12">
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h5>
+                            <?= lang('Main.xin_add');?>
+                            <?= lang('Main.xin_attachment');?>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+					    <div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_resume');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-file-user"></i></span></div>
+											<input
+												class="form-control"
+												name="resume"
+												type="file">
+										</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_passport');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-file-user"></i></span></div>
+											<input
+												class="form-control"
+												name="passport"
+												type="file">
+										</div>
+								</div>
+							</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_education_certificate');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fas fa-file-user"></i></span></div>
+												<input
+													class="form-control"
+													name="education_certificate"
+													type="file">
+											</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_experience_certificate');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fas fa-file-user"></i></span></div>
+												<input
+													class="form-control"
+													name="experience_certificate"
+													type="file">
+											</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_police_clearance_certificate');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+												<i class="fas fa-user"></i></span></div>
+											<input
+												class="form-control"
+												name="police_clearance_certificate"
+												type="file">
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer text-right">
+					    <button
+							type="button"
+							class="btn btn-light previous">
+							<?= lang('Main.back');?>
+						</button>
+						&nbsp;
+						<button type="button" class="btn btn-primary next">
+							<?= lang('Main.next');?>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</fieldset>
 		<?= form_close(); ?>
 	</div>
 </div>

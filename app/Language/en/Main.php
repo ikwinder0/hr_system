@@ -557,4 +557,11 @@ return [
 	'xin_start_time' => 'Start Time',
 	'xin_end_time' => 'End Time',
 	'xin_interviewer' => 'Interviewer',
+	'xin_visa_status' => 'visa Status',
+	'xin_air_ticket' => 'Air Ticket',
+	'xin_resume' => 'Resume',
+	'xin_passport' => 'Passport',
+	'xin_education_certificate' => 'Education Certificates',
+	'xin_experience_certificate' => 'Experience Certificate',
+	'xin_police_clearance_certificate' => 'Police Clearance Certificate',
 ];
