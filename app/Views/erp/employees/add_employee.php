@@ -296,7 +296,138 @@ $get_animate='';
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_add');?>
-                            <?= lang('Main.xin_personal_info');?>
+                            <?= lang('Main.xin_interview_details');?>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_experience_1');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-calendar-star"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_experience_1');?>"
+												name="experience_1"
+												type="text">
+										</div>
+								</div>
+							</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_experience_2');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fas fa-calendar-star"></i></span></div>
+												<input
+													class="form-control"
+													placeholder="<?= lang('Main.xin_experience_2');?>"
+													name="experience_2"
+													type="text">
+											</div>
+									</div>
+								</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="contact_number">
+												<?= lang('Main.xin_experience_3');?>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="fas fa-calendar-star"></i></span></div>
+													<input
+														class="form-control"
+														placeholder="<?= lang('Main.xin_experience_3');?>"
+														name="experience_3"
+														type="text">
+												</div>
+										</div>
+									</div>
+						</div>
+						<hr class="m-0 mb-3">
+						<span class="preview-title-lg">
+							<b><?= lang('Main.xin_education_details');?></b>
+						</span>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_education_high_school');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+												<i class="fas fa-school"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_education_high_school');?>"
+												name="high_school"
+												type="text">
+										</div>
+								</div>
+							</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_education_degree');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="fas fa-graduation-cap"></i></span></div>
+												<input
+													class="form-control"
+													placeholder="<?= lang('Main.xin_education_degree');?>"
+													name="degree"
+													type="text">
+											</div>
+									</div>
+								</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="contact_number">
+												<?= lang('Main.xin_education_other');?>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+														<i class="fas fa-circle"></i></span></div>
+													<input
+														class="form-control"
+														placeholder="<?= lang('Main.xin_education_other');?>"
+														name="other_education"
+														type="text">
+												</div>
+										</div>
+									</div>
+						</div>
+					</div>
+					<div class="card-footer text-right">
+					    <button
+							type="button"
+							class="btn btn-light previous">
+							<?= lang('Main.back');?>
+						</button>
+						&nbsp;
+						<button type="button" class="btn btn-primary next">
+							<?= lang('Main.next');?>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</fieldset>
+				<fieldset>
+		<div class="row d_next">
+            <div class="col-md-12">
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h5>
+                            <?= lang('Main.xin_add');?>
+                            <?= lang('Main.xin_experience_and_education');?>
                         </h5>
                     </div>
                     <div class="card-body">
