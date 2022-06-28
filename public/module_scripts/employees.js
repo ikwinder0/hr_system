@@ -107,13 +107,25 @@ $(document).ready(function() {
 			{
 				if (JSON.error != '') {
 					
-					$('ul.step-anchor').find('.nav-item').removeClass('active');
-					$('ul.step-anchor').find('li.step1').addClass('active');
-					$('fieldset').removeAttr('style');
-					$('fieldset.fieldset_1').css({
-						'opacity': 1,
-						'display':'block'
-					});
+					if(JSON.type == 'info'){
+						$('ul.step-anchor').find('.nav-item').removeClass('active');
+						$('ul.step-anchor').find('li.step1').addClass('active');
+						$('fieldset').removeAttr('style');
+						$('fieldset.fieldset_1').css({
+							'opacity': 1,
+							'display':'block'
+						});
+					}
+					if(JSON.type == 'educ'){
+						$('ul.step-anchor').find('.nav-item').removeClass('active');
+						$('ul.step-anchor').find('li.step2').addClass('active');
+						$('fieldset').removeAttr('style');
+						$('fieldset.fieldset_2').css({
+							'opacity': 1,
+							'display':'block'
+						});
+					}
+					
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
 					Ladda.stopAll();
