@@ -1,4 +1,3 @@
-.add_form > fieldset:nth-sibling(2n) {
-    opacity: 0;
-	display : none;
+.add_form > fieldset:not(:first-of-type) {
+       display: none;
 }
