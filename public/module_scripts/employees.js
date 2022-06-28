@@ -106,12 +106,21 @@ $(document).ready(function() {
 			success: function(JSON)
 			{
 				if (JSON.error != '') {
-					$('.fieldset_1').css({
-						'opacity': 1
-					});
+					
 					$('ul.step-anchor').find('.nav-item').removeClass('active');
 					$('ul.step-anchor').find('li.step1').addClass('active');
-					console.log('here123');
+					$('.fieldset_1').css({
+						'opacity': 1,
+						'display':'block'
+					});
+					$('.fieldset_2').css({
+						'opacity': 0,
+						'display':'none'
+					});
+					$('.fieldset_3').css({
+						'opacity': 0,
+						'display':'none'
+					});
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
 					Ladda.stopAll();
