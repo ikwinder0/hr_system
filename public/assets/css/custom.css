@@ -1,3 +1,4 @@
 .add_form > fieldset:nth-sibling(2n) {
-    opacity:0;
+    opacity: 0;
+	display : none;
 }
