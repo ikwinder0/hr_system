@@ -97,19 +97,9 @@ $get_animate='';
                 <div class="card mb-2">
                     <div class="card-header">
                         <h5>
-                            <?= lang('Main.xin_add_new');?>
-                            <?= lang('Dashboard.dashboard_employee');?>
+                            <?= lang('Main.xin_add');?>
+                            <?= lang('Dashboard.xin_personal_info');?>
                         </h5>
-                        <div class="card-header-right">
-                            <a
-                                data-toggle="collapse"
-                                href="#add_form"
-                                aria-expanded="false"
-                                class="collapsed btn btn-sm waves-effect waves-light btn-primary m-0">
-                                <i data-feather="minus"></i>
-                                <?= lang('Main.xin_hide');?>
-                            </a>
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -288,6 +278,11 @@ $get_animate='';
                                 </div>
                             </div>
                         </div>
+					</div>
+					<div class="card-footer text-right">
+						<button type="submit" class="btn btn-primary">
+							<?= lang('Main.xin_save');?>
+						</button>
 					</div>
 				</div>
 			</div>
