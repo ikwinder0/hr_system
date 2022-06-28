@@ -290,7 +290,7 @@ $get_animate='';
 		</div>
 		</fieldset>
 		<fieldset>
-		<div class="row d_next">
+		<div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
                     <div class="card-header">
@@ -420,8 +420,8 @@ $get_animate='';
 			</div>
 		</div>
 		</fieldset>
-				<fieldset>
-		<div class="row d_next">
+	    <fieldset>
+		<div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
                     <div class="card-header">
