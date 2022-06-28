@@ -573,28 +573,19 @@ class Employees extends BaseController {
 			$MembershipModel = new MembershipModel();
 			$CompanymembershipModel = new CompanymembershipModel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-			if($user_info['user_type'] == 'staff'){
-				$company_id = $user_info['company_id'];
-				$company_info = $UsersModel->where('company_id', $company_id)->first();
-			} else {
-				$company_id = $usession['sup_user_id'];
-				$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-			}
+			$company_id = $usession['sup_user_id'];
+			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			// set rules
 			$validation->setRules([
 					'first_name' => 'required',
 					'last_name' => 'required',
-					'employee_id' => 'required',
-					'office_shift_id' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
-					'department_id' => 'required',
-					'designation_id' => 'required',
-					'username' => 'required|min_length[6]|is_unique[ci_erp_users.username]',
-					'password' => 'required|min_length[6]',
-					'contact_number' => 'required',
-					'role' => 'required',
-					'basic_salary' => 'required',
-					'salay_type' => 'required',
+					'contact_number' => 'required|numeric',
+					'dob' => 'required',
+					'gender' => 'required',
+					'nationality' => 'required',
+					'marital_status' => 'required',
+					'religion' => 'required',
 				],
 				[   // Errors
 					'first_name' => [
@@ -603,43 +594,29 @@ class Employees extends BaseController {
 					'last_name' => [
 						'required' => lang('Main.xin_employee_error_last_name'),
 					],
-					'employee_id' => [
-						'required' => lang('Employees.xin_employee_error_employee_id'),
-					],
-					'office_shift_id' => [
-						'required' => lang('Employees.xin_office_shift_field_error'),
-					],
 					'email' => [
 						'required' => lang('Main.xin_employee_error_email'),
 						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
 						'is_unique' => lang('Main.xin_already_exist_error_email'),
 					],
-					'username' => [
-						'required' => lang('Main.xin_employee_error_username'),
-						'min_length' => lang('Main.xin_min_error_username'),
-						'is_unique' => lang('Main.xin_already_exist_error_username')
-					],
-					'password' => [
-						'required' => lang('Main.xin_employee_error_password'),
-						'min_length' => lang('Login.xin_min_error_password')
-					],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
+						'numeric' => lang('Main.xin_error_contact_numeric'),
 					],
-					'role' => [
-						'required' => lang('Employees.xin_employee_error_staff_role'),
+					'dob' => [
+						'required' => lang('Employees.xin_error_dob'),
 					],
-					'department_id' => [
-						'required' => lang('Employees.xin_employee_error_department'),
+					'gender' => [
+						'required' => lang('Employees.xin_error_gender'),
 					],
-					'designation_id' => [
-						'required' => lang('Employees.xin_employee_error_designation'),
+					'nationality' => [
+						'required' => lang('Employees.xin_error_nationality'),
 					],
-					'basic_salary' => [
-						'required' => lang('Main.xin_employee_error_username'),
+					'marital_status' => [
+						'required' => lang('Employees.xin_error_marital_status'),
 					],
-					'salay_type' => [
-						'required' => lang('Main.xin_employee_error_username'),
+					'religion' => [
+						'required' => lang('Employees.xin_error_religion'),
 					],
 				]
 			);
@@ -650,32 +627,102 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('first_name');
 			} elseif($validation->hasError('last_name')){
 				$Return['error'] = $validation->getError('last_name');
-			} elseif($validation->hasError('employee_id')) {
-				$Return['error'] = $validation->getError('employee_id');
-			} elseif($validation->hasError('office_shift_id')) {
-				$Return['error'] = $validation->getError('office_shift_id');
 			} elseif($validation->hasError('email')){
 				$Return['error'] = $validation->getError('email');
-			} elseif($validation->hasError('department_id')){
-				$Return['error'] = $validation->getError('department_id');
-			} elseif($validation->hasError('designation_id')){
-				$Return['error'] = $validation->getError('designation_id');
-			} elseif($validation->hasError('username')){
-				$Return['error'] = $validation->getError('username');
-			} elseif($validation->hasError('password')){
-				$Return['error'] = $validation->getError('password');
 			} elseif($validation->hasError('contact_number')){
 				$Return['error'] = $validation->getError('contact_number');
-			} elseif($validation->hasError('role')){
-				$Return['error'] = $validation->getError('role');
-			} elseif($validation->hasError('basic_salary')) {
-				$Return['error'] = $validation->getError('basic_salary');
-			} elseif($validation->hasError('salay_type')){
-				$Return['error'] = $validation->getError('salay_type');
+			} elseif($validation->hasError('dob')){
+				$Return['error'] = $validation->getError('dob');
+			} elseif($validation->hasError('gender')){
+				$Return['error'] = $validation->getError('gender');
+			} elseif($validation->hasError('nationality')){
+				$Return['error'] = $validation->getError('nationality');
+			} elseif($validation->hasError('marital_status')){
+				$Return['error'] = $validation->getError('marital_status');
+			} elseif($validation->hasError('religion')) {
+				$Return['error'] = $validation->getError('religion');
 			}
 			if($Return['error']!=''){
+				$Return['type'] = 'info';
 				$this->output($Return);
 			}
+			
+			$validation->setRules([
+					'experience_1' => 'required',
+					'high_school' => 'required',
+					'degree' => 'required|valid_email|is_unique[ci_erp_users.email]',
+				],
+				[   // Errors
+					'experience_1' => [
+						'required' => lang('Main.xin_employee_error_first_name'),
+					],
+					'high_school' => [
+						'required' => lang('Main.xin_employee_error_last_name'),
+					],
+					'degree' => [
+						'required' => lang('Main.xin_employee_error_email'),
+					],
+				]
+			);
+			
+			$validation->withRequest($this->request)->run();
+			//check error
+			if ($validation->hasError('experience_1')) {
+				$Return['error'] = $validation->getError('experience_1');
+			} elseif($validation->hasError('high_school')){
+				$Return['error'] = $validation->getError('high_school');
+			} elseif($validation->hasError('degree')){
+				$Return['error'] = $validation->getError('degree');
+			}
+			if($Return['error']!=''){
+				$Return['type'] = 'educ';
+				$this->output($Return);
+			}
+			
+			$validation->setRules([
+					'resume' => 'uploaded[resume]|mime_in[resume,image/jpg,image/jpeg,image/gif,image/png]|max_size[resume,4096]',
+					'passport' => 'uploaded[passport]|mime_in[passport,image/jpg,image/jpeg,image/gif,image/png]|max_size[passport,4096]',
+					'education_certificate' => 'uploaded[education_certificate]|mime_in[education_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[education_certificate,4096]',
+					'experience_certificate' => 'uploaded[experience_certificate]|mime_in[experience_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[experience_certificate,4096]',
+					'police_clearance_certificate' => 'uploaded[police_clearance_certificate]|mime_in[police_clearance_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[police_clearance_certificate,4096]',
+				],
+				[   // Errors
+					'resume' => [
+						'required' => lang('Main.xin_employee_error_first_name'),
+					],
+					'passport' => [
+						'required' => lang('Main.xin_employee_error_last_name'),
+					],
+					'education_certificate' => [
+						'required' => lang('Main.xin_employee_error_email'),
+					],
+					'experience_certificate' => [
+						'required' => lang('Main.xin_employee_error_email'),
+					],
+					'police_clearance_certificate' => [
+						'required' => lang('Main.xin_employee_error_email'),
+					],
+				]
+			);
+			
+			$validation->withRequest($this->request)->run();
+			//check error
+			if ($validation->hasError('resume')) {
+				$Return['error'] = $validation->getError('resume');
+			} elseif($validation->hasError('passport')){
+				$Return['error'] = $validation->getError('passport');
+			} elseif($validation->hasError('education_certificate')){
+				$Return['error'] = $validation->getError('education_certificate');
+			} elseif($validation->hasError('experience_certificate')){
+				$Return['error'] = $validation->getError('experience_certificate');
+			} elseif($validation->hasError('police_clearance_certificate')){
+				$Return['error'] = $validation->getError('police_clearance_certificate');
+			}
+			if($Return['error']!=''){
+				$Return['type'] = 'attach';
+				$this->output($Return);
+			}
+			
 			$image = \Config\Services::image();
 			$validated = $this->validate([
 				'file' => [

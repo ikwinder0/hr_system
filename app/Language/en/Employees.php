@@ -232,4 +232,9 @@ return [
 	'xin_transfer_accepted_msg' => 'The transfer is accepted.',
 	'xin_transfer_rejected_msg' => 'The transfer is rejected.',
 	'xin_timesheet_agenda' => 'Timesheet Agenda',
+	'xin_error_dob' => 'The Date of Birth field is required.',
+	'xin_error_gender' => 'The Gender field is required.',
+	'xin_error_nationality' => 'The Nationality field is required.',
+	'xin_error_marital_status' => 'The Marital Status field is required.',
+	'xin_error_religion' => 'The Religion field is required.',
 ];
