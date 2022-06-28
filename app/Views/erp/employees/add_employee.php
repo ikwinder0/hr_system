@@ -299,184 +299,118 @@ $get_animate='';
                             <?= lang('Main.xin_personal_info');?>
                         </h5>
                     </div>
-                    <div class="card-body"> 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label for="logo">
-                                    <?= lang('Main.xin_e_details_profile_picture');?>
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="file">
-                                    <label class="custom-file-label">
-                                        <?= lang('Main.xin_choose_file');?>
-                                    </label>
-                                    <small>
-                                        <?= lang('Main.xin_company_file_type');?>
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="company_name">
-                                        <?= lang('Main.xin_employee_first_name');?>
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-user"></i></span></div>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_employee_first_name');?>"
-                                            name="first_name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="last_name" class="control-label">
-                                        <?= lang('Main.xin_employee_last_name');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-user"></i></span></div>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_employee_last_name');?>"
-                                            name="last_name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="email">
-                                        <?= lang('Main.xin_email');?>
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-envelope"></i></span></div>
-                                        <input
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_email');?>"
-                                            name="email"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_contact_number');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-phone"></i></span></div>
-                                        <input
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_contact_number');?>"
-                                            name="contact_number"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_dob');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-birthday-cake"></i></span></div>
-                                        <input
-                                            class="form-control maxdate"
-                                            placeholder="<?= lang('Main.xin_dob');?>"
-                                            name="dob"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="gender" class="control-label">
-                                        <?= lang('Main.xin_employee_gender');?>
-                                    </label>
-                                    <select
-                                        class="form-control"
-                                        name="gender"
-                                        data-plugin="select_hrm"
-                                        data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                                        <option value="1">
-                                            <?= lang('Main.xin_gender_male');?>
-                                        </option>
-                                        <option value="2">
-                                            <?= lang('Main.xin_gender_female');?>
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_nationality');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-flag"></i></span></div>
-                                        <input
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_nationality');?>"
-                                            name="nationality"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_marital_status');?>
-                                        <span class="text-danger">*</span></label>
-                                    <select
-                                        class="form-control"
-                                        name="marital_status"
-                                        data-plugin="select_hrm"
-                                        data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                                        <option value="1">
-                                            <?= lang('Main.xin_marital_single');?>
-                                        </option>
-                                        <option value="2">
-                                            <?= lang('Main.xin_marital_married');?>
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_religion');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-atom"></i></span></div>
-                                        <input
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_religion');?>"
-                                            name="religion"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_experience_1');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-calendar-star"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_experience_1');?>"
+												name="experience_1"
+												type="text">
+										</div>
+								</div>
+							</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_experience_2');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fas fa-calendar-star"></i></span></div>
+												<input
+													class="form-control"
+													placeholder="<?= lang('Main.xin_experience_2');?>"
+													name="experience_2"
+													type="text">
+											</div>
+									</div>
+								</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="contact_number">
+												<?= lang('Main.xin_experience_3');?>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="fas fa-calendar-star"></i></span></div>
+													<input
+														class="form-control"
+														placeholder="<?= lang('Main.xin_experience_3');?>"
+														name="experience_3"
+														type="text">
+												</div>
+										</div>
+									</div>
+						</div>
+						<hr class="m-0 mb-3">
+						<span class="preview-title-lg">
+							<b><?= lang('Main.xin_education_details');?></b>
+						</span>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_education_high_school');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+												<i class="fas fa-school"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_education_high_school');?>"
+												name="high_school"
+												type="text">
+										</div>
+								</div>
+							</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_number">
+											<?= lang('Main.xin_education_degree');?>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+													<i class="fas fa-graduation-cap"></i></span></div>
+												<input
+													class="form-control"
+													placeholder="<?= lang('Main.xin_education_degree');?>"
+													name="degree"
+													type="text">
+											</div>
+									</div>
+								</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="contact_number">
+												<?= lang('Main.xin_education_other');?>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+														<i class="fas fa-circle"></i></span></div>
+													<input
+														class="form-control"
+														placeholder="<?= lang('Main.xin_education_other');?>"
+														name="other_education"
+														type="text">
+												</div>
+										</div>
+									</div>
+						</div>
 					</div>
+					<button
+						type="button"
+						class="btn btn-light previous">
+						<?= lang('Main.back');?>
+					</button>
+					&nbsp;
 					<div class="card-footer text-right">
 						<button type="button" class="btn btn-primary next">
 							<?= lang('Main.next');?>
