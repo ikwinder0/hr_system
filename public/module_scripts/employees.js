@@ -123,6 +123,7 @@ $(document).ready(function() {
 							'position': 'absolute'
 						});
 						$('fieldset.fieldset_1').css({
+							'display': 'block', 
 							'transform': 'scale(1)', 
 							'position': 'absolute',
 							'opacity': 1
