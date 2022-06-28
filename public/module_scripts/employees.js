@@ -109,6 +109,7 @@ $(document).ready(function() {
 					$('.fieldset_1').css({
 						'opacity': 1
 					});
+					console.log('here123');
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
 					Ladda.stopAll();
