@@ -142,7 +142,7 @@ $(".next").click(function () {
 	animating = true;
 	current_fs = $(this).parent().parent().parent();
 	console.log(current_fs);
-	next_fs = $(this).parent().next();
+	next_fs = $(this).parent().parent().parent().next();
 	$(".step-anchor li").eq($("fieldset").index(next_fs)).addClass("active");
 	next_fs.show();
 	current_fs.animate({
