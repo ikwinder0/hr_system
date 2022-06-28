@@ -51,7 +51,7 @@ return [
 	'xin_error_contact_numeric' => "The contact number should be numeric.",
 	'xin_error_contact_person_numeric' => "The contact person phone should be numeric.",
 	'xin_error_cemail_field' => "The email field is required.",
-	'xin_error_website_field' => "The website field is required.",
+	'xin_error_website_field' => "The website field is required.", 
 	'xin_error_city_field' => "The city field is required.",
 	'xin_error_zipcode_field' => "The zipcode field is required.",
 	'xin_error_country_field' => "The country field is required.",
