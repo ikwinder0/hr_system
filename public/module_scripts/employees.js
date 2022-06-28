@@ -110,7 +110,10 @@ $(document).ready(function() {
 					if(JSON.type == 'info'){
 						$('ul.step-anchor').find('.nav-item').removeClass('active');
 						$('ul.step-anchor').find('li.step1').addClass('active');
-						$('fieldset').removeAttr('style');
+						$('fieldset').css({
+							'opacity': 0,
+							'display':'none'
+						});
 						$('fieldset.fieldset_1').css({
 							'opacity': 1,
 							'display':'block'
@@ -119,7 +122,10 @@ $(document).ready(function() {
 					if(JSON.type == 'educ'){
 						$('ul.step-anchor').find('.nav-item').removeClass('active');
 						$('ul.step-anchor').find('li.step2').addClass('active');
-						$('fieldset').removeAttr('style');
+						$('fieldset').css({
+							'opacity': 0,
+							'display':'none'
+						});
 						$('fieldset.fieldset_2').css({
 							'opacity': 1,
 							'display':'block'
