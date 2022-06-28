@@ -405,13 +405,13 @@ $get_animate='';
 									</div>
 						</div>
 					</div>
-					<button
-						type="button"
-						class="btn btn-light previous">
-						<?= lang('Main.back');?>
-					</button>
-					&nbsp;
 					<div class="card-footer text-right">
+					    <button
+							type="button"
+							class="btn btn-light previous">
+							<?= lang('Main.back');?>
+						</button>
+						&nbsp;
 						<button type="button" class="btn btn-primary next">
 							<?= lang('Main.next');?>
 						</button>
