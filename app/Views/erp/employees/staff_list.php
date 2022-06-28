@@ -449,10 +449,10 @@ $get_animate='';
                             </a>
                             <?php if(in_array('staff3',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
                             <a
-                                data-toggle="collapse"
-                                href="#add_form"
-                                aria-expanded="false"
-                                class="collapsed btn waves-effect waves-light btn-primary btn-sm m-0">
+                                
+                                href="<?= site_url().'erp/create-employee'; ?>"
+                               
+                                class="btn waves-effect waves-light btn-primary btn-sm m-0">
                                 <i data-feather="plus"></i>
                                 <?= lang('Main.xin_add_new');?>
                             </a>
