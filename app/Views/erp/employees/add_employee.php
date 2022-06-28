@@ -42,7 +42,7 @@ $get_animate='';
     class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
     <ul class="nav nav-tabs step-anchor">
         <li class="nav-item active">
-            <a href="<?= site_url('erp/staff-list');?>" class="mb-3 nav-link">
+            <a href="#">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-user-friends"></span>
                 <?= lang('Main.xin_personal_info');?>
@@ -52,7 +52,7 @@ $get_animate='';
             </a>
         </li>
         <li class="nav-item clickable">
-            <a href="<?= site_url('erp/set-roles');?>" class="mb-3 nav-link">
+            <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon fas fa-user-lock"></span>
                 <?= lang('Main.xin_experience_and_education');?>
@@ -62,7 +62,7 @@ $get_animate='';
             </a>
         </li>
         <li class="nav-item clickable">
-            <a href="<?= site_url('erp/office-shifts');?>" class="mb-3 nav-link">
+            <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
                 <span class="sw-icon feather icon-clock"></span>
                 <?= lang('Main.xin_interview_details');?>
@@ -92,6 +92,7 @@ $get_animate='';
         <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => 0);?>
         <?= form_open_multipart('erp/employees/add_employee', $attributes, $hidden);?>
+		<fieldset>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
@@ -280,13 +281,17 @@ $get_animate='';
                         </div>
 					</div>
 					<div class="card-footer text-right">
-						<button type="submit" class="btn btn-primary">
-							<?= lang('Main.xin_save');?>
+						<button type="button" class="btn btn-primary next">
+							<?= lang('Main.next');?>
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		</fieldset>
+		<fieldset>
+		test here
+		</fieldset>
 		<?= form_close(); ?>
 	</div>
 </div>

@@ -316,6 +316,7 @@ return [
     'first'	=> 'First',
     'previous'	=> 'Previous',
     'next'	=> 'Next',
+    'back'	=> 'Back',
     'last'	=> 'Last',
     'older'	=> 'Older',
     'newer'	=> 'Newer',
