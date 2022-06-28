@@ -98,7 +98,7 @@ $get_animate='';
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_add');?>
-                            <?= lang('Dashboard.xin_personal_info');?>
+                            <?= lang('Main.xin_personal_info');?>
                         </h5>
                     </div>
                     <div class="card-body"> 
