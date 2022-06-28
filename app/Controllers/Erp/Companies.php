@@ -462,7 +462,7 @@ class Companies extends BaseController {
 					]
 				]
 			);
-			
+			   
 			$validation->withRequest($this->request)->run();
 			//check error
 			if ($validation->hasError('company_name')) {
