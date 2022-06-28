@@ -551,4 +551,5 @@ return [
 	'xin_info' => 'Info',
 	'xin_experience_and_education' => 'Education & Experience',
 	'xin_interview_details' => 'Interview Details',
+	'xin_position_applied_for' => 'Position Applied For',
 ];

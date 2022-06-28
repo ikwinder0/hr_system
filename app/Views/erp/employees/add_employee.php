@@ -72,9 +72,9 @@ $get_animate='';
             </a>
         </li>
         <li class="nav-item clickable">
-            <a href="<?= site_url('erp/employee-exit');?>" class="mb-3 nav-link">
+            <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
-                <span class="sw-icon feather icon-log-out"></span>
+                <i class="fas fa-paperclip"></i>
                 <?= lang('Main.xin_attachment');?>
                 <div class="text-muted small">
                     <?= lang('Main.xin_add');?>
