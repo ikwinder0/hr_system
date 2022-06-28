@@ -528,7 +528,7 @@ $get_animate='';
 							<?= lang('Main.back');?>
 						</button>
 						&nbsp;
-						<button type="submit" class="btn btn-primary next">
+						<button type="submit" class="btn btn-primary">
 							<?= lang('Main.save');?>
 						</button>
 					</div>
