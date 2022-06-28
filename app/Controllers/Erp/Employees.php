@@ -650,17 +650,17 @@ class Employees extends BaseController {
 			$validation->setRules([
 					'experience_1' => 'required',
 					'high_school' => 'required',
-					'degree' => 'required|valid_email|is_unique[ci_erp_users.email]',
+					'degree' => 'required',
 				],
 				[   // Errors
 					'experience_1' => [
-						'required' => lang('Main.xin_employee_error_first_name'),
+						'required' => lang('Employees.xin_employee_error_ex1'),
 					],
 					'high_school' => [
-						'required' => lang('Main.xin_employee_error_last_name'),
+						'required' => lang('Employees.xin_employee_error_school'),
 					],
 					'degree' => [
-						'required' => lang('Main.xin_employee_error_email'),
+						'required' => lang('Employees.xin_employee_error_degree'),
 					],
 				]
 			);
@@ -688,19 +688,29 @@ class Employees extends BaseController {
 				],
 				[   // Errors
 					'resume' => [
-						'required' => lang('Main.xin_employee_error_first_name'),
+						'uploaded' => lang('Employees.xin_error_resume_field'),
+						'mime_in' => lang('Employees.xin_error_resume_format_field'),
+						'max_size' => lang('Employees.xin_error_resume_size'),
 					],
 					'passport' => [
-						'required' => lang('Main.xin_employee_error_last_name'),
+						'uploaded' => lang('Employees.xin_error_passport_field'),
+						'mime_in' => lang('Employees.xin_error_passport_format_field'),
+						'max_size' => lang('Employees.xin_error_passport_size'),
 					],
 					'education_certificate' => [
-						'required' => lang('Main.xin_employee_error_email'),
+						'uploaded' => lang('Employees.xin_error_education_certificate_field'),
+						'mime_in' => lang('Employees.xin_error_education_certificate_format_field'),
+						'max_size' => lang('Employees.xin_error_education_certificate_size'),
 					],
 					'experience_certificate' => [
-						'required' => lang('Main.xin_employee_error_email'),
+						'uploaded' => lang('Main.xin_agency_error_logo_field'),
+						'mime_in' => lang('Main.xin_agency_logo_file_type'),
+						'max_size' => lang('Main.xin_agency_error_logo_size'),
 					],
 					'police_clearance_certificate' => [
-						'required' => lang('Main.xin_employee_error_email'),
+						'uploaded' => lang('Main.xin_agency_error_logo_field'),
+						'mime_in' => lang('Main.xin_agency_logo_file_type'),
+						'max_size' => lang('Main.xin_agency_error_logo_size'),
 					],
 				]
 			);
@@ -743,6 +753,7 @@ class Employees extends BaseController {
 				->save('public/uploads/users/thumb/'.$file_name);
 			}
 			if($Return['error']!=''){
+				$Return['type'] = 'info';
 				$this->output($Return);
 			}
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
