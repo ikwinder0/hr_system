@@ -110,25 +110,31 @@ $(document).ready(function() {
 					if(JSON.type == 'info'){
 						$('ul.step-anchor').find('.nav-item').removeClass('active');
 						$('ul.step-anchor').find('li.step1').addClass('active');
-						$('fieldset').css({
+						$('fieldset.fieldset_2').css({
+							'display': 'none', 
 							'opacity': 0,
-							'display':'none'
+							'transform': 'scale(1)',
+							'position': 'absolute'
 						});
 						$('fieldset.fieldset_1').css({
-							'opacity': 1,
-							'display':'block'
+							'transform': 'scale(1)', 
+							'position': 'absolute'; 
+							'opacity': 1;
 						});
 					}
 					if(JSON.type == 'educ'){
 						$('ul.step-anchor').find('.nav-item').removeClass('active');
 						$('ul.step-anchor').find('li.step2').addClass('active');
-						$('fieldset').css({
+						$('fieldset.fieldset_1').css({
+							'display': 'none', 
 							'opacity': 0,
-							'display':'none'
+							'transform': 'scale(1)',
+							'position': 'absolute'
 						});
 						$('fieldset.fieldset_2').css({
-							'opacity': 1,
-							'display':'block'
+							'transform': 'scale(1)', 
+							'position': 'absolute'; 
+							'opacity': 1;
 						});
 					}
 					
