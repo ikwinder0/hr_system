@@ -428,6 +428,7 @@ class Companies extends BaseController {
 					],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
+						'numeric' => lang('Main.xin_error_contact_numeric'),
 					],
 					'email' => [
 						'required' => lang('Main.xin_error_cemail_field'),
