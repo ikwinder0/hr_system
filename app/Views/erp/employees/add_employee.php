@@ -296,7 +296,7 @@ $get_animate='';
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_add');?>
-                            <?= lang('Main.xin_interview_details');?>
+                            <?= lang('Main.xin_experience_and_education');?>
                         </h5>
                     </div>
                     <div class="card-body">
@@ -427,7 +427,7 @@ $get_animate='';
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_add');?>
-                            <?= lang('Main.xin_experience_and_education');?>
+                            <?= lang('Main.xin_interview_details');?>
                         </h5>
                     </div>
                     <div class="card-body">
