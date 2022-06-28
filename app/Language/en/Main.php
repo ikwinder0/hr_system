@@ -556,4 +556,5 @@ return [
 	'xin_interview_date' => 'Interview Date',
 	'xin_start_time' => 'Start Time',
 	'xin_end_time' => 'End Time',
+	'xin_interviewer' => 'Interviewer',
 ];

@@ -486,76 +486,38 @@ $get_animate='';
 											</div>
 									</div>
 								</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="contact_number">
-												<?= lang('Main.xin_end_time');?>
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">
-															<i class="fas fa-clock"></i></span></div>
-													<input
-														class="form-control"
-														placeholder="<?= lang('Main.xin_end_time');?>"
-														name="end_time"
-														type="text">
-												</div>
-										</div>
-									</div>
-						</div>
-						<hr class="m-0 mb-3">
-						<span class="preview-title-lg">
-							<b><?= lang('Main.xin_education_details');?></b>
-						</span>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="contact_number">
-										<?= lang('Main.xin_education_high_school');?>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-												<i class="fas fa-school"></i></span></div>
-											<input
-												class="form-control"
-												placeholder="<?= lang('Main.xin_education_high_school');?>"
-												name="high_school"
-												type="text">
-										</div>
-								</div>
-							</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="contact_number">
-											<?= lang('Main.xin_education_degree');?>
+											<?= lang('Main.xin_end_time');?>
 											<div class="input-group">
 												<div class="input-group-prepend">
 													<span class="input-group-text">
-													<i class="fas fa-graduation-cap"></i></span></div>
+														<i class="fas fa-clock"></i></span></div>
 												<input
 													class="form-control"
-													placeholder="<?= lang('Main.xin_education_degree');?>"
-													name="degree"
+													placeholder="<?= lang('Main.xin_end_time');?>"
+													name="end_time"
 													type="text">
 											</div>
 									</div>
 								</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="contact_number">
-												<?= lang('Main.xin_education_other');?>
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">
-														<i class="fas fa-circle"></i></span></div>
-													<input
-														class="form-control"
-														placeholder="<?= lang('Main.xin_education_other');?>"
-														name="other_education"
-														type="text">
-												</div>
+								<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_interviewer');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+												<i class="fas fa-user"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_interviewer');?>"
+												name="interviewer"
+												type="text">
 										</div>
-									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="card-footer text-right">
