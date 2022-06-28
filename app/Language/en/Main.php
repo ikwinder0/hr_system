@@ -552,4 +552,8 @@ return [
 	'xin_experience_and_education' => 'Education & Experience',
 	'xin_interview_details' => 'Interview Details',
 	'xin_position_applied_for' => 'Position Applied For',
+	'xin_schedule_interview' => 'Schedule Interview',
+	'xin_interview_date' => 'Interview Date',
+	'xin_start_time' => 'Start Time',
+	'xin_end_time' => 'End Time',
 ];

@@ -74,7 +74,7 @@ $get_animate='';
         <li class="nav-item clickable">
             <a href="#" class="mb-3 nav-link">
                 <span class="sw-done-icon feather icon-check-circle"></span>
-                <span class="sw-icon feather icon-log-out"></span>
+                <span class="sw-icon fas fa-paperclip"></span>
                 <?= lang('Main.xin_attachment');?>
                 <div class="text-muted small">
                     <?= lang('Main.xin_add');?>
@@ -431,19 +431,41 @@ $get_animate='';
                         </h5>
                     </div>
                     <div class="card-body">
+					    <div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										<?= lang('Main.xin_position_applied_for');?>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-desktop-alt"></i></span></div>
+											<input
+												class="form-control"
+												placeholder="<?= lang('Main.xin_position_applied_for');?>"
+												name="applied_for"
+												type="text">
+										</div>
+								</div>
+							</div>
+						</div>
+						<hr class="m-0 mb-3">
+						<span class="preview-title-lg">
+							<b><?= lang('Main.xin_schedule_interview');?></b>
+						</span>
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="contact_number">
-										<?= lang('Main.xin_experience_1');?>
+										<?= lang('Main.xin_interview_date');?>
 										<div class="input-group">
 											<div class="input-group-prepend">
 												<span class="input-group-text">
-													<i class="fas fa-calendar-star"></i></span></div>
+													<i class="fas fa-calendar"></i></span></div>
 											<input
-												class="form-control"
-												placeholder="<?= lang('Main.xin_experience_1');?>"
-												name="experience_1"
+												class="form-control date"
+												placeholder="<?= lang('Main.xin_interview_date');?>"
+												name="interview_date"
 												type="text">
 										</div>
 								</div>
@@ -451,15 +473,15 @@ $get_animate='';
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="contact_number">
-											<?= lang('Main.xin_experience_2');?>
+											<?= lang('Main.xin_start_time');?>
 											<div class="input-group">
 												<div class="input-group-prepend">
 													<span class="input-group-text">
-														<i class="fas fa-calendar-star"></i></span></div>
+														<i class="fas fa-clock"></i></span></div>
 												<input
-													class="form-control"
-													placeholder="<?= lang('Main.xin_experience_2');?>"
-													name="experience_2"
+													class="form-control time"
+													placeholder="<?= lang('Main.xin_start_time');?>"
+													name="start_time"
 													type="text">
 											</div>
 									</div>
@@ -467,15 +489,15 @@ $get_animate='';
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="contact_number">
-												<?= lang('Main.xin_experience_3');?>
+												<?= lang('Main.xin_end_time');?>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">
-															<i class="fas fa-calendar-star"></i></span></div>
+															<i class="fas fa-clock"></i></span></div>
 													<input
 														class="form-control"
-														placeholder="<?= lang('Main.xin_experience_3');?>"
-														name="experience_3"
+														placeholder="<?= lang('Main.xin_end_time');?>"
+														name="end_time"
 														type="text">
 												</div>
 										</div>
