@@ -130,7 +130,7 @@ $(document).ready(function() {
 						});
 					}
 					if(JSON.type == 'educ'){
-						$('ul.step-anchor').find('.nav-item').removeClass('active');
+						$('ul.step-anchor').find('li.step3').removeClass('active');
 						$('ul.step-anchor').find('li.step2').addClass('active');
 						$('fieldset.fieldset_1').css({
 							'display': 'none', 
