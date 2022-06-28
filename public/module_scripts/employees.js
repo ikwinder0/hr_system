@@ -116,6 +116,12 @@ $(document).ready(function() {
 							'transform': 'scale(1)',
 							'position': 'absolute'
 						});
+						$('fieldset.fieldset_3').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
 						$('fieldset.fieldset_1').css({
 							'transform': 'scale(1)', 
 							'position': 'absolute',
@@ -131,7 +137,14 @@ $(document).ready(function() {
 							'transform': 'scale(1)',
 							'position': 'absolute'
 						});
+						$('fieldset.fieldset_3').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
 						$('fieldset.fieldset_2').css({
+							'display': 'block', 
 							'transform': 'scale(1)', 
 							'position': 'absolute',
 							'opacity': 1
