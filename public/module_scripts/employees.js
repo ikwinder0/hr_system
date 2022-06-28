@@ -109,17 +109,10 @@ $(document).ready(function() {
 					
 					$('ul.step-anchor').find('.nav-item').removeClass('active');
 					$('ul.step-anchor').find('li.step1').addClass('active');
-					$('.fieldset_1').css({
+					$('fieldset').removeAttr('style');
+					$('fieldset.fieldset_1').css({
 						'opacity': 1,
 						'display':'block'
-					});
-					$('.fieldset_2').css({
-						'opacity': 0,
-						'display':'none'
-					});
-					$('.fieldset_3').css({
-						'opacity': 0,
-						'display':'none'
 					});
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
