@@ -82,5 +82,6 @@ $xin_com_system = erp_company_settings();
     <?php if($router->controllerName() =='\App\Controllers\Erp\Settings' && $router->methodName() =='index') { ?>
     <link rel="stylesheet" href="<?= base_url();?>/public/assets/css/plugins/ekko-lightbox.css">
     <link rel="stylesheet" href="<?= base_url();?>/public/assets/css/plugins/lightbox.min.css">
-    <?php } ?>
+	<link rel="stylesheet" href="<?= base_url();?>/public/assets/css/custom.css?<?= time();?>">
+    <?php } ?>.
 </head>
