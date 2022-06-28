@@ -436,6 +436,12 @@ $get_animate='';
 												class="form-control"
 												name="resume"
 												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
 										</div>
 								</div>
 							</div>
@@ -443,14 +449,18 @@ $get_animate='';
 								<div class="form-group">
 									<label for="contact_number">
 										<?= lang('Main.xin_passport');?>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="fas fa-file-user"></i></span></div>
+									</label>
+											<div class="custom-file">
 											<input
 												class="form-control"
 												name="passport"
 												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
 										</div>
 								</div>
 							</div>
@@ -464,6 +474,12 @@ $get_animate='';
 													class="form-control"
 													name="education_certificate"
 													type="file">
+												<label class="custom-file-label">
+													<?= lang('Main.xin_choose_file');?>
+												</label>
+												<small>
+													<?= lang('Main.xin_company_file_type');?>
+												</small>
 											</div>
 									</div>
 								</div>
@@ -477,6 +493,12 @@ $get_animate='';
 													class="form-control"
 													name="experience_certificate"
 													type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
 											</div>
 									</div>
 								</div>
@@ -490,6 +512,12 @@ $get_animate='';
 												class="form-control"
 												name="police_clearance_certificate"
 												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
 										</div>
 								</div>
 							</div>
