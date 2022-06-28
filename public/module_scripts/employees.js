@@ -150,7 +150,7 @@ $(".next").click(function () {
 	}, {
 		step: function (now, mx) {
 			
-			scale = 1 - (1 - now) * 0.2;
+			scale = 0.8 + (1 - now) * 0.2;
 			
 			
 			
