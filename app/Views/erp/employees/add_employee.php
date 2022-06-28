@@ -88,7 +88,7 @@ $get_animate='';
 <div id="accordion">
     <div
         id="add_form"
-        class="collapse add-form <?php echo $get_animate;?>"
+        class=""
         data-parent="#accordion"
         style="">
         <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'autocomplete' => 'off');?>
