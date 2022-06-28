@@ -88,8 +88,6 @@ $get_animate='';
 <div id="accordion">
     <div
         id="add_form"
-        class=""
-        data-parent="#accordion"
         style="">
         <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => 0);?>
