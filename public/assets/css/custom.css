@@ -1,3 +1,10 @@
-.d_next{
-	display:none;
+#add_form fieldset { 
+            border: 0; 
+            padding: 20px 105px 0;  
+            position: relative;
+            width: 100%;
+            left: 0;
+            right: 0;
+            &:not(:first-of-type) {
+                display: none;
 }
