@@ -118,8 +118,8 @@ $(document).ready(function() {
 						});
 						$('fieldset.fieldset_1').css({
 							'transform': 'scale(1)', 
-							'position': 'absolute'; 
-							'opacity': 1;
+							'position': 'absolute',
+							'opacity': 1
 						});
 					}
 					if(JSON.type == 'educ'){
@@ -133,8 +133,8 @@ $(document).ready(function() {
 						});
 						$('fieldset.fieldset_2').css({
 							'transform': 'scale(1)', 
-							'position': 'absolute'; 
-							'opacity': 1;
+							'position': 'absolute',
+							'opacity': 1
 						});
 					}
 					
