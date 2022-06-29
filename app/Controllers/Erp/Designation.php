@@ -65,7 +65,7 @@ class Designation extends BaseController {
 	}
 	// record list
 	public function designation_list() {
-        die;
+        
 		$session = \Config\Services::session();
 		$usession = $session->get('sup_username');
 		if(!$session->has('sup_username')){ 
