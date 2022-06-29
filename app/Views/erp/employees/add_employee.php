@@ -278,7 +278,7 @@ $get_animate='';
                                     <div class="input-group">
                             
 									<select class="form-control dropdown" id="religion" name="religion">
-										<option value="" selected="selected" disabled="disabled"><?= lang('Employees.xin_select_religion');?></option>
+										<option value="" selected="selected" disabled="disabled"><?= lang('Employees.xin_select');?> <?= lang('Main.xin_religion');?></option>
 										<option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
 										<option value="Agnostic">Agnostic</option>
 										<option value="Atheist">Atheist</option>
