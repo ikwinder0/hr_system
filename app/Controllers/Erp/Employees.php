@@ -577,6 +577,7 @@ class Employees extends BaseController {
 			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			// set rules
 			$validation->setRules([
+					'applied_for' => 'required',
 					'first_name' => 'required',
 					'last_name' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
@@ -588,6 +589,9 @@ class Employees extends BaseController {
 					'religion' => 'required',
 				],
 				[   // Errors
+				    'applied_for' => [
+						'required' => lang('Employees.xin_employee_error_applied'),
+					],
 					'first_name' => [
 						'required' => lang('Main.xin_employee_error_first_name'),
 					],
@@ -623,7 +627,9 @@ class Employees extends BaseController {
 			
 			$validation->withRequest($this->request)->run();
 			//check error
-			if ($validation->hasError('first_name')) {
+			if ($validation->hasError('applied_for')) {
+				$Return['error'] = $validation->getError('applied_for');
+			} elseif ($validation->hasError('first_name')) {
 				$Return['error'] = $validation->getError('first_name');
 			} elseif($validation->hasError('last_name')){
 				$Return['error'] = $validation->getError('last_name');
@@ -703,9 +709,9 @@ class Employees extends BaseController {
 						'max_size' => lang('Employees.xin_error_education_certificate_size'),
 					],
 					'experience_certificate' => [
-						'uploaded' => lang('Main.xin_agency_error_logo_field'),
-						'mime_in' => lang('Main.xin_agency_logo_file_type'),
-						'max_size' => lang('Main.xin_agency_error_logo_size'),
+						'uploaded' => lang('Main.xin_error_experience_certificate_field'),
+						'mime_in' => lang('Main.xin_error_experience_certificate_format'),
+						'max_size' => lang('Main.xin_error_experience_certificate_size'),
 					],
 					'police_clearance_certificate' => [
 						'uploaded' => lang('Main.xin_agency_error_logo_field'),
