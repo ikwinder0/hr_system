@@ -237,18 +237,20 @@ $get_animate='';
                                     <label for="contact_number">
                                         <?= lang('Main.xin_marital_status');?>
                                         <span class="text-danger">*</span></label>
-                                    <select
-                                        class="form-control"
-                                        name="marital_status"
-                                        data-plugin="select_hrm"
-                                        data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                                        <option value="1">
-                                            <?= lang('Main.xin_marital_single');?>
-                                        </option>
-                                        <option value="2">
-                                            <?= lang('Main.xin_marital_married');?>
-                                        </option>
-                                    </select>
+                                    <select class="form-control" name="marital_status" data-plugin="select_hrm" data-placeholder="<?= lang('Employees.xin_employee_mstatus');?>">
+										<option value="0" <?php if($employee_detail['marital_status']==0):?> selected <?php endif; ?>>
+										<?= lang('Employees.xin_status_single');?>
+										</option>
+										<option value="1" <?php if($employee_detail['marital_status']==1):?> selected <?php endif; ?>>
+										<?= lang('Employees.xin_status_married');?>
+										</option>
+										<option value="2" <?php if($employee_detail['marital_status']==2):?> selected <?php endif; ?>>
+										<?= lang('Employees.xin_status_widowed');?>
+										</option>
+										<option value="3" <?php if($employee_detail['marital_status']==3):?> selected <?php endif; ?>>
+										<?= lang('Employees.xin_status_divorced_separated');?>
+										</option>
+									</select>
                                 </div>
                             </div>
 							<div class="col-md-4">
