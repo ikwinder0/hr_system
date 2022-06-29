@@ -231,25 +231,7 @@ $get_animate='';
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="contact_number">
-                                        <?= lang('Main.xin_nationality');?>
-                                        <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-									    <select class="form-control" name="country" data-plugin="select_hrm" data-placeholder="<?= lang('Employees.xin_nationality');?>">
-											<option value="">
-											<?= lang('Main.xin_select_one');?>
-											</option>
-											<?php foreach($all_countries as $country) {?>
-											<option value="<?= $country['country_id'];?>">
-											<?= $country['country_name'];?>
-											</option>
-											<?php } ?>
-										</select>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="contact_number">
@@ -310,6 +292,25 @@ $get_animate='';
 										<?php } ?>
 									  </select>
 											
+                                    </div>
+                                </div>
+                            </div>
+							<div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="contact_number">
+                                        <?= lang('Main.xin_nationality');?>
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+									    <select class="form-control" name="country" data-plugin="select_hrm" data-placeholder="<?= lang('Employees.xin_nationality');?>">
+											<option value="">
+											<?= lang('Main.xin_select_one');?>
+											</option>
+											<?php foreach($all_countries as $country) {?>
+											<option value="<?= $country['country_id'];?>">
+											<?= $country['country_name'];?>
+											</option>
+											<?php } ?>
+										</select>
                                     </div>
                                 </div>
                             </div>
