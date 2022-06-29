@@ -465,7 +465,7 @@ $get_animate='';
                                     </label>
 										<div class="custom-file">
 											<input
-												class="form-control"
+												class="custom-file-input"
 												name="resume"
 												type="file">
 											<label class="custom-file-label">
@@ -484,7 +484,7 @@ $get_animate='';
 									</label>
 											<div class="custom-file">
 											<input
-												class="form-control"
+												class="custom-file-input"
 												name="passport"
 												type="file">
 											<label class="custom-file-label">
@@ -504,7 +504,7 @@ $get_animate='';
 											<div class="custom-file">
 												<input
 													class="form-control"
-													name="education_certificate"
+													name="custom-file-input"
 													type="file">
 												<label class="custom-file-label">
 													<?= lang('Main.xin_choose_file');?>
@@ -522,7 +522,7 @@ $get_animate='';
 										</label>
 											<div class="custom-file">
 												<input
-													class="form-control"
+													class="custom-file-input"
 													name="experience_certificate"
 													type="file">
 											<label class="custom-file-label">
@@ -541,7 +541,7 @@ $get_animate='';
 									</label>
 											<div class="custom-file">
 											<input
-												class="form-control"
+												class="custom-file-input"
 												name="police_clearance_certificate"
 												type="file">
 											<label class="custom-file-label">
