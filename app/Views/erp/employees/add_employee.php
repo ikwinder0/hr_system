@@ -6,6 +6,7 @@ use App\Models\UsersModel;
 use App\Models\ShiftModel;
 use App\Models\ConstantsModel;
 use App\Models\SystemModel;
+use App\Models\CountryModel;
 
 $DepartmentModel = new DepartmentModel();
 $DesignationModel = new DesignationModel();
@@ -14,6 +15,7 @@ $UsersModel = new UsersModel();
 $ConstantsModel = new ConstantsModel();
 $ShiftModel = new ShiftModel();
 $SystemModel = new SystemModel();
+$CountryModel = new CountryModel();
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
 
