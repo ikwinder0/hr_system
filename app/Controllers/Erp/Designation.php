@@ -78,7 +78,8 @@ class Designation extends BaseController {
 		$DesignationModel = new DesignationModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 		
-		$get_data = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
+		//$get_data = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
+		$get_data = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
 		
 		$data = array();
 		
