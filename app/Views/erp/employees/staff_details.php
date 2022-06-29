@@ -113,18 +113,8 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
         <?php } ?>
         <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-account-tab" data-toggle="pill" href="#user-set-account" role="tab" aria-controls="user-set-account" aria-selected="false"> <span class="f-w-500"><i class="feather icon-book m-r-10 h5 "></i>
-        <?= lang('Main.xin_account_info');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
         <a class="nav-link list-group-item list-group-item-action" id="user-set-document-tab" data-toggle="pill" href="#user-set-document" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-plus m-r-10 h5 "></i>
         <?= lang('Employees.xin_documents');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-agenda-tab" data-toggle="pill" href="#user-set-agenda" role="tab" aria-controls="user-set-agenda" aria-selected="false"> <span class="f-w-500"><i class="feather icon-package m-r-10 h5 "></i>
-        <?= lang('Employees.xin_timesheet_agenda');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
         <?php } ?>
       </div>
@@ -437,54 +427,6 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
         </div>
       </div>
       <?php }?>
-      <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-      <div class="tab-pane fade" id="user-set-account" role="tabpanel" aria-labelledby="user-set-account-tab">
-        <div class="card">
-          <div class="card-header">
-            <h5> <i data-feather="book" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Main.xin_account_info');?>
-              </span> <small class="text-muted d-block m-l-25 m-t-5">
-              <?= lang('Employees.xin_change_account_info');?>
-              </small> </h5>
-          </div>
-          <?php $attributes = array('name' => 'edit_user', 'id' => 'edit_account', 'autocomplete' => 'off');?>
-          <?php $hidden = array('token' => $segment_id);?>
-          <?= form_open('erp/employees/update_account_info', $attributes, $hidden);?>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>
-                    <?= lang('Main.dashboard_username');?>
-                    <span class="text-danger">*</span></label>
-                  <div class="input-group">
-                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
-                    <input class="form-control" placeholder="<?= lang('Main.dashboard_username');?>" name="username" type="text" value="<?= $result['username'];?>">
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>
-                    <?= lang('Employees.xin_account_email');?>
-                    <span class="text-danger">*</span></label>
-                  <div class="input-group">
-                    <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-envelope"></i></span></div>
-                    <input class="form-control" placeholder="<?= lang('Employees.xin_account_email');?>" name="email" type="text" value="<?= $result['email'];?>">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-right">
-            <button type="submit" class="btn btn-primary">
-            <?= lang('Main.xin_save');?>
-            </button>
-          </div>
-          <?= form_close(); ?>
-        </div>
-      </div>
-      <?php } ?>
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade" id="user-set-document" role="tabpanel" aria-labelledby="user-set-document-tab">
         <div class="card user-profile-list">
