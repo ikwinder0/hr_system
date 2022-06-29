@@ -448,57 +448,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               </table>
             </div>
           </div>
-          <div class="card-header with-elements"> <span class="card-header-title mr-2"> <strong>
-            <?= lang('Main.xin_add_new');?>
-            </strong>
-            <?= lang('Employees.xin_document');?>
-            </span> </div>
-          <?php $attributes = array('name' => 'user_document', 'id' => 'user_document', 'autocomplete' => 'off');?>
-          <?php $hidden = array('token' => $segment_id);?>
-          <?= form_open_multipart('erp/employees/add_document', $attributes, $hidden);?>
-          <div class="card-body pb-2">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="date_of_expiry" class="control-label">
-                    <?= lang('Employees.xin_document_name');?>
-                    <span class="text-danger">*</span></label>
-                  <input class="form-control" placeholder="<?= lang('Employees.xin_document_name');?>" name="document_name" type="text">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="title" class="control-label">
-                    <?= lang('Employees.xin_document_type');?>
-                    <span class="text-danger">*</span></label>
-                  <input class="form-control" placeholder="<?= lang('Employees.xin_document_eg_payslip_etc');?>" name="document_type" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="form-group">
-                  <label for="logo">
-                    <?= lang('Employees.xin_document_file');?>
-                    <span class="text-danger">*</span> </label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="document_file">
-                    <label class="custom-file-label">
-                      <?= lang('Main.xin_choose_file');?>
-                    </label>
-                    <small>
-                    <?= lang('Employees.xin_e_details_d_type_file');?>
-                    </small> </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-right">
-            <button  type="submit" class="btn btn-primary">
-            <?= lang('Employees.xin_add_document');?>
-            </button>
-          </div>
-          <?= form_close(); ?>
+          
         </div>
       </div>
       <?php } ?>

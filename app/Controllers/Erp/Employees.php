@@ -1828,7 +1828,7 @@ class Employees extends BaseController {
 					
 					$document_file = $this->request->getFile('document_file');
 					$file_name = time().'-'.$document_file->getName();
-					$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/',);
+					$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/',$file_name);
 				}
 				
 				$document_name = $this->request->getPost('document_name',FILTER_SANITIZE_STRING);
