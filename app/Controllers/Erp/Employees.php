@@ -233,7 +233,7 @@ class Employees extends BaseController {
 				$gender = lang('Main.xin_gender_female');
 			}
 			
-			$country_info = $CountryModel->where('country_id', $r['country'])->first();
+			$country_info['country_name'] = 'india';
 			$name = $r['first_name'].' '.$r['last_name'];
 			//designation
 			$employee_detail = $StaffdetailsModel->where('user_id', $r['user_id'])->first();
