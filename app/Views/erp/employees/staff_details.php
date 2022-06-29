@@ -146,7 +146,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
                   <div class="col-md-4">
 				    <h6>Position Applied For : </h6>
 				  </div>
-				  <div class="col-md-3">
+				  <div class="col-md-4 text-left">
 				    <?= $idesignations['designation_name']; ?>
 				  </div>
 				</div>
