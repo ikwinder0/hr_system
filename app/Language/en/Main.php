@@ -54,6 +54,7 @@ return [
 	'xin_error_website_field' => "The website field is required.", 
 	'xin_error_city_field' => "The city field is required.",
 	'xin_error_zipcode_field' => "The zipcode field is required.",
+	'xin_error_state_field' => "The state field is required.",
 	'xin_error_country_field' => "The country field is required.",
 	'xin_employee_error_username' => "The username field is required.",
 	'xin_employee_error_password' => "The password field is required.",

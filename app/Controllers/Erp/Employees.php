@@ -577,6 +577,9 @@ class Employees extends BaseController {
 					'country' => 'required',
 					'marital_status' => 'required',
 					'religion' => 'required',
+					'state' => 'required',
+					'city' => 'required',
+					'zipcode' => 'required',
 				],
 				[   // Errors
 				    'applied_for' => [
@@ -612,6 +615,15 @@ class Employees extends BaseController {
 					'religion' => [
 						'required' => lang('Employees.xin_error_religion'),
 					],
+					'state' => [
+						'required' => lang('Main.xin_error_state_field'),
+					],
+					'city' => [
+						'required' => lang('Main.xin_error_city_field'),
+					],
+					'zipcode' => [
+						'required' => lang('Main.xin_error_zipcode_field'),
+					],
 				]
 			);
 			
@@ -637,7 +649,14 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('marital_status');
 			} elseif($validation->hasError('religion')) {
 				$Return['error'] = $validation->getError('religion');
+			} elseif($validation->hasError('state')) {
+				$Return['error'] = $validation->getError('state');
+			} elseif($validation->hasError('city')) {
+				$Return['error'] = $validation->getError('city');
+			} elseif($validation->hasError('zipcode')) {
+				$Return['error'] = $validation->getError('zipcode');
 			}
+			
 			if($Return['error']!=''){
 				$Return['type'] = 'info';
 				$this->output($Return);
@@ -770,6 +789,9 @@ class Employees extends BaseController {
 			$high_school = $this->request->getPost('high_school',FILTER_SANITIZE_STRING);
 			$degree = $this->request->getPost('degree',FILTER_SANITIZE_STRING);
 			$other_education = $this->request->getPost('other_education',FILTER_SANITIZE_STRING);
+			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
+			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
+			$zipcode = $this->request->getPost('zipcode');
 			
 			
 			
@@ -787,10 +809,10 @@ class Employees extends BaseController {
 				'user_role_id' => '',
 				'address_1'  => '',
 				'address_2'  => '',
-				'city'  =>'',
+				'city'  =>$city,
 				'profile_photo'  => $file_name,
-				'state'  => '',
-				'zipcode' => '',
+				'state'  => $state,
+				'zipcode' => $zipcode,
 				'gender' => $gender,
 				'company_name' => $user_info['company_name'],
 				'trading_name' => '',
