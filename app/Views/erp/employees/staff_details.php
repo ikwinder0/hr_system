@@ -36,23 +36,15 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-if($user_info['user_type'] == 'staff'){
-	$departments = $DepartmentModel->where('company_id',$user_info['company_id'])->orderBy('department_id', 'ASC')->findAll();
-	$designations = $DesignationModel->where('company_id',$user_info['company_id'])->where('department_id',$employee_detail['department_id'])->orderBy('designation_id', 'ASC')->findAll();
-	$office_shifts = $ShiftModel->where('company_id',$user_info['company_id'])->orderBy('office_shift_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$user_info['company_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$roles = $RolesModel->where('company_id',$user_info['company_id'])->orderBy('role_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$user_info['company_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$company_id = $user_info['company_id'];
-} else {
-	$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
-	$designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
-	$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$company_id = $usession['sup_user_id'];
-}
+
+$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+$designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
+$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
+$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
+$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
+$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
+$company_id = $usession['sup_user_id'];
+
 
 $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
 $religion = $ConstantsModel->where('type','religion')->orderBy('constants_id', 'ASC')->findAll();
@@ -144,11 +136,26 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               <div class="form-body">
 			    <div class="row">
                   <div class="col-md-4">
-				    <h6>Position Applied For : </h6>
-				  </div>
-				  <div class="col-md-4 text-left">
-				    <?= $idesignations['designation_name']; ?>
-				  </div>
+						<label for="logo">
+							<?= lang('Main.xin_position_applied_for');?>
+							<span class="text-danger">*</span>
+						</label>
+						<div class="input-group">
+							<select
+								class="form-control"
+								name="applied_for"
+								data-plugin="select_hrm">
+								<option value="">
+									<?= lang('Employees.xin_select');?>
+								</option>
+								<?php foreach($designations as $job){  ?>
+								<option value="<?= $job['designation_id']; ?>" <?= ($job['designation_id'] == $employee_detail['designation_id']) ? 'selected':''; ?> >
+									<?= $job['designation_name']; ?>
+								</option>
+								<?php }  ?>
+							</select>
+						</div>
+					</div>
 				</div>
 				<hr>
                 <div class="row">
