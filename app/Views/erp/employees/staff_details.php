@@ -143,8 +143,8 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
 			    <div class="row">
-                  <div class="col-md-3">
-				    <h4>Position Applied For : </h4>
+                  <div class="col-md-4">
+				    <h6>Position Applied For : </h6>
 				  </div>
 				  <div class="col-md-3">
 				    <?= $idesignations['designation_name']; ?>
