@@ -471,7 +471,6 @@ $get_animate='';
                                         <th><?= lang('Main.xin_contact_number');?></th>
                                         <th><?= lang('Main.xin_employee_gender');?></th>
                                         <th><?= lang('Main.xin_country');?></th>
-                                        <th><?= lang('Main.xin_employee_role');?></th>
                                         <th><?= lang('Main.dashboard_xin_status');?></th>
                                     </tr>
                                 </thead>
