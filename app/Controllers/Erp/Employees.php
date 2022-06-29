@@ -84,11 +84,9 @@ class Employees extends BaseController {
 		$usession = $session->get('sup_username');
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
-		$get_data = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
 		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'employees';
 		$data['breadcrumbs'] = lang('Dashboard.dashboard_employees');
-		$data['designations'] = $get_data;
 
 		$data['subview'] = view('erp/employees/add_employee', $data);
 		return view('erp/layout/layout_main', $data); //page load
