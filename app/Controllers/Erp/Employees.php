@@ -714,9 +714,9 @@ class Employees extends BaseController {
 						'max_size' => lang('Main.xin_error_experience_certificate_size'),
 					],
 					'police_clearance_certificate' => [
-						'uploaded' => lang('Main.xin_agency_error_logo_field'),
-						'mime_in' => lang('Main.xin_agency_logo_file_type'),
-						'max_size' => lang('Main.xin_agency_error_logo_size'),
+						'uploaded' => lang('Main.xin_error_police_clearance_field'),
+						'mime_in' => lang('Main.xin_error_police_clearance_format'),
+						'max_size' => lang('Main.xin_error_police_clearance_size'),
 					],
 				]
 			);
@@ -762,23 +762,62 @@ class Employees extends BaseController {
 				$Return['type'] = 'info';
 				$this->output($Return);
 			}
+			
+			$resume ='';
+			$passport='';
+			$education_certificate='';
+			$experience_certificate='';
+			$police_clearance_certificate='';
+
+			if(!empty($this->request->getFile('resume')->getName())){
+				$rs = $this->request->getFile('resume');
+				$rs_file = time().'-'.$rs->getName();
+				$rs->move('public/uploads/company_documents/',$rs_file);
+				
+				
+			}
+			if(!empty($this->request->getFile('passport')->getName())){
+				$ps = $this->request->getFile('passport');
+				$ps_file = time().'-'.$ps->getName();
+				$ps->move('public/uploads/company_documents/',$ps_file);
+				
+			}
+			if(!empty($this->request->getFile('education_certificate')->getName())){
+				$ed = $this->request->getFile('education_certificate');
+				$ed_file = time().'-'.$ed->getName();
+				$ed->move('public/uploads/company_documents/',$ed_file);
+				
+			}
+			if(!empty($this->request->getFile('experience_certificate')->getName())){
+				$exp = $this->request->getFile('experience_certificate');
+				$exp_file = time().'-'.$exp->getName();
+				$exp->move('public/uploads/company_documents/',$exp_file);
+				
+			}
+			if(!empty($this->request->getFile('police_clearance_certificate')->getName())){
+				$pcc = $this->request->getFile('police_clearance_certificate');
+				$pcc_file = time().'-'.$pcc->getName();
+				$pcc->move('public/uploads/company_documents/',$pcc_file);
+				
+			}
+			
+			$applied_for = $this->request->getPost('applied_for',FILTER_SANITIZE_STRING);
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
 			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
-			$username = $this->request->getPost('username',FILTER_SANITIZE_STRING);
-			$password = $this->request->getPost('password',FILTER_SANITIZE_STRING);
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
-			$employee_id = $this->request->getPost('employee_id',FILTER_SANITIZE_STRING);
-			$role = $this->request->getPost('role',FILTER_SANITIZE_STRING);
+			$dob = $this->request->getPost('dob',FILTER_SANITIZE_STRING);
 			$gender = $this->request->getPost('gender',FILTER_SANITIZE_STRING);
-			$office_shift_id = $this->request->getPost('office_shift_id',FILTER_SANITIZE_STRING);
-			$department_id = $this->request->getPost('department_id',FILTER_SANITIZE_STRING);
-			$designation_id = $this->request->getPost('designation_id',FILTER_SANITIZE_STRING);
-			$basic_salary = $this->request->getPost('basic_salary',FILTER_SANITIZE_STRING);
-			$hourly_rate = $this->request->getPost('hourly_rate',FILTER_SANITIZE_STRING);
-			$salay_type = $this->request->getPost('salay_type',FILTER_SANITIZE_STRING);
-			$options = array('cost' => 12);
-			$password_hash = password_hash($password, PASSWORD_BCRYPT, $options);
+			$nationality = $this->request->getPost('nationality',FILTER_SANITIZE_STRING);
+			$marital_status = $this->request->getPost('marital_status',FILTER_SANITIZE_STRING);
+			$religion = $this->request->getPost('religion',FILTER_SANITIZE_STRING);
+			$experience_1 = $this->request->getPost('experience_1',FILTER_SANITIZE_STRING);
+			$experience_2 = $this->request->getPost('experience_2',FILTER_SANITIZE_STRING);
+			$experience_3 = $this->request->getPost('experience_3',FILTER_SANITIZE_STRING);
+			$high_school = $this->request->getPost('high_school',FILTER_SANITIZE_STRING);
+			$degree = $this->request->getPost('degree',FILTER_SANITIZE_STRING);
+			$other_education = $this->request->getPost('other_education',FILTER_SANITIZE_STRING);
+			
 			
 			
 			$EmailtemplatesModel = new EmailtemplatesModel();
@@ -788,11 +827,11 @@ class Employees extends BaseController {
 				'last_name'  => $last_name,
 				'email'  => $email,
 				'user_type'  => 'staff',
-				'username'  => $username,
-				'password'  => $password_hash,
+				'username'  => '',
+				'password'  => '',
 				'contact_number'  => $contact_number,
 				'country'  => 0,
-				'user_role_id' => $role,
+				'user_role_id' => '',
 				'address_1'  => '',
 				'address_2'  => '',
 				'city'  =>'',
