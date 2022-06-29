@@ -93,8 +93,8 @@ $get_animate='';
 									<select
                                         class="form-control"
                                         name="applied_for"
-                                        data-plugin="select_hrm"
-                                        <option value="" selected="selected" disabled="disabled">
+                                        data-plugin="select_hrm">
+                                        <option value="">
                                             <?= lang('Employees.xin_select');?>
                                         </option>
 										<?php foreach($designations as $job){  ?>
