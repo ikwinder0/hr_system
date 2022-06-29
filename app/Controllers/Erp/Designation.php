@@ -84,16 +84,10 @@ class Designation extends BaseController {
 		
           foreach($get_data as $r) {
 			  
-			if(in_array('designation3',staff_role_resource()) || $user_info['user_type'] == 'company') { //edit
+			
 				$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_edit').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light" data-toggle="modal" data-target=".view-modal-data" data-field_id="'. uencode($r['designation_id']) . '"><i class="feather icon-edit"></i></button></span>';
-			} else {
-				$edit = '';
-			}
-			if(in_array('designation4',staff_role_resource()) || $user_info['user_type'] == 'company') { //delete
+			
 				$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['designation_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
-			} else {
-				$delete = '';
-			}
 			
 			$created_at = set_date_format($r['created_at']);
 			$department = $DepartmentModel->where('department_id', $r['department_id'])->first();
@@ -104,16 +98,12 @@ class Designation extends BaseController {
 			}
 			$idesignation_name = $r['designation_name'];
 			$combhr = $edit.$delete;
-			if(in_array('designation3',staff_role_resource()) || in_array('designation4',staff_role_resource()) || $user_info['user_type'] == 'company') {
-				$iidesignation_name = '
-					'.$idesignation_name.'
-					<div class="overlay-edit">
-						'.$combhr.'
-					</div>';
-						 			  				
-			} else {
-				$iidesignation_name = $idesignation_name;
-			}
+			$iidesignation_name = '
+				'.$idesignation_name.'
+				<div class="overlay-edit">
+					'.$combhr.'
+				</div>';
+		
 			$data[] = array(
 				$iidesignation_name,
 				$department_name
