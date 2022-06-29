@@ -265,7 +265,7 @@ class Employees extends BaseController {
 				$r['contact_number'],
 				$gender,
 				$country_info['country_name'],
-				$role_name,
+				'Candidate',
 				$status
 			);
 		}
