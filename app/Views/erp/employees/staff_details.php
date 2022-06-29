@@ -77,6 +77,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
+<?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
 
 <div class="row"> 
   <!-- [] start -->
