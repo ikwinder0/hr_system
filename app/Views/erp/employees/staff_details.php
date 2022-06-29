@@ -37,8 +37,8 @@ $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->fir
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 
-$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
-$designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
+$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
 $office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
 $leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
 $roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
@@ -135,7 +135,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
 			    <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
 						<label for="logo">
 							<?= lang('Main.xin_position_applied_for');?>
 							<span class="text-danger">*</span>
