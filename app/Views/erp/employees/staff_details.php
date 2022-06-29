@@ -103,12 +103,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
       
       <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
         <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-        <a class="nav-link list-group-item list-group-item-action active" id="user-set-salary-tab" data-toggle="pill" href="#user-set-salary" role="tab" aria-controls="user-set-salary" aria-selected="false"> <span class="f-w-500"><i class="feather icon-lock m-r-10 h5 "></i>
-        <?= lang('Employees.xin_contract');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-basicinfo-tab" data-toggle="pill" href="#user-set-basicinfo" role="tab" aria-controls="user-set-basicinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
+        <a class="nav-link list-group-item list-group-item-action active" id="user-set-basicinfo-tab" data-toggle="pill" href="#user-set-basicinfo" role="tab" aria-controls="user-set-basicinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
         <?= lang('Main.xin_employee_basic_title');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
         <?php } ?>
@@ -148,44 +143,9 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
   <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
   <div class="col-lg-8">
     <div class="tab-content" id="user-set-tabContent">
+      
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-      <div class="tab-pane fade active show" id="user-set-salary" role="tabpanel" aria-labelledby="user-set-salary-tab">
-        <div class="alert alert-info alert-dismissible" role="alert">
-          <h5 class="alert-heading"><i class="feather icon-alert-circle mr-2"></i>
-            <?= lang('Employees.xin_contract_option');?>
-          </h5>
-          <p class="mb-0">
-            <?= lang('Employees.xin_define_salary_options');?>
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h5><i data-feather="lock" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Employees.xin_set_contract');?>
-              </span></h5>
-          </div>
-          <div class="card-body">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item"> <a class="nav-link" id="pills-allowances-tab" data-toggle="pill" href="#pills-allowances" role="tab" aria-controls="pills-allowances" aria-selected="false">
-                <?= lang('Employees.xin_allowances');?>
-                </a> </li>
-              <li class="nav-item"> <a class="nav-link" id="pills-commissions-tab" data-toggle="pill" href="#pills-commissions" role="tab" aria-controls="pills-commissions" aria-selected="false">
-                <?= lang('Employees.xin_commissions');?>
-                </a> </li>
-              <li class="nav-item"> <a class="nav-link" id="pills-statutory-tab" data-toggle="pill" href="#pills-statutory" role="tab" aria-controls="pills-statutory" aria-selected="false">
-                <?= lang('Employees.xin_satatutory_deductions');?>
-                </a> </li>
-              <li class="nav-item"> <a class="nav-link" id="pills-reimbursements-tab" data-toggle="pill" href="#pills-reimbursements" role="tab" aria-controls="pills-reimbursements" aria-selected="false">
-                <?= lang('Employees.xin_reimbursements');?>
-                </a> </li>
-            </ul>
-           
-          </div>
-        </div>
-      </div>
-      <?php } ?>
-      <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-      <div class="tab-pane fade" id="user-set-basicinfo" role="tabpanel" aria-labelledby="user-set-basicinfo-tab">
+      <div class="tab-pane fade show active" id="user-set-basicinfo" role="tabpanel" aria-labelledby="user-set-basicinfo-tab">
         <div class="card">
           <div class="card-header">
             <h5><i data-feather="file-text" class="icon-svg-primary wid-20"></i><span class="p-l-5">
