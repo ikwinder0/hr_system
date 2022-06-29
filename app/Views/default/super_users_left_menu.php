@@ -32,6 +32,9 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
   <li class="pc-item <?php if(!empty($arr_mod['companies_active']))echo $arr_mod['companies_active'];?>"><a href="<?= site_url('erp/companies-list');?>" class="pc-link "><span class="pc-micon"><i data-feather="users"></i></span><span class="pc-mtext">
     <?= lang('Company.xin_companies');?>
     </span></a></li>
+  <li class="pc-item"><a href="<?= site_url('erp/staff-list');?>" class="pc-link "><span class="pc-micon"><i data-feather="users"></i></span><span class="pc-mtext">
+    <?= lang('Dashboard.dashboard_employees');?>
+    </span></a></li>
   <!-- Membership -->
   <li class="pc-item <?php if(!empty($arr_mod['membership_active']))echo $arr_mod['membership_active'];?>"><a href="<?= site_url('erp/membership-list');?>" class="pc-link "><span class="pc-micon"><i data-feather="calendar"></i></span><span class="pc-mtext">
     <?= lang('Membership.xin_membership');?>
