@@ -1818,12 +1818,17 @@ class Employees extends BaseController {
 				
 				$UserdocumentsModel = new UserdocumentsModel();
 			    $id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
-			    $doc = $UserdocumentsModel->where('document_id',$id)->first();
+			    
 				
 				if ($validated) {
+					
+					$doc = $UserdocumentsModel->where('document_id',$id)->first();
+					
+					unlink('public/uploads/candidate_documents/'.$doc['user_id'].'/'.$doc['document_file']);
+					
 					$document_file = $this->request->getFile('document_file');
-					$file_name = $document_file->getName();
-					$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/');
+					$file_name = time().'-'.$document_file->getName();
+					$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/',);
 				}
 				
 				$document_name = $this->request->getPost('document_name',FILTER_SANITIZE_STRING);
