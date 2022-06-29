@@ -94,6 +94,22 @@ $get_animate='';
                     </div>
                     <div class="card-body"> 
                         <div class="row">
+						    <div class="col-md-4">
+                                <label for="logo">
+                                    <?= lang('Main.xin_position_applied_for');?>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-user"></i></span></div>
+									<input
+										type="text"
+										class="form-control"
+										placeholder="<?= lang('Main.xin_position_applied_for');?>"
+										name="applied_for">
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <label for="logo">
                                     <?= lang('Main.xin_e_details_profile_picture');?>
