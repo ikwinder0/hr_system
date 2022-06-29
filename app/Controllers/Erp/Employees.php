@@ -1875,6 +1875,8 @@ class Employees extends BaseController {
 			$Return['csrf_hash'] = csrf_hash();
 			// set rules
 			$validation->setRules([
+			
+			        'applied_for' => 'required',
 					'first_name' => 'required',
 					'last_name' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
@@ -1887,6 +1889,7 @@ class Employees extends BaseController {
 					'state' => 'required',
 					'city' => 'required',
 					'zipcode' => 'required',
+					
 				],
 				[   // Errors
 				    'applied_for' => [
@@ -1938,6 +1941,8 @@ class Employees extends BaseController {
 			//check error
 			if ($validation->hasError('first_name')) {
 				$Return['error'] = $validation->getError('first_name');
+			} elseif($validation->hasError('applied_for')){
+				$Return['error'] = $validation->getError('applied_for');
 			} elseif($validation->hasError('last_name')){
 				$Return['error'] = $validation->getError('last_name');
 			} elseif($validation->hasError('email')){
@@ -1966,6 +1971,7 @@ class Employees extends BaseController {
 				$this->output($Return);
 			}
 			
+			$applied_for = $this->request->getPost('applied_for',FILTER_SANITIZE_STRING);
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
 			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
@@ -2024,6 +2030,7 @@ class Employees extends BaseController {
 			$result = $UsersModel->update($id, $data);
 			// employee details
 			$data2 = [
+			    'designation_id'  => $applied_for,
 				'date_of_birth' => $dob,
 				'marital_status' => $marital_status,
 				'religion_id' => $religion,
