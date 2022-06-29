@@ -117,7 +117,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
         <a class="nav-link list-group-item list-group-item-action" id="user-set-document-tab" data-toggle="pill" href="#user-set-document" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-plus m-r-10 h5 "></i>
         <?= lang('Employees.xin_documents');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-		<a class="nav-link list-group-item list-group-item-action" id="user-application-status-tab" data-toggle="pill" href="#user-application-status" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="fas fa-file m-r-10 h5"></i>
+		<a class="nav-link list-group-item list-group-item-action" id="user-application-status-tab" data-toggle="pill" href="#user-application-status" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="fas fa-tasks m-r-10 h5"></i>
         <?= lang('Main.xin_application_status');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
         <?php } ?>
@@ -415,6 +415,49 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
         </div>
       </div>
       <?php }?>
+	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
+        <div class="card">
+			<div class="card-header">
+            <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
+              <?= lang('Main.xin_application_status');?>
+              </span></h5>
+				<div class="card-body pb-2">
+					<div class="box-body">
+						<div class="row bs-wizard" style="border-bottom:0;">
+                
+							<div class="col-xs-3 bs-wizard-step complete">
+							  <div class="text-center bs-wizard-stepnum">Step 1</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
+							</div>
+							
+							<div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+							  <div class="text-center bs-wizard-stepnum">Step 2</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
+							</div>
+							
+							<div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+							  <div class="text-center bs-wizard-stepnum">Step 3</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
+							</div>
+							
+							<div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+							  <div class="text-center bs-wizard-stepnum">Step 4</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade" id="user-set-document" role="tabpanel" aria-labelledby="user-set-document-tab">
         <div class="card user-profile-list">
