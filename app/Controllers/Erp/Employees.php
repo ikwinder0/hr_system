@@ -206,34 +206,22 @@ class Employees extends BaseController {
 		$DesignationModel = new DesignationModel();
 		$StaffdetailsModel = new StaffdetailsModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-		if($user_info['user_type'] == 'staff'){
-			$staff = $UsersModel->where('company_id',$user_info['company_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
-		} else {
-			$staff = $UsersModel->where('company_id',$usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
-		}
+		
+	    $staff = $UsersModel->where('company_id',$usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
+		
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
 		
 		$data = array();
 		
           foreach($staff as $r) {						
 		  			
-				if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') {
+			
 					$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-details').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
-				} else {
-					$edit = '';
-				}
-				if(in_array('staff5',staff_role_resource()) || $user_info['user_type'] == 'company') {
+				
+				
 					$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
-				} else {
-					$delete = '';
-				}
+				
 
-			$role = $RolesModel->where('role_id', $r['user_role_id'])->first();
-			if($role['role_name']){
-				$role_name = $role['role_name'];
-			} else {
-				$role_name = '--';
-			}
 			if($r['is_active'] == 1){
 				$status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
 			} else {
