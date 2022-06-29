@@ -267,6 +267,30 @@ $get_animate='';
                                     </select>
                                 </div>
                             </div>
+							<div class="col-md-4">
+							<div class="form-group">
+							  <label for="estate">
+								<?= lang('Main.xin_state');?>
+							  </label>
+							  <input class="form-control" placeholder="<?= lang('Main.xin_state');?>" name="state" type="text" value="">
+							</div>
+						  </div>
+						  <div class="col-md-4">
+							<div class="form-group">
+							  <label for="ecity">
+								<?= lang('Main.xin_city');?>
+							  </label>
+							  <input class="form-control" placeholder="<?= lang('Main.xin_city');?>" name="city" type="text" value="">
+							</div>
+						  </div>
+						  <div class="col-md-4">
+							<div class="form-group">
+							  <label for="ezipcode" class="control-label">
+								<?= lang('Main.xin_zipcode');?>
+							  </label>
+							  <input class="form-control" placeholder="<?= lang('Main.xin_zipcode');?>" name="zipcode" type="text" value="">
+							</div>
+						  </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="contact_number">
