@@ -224,6 +224,8 @@ class Employees extends BaseController {
 
 			if($r['is_active'] == 1){
 				$status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
+		    } elseif($r['is_active'] == 2){
+				$status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>';
 			} else {
 				$status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>';
 			}

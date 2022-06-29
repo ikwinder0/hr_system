@@ -67,6 +67,7 @@ return [
 	'xin_code' => 'Code',
 	'dashboard_xin_status' => 'Status',
 	'xin_symbol' => 'Symbol',
+	'xin_employees_new' => 'New',
 	'xin_employees_active' => 'Active',
 	'xin_employees_inactive' => 'Banned',
 	'xin_selected' => 'Selected',
