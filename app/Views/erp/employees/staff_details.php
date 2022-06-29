@@ -219,7 +219,9 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
                       </select>
                     </div>
                   </div>
-				  <div class="col-md-6">
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label for="estate">
                         <?= lang('Main.xin_state');?>
@@ -227,10 +229,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
                       <input class="form-control" placeholder="<?= lang('Main.xin_state');?>" name="state" type="text" value="<?= $result['state'];?>">
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label for="ecity">
                         <?= lang('Main.xin_city');?>
@@ -238,7 +237,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
                       <input class="form-control" placeholder="<?= lang('Main.xin_city');?>" name="city" type="text" value="<?= $result['city'];?>">
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label for="ezipcode" class="control-label">
                         <?= lang('Main.xin_zipcode');?>
