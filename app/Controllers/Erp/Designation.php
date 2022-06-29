@@ -65,7 +65,7 @@ class Designation extends BaseController {
 	}
 	// record list
 	public function designation_list() {
-
+        die;
 		$session = \Config\Services::session();
 		$usession = $session->get('sup_username');
 		if(!$session->has('sup_username')){ 
@@ -77,11 +77,9 @@ class Designation extends BaseController {
 		$DepartmentModel = new DepartmentModel();
 		$DesignationModel = new DesignationModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-		if($user_info['user_type'] == 'staff'){
-			$get_data = $DesignationModel->where('company_id',$user_info['company_id'])->orderBy('designation_id', 'ASC')->findAll();
-		} else {
-			$get_data = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
-		}
+		
+		$get_data = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
+		
 		$data = array();
 		
           foreach($get_data as $r) {
