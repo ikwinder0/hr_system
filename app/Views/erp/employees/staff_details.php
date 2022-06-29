@@ -142,6 +142,14 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               <?php $hidden = array('token' => $segment_id);?>
               <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
+			    <div class="row">
+                  <div class="col-md-3">
+				    <h4>Position Applied For : </h4>
+				  </div>
+				  <div class="col-md-3">
+				    <?= $result['applied_for']; ?>
+				  </div>
+				</div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
