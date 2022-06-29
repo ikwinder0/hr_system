@@ -108,6 +108,19 @@ $get_animate='';
 										class="form-control"
 										placeholder="<?= lang('Main.xin_position_applied_for');?>"
 										name="applied_for">
+									<select
+                                        class="form-control"
+                                        name="applied_for"
+                                        data-plugin="select_hrm"
+                                        <option value="" selected="selected" disabled="disabled">
+                                            <?= lang('Employees.xin_select');?>
+                                        </option>
+										<?php foreach($designations as $job){  ?>
+                                        <option value="<?= $job['designation_id']; ?>">
+                                            <?= $job['designation_name']; ?>
+                                        </option>
+										<?php }  ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -277,7 +290,7 @@ $get_animate='';
 									</label>
                                     <div class="input-group">
                             
-									<select class="form-control dropdown" id="religion" name="religion">
+									<select class="form-control dropdown" data-plugin="select_hrm" id="religion" name="religion">
 										<option value="" selected="selected" disabled="disabled"><?= lang('Employees.xin_select');?> <?= lang('Main.xin_religion');?></option>
 										<option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
 										<option value="Agnostic">Agnostic</option>

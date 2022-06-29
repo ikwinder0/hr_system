@@ -79,13 +79,16 @@ class Employees extends BaseController {
 		$UsersModel = new UsersModel();
 		$SystemModel = new SystemModel();
 		//$AssetsModel = new AssetsModel();
+		$DesignationModel = new DesignationModel();
 		$session = \Config\Services::session();
 		$usession = $session->get('sup_username');
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$get_data = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
 		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'employees';
 		$data['breadcrumbs'] = lang('Dashboard.dashboard_employees');
+		$data['designations'] = $get_data;
 
 		$data['subview'] = view('erp/employees/add_employee', $data);
 		return view('erp/layout/layout_main', $data); //page load
@@ -858,7 +861,6 @@ class Employees extends BaseController {
 			// employee details
 			$data2 = [
 				'user_id' => $user_id,
-				'employee_id'  => $employee_id,
 				'department_id'  => $department_id,
 				'designation_id'  => $designation_id,
 				'office_shift_id' => $office_shift_id,
