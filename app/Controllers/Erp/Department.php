@@ -63,11 +63,11 @@ class Department extends BaseController {
 			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
 			return redirect()->to(site_url('erp/login'));
 		}
-		if($user_info['user_type'] != 'company' && $user_info['user_type']!='staff'){
+		if($user_info['user_type'] == 'company' || $user_info['user_type'] == 'staff'){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
 			return redirect()->to(site_url('erp/desk'));
 		}
-		if($user_info['user_type'] != 'company'){
+		if($user_info['user_type'] == 'company'){
 			if(!in_array('department1',staff_role_resource())) {
 				$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
 				return redirect()->to(site_url('erp/desk'));
@@ -94,25 +94,19 @@ class Department extends BaseController {
 		//$AssetsModel = new AssetsModel();
 		$DepartmentModel = new DepartmentModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-		if($user_info['user_type'] == 'staff'){
-			$get_data = $DepartmentModel->where('company_id',$user_info['company_id'])->orderBy('department_id', 'ASC')->findAll();
-		} else {
-			$get_data = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
-		}
+		
+		$get_data = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+		
 		$data = array();
 		
           foreach($get_data as $r) {
 			  
-			if(in_array('department3',staff_role_resource()) || $user_info['user_type'] == 'company') { //edit
+			
 				$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_edit').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light" data-toggle="modal" data-target=".view-modal-data" data-field_id="'. uencode($r['department_id']) . '"><i class="feather icon-edit"></i></button></span>';
-			} else {
-				$edit = '';
-			}
-			if(in_array('department4',staff_role_resource()) || $user_info['user_type'] == 'company') { //delete
+			
+		
 				$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['department_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
-			} else {
-				$delete = '';
-			}
+			
 			
 			$created_at = set_date_format($r['created_at']);
 			$d_head = $UsersModel->where('user_id', $r['department_head'])->first();
@@ -122,15 +116,13 @@ class Department extends BaseController {
 				$name = '--';
 			}
 			$combhr = $edit.$delete;
-			if(in_array('department3',staff_role_resource()) || in_array('department4',staff_role_resource()) || $user_info['user_type'] == 'company') {
+			
 					$department_name = '
 					'.$r['department_name'].'
 					<div class="overlay-edit">
 						'.$combhr.'
 					</div>';		  				
-			} else {
-				$department_name = $r['department_name'];
-			}
+			
 			$data[] = array(
 				$department_name,
 				$name,
