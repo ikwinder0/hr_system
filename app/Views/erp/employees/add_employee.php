@@ -503,8 +503,8 @@ $get_animate='';
 										</label>
 											<div class="custom-file">
 												<input
-													class="form-control"
-													name="custom-file-input"
+													class="custom-file-input"
+													name="education_certificate"
 													type="file">
 												<label class="custom-file-label">
 													<?= lang('Main.xin_choose_file');?>
