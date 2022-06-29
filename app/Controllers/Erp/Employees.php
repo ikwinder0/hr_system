@@ -522,7 +522,7 @@ class Employees extends BaseController {
 			  
 				$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_edit').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light" data-toggle="modal" data-target=".view-modal-data" data-field_type="document" data-field_id="'. uencode($r['document_id']) . '"><i class="feather icon-edit"></i></button></span>';
 				$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-field_type="document" data-record-id="'. uencode($r['document_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
-			$download_link = '<a href="'.site_url().'download?type=documents&filename='.uencode($r['document_file']).'">'.lang('Main.xin_download').'</a>';
+			$download_link = '<a href="'.site_url().'download?user='.$id.'&type=candidate_documents&filename='.uencode($r['document_file']).'">'.lang('Main.xin_download').'</a>';
 			$combhr = $edit.$delete;
 			$salary_option = '
 				'.$r['document_name'].'
