@@ -37,7 +37,7 @@ $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->fir
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 
-$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
 $designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
 $office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
 $leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
