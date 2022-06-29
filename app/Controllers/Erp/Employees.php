@@ -54,16 +54,16 @@ class Employees extends BaseController {
 			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
 			return redirect()->to(site_url('erp/login'));
 		}
-		if($user_info['user_type'] != 'company' && $user_info['user_type']!='staff'){
+		if($user_info['user_type'] =='staff'){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
 			return redirect()->to(site_url('erp/desk'));
 		}
-		if($user_info['user_type'] != 'company'){
-			if(!in_array('staff2',staff_role_resource())) {
-				$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
-				return redirect()->to(site_url('erp/desk'));
-			}
-		}
+		// if($user_info['user_type'] != 'company'){
+			// if(!in_array('staff2',staff_role_resource())) {
+				// $session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
+				// return redirect()->to(site_url('erp/desk'));
+			// }
+		// }
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
 		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'employees';
