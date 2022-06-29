@@ -200,21 +200,6 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="status" class="control-label">
-                        <?= lang('Main.dashboard_xin_status');?>
-                      </label>
-                      <select class="form-control" name="status" data-plugin="select_hrm" data-placeholder="<?= lang('Main.dashboard_xin_status');?>">
-                        <option value="0" <?php if($result['is_active']=='0'):?> selected <?php endif; ?>>
-                        <?= lang('Main.xin_employees_inactive');?>
-                        </option>
-                        <option value="1" <?php if($result['is_active']=='1'):?> selected <?php endif; ?>>
-                        <?= lang('Main.xin_employees_active');?>
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
                       <label for="marital_status" class="control-label">
                         <?= lang('Employees.xin_employee_mstatus');?>
                       </label>
