@@ -136,6 +136,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
               <div class="form-body">
 			    <div class="row">
                   <div class="col-md-6">
+				    <div class="form-group">
 						<label for="logo">
 							<?= lang('Main.xin_position_applied_for');?>
 							<span class="text-danger">*</span>
@@ -154,6 +155,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
 								</option>
 								<?php }  ?>
 							</select>
+						</div>
 						</div>
 					</div>
 				</div>
