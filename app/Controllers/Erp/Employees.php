@@ -574,7 +574,7 @@ class Employees extends BaseController {
 					'contact_number' => 'required|numeric',
 					'dob' => 'required',
 					'gender' => 'required',
-					'nationality' => 'required',
+					'country' => 'required',
 					'marital_status' => 'required',
 					'religion' => 'required',
 				],
@@ -603,7 +603,7 @@ class Employees extends BaseController {
 					'gender' => [
 						'required' => lang('Employees.xin_error_gender'),
 					],
-					'nationality' => [
+					'country' => [
 						'required' => lang('Employees.xin_error_nationality'),
 					],
 					'marital_status' => [
@@ -631,8 +631,8 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('dob');
 			} elseif($validation->hasError('gender')){
 				$Return['error'] = $validation->getError('gender');
-			} elseif($validation->hasError('nationality')){
-				$Return['error'] = $validation->getError('nationality');
+			} elseif($validation->hasError('country')){
+				$Return['error'] = $validation->getError('country');
 			} elseif($validation->hasError('marital_status')){
 				$Return['error'] = $validation->getError('marital_status');
 			} elseif($validation->hasError('religion')) {
@@ -761,7 +761,7 @@ class Employees extends BaseController {
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
 			$dob = $this->request->getPost('dob',FILTER_SANITIZE_STRING);
 			$gender = $this->request->getPost('gender',FILTER_SANITIZE_STRING);
-			$nationality = $this->request->getPost('nationality',FILTER_SANITIZE_STRING);
+			$nationality = $this->request->getPost('country',FILTER_SANITIZE_STRING);
 			$marital_status = $this->request->getPost('marital_status',FILTER_SANITIZE_STRING);
 			$religion = $this->request->getPost('religion',FILTER_SANITIZE_STRING);
 			$experience_1 = $this->request->getPost('experience_1',FILTER_SANITIZE_STRING);
@@ -783,7 +783,7 @@ class Employees extends BaseController {
 				'username'  => '',
 				'password'  => '',
 				'contact_number'  => $contact_number,
-				'country'  => 0,
+				'country'  => $nationality,
 				'user_role_id' => '',
 				'address_1'  => '',
 				'address_2'  => '',
@@ -911,8 +911,7 @@ class Employees extends BaseController {
 				'date_of_birth' => $dob,
 				'marital_status' => $marital_status,
 				'nationality' => $nationality,
-				'religion_id' => '',
-				'religion' => $religion,
+				'religion_id' => religion,
 				'blood_group' => '',
 				'citizenship_id' => 0,
 				'basic_salary'  => '',

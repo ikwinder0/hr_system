@@ -22,7 +22,8 @@ $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 //$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
 //$designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
 $designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
-
+$all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
+$religion = $ConstantsModel->where('type','religion')->orderBy('constants_id', 'ASC')->findAll();
 $xin_system = $SystemModel->where('setting_id', 1)->first();
 //$employee_id = generate_random_employeeid();
 $get_animate='';
@@ -234,14 +235,16 @@ $get_animate='';
                                         <?= lang('Main.xin_nationality');?>
                                         <span class="text-danger">*</span></label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-flag"></i></span></div>
-                                        <input
-                                            class="form-control"
-                                            placeholder="<?= lang('Main.xin_nationality');?>"
-                                            name="nationality"
-                                            type="text">
+									    <select class="form-control" name="country" data-plugin="select_hrm" data-placeholder="<?= lang('Employees.xin_nationality');?>">
+											<option value="">
+											<?= lang('Main.xin_select_one');?>
+											</option>
+											<?php foreach($all_countries as $country) {?>
+											<option value="<?= $country['country_id'];?>">
+											<?= $country['country_name'];?>
+											</option>
+											<?php } ?>
+										</select>
                                     </div>
                                 </div>
                             </div>
@@ -272,34 +275,14 @@ $get_animate='';
 									</label>
                                     <div class="input-group">
                             
-									<select class="form-control dropdown" data-plugin="select_hrm" id="religion" name="religion">
-										<option value="" selected="selected" disabled="disabled"><?= lang('Employees.xin_select');?> <?= lang('Main.xin_religion');?></option>
-										<option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</option>
-										<option value="Agnostic">Agnostic</option>
-										<option value="Atheist">Atheist</option>
-										<option value="Bahai">Baha'i</option>
-										<option value="Buddhism">Buddhism</option>
-										<option value="Cao Dai">Cao Dai</option>
-										<option value="Chinese traditional religion">Chinese traditional religion</option>
-										<option value="Christianity">Christianity</option>
-										<option value="Hinduism">Hinduism</option>
-										<option value="Islam">Islam</option>
-										<option value="Jainism">Jainism</option>
-										<option value="Juche">Juche</option>
-										<option value="Judaism">Judaism</option>
-										<option value="Neo-Paganism">Neo-Paganism</option>
-										<option value="Nonreligious">Nonreligious</option>
-										<option value="Rastafarianism">Rastafarianism</option>
-										<option value="Secular">Secular</option>
-										<option value="Shinto">Shinto</option>
-										<option value="Sikhism">Sikhism</option>
-										<option value="Spiritism">Spiritism</option>
-										<option value="Tenrikyo">Tenrikyo</option>
-										<option value="Unitarian-Universalism">Unitarian-Universalism</option>
-										<option value="Zoroastrianism">Zoroastrianism</option>
-										<option value="primal-indigenous">primal-indigenous</option>
-										<option value="Other">Other</option>
-									</select>
+										<select class="form-control" name="religion" data-plugin="select_hrm" data-placeholder="<?= lang('Employees.xin_ethnicity_type_title');?>">
+										<option value=""></option>
+										<?php foreach($religion as $ireligion) {?>
+										<option value="<?= $ireligion['constants_id']?>">
+										<?= $ireligion['category_name']?>
+										</option>
+										<?php } ?>
+									  </select>
 											
                                     </div>
                                 </div>
