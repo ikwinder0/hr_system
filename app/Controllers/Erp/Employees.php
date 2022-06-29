@@ -1882,26 +1882,60 @@ class Employees extends BaseController {
 			$validation->setRules([
 					'first_name' => 'required',
 					'last_name' => 'required',
-					'contact_number' => 'required',		
-					'employee_id' => 'required',			
-					'role' => 'required',
+					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
+					'contact_number' => 'required|numeric',
+					'dob' => 'required',
+					'gender' => 'required',
+					'country' => 'required',
+					'marital_status' => 'required',
+					'religion' => 'required',
+					'state' => 'required',
+					'city' => 'required',
+					'zipcode' => 'required',
 				],
 				[   // Errors
+				    'applied_for' => [
+						'required' => lang('Employees.xin_employee_error_applied'),
+					],
 					'first_name' => [
 						'required' => lang('Main.xin_employee_error_first_name'),
 					],
 					'last_name' => [
 						'required' => lang('Main.xin_employee_error_last_name'),
 					],
+					'email' => [
+						'required' => lang('Main.xin_employee_error_email'),
+						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
+						'is_unique' => lang('Main.xin_already_exist_error_email'),
+					],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
+						'numeric' => lang('Main.xin_error_contact_numeric'),
 					],
-					'employee_id' => [
-						'required' => lang('Employees.xin_employee_error_employee_id'),
+					'dob' => [
+						'required' => lang('Employees.xin_error_dob'),
 					],
-					'role' => [
-						'required' => lang('Employees.xin_employee_error_staff_role'),
-					]
+					'gender' => [
+						'required' => lang('Employees.xin_error_gender'),
+					],
+					'country' => [
+						'required' => lang('Employees.xin_error_nationality'),
+					],
+					'marital_status' => [
+						'required' => lang('Employees.xin_error_marital_status'),
+					],
+					'religion' => [
+						'required' => lang('Employees.xin_error_religion'),
+					],
+					'state' => [
+						'required' => lang('Main.xin_error_state_field'),
+					],
+					'city' => [
+						'required' => lang('Main.xin_error_city_field'),
+					],
+					'zipcode' => [
+						'required' => lang('Main.xin_error_zipcode_field'),
+					],
 				]
 			);
 			
@@ -1911,37 +1945,44 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('first_name');
 			} elseif($validation->hasError('last_name')){
 				$Return['error'] = $validation->getError('last_name');
+			} elseif($validation->hasError('email')){
+				$Return['error'] = $validation->getError('email');
 			} elseif($validation->hasError('contact_number')){
 				$Return['error'] = $validation->getError('contact_number');
-			} elseif($validation->hasError('employee_id')){
-				$Return['error'] = $validation->getError('employee_id');
-			} elseif($validation->hasError('role')){
-				$Return['error'] = $validation->getError('role');
+			} elseif($validation->hasError('dob')){
+				$Return['error'] = $validation->getError('dob');
+			} elseif($validation->hasError('gender')){
+				$Return['error'] = $validation->getError('gender');
+			} elseif($validation->hasError('country')){
+				$Return['error'] = $validation->getError('country');
+			} elseif($validation->hasError('marital_status')){
+				$Return['error'] = $validation->getError('marital_status');
+			} elseif($validation->hasError('religion')) {
+				$Return['error'] = $validation->getError('religion');
+			} elseif($validation->hasError('state')) {
+				$Return['error'] = $validation->getError('state');
+			} elseif($validation->hasError('city')) {
+				$Return['error'] = $validation->getError('city');
+			} elseif($validation->hasError('zipcode')) {
+				$Return['error'] = $validation->getError('zipcode');
 			}
+			
 			if($Return['error']!=''){
 				$this->output($Return);
 			}
-			//staff
+			
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
 			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
+			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
-			$role = $this->request->getPost('role',FILTER_SANITIZE_STRING);
+			$dob = $this->request->getPost('dob',FILTER_SANITIZE_STRING);
 			$gender = $this->request->getPost('gender',FILTER_SANITIZE_STRING);
-			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
-			$zipcode = $this->request->getPost('zipcode',FILTER_SANITIZE_STRING);
-			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
-			$status = $this->request->getPost('status',FILTER_SANITIZE_STRING);
-			$address_1 = $this->request->getPost('address_1',FILTER_SANITIZE_STRING);
-			$address_2 = $this->request->getPost('address_2',FILTER_SANITIZE_STRING);
 			$country = $this->request->getPost('country',FILTER_SANITIZE_STRING);
-			
-			// staff details
-			$date_of_birth = $this->request->getPost('date_of_birth',FILTER_SANITIZE_STRING);
 			$marital_status = $this->request->getPost('marital_status',FILTER_SANITIZE_STRING);
 			$religion = $this->request->getPost('religion',FILTER_SANITIZE_STRING);
-			$blood_group = $this->request->getPost('blood_group',FILTER_SANITIZE_STRING);
-			$citizenship_id = $this->request->getPost('citizenship_id',FILTER_SANITIZE_STRING);
-			$employee_id = $this->request->getPost('employee_id',FILTER_SANITIZE_STRING);
+			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
+			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
+			$zipcode = $this->request->getPost('zipcode');
 			
 			if(empty($country)){
 				$country = 0;
@@ -1949,24 +1990,18 @@ class Employees extends BaseController {
 			if(empty($religion)){
 				$religion = 0;
 			}
-			if(empty($citizenship_id)){
-				$citizenship_id = 0;
-			}
+			
 			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
 			$UsersModel = new UsersModel();
 			$Moduleattributes = new Moduleattributes();
 			$Moduleattributesval = new Moduleattributesval();
 			$Moduleattributesvalsel = new Moduleattributesvalsel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-			if($user_info['user_type'] == 'staff'){
-				$company_id = $user_info['company_id'];
-				$count_module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->countAllResults();
-				$module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->findAll();
-			} else {
+			
 				$company_id = $usession['sup_user_id'];
 				$count_module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->countAllResults();
 				$module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->findAll();
-			}
+		
 			$i=1;
 			if($count_module_attributes > 0){
 				 foreach($module_attributes as $mattribute) {
@@ -1986,24 +2021,17 @@ class Employees extends BaseController {
 				'last_name'  => $last_name,
 				'contact_number'  => $contact_number,
 				'country'  => $country,
-				'user_role_id' => $role,
-				'address_1'  => $address_1,
-				'address_2'  => $address_2,
 				'city'  => $city,
 				'state'  => $state,
 				'zipcode' => $zipcode,
 				'gender' => $gender,
-				'is_active'  => $status
 			];
 			$result = $UsersModel->update($id, $data);
 			// employee details
 			$data2 = [
-				'employee_id' => $employee_id,
-				'date_of_birth' => $date_of_birth,
+				'date_of_birth' => $dob,
 				'marital_status' => $marital_status,
 				'religion_id' => $religion,
-				'blood_group' => $blood_group,
-				'citizenship_id' => $citizenship_id
 			];
 			
 			$Return['csrf_hash'] = csrf_hash();	
