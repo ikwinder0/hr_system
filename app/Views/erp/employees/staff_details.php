@@ -100,18 +100,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
           </div>
         </div>
       </div>
-      <ul class="list-group list-group-flush mb-3">
-        <li class="list-group-item"> <span class="f-w-500"><i class="feather icon-user m-r-10"></i>
-          <?= lang('Employees.xin_manager');?>
-          <i class="fas fa-question-circle" data-toggle="tooltip" title="Department Head"></i></span> <a href="#" class="float-right text-body">
-          <?= $dep_user['first_name'].' '.$dep_user['last_name']; ?>
-          </a> </li>
-        <li class="list-group-item border-bottom-0"> <span class="f-w-500"><i class="feather icon-mail m-r-10"></i>
-          <?= lang('Main.xin_email');?>
-          </span> <span class="float-right">
-          <?= $result['email'];?>
-          </span> </li>
-      </ul>
+      
       <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
         <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
         <a class="nav-link list-group-item list-group-item-action active" id="user-set-salary-tab" data-toggle="pill" href="#user-set-salary" role="tab" aria-controls="user-set-salary" aria-selected="false"> <span class="f-w-500"><i class="feather icon-lock m-r-10 h5 "></i>
