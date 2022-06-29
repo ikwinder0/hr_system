@@ -150,6 +150,7 @@ $cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where(
 				    <?= $idesignations['designation_name']; ?>
 				  </div>
 				</div>
+				<hr>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
