@@ -571,8 +571,8 @@ class Employees extends BaseController {
 			$Return['csrf_hash'] = csrf_hash();
 			$UsersModel = new UsersModel();
 			$SystemModel = new SystemModel();
-			$MembershipModel = new MembershipModel();
-			$CompanymembershipModel = new CompanymembershipModel();
+			$DesignationModel = new DesignationModel();
+			$UserdocumentsModel = new UserdocumentsModel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			$company_id = $usession['sup_user_id'];
 			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
@@ -764,43 +764,6 @@ class Employees extends BaseController {
 				$this->output($Return);
 			}
 			
-			$resume ='';
-			$passport='';
-			$education_certificate='';
-			$experience_certificate='';
-			$police_clearance_certificate='';
-
-			if(!empty($this->request->getFile('resume')->getName())){
-				$rs = $this->request->getFile('resume');
-				$rs_file = time().'-'.$rs->getName();
-				$rs->move('public/uploads/company_documents/',$rs_file);
-				
-				
-			}
-			if(!empty($this->request->getFile('passport')->getName())){
-				$ps = $this->request->getFile('passport');
-				$ps_file = time().'-'.$ps->getName();
-				$ps->move('public/uploads/company_documents/',$ps_file);
-				
-			}
-			if(!empty($this->request->getFile('education_certificate')->getName())){
-				$ed = $this->request->getFile('education_certificate');
-				$ed_file = time().'-'.$ed->getName();
-				$ed->move('public/uploads/company_documents/',$ed_file);
-				
-			}
-			if(!empty($this->request->getFile('experience_certificate')->getName())){
-				$exp = $this->request->getFile('experience_certificate');
-				$exp_file = time().'-'.$exp->getName();
-				$exp->move('public/uploads/company_documents/',$exp_file);
-				
-			}
-			if(!empty($this->request->getFile('police_clearance_certificate')->getName())){
-				$pcc = $this->request->getFile('police_clearance_certificate');
-				$pcc_file = time().'-'.$pcc->getName();
-				$pcc->move('public/uploads/company_documents/',$pcc_file);
-				
-			}
 			
 			$applied_for = $this->request->getPost('applied_for',FILTER_SANITIZE_STRING);
 			$first_name = $this->request->getPost('first_name',FILTER_SANITIZE_STRING);
@@ -856,26 +819,126 @@ class Employees extends BaseController {
 			$StaffdetailsModel = new StaffdetailsModel();
 			$result = $UsersModel->insert($data);
 			$user_id = $UsersModel->insertID();
+			
+			$resume ='';
+			$passport='';
+			$education_certificate='';
+			$experience_certificate='';
+			$police_clearance_certificate='';
+            $document = [];
+			if(!empty($this->request->getFile('resume')->getName())){
+				$rs = $this->request->getFile('resume');
+				$rs_file = time().'-'.$rs->getName();
+				$rs->move('public/uploads/candidate_documents/'.$user_id.'/',$rs_file);
+				$doc2 = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Resume',
+					'document_type'  => 'image/file',
+					'document_file'  => $rs_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doc2);	
+				
+			}
+			if(!empty($this->request->getFile('passport')->getName())){
+				$ps = $this->request->getFile('passport');
+				$ps_file = time().'-'.$ps->getName();
+				$ps->move('public/uploads/candidate_documents/'.$user_id.'/',$ps_file);
+				$doc3 = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Passport',
+					'document_type'  => 'image/file',
+					'document_file'  => $ps_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doc3);
+				
+			}
+			if(!empty($this->request->getFile('education_certificate')->getName())){
+				$ed = $this->request->getFile('education_certificate');
+				$ed_file = time().'-'.$ed->getName();
+				$ed->move('public/uploads/candidate_documents/'.$user_id.'/',$ed_file);
+				$doc4 = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Education Certificate',
+					'document_type'  => 'image/file',
+					'document_file'  => $ed_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doc4);
+				
+			}
+			if(!empty($this->request->getFile('experience_certificate')->getName())){
+				$exp = $this->request->getFile('experience_certificate');
+				$exp_file = time().'-'.$exp->getName();
+				$exp->move('public/uploads/candidate_documents/'.$user_id.'/',$exp_file);
+				$doc5 = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Experience Certificate',
+					'document_type'  => 'image/file',
+					'document_file'  => $exp_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doc5);
+				
+			}
+			if(!empty($this->request->getFile('police_clearance_certificate')->getName())){
+				$pcc = $this->request->getFile('police_clearance_certificate');
+				$pcc_file = time().'-'.$pcc->getName();
+				$pcc->move('public/uploads/candidate_documents/'.$user_id.'/',$pcc_file);
+				$doc6 = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Police Clearance Certificate',
+					'document_type'  => 'image/file',
+					'document_file'  => $pcc_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doc6);
+				
+				
+				
+			}
+			
+			
 			// employee details
+			$designation = $DesignationModel->where('designation_id', $applied_for)->first();
 			$data2 = [
 				'user_id' => $user_id,
-				'department_id'  => $department_id,
-				'designation_id'  => $designation_id,
-				'office_shift_id' => $office_shift_id,
+				'department_id'  => $designation['department_id'],
+				'designation_id'  => $applied_for,
+				'office_shift_id' => '',
 				'date_of_joining' => date('d-m-Y'),
 				'date_of_leaving' => '',
-				'date_of_birth' => '',
-				'marital_status' => 0,
-				'religion_id' => 0,
+				'date_of_birth' => $dob,
+				'marital_status' => $marital_status,
+				'nationality' => $nationality,
+				'religion_id' => '',
+				'religion' => $religion,
 				'blood_group' => '',
 				'citizenship_id' => 0,
-				'basic_salary'  => $basic_salary,
-				'hourly_rate'  => $hourly_rate,
-				'salay_type' => $salay_type,
+				'basic_salary'  => '',
+				'hourly_rate'  => '',
+				'salay_type' => '',
 				'leave_categories' => 0,
 				'role_description' => 'Enter role description here..',
 				'bio' => 'Enter staff bio here..',
 				'experience' => 0,
+				'experience_1' => $experience_3,
+				'experienc_2' => $experience_2,
+				'experience_3' => $experience_3,
+				'high_school' => $high_school,
+				'degree' => $degree,
+				'other_education' => $other_education,
 				'fb_profile' => '',
 				'twitter_profile' => '',
 				'gplus_profile' => '',
@@ -893,6 +956,7 @@ class Employees extends BaseController {
 				'created_at' => date('d-m-Y h:i:s')
 			];
 			$StaffdetailsModel->insert($data2);
+			
 			
 			$Return['csrf_hash'] = csrf_hash();	
 			if ($result == TRUE) {
