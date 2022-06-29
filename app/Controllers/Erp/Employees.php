@@ -1708,6 +1708,9 @@ class Employees extends BaseController {
 					]
 				]
 			];
+			$UserdocumentsModel = new UserdocumentsModel();
+			$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+			$doc = $UserdocumentsModel->where('document_id',$id)->first();
 			if(!$this->validate($rules)){
 				$ruleErrors = [
                     "document_name" => $validation->getError('document_name'),
@@ -1724,11 +1727,11 @@ class Employees extends BaseController {
 				// upload file
 				$document_file = $this->request->getFile('document_file');
 				$file_name = $document_file->getName();
-				$document_file->move('public/uploads/documents/');
+				$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/');
 				
 				$document_name = $this->request->getPost('document_name',FILTER_SANITIZE_STRING);
 				$document_type = $this->request->getPost('document_type',FILTER_SANITIZE_STRING);
-				$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+				
 				
 				$UsersModel = new UsersModel();
 				$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
@@ -1745,7 +1748,7 @@ class Employees extends BaseController {
 					'document_file'  => $file_name,
 					'created_at' => date('d-m-Y h:i:s')
 				];
-				$UserdocumentsModel = new UserdocumentsModel();
+				
 				$result = $UserdocumentsModel->insert($data);	
 				$Return['csrf_hash'] = csrf_hash();	
 				if ($result == TRUE) {
@@ -1812,15 +1815,20 @@ class Employees extends BaseController {
 						]
 					]
 				]);
+				
+				$UserdocumentsModel = new UserdocumentsModel();
+			    $id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+			    $doc = $UserdocumentsModel->where('document_id',$id)->first();
+				
 				if ($validated) {
 					$document_file = $this->request->getFile('document_file');
 					$file_name = $document_file->getName();
-					$document_file->move('public/uploads/documents/');
+					$document_file->move('public/uploads/candidate_documents/'.$doc['user_id'].'/');
 				}
 				
 				$document_name = $this->request->getPost('document_name',FILTER_SANITIZE_STRING);
 				$document_type = $this->request->getPost('document_type',FILTER_SANITIZE_STRING);
-				$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
+				
 				
 				if ($validated) {
 					$data = [
@@ -1834,7 +1842,7 @@ class Employees extends BaseController {
 						'document_type'  => $document_type,
 					];
 				}
-				$UserdocumentsModel = new UserdocumentsModel();
+				
 				$result = $UserdocumentsModel->update($id,$data);	
 				$Return['csrf_hash'] = csrf_hash();	
 				if ($result == TRUE) {
