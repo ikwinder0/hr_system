@@ -37,13 +37,13 @@ $user_info = $UsersModel->where('user_id', $session['sup_user_id'])->first();
     <script src="<?= base_url();?>/public/assets/plugins/ladda/ladda.js"></script>
     <script src="<?= base_url();?>/public/assets/plugins/moment/moment.js"></script>
     <script src="<?php echo base_url();?>/public/assets/plugins/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js"></script>
     <script src="<?= base_url();?>/public/assets/plugins/colorpicker/bootstrap-colorpicker.js"></script>
     <link href="<?= base_url();?>/public/assets/plugins/colorpicker/bootstrap-colorpicker.css" rel="stylesheet">
     <script src="<?= base_url();?>/public/assets/js/plugins/jquery.bootstrap.wizard.min.js"></script>
     <script src="<?= base_url();?>/public/assets/js/plugins/jquery.barrating.min.js"></script>
     <script src="<?= base_url();?>/public/assets/js/plugins/isotope.pkgd.min.js"></script>
-
+    
     <script src="<?= base_url();?>/public/assets/js/plugins/jquery.barrating.min.js"></script>
     <?php if($router->controllerName() == '\App\Controllers\Erp\Todos' || $router->methodName() == 'training_details' || $router->methodName() == 'ticket_details'){?>
     <script src="<?= base_url();?>/public/assets/js/pages/todo.js"></script>

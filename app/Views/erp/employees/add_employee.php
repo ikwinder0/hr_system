@@ -73,7 +73,7 @@ $get_animate='';
     <div
         id="add_form"
         style="">
-        <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'autocomplete' => 'off');?>
+        <?php $attributes = array('name' => 'add_employee', 'id' => 'xin-form', 'class' => 'add_employee_form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => 0);?>
         <?= form_open_multipart('erp/employees/add_employee', $attributes, $hidden);?>
 		<fieldset class="fieldset_1">

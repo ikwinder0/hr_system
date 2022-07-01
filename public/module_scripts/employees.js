@@ -179,17 +179,151 @@ $( document ).on( "click", ".delete", function() {
 	$('#delete_record').attr('action',main_url+'employees/delete_staff');
 });
 
+var v = $(".add_employee_form").validate({
+        
+      rules: {
+        
+        applied_for: {
+          required: true,
+        },
+        file: {
+          required: true,
+        },
+        first_name: {
+          required: true,
+         
+        },
+        last_name: {
+          required: true,
+        },
+		email: {
+          required: true,
+          email: true,
+            remote: {
+                 headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "{{route('checkemail')}}",
+                    type: "post"
+                    
+                 }
+         
+        },
+		contact_number: {
+          required: true,
+        },
+		dob: {
+          required: true,
+        },
+		gender: {
+          required: true,
+        },
+		marital_status: {
+          required: true,
+        },
+		state: {
+          required: true,
+        },
+		city: {
+          required: true,
+        },
+		zipcode: {
+          required: true,
+        },
+		religion: {
+          required: true,
+        },
+		country: {
+          required: true,
+        },
+		experience_1: {
+          required: true,
+        },
+		high_school: {
+          required: true,
+        },
+		degree: {
+          required: true,
+        },
+		resume: {
+          required: true,
+        },
+		passport: {
+          required: true,
+        },
+		education_certificate: {
+          required: true,
+        },
+		experience_certificate: {
+          required: true,
+        },
+		police_clearance_certificate: {
+          required: true,
+        }
+		
+        
+      },
+       messages:{
+
+        // "seeking_reason[]":{
+            // required:"{{ trans('global.patient.reg.reasonErr') }}"
+        // },
+         // why_seeking: {
+          // required: "{{ trans('global.patient.reg.whyseekErr') }}",
+          // maxlength: "{{ trans('global.patient.reg.lwhyseekErr') }}"
+        // },
+        // therapist_gender: {
+          // required: "{{ trans('global.patient.reg.therapist_gender') }}",
+         
+        // },
+        // age: {
+          // required: "{{ trans('global.patient.reg.age') }}",
+
+         
+        // },
+        // patient_gender: {
+          // required: "{{ trans('global.patient.reg.patient_gender') }}",
+         
+        // },
+        // first_name:{
+            // required:"{{ trans('global.patient.reg.fnameErr') }}"
+        // },
+        // last_name:{
+            // required:"{{ trans('global.patient.reg.lnameErr') }}"
+        // },
+        // email:{
+            // required:"{{ trans('global.patient.reg.emailErr') }}",
+            // email: "{{ trans('global.patient.reg.vemailErr') }}",
+            // remote: "{{ trans('global.patient.reg.dupemailErr') }}"
+        // },
+        // password:{
+            // required:"{{ trans('global.patient.reg.passErr') }}"
+        // },
+        // password_confirmation:{
+            // required:"{{ trans('global.patient.reg.cpassErr') }}"
+        // },
+
+    },
+    
+      errorElement: "div",
+      //errorClass: "help-inline-error",
+      errorLabelContainer: ".custom-error",
+    });
+
 //step form
 var current_fs, next_fs, previous_fs; 
 var left, opacity, scale; 
 var animating;
 $(".next").click(function () {
+	//var form = $(".add_employee_form");
 	if (animating) return false;
 	animating = true;
 	current_fs = $(this).parent().parent().parent().parent().parent();
 	console.log(current_fs);
 	next_fs = $(this).parent().parent().parent().parent().parent().next();
+	if (v.form()) {
 	$(".step-anchor li").eq($("fieldset").index(next_fs)).addClass("active");
+	
 	next_fs.show();
 	current_fs.animate({
 		opacity: 0
@@ -213,6 +347,7 @@ $(".next").click(function () {
 		},
 		easing: 'easeInOutBack'
 	});
+	}
 });
 $(".previous").click(function () {
 	if (animating) return false;
