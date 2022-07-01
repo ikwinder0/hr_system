@@ -357,11 +357,10 @@ class Auth extends BaseController
 		
 		$UsersModel = new UsersModel();
 		$ifExist = $UsersModel->where('email',$data['email'])->first();
-		if($ifExist){
-			echo 1;
-		}else{
-		echo 0;
+			if(empty($ifExist)){
+			return 'true';
 		}
+		return 'false';
 		
 	}
 } 
