@@ -192,13 +192,16 @@ var v = $(".add_employee_form").validate({
         },
         first_name: {
           required: true,
+		  lettersonly:true
          
         },
         last_name: {
           required: true,
+		  lettersonly:true
         },
 		email: {
           required: true,
+		  
           email: true,
             remote: {
                  headers: {
