@@ -347,3 +347,10 @@ $(".previous").click(function () {
 		easing: 'easeInOutBack'
 	});
 });
+
+$('select').change(function(){
+    if ($(this).val()!="")
+    {
+        $(this).valid();
+    }
+});
