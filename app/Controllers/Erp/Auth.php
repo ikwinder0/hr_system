@@ -350,7 +350,10 @@ class Auth extends BaseController
 	
 	public function check_email()
 	{		
-		print_r($this->request->get('email'));
+	
+	    $request = \Config\Services::request();
+		
+		print_r($request->getGetPost());
 		die('here');
 	}
 } 
