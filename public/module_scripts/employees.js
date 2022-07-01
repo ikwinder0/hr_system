@@ -313,9 +313,9 @@ var v = $(".add_employee_form").validate({
       }
     },
     
-      errorElement: "div",
+      //errorElement: "div",
       //errorClass: "help-inline-error",
-      errorLabelContainer: ".custom-error",
+     // errorLabelContainer: ".custom-error",
     });
 
 //step form
