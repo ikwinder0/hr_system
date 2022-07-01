@@ -205,7 +205,7 @@ var v = $(".add_employee_form").validate({
           email: true,
             remote: {
                 
-                    url: "home/check_email",
+                    url: "auth/check_email",
                     type: "post"
                     
                  }
