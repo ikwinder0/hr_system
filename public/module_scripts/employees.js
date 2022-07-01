@@ -265,9 +265,9 @@ var v = $(".add_employee_form").validate({
       },
        messages:{
 
-        // "seeking_reason[]":{
-            // required:"{{ trans('global.patient.reg.reasonErr') }}"
-        // },
+        applied_for:{
+            required:"{{ trans('global.patient.reg.reasonErr') }}"
+        },
          // why_seeking: {
           // required: "{{ trans('global.patient.reg.whyseekErr') }}",
           // maxlength: "{{ trans('global.patient.reg.lwhyseekErr') }}"
