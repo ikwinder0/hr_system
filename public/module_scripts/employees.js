@@ -215,6 +215,7 @@ var v = $(".add_employee_form").validate({
         },
 		contact_number: {
           required: true,
+		  digits: true
         },
 		dob: {
           required: true,
