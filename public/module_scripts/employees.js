@@ -267,7 +267,10 @@ var v = $(".add_employee_form").validate({
         
       },
       messages:{
-
+        email:{
+        
+            remote: "This email address is already exist."
+        },
 
     },
 	errorPlacement: function(error, element) {
