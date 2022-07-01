@@ -354,3 +354,10 @@ $('select').change(function(){
         $(this).valid();
     }
 });
+
+$('input[type=file]').change(function(){
+    if ($(this).val()!="")
+    {
+        $(this).valid();
+    }
+});
