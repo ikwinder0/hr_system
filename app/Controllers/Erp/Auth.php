@@ -347,5 +347,11 @@ class Auth extends BaseController
 			exit;
 		}
 	}
+	
+	public function check_email()
+	{		
+		print_r($this->request->getPost());
+		die;
+	}
 } 
 ?>

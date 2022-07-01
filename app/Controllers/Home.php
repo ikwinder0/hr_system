@@ -33,10 +33,6 @@ class Home extends BaseController {
 		return view('erp/auth/erp_login',$data);
 	}
 	
-	public function check_email()
-	{		
-		print_r($this->request->getPost());
-		die;
-	}
+	
 	
 }
