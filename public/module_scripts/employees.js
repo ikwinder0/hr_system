@@ -188,7 +188,7 @@ var v = $(".add_employee_form").validate({
         },
         file: {
           required: true,
-		  extension: "jpg, png",
+		  accept: "file/pdf"
         },
         first_name: {
           required: true,
