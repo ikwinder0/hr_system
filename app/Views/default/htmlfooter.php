@@ -38,6 +38,7 @@ $user_info = $UsersModel->where('user_id', $session['sup_user_id'])->first();
     <script src="<?= base_url();?>/public/assets/plugins/moment/moment.js"></script>
     <script src="<?php echo base_url();?>/public/assets/plugins/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="<?= base_url();?>/public/assets/plugins/colorpicker/bootstrap-colorpicker.js"></script>
     <link href="<?= base_url();?>/public/assets/plugins/colorpicker/bootstrap-colorpicker.css" rel="stylesheet">
     <script src="<?= base_url();?>/public/assets/js/plugins/jquery.bootstrap.wizard.min.js"></script>
