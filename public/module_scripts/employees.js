@@ -206,7 +206,7 @@ var v = $(".add_employee_form").validate({
             remote: {
                 
                     url: "check-unique-email",
-                    type: "post"
+                    type: "get"
                     
                  }
          
