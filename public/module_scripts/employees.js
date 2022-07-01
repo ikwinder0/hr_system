@@ -204,10 +204,8 @@ var v = $(".add_employee_form").validate({
 		  
           email: true,
             remote: {
-                 headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: "{{route('checkemail')}}",
+                
+                    url: "check-unique-email",
                     type: "post"
                     
                  }

@@ -32,4 +32,11 @@ class Home extends BaseController {
 		$data['title'] = $xin_system['application_name'].' | '.lang('Login.xin_login_title');
 		return view('erp/auth/erp_login',$data);
 	}
+	
+	public function checkEmail()
+	{		
+		print_r($this->request->getPost());
+		die;
+	}
+	
 }
