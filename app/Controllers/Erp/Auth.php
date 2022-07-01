@@ -353,8 +353,15 @@ class Auth extends BaseController
 	
 	    $request = \Config\Services::request();
 		
-		print_r($request->getGetPost());
-		die('here');
+		$data = $request->getGetPost();
+		
+		$UsersModel = new UsersModel();
+		$ifExist = $UsersModel->where('email',$data['email'])->first();
+		if($ifExist){
+			return true;
+		}
+		return false;
+		
 	}
 } 
 ?>
