@@ -263,45 +263,8 @@ var v = $(".add_employee_form").validate({
 		
         
       },
-       messages:{
+      messages:{
 
-        applied_for:{
-            required:"{{ trans('global.patient.reg.reasonErr') }}"
-        },
-         // why_seeking: {
-          // required: "{{ trans('global.patient.reg.whyseekErr') }}",
-          // maxlength: "{{ trans('global.patient.reg.lwhyseekErr') }}"
-        // },
-        // therapist_gender: {
-          // required: "{{ trans('global.patient.reg.therapist_gender') }}",
-         
-        // },
-        // age: {
-          // required: "{{ trans('global.patient.reg.age') }}",
-
-         
-        // },
-        // patient_gender: {
-          // required: "{{ trans('global.patient.reg.patient_gender') }}",
-         
-        // },
-        // first_name:{
-            // required:"{{ trans('global.patient.reg.fnameErr') }}"
-        // },
-        // last_name:{
-            // required:"{{ trans('global.patient.reg.lnameErr') }}"
-        // },
-        // email:{
-            // required:"{{ trans('global.patient.reg.emailErr') }}",
-            // email: "{{ trans('global.patient.reg.vemailErr') }}",
-            // remote: "{{ trans('global.patient.reg.dupemailErr') }}"
-        // },
-        // password:{
-            // required:"{{ trans('global.patient.reg.passErr') }}"
-        // },
-        // password_confirmation:{
-            // required:"{{ trans('global.patient.reg.cpassErr') }}"
-        // },
 
     },
 	errorPlacement: function(error, element) {
