@@ -107,7 +107,7 @@ $get_animate='';
                                         </option>
 										<?php }  ?>
                                     </select>
-									<div class="custom-error"></div> 
+									<div class="error-applied_for"></div> 
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -123,6 +123,7 @@ $get_animate='';
                                     <small>
                                         <?= lang('Main.xin_company_file_type');?>
                                     </small>
+									<div class="error-file"></div>
                                 </div>
                             </div>
 						</div>
@@ -142,6 +143,7 @@ $get_animate='';
                                             class="form-control"
                                             placeholder="<?= lang('Main.xin_employee_first_name');?>"
                                             name="first_name">
+										<div class="error-first_name"></div>
                                     </div>
                                 </div>
                             </div>
@@ -159,6 +161,7 @@ $get_animate='';
                                             class="form-control"
                                             placeholder="<?= lang('Main.xin_employee_last_name');?>"
                                             name="last_name">
+										<div class="error-last_name"></div>
                                     </div>
                                 </div>
                             </div>
@@ -177,6 +180,7 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_email');?>"
                                             name="email"
                                             type="text">
+										<div class="error-email"></div>
                                     </div>
                                 </div>
                             </div>
@@ -194,6 +198,7 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_contact_number');?>"
                                             name="contact_number"
                                             type="text">
+										<div class="error-contact_number"></div>
                                     </div>
                                 </div>
                             </div>
@@ -211,6 +216,7 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_dob');?>"
                                             name="dob"
                                             type="text">
+										<div class="error-dob"></div>
                                     </div>
                                 </div>
                             </div>
@@ -231,6 +237,7 @@ $get_animate='';
                                             <?= lang('Main.xin_gender_female');?>
                                         </option>
                                     </select>
+									<div class="error-gender"></div>
                                 </div>
                             </div>
                             
@@ -253,6 +260,7 @@ $get_animate='';
 										<?= lang('Employees.xin_status_divorced_separated');?>
 										</option>
 									</select>
+									<div class="error-marital_status"></div>
                                 </div>
                             </div>
 							<div class="col-md-4">
@@ -261,6 +269,7 @@ $get_animate='';
 								<?= lang('Main.xin_state');?>
 							  </label>
 							  <input class="form-control" placeholder="<?= lang('Main.xin_state');?>" name="state" type="text" value="">
+							  <div class="error-state"></div>
 							</div>
 						  </div>
 						  <div class="col-md-4">
@@ -269,6 +278,7 @@ $get_animate='';
 								<?= lang('Main.xin_city');?>
 							  </label>
 							  <input class="form-control" placeholder="<?= lang('Main.xin_city');?>" name="city" type="text" value="">
+							  <div class="error-city"></div>
 							</div>
 						  </div>
 						  <div class="col-md-4">
@@ -277,6 +287,7 @@ $get_animate='';
 								<?= lang('Main.xin_zipcode');?>
 							  </label>
 							  <input class="form-control" placeholder="<?= lang('Main.xin_zipcode');?>" name="zipcode" type="text" value="">
+							  <div class="error-zipcode"></div>
 							</div>
 						  </div>
                             <div class="col-md-4">
@@ -295,7 +306,7 @@ $get_animate='';
 										</option>
 										<?php } ?>
 									  </select>
-											
+										<div class="error-religion"></div>	
                                     </div>
                                 </div>
                             </div>
@@ -315,6 +326,7 @@ $get_animate='';
 											</option>
 											<?php } ?>
 										</select>
+										<div class="error-country"></div>
                                     </div>
                                 </div>
                             </div>
@@ -354,6 +366,7 @@ $get_animate='';
 												placeholder="<?= lang('Main.xin_experience_1');?>"
 												name="experience_1"
 												type="text">
+											<div class="error-experience_1"></div>
 										</div>
 								</div>
 							</div>
@@ -370,6 +383,7 @@ $get_animate='';
 													placeholder="<?= lang('Main.xin_experience_2');?>"
 													name="experience_2"
 													type="text">
+												
 											</div>
 									</div>
 								</div>
@@ -408,6 +422,7 @@ $get_animate='';
 												placeholder="<?= lang('Main.xin_education_high_school');?>"
 												name="high_school"
 												type="text">
+											<div class="error-high_school"></div>
 										</div>
 								</div>
 							</div>
@@ -424,6 +439,7 @@ $get_animate='';
 													placeholder="<?= lang('Main.xin_education_degree');?>"
 													name="degree"
 													type="text">
+												<div class="error-degree"></div>
 											</div>
 									</div>
 								</div>
@@ -440,6 +456,7 @@ $get_animate='';
 														placeholder="<?= lang('Main.xin_education_other');?>"
 														name="other_education"
 														type="text">
+													
 												</div>
 										</div>
 									</div>
@@ -488,6 +505,7 @@ $get_animate='';
 											<small>
 												<?= lang('Main.xin_company_file_type');?>
 											</small>
+											<div class="error-resume"></div>
 										</div>
 								</div>
 							</div>
@@ -507,6 +525,7 @@ $get_animate='';
 											<small>
 												<?= lang('Main.xin_company_file_type');?>
 											</small>
+											<div class="error-passport"></div>
 										</div>
 								</div>
 							</div>
@@ -526,6 +545,7 @@ $get_animate='';
 												<small>
 													<?= lang('Main.xin_company_file_type');?>
 												</small>
+												<div class="error-education_certificate"></div>
 											</div>
 									</div>
 								</div>
@@ -545,6 +565,7 @@ $get_animate='';
 											<small>
 												<?= lang('Main.xin_company_file_type');?>
 											</small>
+											<div class="error-experience_certificate"></div>
 											</div>
 									</div>
 								</div>
@@ -564,6 +585,7 @@ $get_animate='';
 											<small>
 												<?= lang('Main.xin_company_file_type');?>
 											</small>
+											<div class="error-police_clearance_certificate"></div>
 										</div>
 								</div>
 							</div>

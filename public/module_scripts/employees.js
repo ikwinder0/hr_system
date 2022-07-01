@@ -305,12 +305,7 @@ var v = $(".add_employee_form").validate({
 
     },
 	errorPlacement: function(error, element) {
-      var placement = $(element).data('error');
-      if (placement) {
-        $(placement).append(error)
-      } else {
-        error.insertAfter(element);
-      }
+        $('.error-'+element.attr("name")).append(error);
     },
     
       //errorElement: "div",
