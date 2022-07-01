@@ -143,8 +143,9 @@ $get_animate='';
                                             class="form-control"
                                             placeholder="<?= lang('Main.xin_employee_first_name');?>"
                                             name="first_name">
-										<div class="error-first_name"></div>
+										
                                     </div>
+									<div class="error-first_name"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -161,8 +162,9 @@ $get_animate='';
                                             class="form-control"
                                             placeholder="<?= lang('Main.xin_employee_last_name');?>"
                                             name="last_name">
-										<div class="error-last_name"></div>
+										
                                     </div>
+									<div class="error-last_name"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -180,8 +182,9 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_email');?>"
                                             name="email"
                                             type="text">
-										<div class="error-email"></div>
+										
                                     </div>
+									<div class="error-email"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -198,8 +201,9 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_contact_number');?>"
                                             name="contact_number"
                                             type="text">
-										<div class="error-contact_number"></div>
+										
                                     </div>
+									<div class="error-contact_number"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -216,8 +220,9 @@ $get_animate='';
                                             placeholder="<?= lang('Main.xin_dob');?>"
                                             name="dob"
                                             type="text">
-										<div class="error-dob"></div>
+										
                                     </div>
+									<div class="error-dob"></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -366,8 +371,9 @@ $get_animate='';
 												placeholder="<?= lang('Main.xin_experience_1');?>"
 												name="experience_1"
 												type="text">
-											<div class="error-experience_1"></div>
+											
 										</div>
+										<div class="error-experience_1"></div>
 								</div>
 							</div>
 								<div class="col-md-4">
@@ -422,8 +428,9 @@ $get_animate='';
 												placeholder="<?= lang('Main.xin_education_high_school');?>"
 												name="high_school"
 												type="text">
-											<div class="error-high_school"></div>
+											
 										</div>
+										<div class="error-high_school"></div>
 								</div>
 							</div>
 								<div class="col-md-4">
@@ -439,8 +446,9 @@ $get_animate='';
 													placeholder="<?= lang('Main.xin_education_degree');?>"
 													name="degree"
 													type="text">
-												<div class="error-degree"></div>
+												
 											</div>
+											<div class="error-degree"></div>
 									</div>
 								</div>
 									<div class="col-md-4">
