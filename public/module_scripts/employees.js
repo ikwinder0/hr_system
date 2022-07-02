@@ -317,8 +317,7 @@ $(document).on('click','.next',function () {
 	}
 });
 $(".previous").click(function () {
-	if (animating) return false;
-	animating = true;
+	
 	current_fs = $(this).parent().parent().parent().parent().parent();
 	previous_fs = $(this).parent().parent().parent().parent().parent().prev();
 	$(".step-anchor li").eq($("fieldset").index(current_fs)).removeClass("active");
