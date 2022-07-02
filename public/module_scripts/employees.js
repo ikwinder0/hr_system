@@ -286,7 +286,7 @@ var v = $(".add_employee_form").validate({
 var current_fs, next_fs, previous_fs; 
 var left, opacity, scale; 
 var animating;
-$(".next").click(function () {
+$(document).on('click','.next',function () {
 	//var form = $(".add_employee_form");
 	if (animating) return false;
 	animating = true;
