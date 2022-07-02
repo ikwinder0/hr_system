@@ -311,8 +311,8 @@ $(document).on('click','.next',function () {
 				'opacity': opacity
 			});
 		},
-		duration: 600,
-		easing: 'easeInOutBack'
+		duration: 600
+		
 	});
 	}
 });
@@ -336,8 +336,8 @@ $(".previous").click(function () {
 				'opacity': opacity
 			});
 		},
-		duration: 600,
-		easing: 'easeInOutBack'
+		duration: 600
+		
 	});
 });
 
