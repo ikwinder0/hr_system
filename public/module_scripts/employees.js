@@ -305,7 +305,8 @@ $(document).on('click','.next',function () {
 			opacity = 1 - now;
 			current_fs.css({
 				'transform': 'scale(' + scale + ')',
-				'position': 'absolute'
+				'display': 'none',
+                'position': 'relative'
 			});
 			next_fs.css({
 				'opacity': opacity
@@ -329,7 +330,10 @@ $(".previous").click(function () {
 			scale = 0.8 + (1 - now) * 0.2;
 			
 			opacity = 1 - now;
-	
+	        current_fs.css({
+			'display': 'none',
+			'position': 'relative'
+			});
 			previous_fs.css({
 				'transform': 'scale(' + scale + ')',
 				'opacity': opacity
