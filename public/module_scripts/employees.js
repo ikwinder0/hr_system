@@ -287,9 +287,8 @@ var current_fs, next_fs, previous_fs;
 var left, opacity, scale; 
 var animating;
 $(document).on('click','.next',function () {
-	//var form = $(".add_employee_form");
-	if (animating) return false;
-	animating = true;
+	
+
 	current_fs = $(this).parent().parent().parent().parent().parent();
 	console.log(current_fs);
 	next_fs = $(this).parent().parent().parent().parent().parent().next();
@@ -312,18 +311,12 @@ $(document).on('click','.next',function () {
 				'opacity': opacity
 			});
 		},
-		duration: 800,
-		complete: function () {
-			current_fs.hide();
-			animating = false;
-		},
-		easing: 'easeInOutBack'
+		duration: 800
 	});
 	}
 });
 $(".previous").click(function () {
-	if (animating) return false;
-	animating = true;
+	
 	current_fs = $(this).parent().parent().parent().parent().parent();
 	previous_fs = $(this).parent().parent().parent().parent().parent().prev();
 	$(".step-anchor li").eq($("fieldset").index(current_fs)).removeClass("active");
@@ -341,12 +334,7 @@ $(".previous").click(function () {
 				'opacity': opacity
 			});
 		},
-		duration: 800,
-		complete: function () {
-			current_fs.hide();
-			animating = false;
-		},
-		easing: 'easeInOutBack'
+		duration: 800
 	});
 });
 
