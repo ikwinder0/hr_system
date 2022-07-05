@@ -1007,7 +1007,7 @@ function floatchart() {
 				var options = {
 					chart: {
 						height: 365,
-						type: 'line',
+						type: 'bar',
 						stacked: false,
 					},
 					stroke: {
