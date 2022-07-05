@@ -1005,54 +1005,21 @@ function floatchart() {
 			dataType: "json",
 			success: function(response) {
 				var options = {
-					chart: {
-						height: 365,
-						type: 'bar',
-						stacked: false,
-					},
-					stroke: {
-						width: [0, 3],
-						curve: 'smooth'
-					},
-					plotOptions: {
-						bar: {
-							columnWidth: '50%'
-						}
-					},
-					colors: ['#7267EF', '#c7d9ff'],
-					series: [{
-						name: response.paid_inv_label,
-						type: 'column',
-						data: response.payroll_amount
-					}],
-					fill: {
-						opacity: [0.85, 1],
-					},
-					labels: response.payslip_month,
-					markers: {
-						size: 0
-					},
-					xaxis: {
-						type: 'month'
-					},
-					yaxis: {
-						min: 0
-					},
-					legend: {
-						labels: {
-							useSeriesColors: true
-						},
-						markers: {
-							customHTML: [
-								function() {
-									return ''
-								},
-								function() {
-									return ''
-								}
-							]
-						}
-					}
+				  chart: {
+					type: 'bar'
+				  },
+				  series: [{
+					data: [{
+					  x: 'category A',
+					  y: 10
+					}, {
+					  x: 'category B',
+					  y: 18
+					}, {
+					  x: 'category C',
+					  y: 13
+					}]
+				  }]
 				};
 				var chart = new ApexCharts(document.querySelector("#erp-payroll-chart"), options);
 				chart.render();
