@@ -43,7 +43,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
     <div class="row">
       <div class="col-xl-12 col-md-12">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
              <div class="card flat-card">
 				  <div class="row-table">
 					<div class="col-sm-6 card-body br">
@@ -85,23 +85,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 				  </div>
 				</div>
           </div>
-          <div class="col-sm-6">
-            <div class="card prod-p-card background-pattern">
-              <div class="card-body">
-                <div class="row align-items-center m-b-0">
-                  <div class="col">
-                    <h6 class="m-b-5">
-                      <?= lang('Projects.xin_total_projects');?>
-                    </h6>
-                    <h3 class="m-b-0">
-                      <?= $total_projects;?>
-                    </h3>
-                  </div>
-                  <div class="col-auto"> <i class="fas fa-money-bill-alt text-primary"></i> </div>
-                </div>
-              </div>
-            </div>
-          </div>
+       
         </div>
         
         <div class="row">
