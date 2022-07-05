@@ -129,7 +129,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
              <div class="card">
 			  <div class="card-header">
 				<h5>
-				  <?= lang('Payroll.xin_payroll_monthly_report');?>
+				  Dashboard
 				</h5>
 			  </div>
 			  <div class="card-body">
