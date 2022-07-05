@@ -97,22 +97,6 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 				</h5>
 			  </div>
 			  <div class="card-body">
-				<div class="row pb-2">
-				  <div class="col-auto m-b-10">
-					<h3 class="mb-1">
-					  <?= number_to_currency(total_payroll(), $xin_system['default_currency'],null,2);?>
-					</h3>
-					<span>
-					<?= lang('Main.xin_total');?>
-					</span> </div>
-				  <div class="col-auto m-b-10">
-					<h3 class="mb-1">
-					  <?= number_to_currency(payroll_this_month(), $xin_system['default_currency'],null,2);?>
-					</h3>
-					<span>
-					<?= lang('Payroll.xin_payroll_this_month');?>
-					</span> </div>
-				</div>
 				<div id="erp-payroll-chart"></div>
 			  </div>
 			</div>
