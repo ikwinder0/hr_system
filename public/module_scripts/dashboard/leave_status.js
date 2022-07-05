@@ -1010,14 +1010,26 @@ function floatchart() {
 				  },
 				  series: [{
 					data: [{
-					  x: 'category A',
-					  y: 10
+					  x: 'Total Candidate Applied',
+					  y: 500
 					}, {
-					  x: 'category B',
-					  y: 18
+					  x: 'Total Candidate Screened',
+					  y: 100
 					}, {
-					  x: 'category C',
-					  y: 13
+					  x: 'Shortlisted',
+					  y: 50
+					}, {
+					  x: 'Selected',
+					  y: 40
+					}, {
+					  x: 'Visa Aprroved',
+					  y: 35
+					}, {
+					  x: 'Ticket Issue',
+					  y: 35
+					}, {
+					  x: 'Travelled',
+					  y: 35
 					}]
 				  }]
 				};
