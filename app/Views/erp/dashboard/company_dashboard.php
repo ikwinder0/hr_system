@@ -54,7 +54,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $total_tickets;?>
 						  </h5>
 						  <span>
-						  <?= lang('Dashboard.left_tickets');?>
+						  Total Candidate Applied
 						  </span> </div>
 					  </div>
 					</div>
@@ -66,7 +66,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $open;?>
 						  </h5>
 						  <span>
-						  <?= lang('Main.xin_open');?>
+						  Total Candidate Screened
 						  </span> </div>
 					  </div>
 					</div>
@@ -78,7 +78,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $closed;?>
 						  </h5>
 						  <span>
-						  <?= lang('Main.xin_closed');?>
+						  Shortlisted
 						  </span> </div>
 					  </div>
 					</div>
@@ -90,7 +90,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $total_tickets;?>
 						  </h5>
 						  <span>
-						  <?= lang('Dashboard.left_tickets');?>
+						  Selected
 						  </span> </div>
 					  </div>
 					</div>
@@ -102,7 +102,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $open;?>
 						  </h5>
 						  <span>
-						  <?= lang('Main.xin_open');?>
+						  Visa Approved
 						  </span> </div>
 					  </div>
 					</div>
@@ -114,7 +114,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $closed;?>
 						  </h5>
 						  <span>
-						  <?= lang('Main.xin_closed');?>
+						  Ticket Issued
 						  </span> </div>
 					  </div>
 					</div>
