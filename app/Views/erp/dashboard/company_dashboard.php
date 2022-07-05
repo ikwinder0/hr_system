@@ -38,7 +38,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 ?>
 
 <div class="row">
-  <div class="col-xl-6 col-md-12">
+  <div class="col-xl-12 col-md-12">
     
     <div class="row">
       <div class="col-xl-12 col-md-12">
@@ -90,148 +90,35 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
         
         <div class="row">
           <div class="col-xl-12 col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-auto">
-                    <h6>
-                      <?= lang('Dashboard.xin_staff_attendance');?>
-                    </h6>
-                  </div>
-                  <div class="col">
-                    <div class="dropdown float-right">
-                      <?= date('d F, Y');?>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6 pr-0">
-                    <h6 class="my-3"><i class="feather icon-users f-20 mr-2 text-primary"></i>
-                      <?= lang('Dashboard.xin_total_staff');?>
-                    </h6>
-                    <h6 class="my-3"><i class="feather icon-user f-20 mr-2 text-success"></i>
-                      <?= lang('Attendance.attendance_present');?>
-                      <span class="text-success ml-2 f-14"><i class="feather icon-arrow-up"></i></span></h6>
-                    <h6 class="my-3"><i class="feather icon-user f-20 mr-2 text-danger"></i>
-                      <?= lang('Attendance.attendance_absent');?>
-                      <span class="text-danger ml-2 f-14"><i class="feather icon-arrow-down"></i></span></h6>
-                  </div>
-                  <div class="col-6">
-                    <div id="staff-attendance-chart" class="chart-percent text-center"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+             <div class="card">
+			  <div class="card-header">
+				<h5>
+				  <?= lang('Payroll.xin_payroll_monthly_report');?>
+				</h5>
+			  </div>
+			  <div class="card-body">
+				<div class="row pb-2">
+				  <div class="col-auto m-b-10">
+					<h3 class="mb-1">
+					  <?= number_to_currency(total_payroll(), $xin_system['default_currency'],null,2);?>
+					</h3>
+					<span>
+					<?= lang('Main.xin_total');?>
+					</span> </div>
+				  <div class="col-auto m-b-10">
+					<h3 class="mb-1">
+					  <?= number_to_currency(payroll_this_month(), $xin_system['default_currency'],null,2);?>
+					</h3>
+					<span>
+					<?= lang('Payroll.xin_payroll_this_month');?>
+					</span> </div>
+				</div>
+				<div id="erp-payroll-chart"></div>
+			  </div>
+			</div>
           </div>
         </div>
        
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-6 col-md-12">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card prod-p-card background-pattern">
-          <div class="card-body">
-            <div class="row align-items-center m-b-0">
-              <div class="col">
-                <h6 class="m-b-5">
-                  <?= lang('Dashboard.xin_total_employees');?>
-                </h6>
-                <h3 class="m-b-0">
-                  <?= $total_staff;?>
-                </h3>
-              </div>
-              <div class="col-auto"> <i class="fas fa-money-bill-alt text-primary"></i> </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card prod-p-card bg-primary background-pattern-white">
-          <div class="card-body">
-            <div class="row align-items-center m-b-0">
-              <div class="col">
-                <h6 class="m-b-5 text-white">
-                  <?= lang('Finance.xin_total_expense');?>
-                </h6>
-                <h3 class="m-b-0 text-white">
-                  <?= number_to_currency(total_expense(), $xin_system['default_currency'],null,2);?>
-                </h3>
-              </div>
-              <div class="col-auto"> <i class="fas fa-database text-white"></i> </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <h5>
-          <?= lang('Payroll.xin_payroll_monthly_report');?>
-        </h5>
-      </div>
-      <div class="card-body">
-        <div class="row pb-2">
-          <div class="col-auto m-b-10">
-            <h3 class="mb-1">
-              <?= number_to_currency(total_payroll(), $xin_system['default_currency'],null,2);?>
-            </h3>
-            <span>
-            <?= lang('Main.xin_total');?>
-            </span> </div>
-          <div class="col-auto m-b-10">
-            <h3 class="mb-1">
-              <?= number_to_currency(payroll_this_month(), $xin_system['default_currency'],null,2);?>
-            </h3>
-            <span>
-            <?= lang('Payroll.xin_payroll_this_month');?>
-            </span> </div>
-        </div>
-        <div id="erp-payroll-chart"></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h6>
-          <?= lang('Dashboard.xin_staff_designation_wise');?>
-        </h6>
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col">
-            <div id="designation-wise-chart"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-xl-6 col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <h6>
-              <?= lang('Projects.xin_projects_status');?>
-            </h6>
-            <div class="row d-flex justify-content-center align-items-center">
-              <div class="col">
-                <div id="project-status-chart"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-6 col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <h6>
-              <?= lang('Projects.xin_tasks_status');?>
-            </h6>
-            <div class="row d-flex justify-content-center align-items-center">
-              <div class="col">
-                <div id="task-status-chart"></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
