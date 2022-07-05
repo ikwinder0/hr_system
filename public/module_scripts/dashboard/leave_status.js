@@ -1014,7 +1014,7 @@ function floatchart() {
 					},
 					plotOptions: {
 						bar: {
-							columnWidth: '50%'
+							columnWidth: '30%'
 						}
 					},
 					colors: ['#7267EF', '#c7d9ff'],
