@@ -78,32 +78,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
-            <h5>
-              <?= lang('Dashboard.xin_acc_invoice_payments');?>
-            </h5>
-          </div>
-          <div class="card-body">
-            <div class="row pb-2">
-              <div class="col-auto m-b-10">
-                <h3 class="mb-1">
-                  <?= number_to_currency(erp_total_paid_invoices(), $xin_system['default_currency'],null,2);?>
-                </h3>
-                <span>
-                <?= lang('Invoices.xin_total_paid');?>
-                </span> </div>
-              <div class="col-auto m-b-10">
-                <h3 class="mb-1">
-                  <?= number_to_currency(erp_total_unpaid_invoices(), $xin_system['default_currency'],null,2);?>
-                </h3>
-                <span>
-                <?= lang('Invoices.xin_total_unpaid');?>
-                </span> </div>
-            </div>
-            <div id="paid-invoice-chart"></div>
-          </div>
-        </div>
+        
         <div class="card">
           <div class="card-body">
             <h6>
