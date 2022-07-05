@@ -79,18 +79,6 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
           </div>
         </div>
         
-        <div class="card">
-          <div class="card-body">
-            <h6>
-              <?= lang('Dashboard.xin_staff_department_wise');?>
-            </h6>
-            <div class="row d-flex justify-content-center align-items-center">
-              <div class="col">
-                <div id="department-wise-chart"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="row">
           <div class="col-xl-12 col-md-12">
             <div class="card">
