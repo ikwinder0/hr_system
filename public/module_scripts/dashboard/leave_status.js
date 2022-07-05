@@ -1008,6 +1008,16 @@ function floatchart() {
 				  chart: {
 					type: 'bar'
 				  },
+				  stroke: {
+						width: [0, 3],
+						curve: 'smooth'
+					},
+					plotOptions: {
+						bar: {
+							columnWidth: '50%'
+						}
+					},
+					colors: ['#7267EF', '#c7d9ff'],
 				  series: [{
 					data: [{
 					  x: 'Total Candidate Applied',
