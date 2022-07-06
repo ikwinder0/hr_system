@@ -28,10 +28,14 @@
 	color:red;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 .flat-card .row-table > [class*=col-] {
     display: block;
+}
+
+.card{
+	    word-wrap: unset;
 }
 
 }
