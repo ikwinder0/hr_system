@@ -405,7 +405,7 @@ $get_animate='';
                             <?php } ?>
                         </div>
                     </div>
-				<?php } ?>
+				<?php } ?> 
                     <div class="card-body">
                         <div class="box-datatable table-responsive">
                             <table
