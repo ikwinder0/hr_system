@@ -116,6 +116,18 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 						  </span> </div>
 					  </div>
 					</div>
+					<div class="col-sm-6 card-body">
+					  <div class="row">
+						
+						<div class="col-sm-12 text-md-center">
+						  <h5>
+							<?= $closed;?>
+						  </h5>
+						  <span>
+						  Travelled
+						  </span> </div>
+					  </div>
+					</div>
 				  </div>
 				</div>
           </div>
