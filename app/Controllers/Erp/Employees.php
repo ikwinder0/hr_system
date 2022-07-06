@@ -202,8 +202,12 @@ class Employees extends BaseController {
 		$StaffdetailsModel = new StaffdetailsModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 		
-	    $staff = $UsersModel->where('company_id',$usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
+		if($user_info['user_type'] == 'company') { 
 		
+			$staff = $UsersModel->where('company_id',$usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
+		}else{
+			$staff = $UsersModel->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
+		}
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
 		
 		$data = array();
