@@ -48,8 +48,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 				  <div class="row-table">
 					<div class="col-sm-6 card-body br">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-ticket-alt text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $total_tickets;?>
 						  </h5>
@@ -60,8 +59,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 					</div>
 					<div class="col-sm-6 d-none d-md-table-cell d-lg-table-cell d-xl-table-cell card-body br">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-folder-open text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $open;?>
 						  </h5>
@@ -72,8 +70,8 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 					</div>
 					<div class="col-sm-6 card-body">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-folder text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $closed;?>
 						  </h5>
@@ -84,8 +82,8 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 					</div>
 					<div class="col-sm-6 card-body br">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-ticket-alt text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $total_tickets;?>
 						  </h5>
@@ -96,8 +94,8 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 					</div>
 					<div class="col-sm-6 d-none d-md-table-cell d-lg-table-cell d-xl-table-cell card-body br">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-folder-open text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $open;?>
 						  </h5>
@@ -108,8 +106,8 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 					</div>
 					<div class="col-sm-6 card-body">
 					  <div class="row">
-						<div class="col-sm-4"> <i class="fa fa-folder text-primary mb-1 d-block"></i> </div>
-						<div class="col-sm-8 text-md-center">
+						
+						<div class="col-sm-12 text-md-center">
 						  <h5>
 							<?= $closed;?>
 						  </h5>
