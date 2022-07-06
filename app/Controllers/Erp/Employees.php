@@ -155,16 +155,11 @@ class Employees extends BaseController {
 			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
 			return redirect()->to(site_url('erp/login'));
 		}
-		if($user_info['user_type'] != 'company' && $user_info['user_type']!='staff'){
+		if($user_info['user_type']=='staff'){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
 			return redirect()->to(site_url('erp/desk'));
 		}
-		if($user_info['user_type'] != 'company'){
-			if(!in_array('staff4',staff_role_resource())) {
-				$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
-				return redirect()->to(site_url('erp/desk'));
-			}
-		}
+		
 		$iuser_id = udecode($request->uri->getSegment(3));
 		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
 		if(!$user_val){

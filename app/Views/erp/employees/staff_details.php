@@ -36,13 +36,20 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+if($user_info['user_type'] == 'super_user'){
+	$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
+	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
+	$office_shifts = '';
+	$leave_types = '';
+	$roles = '';
+} else {
+	$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
+	$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
+	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
+	$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
+}
 
-$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
-$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
-$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
-$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
-$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
 $company_id = $usession['sup_user_id'];
 
 
@@ -58,14 +65,14 @@ $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->firs
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $get_animate='';
 //contract custom fields
-$count_module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',5)->orderBy('custom_field_id', 'ASC')->countAllResults();
-$module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',5)->orderBy('custom_field_id', 'ASC')->findAll();
+$count_module_attributes = '';
+$module_attributes = '';
 //basic info custom fields
-$bcount_module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->countAllResults();
-$bmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',8)->orderBy('custom_field_id', 'ASC')->findAll();
+$bcount_module_attributes = '';
+$bmodule_attributes = '';
 //personal info custom fields
-$ccount_module_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',9)->orderBy('custom_field_id', 'ASC')->countAllResults();
-$cmodule_attributes = $Moduleattributes->where('company_id',$company_id)->where('module_id',9)->orderBy('custom_field_id', 'ASC')->findAll();
+$ccount_module_attributes = '';
+$cmodule_attributes = '';
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
