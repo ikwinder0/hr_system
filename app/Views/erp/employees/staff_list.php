@@ -18,12 +18,12 @@ $session = \Config\Services::session();
 $usession = $session->get('sup_username');
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-if($user_info['user_type'] == 'staff'){
-	$departments = $DepartmentModel->where('company_id',$user_info['company_id'])->orderBy('department_id', 'ASC')->findAll();
-	$designations = $DesignationModel->where('company_id',$user_info['company_id'])->orderBy('designation_id', 'ASC')->findAll();
-	$office_shifts = $ShiftModel->where('company_id',$user_info['company_id'])->orderBy('office_shift_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$user_info['company_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$roles = $RolesModel->where('company_id',$user_info['company_id'])->orderBy('role_id', 'ASC')->findAll();
+if($user_info['user_type'] == 'super_user'){
+	$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
+	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
+	$office_shifts = '';
+	$leave_types = '';
+	$roles = '';
 } else {
 	$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
 	$designations = $DesignationModel->where('company_id',$usession['sup_user_id'])->orderBy('designation_id', 'ASC')->findAll();
@@ -109,11 +109,13 @@ $get_animate='';
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-2">
+				<?php if($user_info['user_type'] == 'company') { ?>
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_add_new');?>
                             <?= lang('Dashboard.dashboard_employee');?>
                         </h5>
+					
                         <div class="card-header-right">
                             <a
                                 data-toggle="collapse"
@@ -125,6 +127,7 @@ $get_animate='';
                             </a>
                         </div>
                     </div>
+				<?php } ?>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
