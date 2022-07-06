@@ -436,6 +436,7 @@ $get_animate='';
                 </div>
                 <?php } ?>
                 <div class="card user-profile-list">
+				<?php if($user_info['user_type'] == 'company') { ?>
                     <div class="card-header">
                         <h5>
                             <?= lang('Main.xin_list_all');?>
@@ -462,6 +463,7 @@ $get_animate='';
                             <?php } ?>
                         </div>
                     </div>
+				<?php } ?>
                     <div class="card-body">
                         <div class="box-datatable table-responsive">
                             <table
