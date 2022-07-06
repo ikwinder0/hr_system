@@ -76,7 +76,7 @@ $closed = $TicketsModel->where('company_id',$company_id)->where('ticket_status',
 							<?= $closed;?>
 						  </h5>
 						  <span>
-						  Shortlisted
+						  Short listed
 						  </span> </div>
 					  </div>
 					</div>
