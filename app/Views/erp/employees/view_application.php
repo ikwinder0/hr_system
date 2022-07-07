@@ -83,10 +83,7 @@ $cmodule_attributes = '';
   <div class="col-lg-4">
     <div class="card user-card user-card-1">
       <div class="card-body pb-0">
-        <div class="float-right">
-          <?= $_status?>
-        </div>
-        <div class="user-about-block align-items-center mt-0 mb-3">
+        <div class="user-about-block text-center align-items-center mt-0 mb-3">
           <div class="position-relative d-inline-block"> <img class="img-fluid wid-80" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
           </div>
           <div class="media-body ml-3">
