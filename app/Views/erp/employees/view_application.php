@@ -207,10 +207,10 @@ $cmodule_attributes = '';
 					</div>
 					<div class="col-md-6">
 					    <p class="mb-0 text-muted">
-							<?php if($employee_detail['marital_status']==0): echo 'Single'  endif; ?>
-							<?php if($employee_detail['marital_status']==1): echo 'Married'  endif; ?>
-							<?php if($employee_detail['marital_status']==2): echo 'Widowed'  endif; ?>
-							<?php if($employee_detail['marital_status']==3): echo 'Divorced'  endif; ?>
+							<?php if($employee_detail['marital_status']==0): echo 'Single';  endif; ?>
+							<?php if($employee_detail['marital_status']==1): echo 'Married';  endif; ?>
+							<?php if($employee_detail['marital_status']==2): echo 'Widowed';  endif; ?>
+							<?php if($employee_detail['marital_status']==3): echo 'Divorced';  endif; ?>
 						</p>
 					</div>
 				</div>
