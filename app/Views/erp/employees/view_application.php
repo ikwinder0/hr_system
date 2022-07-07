@@ -156,42 +156,37 @@ $cmodule_attributes = '';
 					</p>
 				  </div>
                 </div>
+				<hr class="">
 				<div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="last_name" class="control-label">
-                        <?= lang('Main.xin_employee_last_name');?>
-                        <span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
-                        <input class="form-control" placeholder="<?= lang('Main.xin_employee_last_name');?>" name="last_name" type="text" value="<?= $result['last_name'];?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="contact_number">
-                        <?= lang('Main.xin_contact_number');?>
-                        <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="<?= lang('Main.xin_contact_number');?>" name="contact_number" type="text" value="<?= $result['contact_number'];?>">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="gender" class="control-label">
-                        <?= lang('Main.xin_employee_gender');?>
-                      </label>
-                      <select class="form-control" name="gender" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                        <option value="1" <?php if($result['gender']==1):?> selected="selected"<?php endif;?>>
-                        <?= lang('Main.xin_gender_male');?>
-                        </option>
-                        <option value="2" <?php if($result['gender']==2):?> selected="selected"<?php endif;?>>
-                        <?= lang('Main.xin_gender_female');?>
-                        </option>
-                      </select>
-                    </div>
-                  </div>
+				  <div class="col-md-6">
+					<h6 class="mb-0"><?= lang('Main.xin_employee_last_name');?></h6>
+				  </div>
+				  <div class="col-md-6">
+					<p class="mb-0 text-muted">
+					  <?= $result['last_name'];?>
+					</p>
+				  </div>
                 </div>
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Main.xin_contact_number');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+							<?= $result['contact_number'];?>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Main.xin_employee_gender');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+							<?= ($result['gender']==1) ? 'Male' : 'Female'; ?>
+						</p>
+					</div>
+				</div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
