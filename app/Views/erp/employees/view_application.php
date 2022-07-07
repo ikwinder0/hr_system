@@ -328,7 +328,7 @@ $cmodule_attributes = '';
 							Others
 						<div>
 						<div class="col-md-6">
-							<?= $employee_detail['other'];?>
+							<?= $employee_detail['other_education'];?>
 						<div>
 					</div>
 						
