@@ -312,7 +312,7 @@ $cmodule_attributes = '';
 							Hight School
 						<div>
 						<div class="col-md-6">
-							<?= $employee_detail['hight_school'];?>
+							<?= $employee_detail['high_school'];?>
 						<div>
 					</div>
 					<div class="row">
@@ -320,7 +320,7 @@ $cmodule_attributes = '';
 							Degree
 						<div>
 						<div class="col-md-6">
-							<?= $employee_detail['hight_school'];?>
+							<?= $employee_detail['degree'];?>
 						<div>
 					</div>
 					<div class="row">
