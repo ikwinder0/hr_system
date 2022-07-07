@@ -274,12 +274,13 @@ $cmodule_attributes = '';
 					</div>
 					<div class="col-md-6">
 					    <p class="mb-0 text-muted">
-							<?php foreach($all_countries as $country) 
-							if($country['country_id'] == $result['country']):?> 
-							
-							<?= $country['country_name'];?>
-                        <?php endif;
-                         } ?>
+							<?php foreach($all_countries as $country) {
+								
+								if($country['country_id'] == $result['country']):?> 
+								<?= $country['country_name'];?>
+								<?php endif;
+								
+							} ?>
 						</p>
 					</div>
 				</div>
