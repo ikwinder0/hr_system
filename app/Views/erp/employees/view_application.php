@@ -122,8 +122,6 @@ $cmodule_attributes = '';
   <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
   <div class="col-lg-8">
     <div class="tab-content" id="user-set-tabContent">
-      
-      <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade show active" id="user-set-basicinfo" role="tabpanel" aria-labelledby="user-set-basicinfo-tab">
         <div class="card">
           <div class="card-header">
@@ -138,29 +136,14 @@ $cmodule_attributes = '';
               <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
 			    <div class="row">
-                  <div class="col-md-6">
-				    <div class="form-group">
-						<label for="logo">
-							<?= lang('Main.xin_position_applied_for');?>
-							<span class="text-danger">*</span>
-						</label>
-						<div class="input-group">
-							<select
-								class="form-control"
-								name="applied_for"
-								data-plugin="select_hrm">
-								<option value="">
-									<?= lang('Employees.xin_select');?>
-								</option>
-								<?php foreach($designations as $job){  ?>
-								<option value="<?= $job['designation_id']; ?>" <?= ($job['designation_id'] == $employee_detail['designation_id']) ? 'selected':''; ?> >
-									<?= $job['designation_name']; ?>
-								</option>
-								<?php }  ?>
-							</select>
-						</div>
-						</div>
-					</div>
+                  <div class="col-md-3">
+					<h6 class="mb-0"><?= lang('Main.xin_position_applied_for');?></h6>
+				  </div>
+				  <div class="col-md-6">
+					<p class="mb-0 text-muted">
+					  <?= $idesignations['designation_name'];?>
+					</p>
+				  </div>
 				</div>
 			
                 <div class="row">
@@ -392,7 +375,7 @@ $cmodule_attributes = '';
           <?= form_close(); ?>
         </div>
       </div>
-      <?php } ?>
+     
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade" id="user-set-picture" role="tabpanel" aria-labelledby="user-set-picture-tab">
         <div class="card">
