@@ -261,7 +261,7 @@ class Employees extends BaseController {
 					
 						$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
 				    }else{
-						if($r['is_active'] == 2){
+						if($r['is_active'] != 1){
 							
 							$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="View Application"><a href="'.site_url('erp/employee-application').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
 					
