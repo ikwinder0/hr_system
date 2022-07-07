@@ -104,7 +104,7 @@ $cmodule_attributes = '';
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
       
         
-        <a class="nav-link list-group-item list-group-item-action" id="user-experience-tab" data-toggle="pill" href="#user-experience" role="tab" aria-controls="user-experience" aria-selected="false"> <span class="f-w-500"><i class="fas fa-laptop-code m-r-10 h5 "></i>
+        <a class="nav-link list-group-item list-group-item-action" id="user-experience-tab" data-toggle="pill" href="#user-experience" role="tab" aria-controls="user-experience" aria-selected="false"> <span class="f-w-500"><i class="fas fa-laptop-code m-r-10"></i>
         Education & Experience
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
      
@@ -295,6 +295,50 @@ $cmodule_attributes = '';
          
         </div>
       </div>
+	  
+	  <div class="tab-pane fade" id="user-experience" role="tabpanel" aria-labelledby="user-experience-tab">
+        <div class="card">
+			<div class="card-header">
+            <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
+              Employee Education & Experience
+              </span></h5>
+				<div class="card-body pb-2">
+					<div class="box-body">
+						<div class="row bs-wizard" style="border-bottom:0;">
+                
+							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
+							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled /*complete*/"><!-- complete -->
+							  <div class="text-center bs-wizard-stepnum">Interview</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled /*active*/"><!-- complete -->
+							  <div class="text-center bs-wizard-stepnum">Feedback</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled"><!-- active -->
+							  <div class="text-center bs-wizard-stepnum">Result</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
       
 	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
         <div class="card">
