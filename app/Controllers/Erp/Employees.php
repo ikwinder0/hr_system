@@ -207,7 +207,7 @@ class Employees extends BaseController {
 		
 		//change application status to in progress
 		
-		if($user_val->is_active == '2'){
+		if($user_val['is_active'] == '2'){
 			$UsersModel->update(['is_active' => 3]);
 		}
 		
