@@ -176,6 +176,42 @@ class Employees extends BaseController {
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	
+	
+	public function view_application()
+	{		
+		$RolesModel = new RolesModel();
+		$UsersModel = new UsersModel();
+		$SystemModel = new SystemModel();
+		$request = \Config\Services::request();
+		$session = \Config\Services::session();
+		
+		$usession = $session->get('sup_username');
+		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+		if(!$session->has('sup_username')){ 
+			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
+			return redirect()->to(site_url('erp/login'));
+		}
+		if($user_info['user_type']!='super_user'){
+			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
+			return redirect()->to(site_url('erp/desk'));
+		}
+		
+		$iuser_id = udecode($request->uri->getSegment(3));
+		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
+		if(!$user_val){
+			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
+			return redirect()->to(site_url('erp/desk'));
+		}
+		$usession = $session->get('sup_username');
+		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$data['title'] = 'Employee Application | '.$xin_system['application_name'];
+		$data['path_url'] = 'employee_details';
+		$data['breadcrumbs'] = 'Employee Application';
+
+		$data['subview'] = view('erp/employees/view_application', $data);
+		return view('erp/layout/layout_main', $data); //page load
+	}
+	
 	// list
 	public function employees_list() {
 
