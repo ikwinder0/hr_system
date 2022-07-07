@@ -98,24 +98,24 @@ $cmodule_attributes = '';
       </div>
       
       <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
+
         <a class="nav-link list-group-item list-group-item-action active" id="user-set-basicinfo-tab" data-toggle="pill" href="#user-set-basicinfo" role="tab" aria-controls="user-set-basicinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
         <?= lang('Main.xin_employee_basic_title');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-picture-tab" data-toggle="pill" href="#user-set-picture" role="tab" aria-controls="user-set-picture" aria-selected="false"> <span class="f-w-500"><i class="feather icon-image m-r-10 h5 "></i>
-        <?= lang('Main.xin_e_details_profile_picture');?>
+      
+        
+        <a class="nav-link list-group-item list-group-item-action" id="user-experience-tab" data-toggle="pill" href="#user-experience" role="tab" aria-controls="user-experience" aria-selected="false"> <span class="f-w-500"><i class="fas fa-laptop-code m-r-10 h5 "></i>
+        Education & Experience
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
-        <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
+     
+
         <a class="nav-link list-group-item list-group-item-action" id="user-set-document-tab" data-toggle="pill" href="#user-set-document" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-plus m-r-10 h5 "></i>
         <?= lang('Employees.xin_documents');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
 		<a class="nav-link list-group-item list-group-item-action" id="user-application-status-tab" data-toggle="pill" href="#user-application-status" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="fas fa-file m-r-10 h5"></i>
         <?= lang('Main.xin_application_status');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        <?php } ?>
+        
       </div>
     </div>
   </div>
