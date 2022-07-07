@@ -299,7 +299,7 @@ $cmodule_attributes = '';
 	  <div class="tab-pane fade" id="user-experience" role="tabpanel" aria-labelledby="user-experience-tab">
         <div class="card">
 			<div class="card-header">
-            <h5><i data-feather="image" class="fas fa-laptop-code wid-20"></i><span class="p-l-5">
+            <h5><i class="fas fa-laptop-code wid-20"></i><span class="p-l-5">
               Employee Education & Experience
               </span></h5>
 				<div class="card-body pb-2">
