@@ -214,6 +214,25 @@ $cmodule_attributes = '';
 						</p>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Employees.xin_ethnicity_type_title');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+						    
+							<?php foreach($religion as $ireligion) {
+							
+								if($ireligion['constants_id']==$employee_detail['religion_id']){
+								
+									echo $ireligion['category_name'];
+								
+					
+					
+						 } } ?>
+						</p>
+					</div>
+				</div>
 				<hr class="">
 				<div class="row">
 					<div class="col-md-6">
@@ -225,6 +244,7 @@ $cmodule_attributes = '';
 						</p>
 					</div>
 				</div>
+				
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
