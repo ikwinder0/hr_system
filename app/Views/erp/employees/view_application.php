@@ -145,7 +145,7 @@ $cmodule_attributes = '';
 					</p>
 				  </div>
 				</div>
-			    <hr class="border-light m-0 mb-3">
+			    <hr class="">
                 <div class="row">
 				  <div class="col-md-6">
 					<h6 class="mb-0"><?= lang('Main.xin_employee_first_name');?></h6>
