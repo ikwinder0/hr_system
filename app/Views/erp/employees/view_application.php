@@ -333,8 +333,36 @@ $cmodule_attributes = '';
 							<?= ($employee_detail['other_education']) ? $employee_detail['other_education'] : 'N/A';?>
 						</div>
 					</div>
-						
-							
+					
+					<hr>
+					<h4>Experience</h4>
+					<hr class="border-light m-0 mb-3">
+					<div class="row">
+						<div class="col-md-6">
+							Experience 1
+						</div>
+						<div class="col-md-6">
+							<?= ($employee_detail['experience_1']) ? $employee_detail['experience_1'] : 'N/A';?>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+							Experience 2
+						</div>
+						<div class="col-md-6">
+							<?= ($employee_detail['experience_2']) ? $employee_detail['experience_2'] : 'N/A';?>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+							Experience 3
+						</div>
+						<div class="col-md-6">
+							<?= ($employee_detail['experience_3']) ? $employee_detail['experience_3'] : 'N/A';?>
+						</div>
+					</div>		
 						
 					</div>
 				</div>
