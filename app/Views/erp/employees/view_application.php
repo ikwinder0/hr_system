@@ -167,6 +167,7 @@ $cmodule_attributes = '';
 					</p>
 				  </div>
                 </div>
+				<hr class="">
 				<div class="row">
 					<div class="col-md-6">
                         <h6 class="mb-0"><?= lang('Main.xin_contact_number');?></h6>
@@ -177,6 +178,7 @@ $cmodule_attributes = '';
 						</p>
 					</div>
 				</div>
+				<hr class="">
 				<div class="row">
 					<div class="col-md-6">
                         <h6 class="mb-0"><?= lang('Main.xin_employee_gender');?></h6>
@@ -184,6 +186,42 @@ $cmodule_attributes = '';
 					<div class="col-md-6">
 					    <p class="mb-0 text-muted">
 							<?= ($result['gender']==1) ? 'Male' : 'Female'; ?>
+						</p>
+					</div>
+				</div>
+				<hr class="">
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Employees.xin_employee_dob');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+							<?= $employee_detail['date_of_birth'];?>
+						</p>
+					</div>
+				</div>
+				<hr class="">
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Employees.xin_employee_mstatus');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+							<?php if($employee_detail['marital_status']==0): echo 'Single'  endif; ?>
+							<?php if($employee_detail['marital_status']==1): echo 'Married'  endif; ?>
+							<?php if($employee_detail['marital_status']==2): echo 'Widowed'  endif; ?>
+							<?php if($employee_detail['marital_status']==3): echo 'Divorced'  endif; ?>
+						</p>
+					</div>
+				</div>
+				<hr class="">
+				<div class="row">
+					<div class="col-md-6">
+                        <h6 class="mb-0"><?= lang('Main.xin_state');?></h6>
+					</div>
+					<div class="col-md-6">
+					    <p class="mb-0 text-muted">
+							<?= $result['state'];?>
 						</p>
 					</div>
 				</div>
