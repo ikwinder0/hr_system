@@ -294,6 +294,7 @@ $routes->get('erp/company-constants/', 'Application::company_constants', ['names
 $routes->get('erp/jobs-dashboard/', 'Recruitment::recruitment_dashboard', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/jobs-list/', 'Recruitment::jobs', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/view-job/(:segment)', 'Recruitment::job_details', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+$routes->get('erp/interview-list/', 'Recruitment::interview_list', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/candidates-list/', 'Recruitment::candidates', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/jobs-interviews/', 'Recruitment::interviews', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/promotion-list/', 'Recruitment::promotions', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
