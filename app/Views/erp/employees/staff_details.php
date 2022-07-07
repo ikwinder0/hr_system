@@ -89,7 +89,9 @@ $cmodule_attributes = '';
         </div>
         <div class="media user-about-block align-items-center mt-0 mb-3">
           <div class="position-relative d-inline-block"> <img class="img-radius img-fluid wid-80" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
+		   <?php if($result['is_active']=='1'): ?>
             <div class="certificated-badge"> <i class="fas fa-certificate text-primary bg-icon"></i> <i class="fas fa-check front-icon text-white"></i> </div>
+			<?php endif; ?>
           </div>
           <div class="media-body ml-3">
             <h6 class="mb-1">
