@@ -312,23 +312,25 @@ $cmodule_attributes = '';
 							Hight School
 						</div>
 						<div class="col-md-6">
-							<?= $employee_detail['high_school'];?>
+							<?= ($employee_detail['high_school']) ? $employee_detail['high_school'] : 'N/A';?>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
 						<div class="col-md-6">
 							Degree
 						</div>
 						<div class="col-md-6">
-							<?= $employee_detail['degree'];?>
+							<?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
 						<div class="col-md-6">
 							Others
 						</div>
 						<div class="col-md-6">
-							<?= $employee_detail['other_education'];?>
+							<?= ($employee_detail['other_education']) ? $employee_detail['other_education'] : 'N/A';?>
 						</div>
 					</div>
 						
