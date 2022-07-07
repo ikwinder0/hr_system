@@ -310,26 +310,26 @@ $cmodule_attributes = '';
 					<div class="row">
 						<div class="col-md-6">
 							Hight School
-						<div>
+						</div>
 						<div class="col-md-6">
 							<?= $employee_detail['high_school'];?>
-						<div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							Degree
-						<div>
+						</div>
 						<div class="col-md-6">
 							<?= $employee_detail['degree'];?>
-						<div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							Others
-						<div>
+						</div>
 						<div class="col-md-6">
 							<?= $employee_detail['other_education'];?>
-						<div>
+						</div>
 					</div>
 						
 							
