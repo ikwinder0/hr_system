@@ -304,36 +304,36 @@ $cmodule_attributes = '';
               </span></h5>
 				<div class="card-body pb-2">
 					<div class="box-body">
-						<div class="row bs-wizard" style="border-bottom:0;">
-                
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
-							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
-							</div>
+						
+					<h4>Education</h4>
+					<hr class="border-light m-0 mb-3">
+					<div class="row">
+						<div class="col-md-6">
+							Hight School
+						<div>
+						<div class="col-md-6">
+							<?= $employee_detail['hight_school'];?>
+						<div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							Degree
+						<div>
+						<div class="col-md-6">
+							<?= $employee_detail['hight_school'];?>
+						<div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							Others
+						<div>
+						<div class="col-md-6">
+							<?= $employee_detail['other'];?>
+						<div>
+					</div>
+						
 							
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/"><!-- complete -->
-							  <div class="text-center bs-wizard-stepnum">Interview</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled /*active*/"><!-- complete -->
-							  <div class="text-center bs-wizard-stepnum">Feedback</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled"><!-- active -->
-							  <div class="text-center bs-wizard-stepnum">Result</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
