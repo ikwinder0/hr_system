@@ -136,7 +136,7 @@ $cmodule_attributes = '';
               <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
 			    <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-6">
 					<h6 class="mb-0"><?= lang('Main.xin_position_applied_for');?></h6>
 				  </div>
 				  <div class="col-md-6">
@@ -145,19 +145,18 @@ $cmodule_attributes = '';
 					</p>
 				  </div>
 				</div>
-			
+			    <hr class="border-light m-0 mb-3">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="company_name">
-                        <?= lang('Main.xin_employee_first_name');?>
-                        <span class="text-danger">*</span> </label>
-                      <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
-                        <input class="form-control" placeholder="<?= lang('Main.xin_employee_first_name');?>" name="first_name" type="text" value="<?= $result['first_name'];?>">
-                      </div>
-                    </div>
-                  </div>
+				  <div class="col-md-6">
+					<h6 class="mb-0"><?= lang('Main.xin_employee_first_name');?></h6>
+				  </div>
+				  <div class="col-md-6">
+					<p class="mb-0 text-muted">
+					  <?= $result['first_name'];?>
+					</p>
+				  </div>
+                </div>
+				<div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="last_name" class="control-label">
