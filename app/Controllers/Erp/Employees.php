@@ -198,10 +198,19 @@ class Employees extends BaseController {
 		
 		$iuser_id = udecode($request->uri->getSegment(3));
 		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
+	
 		if(!$user_val){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
 			return redirect()->to(site_url('erp/desk'));
 		}
+		
+		
+		//change application status to in progress
+		
+		if($iuser_id->is_active == '2'){
+			$UsersModel->update(['is_active' => 3]);
+		}
+		
 		$usession = $session->get('sup_username');
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
 		$data['title'] = 'Employee Application | '.$xin_system['application_name'];
@@ -276,6 +285,8 @@ class Employees extends BaseController {
 				$status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
 		    } elseif($r['is_active'] == 2){
 				$status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>';
+			 } elseif($r['is_active'] == 3){
+				$status = '<span class="badge badge-info">In Progress</span>';
 			} else {
 				$status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>';
 			}
