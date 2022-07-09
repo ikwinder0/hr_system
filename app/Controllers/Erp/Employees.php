@@ -207,9 +207,9 @@ class Employees extends BaseController {
 		
 		//change application status to in progress
 		
-		if($user_val['is_active'] == '2'){
-			$UsersModel->update($iuser_id,['is_active' => 3]);
-		}
+		// if($user_val['is_active'] == '2'){
+			// $UsersModel->update($iuser_id,['is_active' => 3]);
+		// }
 		
 		$usession = $session->get('sup_username');
 		$xin_system = $SystemModel->where('setting_id', 1)->first();

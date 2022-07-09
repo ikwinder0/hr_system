@@ -11,6 +11,7 @@ use App\Models\StaffdetailsModel;
 use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
+use App\Models\JobcandidatesModel;
 use CodeIgniter\HTTP\RequestInterface;
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
@@ -25,6 +26,7 @@ $StaffdetailsModel = new StaffdetailsModel();
 $Moduleattributes = new Moduleattributes();
 $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
+$JobcandidatesModel = new JobcandidatesModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -63,21 +65,14 @@ $idepartment = $DepartmentModel->where('department_id',$employee_detail['departm
 $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->first();
 // user designation
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
-$get_animate='';
-//contract custom fields
-$count_module_attributes = '';
-$module_attributes = '';
-//basic info custom fields
-$bcount_module_attributes = '';
-$bmodule_attributes = '';
-//personal info custom fields
-$ccount_module_attributes = '';
-$cmodule_attributes = '';
+$application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
+
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
 <?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
-<?php if($result['is_active']=='3'): $_status = '<span class="badge badge-light-info">In Progress</span>'; endif; ?>
+
+
 
 <div class="row"> 
   <!-- [] start -->
@@ -119,9 +114,11 @@ $cmodule_attributes = '';
         <a class="nav-link list-group-item list-group-item-action" id="user-set-document-tab" data-toggle="pill" href="#user-set-document" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-plus m-r-10 h5 "></i>
         <?= lang('Employees.xin_documents');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
+		<?php if($application['application_status']=='1'): ?>
 		<a class="nav-link list-group-item list-group-item-action" id="user-application-status-tab" data-toggle="pill" href="#user-application-status" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="fas fa-file m-r-10 h5"></i>
         <?= lang('Main.xin_application_status');?>
         </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
+		<?php endif; ?>
         <?php } ?>
       </div>
     </div>

@@ -350,8 +350,28 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								</select>
 							</div>
 						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<label class = "checkbox-inline">
+									<input type = "checkbox" id = "inlineCheckbox1" value = "option1"> NetBeans IDE
+								 </label>
+								 <label class = "checkbox-inline">
+									<input type = "checkbox" id = "inlineCheckbox2" value = "option2"> Eclipse IDE
+								 </label>
+								 <label class = "checkbox-inline">
+									<input type = "checkbox" id = "inlineCheckbox1" value = "option1"> NetBeans IDE
+								 </label>
+								 <label class = "checkbox-inline">
+									<input type = "checkbox" id = "inlineCheckbox2" value = "option2"> Eclipse IDE
+								 </label>
+							</div>
+						</div>
+						
 						<?php if($application['application_status'] == 1): ?>
-						<div class="row bs-wizard" style="border-bottom:0;">
+						<hr>
+						
+						<!--div class="row bs-wizard" style="border-bottom:0;">
                 
 							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
 							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
@@ -360,27 +380,27 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
 							</div>
 							
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/"><!-- complete -->
+							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
 							  <div class="text-center bs-wizard-stepnum">Interview</div>
 							  <div class="progress"><div class="progress-bar"></div></div>
 							  <a href="#" class="bs-wizard-dot"></a>
 							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
 							</div>
 							
-							<div class="col-md-3 bs-wizard-step disabled /*active*/"><!-- complete -->
+							<div class="col-md-3 bs-wizard-step disabled /*active*/">
 							  <div class="text-center bs-wizard-stepnum">Feedback</div>
 							  <div class="progress"><div class="progress-bar"></div></div>
 							  <a href="#" class="bs-wizard-dot"></a>
 							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
 							</div>
 							
-							<div class="col-md-3 bs-wizard-step disabled"><!-- active -->
+							<div class="col-md-3 bs-wizard-step disabled">
 							  <div class="text-center bs-wizard-stepnum">Result</div>
 							  <div class="progress"><div class="progress-bar"></div></div>
 							  <a href="#" class="bs-wizard-dot"></a>
 							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
 							</div>
-						</div>
+						</div-->
 						<?php endif; ?>
 					</div>
 				</div>
