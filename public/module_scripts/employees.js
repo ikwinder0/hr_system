@@ -23,9 +23,9 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();          
 		},
 		"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-			                console.log(iDisplayIndex);
+			                
                             if(aData[6]  == 2){
-                                $('td',nRow).css('background-color', '#D2D2D2');
+                                $('td',nRow).css('background-color', '#ef8080');
 							}
                             
                         }
