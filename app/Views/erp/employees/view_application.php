@@ -96,7 +96,7 @@ $cmodule_attributes = '';
 				  </div>
 				  <div class="col-md-6">
 					<p class="mb-0 text-muted">
-					  <?= $employee_detail['employee_id'];?>
+					  #<?= $employee_detail['employee_id'];?>
 					</p>
 				  </div>
 				</div>
