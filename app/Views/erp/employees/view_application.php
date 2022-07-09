@@ -341,7 +341,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 					<div class="box-body">
 					    <div class="row">
 							<div class="col-md-6">
-								<select class="app_status" class="form-control">
+								<select class="form-control app_status">
 								
 									<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
 									<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
