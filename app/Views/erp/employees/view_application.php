@@ -79,50 +79,8 @@ $cmodule_attributes = '';
 <?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
 
 <div class="row"> 
-  <!-- [] start -->
-  <div class="col-lg-4">
-    <div class="card user-card user-card-1">
-      <div class="card-body pb-0">
-        <div class="user-about-block text-center align-items-center mt-0 mb-3">
-          <div class="position-relative d-inline-block mb-3"> <img class="img-fluid wid-100" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
-          </div>
-          <div class="media-body ml-3">
-            <h6 class="mb-1">
-              <?= $result['first_name'].' '.$result['last_name']; ?>
-            </h6>
-            <p class="mb-0 text-muted">
-              <?= $idesignations['designation_name'];?>
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
-
-        <a class="nav-link list-group-item list-group-item-action active" id="user-set-basicinfo-tab" data-toggle="pill" href="#user-set-basicinfo" role="tab" aria-controls="user-set-basicinfo" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-text m-r-10 h5 "></i>
-        <?= lang('Main.xin_employee_basic_title');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-      
-        
-        <a class="nav-link list-group-item list-group-item-action" id="user-experience-tab" data-toggle="pill" href="#user-experience" role="tab" aria-controls="user-experience" aria-selected="false"> <span class="f-w-500"><i class="fas fa-laptop-code m-r-10"></i>
-        Education & Experience
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-     
-
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-document-tab" data-toggle="pill" href="#user-set-document" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="feather icon-file-plus m-r-10 h5 "></i>
-        <?= lang('Employees.xin_documents');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-		<a class="nav-link list-group-item list-group-item-action" id="user-application-status-tab" data-toggle="pill" href="#user-application-status" role="tab" aria-controls="user-set-document" aria-selected="false"> <span class="f-w-500"><i class="fas fa-file m-r-10 h5"></i>
-        <?= lang('Main.xin_application_status');?>
-        </span> <span class="float-right"><i class="feather icon-chevron-right"></i></span> </a>
-        
-      </div>
-    </div>
-  </div>
   <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
-  <div class="col-lg-8">
-    <div class="tab-content" id="user-set-tabContent">
-      <div class="tab-pane fade show active" id="user-set-basicinfo" role="tabpanel" aria-labelledby="user-set-basicinfo-tab">
+  <div class="col-md-12 col-lg-12">
         <div class="card">
           <div class="card-header">
             <h5><i data-feather="file-text" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -294,9 +252,6 @@ $cmodule_attributes = '';
           </div>
          
         </div>
-      </div>
-	  
-	  <div class="tab-pane fade" id="user-experience" role="tabpanel" aria-labelledby="user-experience-tab">
         <div class="card">
 			<div class="card-header">
             <h5><i class="fas fa-laptop-code wid-20"></i><span class="p-l-5">
@@ -368,7 +323,6 @@ $cmodule_attributes = '';
 				</div>
 			</div>
 		</div>
-	  </div>
       
 	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
         <div class="card">
@@ -438,7 +392,6 @@ $cmodule_attributes = '';
         </div>
       </div>
       <?php } ?>
-    </div>
   </div>
   <!-- [] end --> 
 </div>
