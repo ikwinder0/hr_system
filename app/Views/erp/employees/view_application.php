@@ -350,20 +350,20 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								</select>
 							</div>
 						</div>
-						
+						<hr>
 						<div class="row">
 							<div class="col-md-12">
-								<label class = "checkbox-inline">
-									<input type = "checkbox" id = "inlineCheckbox1" value = "option1"> NetBeans IDE
+								<label class = "checkbox-inline mr-4">
+									<input type = "checkbox" id = "inlineCheckbox1" value = "1"> Pre-Screening
+								 </label>
+								 <label class = "checkbox-inline mr-4">
+									<input type = "checkbox" id = "inlineCheckbox2" value = "2"> Interview
+								 </label>
+								 <label class = "checkbox-inline mr-4">
+									<input type = "checkbox" id = "inlineCheckbox3" value = "3"> Feedback
 								 </label>
 								 <label class = "checkbox-inline">
-									<input type = "checkbox" id = "inlineCheckbox2" value = "option2"> Eclipse IDE
-								 </label>
-								 <label class = "checkbox-inline">
-									<input type = "checkbox" id = "inlineCheckbox1" value = "option1"> NetBeans IDE
-								 </label>
-								 <label class = "checkbox-inline">
-									<input type = "checkbox" id = "inlineCheckbox2" value = "option2"> Eclipse IDE
+									<input type = "checkbox" id = "inlineCheckbox4" value = "4"> Result
 								 </label>
 							</div>
 						</div>
