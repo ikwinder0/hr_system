@@ -21,7 +21,12 @@ $(document).ready(function() {
         },
 		"fnDrawCallback": function(settings){
 		$('[data-toggle="tooltip"]').tooltip();          
-		}
+		},
+		"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                            
+                                $('tr', nRow).css('background-color', '#D2D2D2');
+                            
+                        }
     });
 	jQuery("#department_id").change(function(){
 		jQuery.get(main_url+"employees/is_designation/"+jQuery(this).val(), function(data, status){

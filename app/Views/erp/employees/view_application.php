@@ -350,6 +350,9 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								</select>
 							</div>
 						</div>
+						
+						
+						<?php if($application['application_status'] == 1): ?>
 						<hr>
 						<div class="row">
 							<div class="col-md-12">
@@ -367,9 +370,6 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								 </label>
 							</div>
 						</div>
-						
-						<?php if($application['application_status'] == 1): ?>
-						<hr>
 						
 						<!--div class="row bs-wizard" style="border-bottom:0;">
                 
