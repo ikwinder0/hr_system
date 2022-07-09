@@ -24,7 +24,7 @@ $(document).ready(function() {
 		},
 		"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
                             
-                                $(nRow).css('background-color', '#D2D2D2');
+                                $('td',nRow).css('background-color', '#D2D2D2');
                             
                         }
     });
