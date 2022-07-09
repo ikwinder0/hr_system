@@ -3176,12 +3176,13 @@ class Employees extends BaseController {
 			$Return['csrf_hash'] = csrf_hash();
 			$UsersModel = new UsersModel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-			if($user_info['user_type'] == 'staff'){
-				$company_id = $user_info['company_id'];
+			if($user_info['user_type'] == 'super_user'){
+				$result = $UsersModel->where('user_id', $id)->delete($id);
 			} else {
 				$company_id = $usession['sup_user_id'];
+				$result = $UsersModel->where('user_id', $id)->where('company_id', $company_id)->delete($id);
 			}
-			$result = $UsersModel->where('user_id', $id)->where('company_id', $company_id)->delete($id);
+			
 			if ($result == TRUE) {
 				$Return['result'] = lang('Success.employee_deleted_success');
 			} else {
