@@ -38,6 +38,7 @@ use App\Models\CompanymembershipModel;
 use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
+use App\Models\JobcandidatesModel;
 
 class Employees extends BaseController {
 
@@ -240,6 +241,7 @@ class Employees extends BaseController {
 		$CountryModel = new CountryModel();
 		$DesignationModel = new DesignationModel();
 		$StaffdetailsModel = new StaffdetailsModel();
+		$JobcandidatesModel = new JobcandidatesModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 		
 		if($user_info['user_type'] == 'company') { 
@@ -260,27 +262,22 @@ class Employees extends BaseController {
 					
 					
 						$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
+						
 				    }else{
-						if($r['is_active'] != 1){
+						
 							
-							$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="View Application"><a href="'.site_url('erp/employee-application').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
+							$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-application').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
 					
 					
-						  $delete = '';
-							
-						}else{
-							
-							$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-details').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
-					
-					
-						    $delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
+						    $delete = '';
 							
 							
-						}
+						
 						
 						
 					}
-
+				$application = $JobcandidatesModel->where('candidate_id', $r['user_id'])->first();
+                $app_status = $application['application_status'];
 			if($r['is_active'] == 1){
 				$status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
 		    } elseif($r['is_active'] == 2){
@@ -327,7 +324,8 @@ class Employees extends BaseController {
 				$r['contact_number'],
 				$gender,
 				$country_info['country_name'],
-				$status
+				$status,
+				$app_status
 			);
 		}
           $output = array(
