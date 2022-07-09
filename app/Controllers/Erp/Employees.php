@@ -630,6 +630,7 @@ class Employees extends BaseController {
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			$company_id = $usession['sup_user_id'];
 			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+			$employee_id = generate_random_employeeid();
 			// set rules
 			$validation->setRules([
 					'applied_for' => 'required',
@@ -990,6 +991,7 @@ class Employees extends BaseController {
 			$designation = $DesignationModel->where('designation_id', $applied_for)->first();
 			$data2 = [
 				'user_id' => $user_id,
+				'employee_id'  => $employee_id,
 				'department_id'  => $designation['department_id'],
 				'designation_id'  => $applied_for,
 				'office_shift_id' => '',

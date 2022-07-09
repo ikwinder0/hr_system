@@ -89,10 +89,17 @@ $cmodule_attributes = '';
           </div>
           <div class="card-body pb-2">
             <div class="box-body">
-              <?php $attributes = array('name' => 'edit_user', 'id' => 'edit_user', 'autocomplete' => 'off');?>
-              <?php $hidden = array('token' => $segment_id);?>
-              <?= form_open('erp/employees/update_basic_info', $attributes, $hidden);?>
               <div class="form-body">
+			    <div class="row">
+                  <div class="col-md-6">
+					<h6 class="mb-0">ID</h6>
+				  </div>
+				  <div class="col-md-6">
+					<p class="mb-0 text-muted">
+					  <?= $employee_detail['employee_id'];?>
+					</p>
+				  </div>
+				</div>
 			    <div class="row">
                   <div class="col-md-6">
 					<h6 class="mb-0"><?= lang('Main.xin_position_applied_for');?></h6>
