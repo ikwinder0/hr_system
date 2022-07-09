@@ -323,8 +323,6 @@ $cmodule_attributes = '';
 				</div>
 			</div>
 		</div>
-      
-	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
         <div class="card">
 			<div class="card-header">
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -366,9 +364,6 @@ $cmodule_attributes = '';
 				</div>
 			</div>
 		</div>
-	  </div>
-      <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-      <div class="tab-pane fade" id="user-set-document" role="tabpanel" aria-labelledby="user-set-document-tab">
         <div class="card user-profile-list">
           <div class="card-header">
             <h5><i data-feather="file-plus" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -390,8 +385,6 @@ $cmodule_attributes = '';
           </div>
           
         </div>
-      </div>
-      <?php } ?>
   </div>
   <!-- [] end --> 
 </div>
