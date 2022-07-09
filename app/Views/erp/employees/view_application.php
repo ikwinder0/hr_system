@@ -323,6 +323,27 @@ $cmodule_attributes = '';
 				</div>
 			</div>
 		</div>
+	    <div class="card user-profile-list">
+          <div class="card-header">
+            <h5><i data-feather="file-plus" class="icon-svg-primary wid-20"></i><span class="p-l-5">
+              <?= lang('Employees.xin_documents');?>
+              </span></h5>
+          </div>
+          <div class="card-body">
+            <div class="box-datatable table-responsive">
+              <table class="table table-striped table-bordered dataTable" id="xin_table_document" style="width:100%;">
+                <thead>
+                  <tr>
+                    <th><?= lang('Employees.xin_document_name');?></th>
+                    <th><?= lang('Employees.xin_document_type');?></th>
+                    <th><?= lang('Employees.xin_document_file');?></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          
+        </div>
         <div class="card">
 			<div class="card-header">
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -364,27 +385,6 @@ $cmodule_attributes = '';
 				</div>
 			</div>
 		</div>
-        <div class="card user-profile-list">
-          <div class="card-header">
-            <h5><i data-feather="file-plus" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Employees.xin_documents');?>
-              </span></h5>
-          </div>
-          <div class="card-body">
-            <div class="box-datatable table-responsive">
-              <table class="table table-striped table-bordered dataTable" id="xin_table_document" style="width:100%;">
-                <thead>
-                  <tr>
-                    <th><?= lang('Employees.xin_document_name');?></th>
-                    <th><?= lang('Employees.xin_document_type');?></th>
-                    <th><?= lang('Employees.xin_document_file');?></th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-          </div>
-          
-        </div>
   </div>
   <!-- [] end --> 
 </div>
