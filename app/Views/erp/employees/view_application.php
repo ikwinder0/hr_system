@@ -11,6 +11,7 @@ use App\Models\StaffdetailsModel;
 use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
+use App\Models\JobcandidatesModel;
 use CodeIgniter\HTTP\RequestInterface;
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
@@ -25,6 +26,7 @@ $StaffdetailsModel = new StaffdetailsModel();
 $Moduleattributes = new Moduleattributes();
 $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
+$JobcandidatesModel = new JobcandidatesModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -36,23 +38,9 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-if($user_info['user_type'] == 'super_user'){
-	$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
-	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
-	$office_shifts = '';
-	$leave_types = '';
-	$roles = '';
-} else {
-	$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
-	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
-	$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
-	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
-	$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
-}
-
+$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
+$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
 $company_id = $usession['sup_user_id'];
-
-
 $all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
 $religion = $ConstantsModel->where('type','religion')->orderBy('constants_id', 'ASC')->findAll();
 
@@ -63,16 +51,8 @@ $idepartment = $DepartmentModel->where('department_id',$employee_detail['departm
 $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->first();
 // user designation
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
-$get_animate='';
-//contract custom fields
-$count_module_attributes = '';
-$module_attributes = '';
-//basic info custom fields
-$bcount_module_attributes = '';
-$bmodule_attributes = '';
-//personal info custom fields
-$ccount_module_attributes = '';
-$cmodule_attributes = '';
+$application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
+
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
@@ -359,6 +339,14 @@ $cmodule_attributes = '';
               </span></h5>
 				<div class="card-body pb-2">
 					<div class="box-body">
+					    <div class="row">
+							<select class="app_status">
+								<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
+								<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
+								<option value="3"<?= ($application['application_status'] == 2) ? 'selected' : ''; ?>>Reject</option>
+							</select>
+						</div>
+						@if($application['application_status'] == 1)
 						<div class="row bs-wizard" style="border-bottom:0;">
                 
 							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
@@ -389,6 +377,7 @@ $cmodule_attributes = '';
 							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
 							</div>
 						</div>
+						@endif
 					</div>
 				</div>
 			</div>
