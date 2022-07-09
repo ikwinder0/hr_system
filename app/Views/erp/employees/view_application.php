@@ -100,6 +100,7 @@ $cmodule_attributes = '';
 					</p>
 				  </div>
 				</div>
+				<hr>
 			    <div class="row">
                   <div class="col-md-6">
 					<h6 class="mb-0"><?= lang('Main.xin_position_applied_for');?></h6>
