@@ -23,7 +23,7 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();          
 		},
 		"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-			                console.log(aData);
+			                console.log(iDisplayIndexFull);
                             if(aData.app_status  == 2){
                                 $('td',nRow).css('background-color', '#D2D2D2');
 							}
