@@ -340,13 +340,17 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 				<div class="card-body pb-2">
 					<div class="box-body">
 					    <div class="row">
-							<select class="app_status">
-								<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
-								<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
-								<option value="3"<?= ($application['application_status'] == 2) ? 'selected' : ''; ?>>Reject</option>
-							</select>
+							<div class="col-md-6">
+								<select class="app_status" class="form-control">
+								
+									<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
+									<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
+									<option value="3"<?= ($application['application_status'] == 2) ? 'selected' : ''; ?>>Reject</option>
+									
+								</select>
+							</div>
 						</div>
-						@if($application['application_status'] == 1)
+						<?php if($application['application_status'] == 1): ?>
 						<div class="row bs-wizard" style="border-bottom:0;">
                 
 							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
@@ -377,7 +381,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
 							</div>
 						</div>
-						@endif
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
