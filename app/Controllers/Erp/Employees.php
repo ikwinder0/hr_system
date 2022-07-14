@@ -225,7 +225,7 @@ class Employees extends BaseController {
 	
 	// status
 	public function application_status() {
-		$Return = [];
+		$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 		$JobcandidatesModel = new JobcandidatesModel();
 		
 		$status = $this->request->getGet('status');
