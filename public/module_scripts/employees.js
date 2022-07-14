@@ -24,7 +24,7 @@ $(document).ready(function() {
 		},
 		"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 			                
-                            if(aData[6]  == 2){
+                            if(aData[6]  == 3){
                                 $('td',nRow).css({'background-color': '#ef8080','color':'#fff'});
 							}
                             
