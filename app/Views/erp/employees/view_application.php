@@ -357,7 +357,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 						
 						<div class="row">
 							<div class="col-md-12">
-								<h5>Schedule Interview</h5>
+								<h5><i class="fas fa-clock wid-20"></i>Schedule Interview</h5>
 								
 								<form>
 								    <div class="form-group">
