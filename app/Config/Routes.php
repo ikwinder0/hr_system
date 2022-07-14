@@ -136,7 +136,7 @@ $routes->get('erp/staff-dashboard/', 'Employees::staff_dashboard', ['namespace' 
 $routes->get('erp/organization-chart/', 'Employees::staff_chart', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/employee-details/(:segment)', 'Employees::staff_details', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/employee-application/(:segment)', 'Employees::view_application', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
-$routes->get('erp/application-status/(:segment)', 'Employees::application_status', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+$routes->get('erp/application-status', 'Employees::application_status', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 // awards
 $routes->get('erp/awards-list/', 'Awards::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/award-view/(:segment)', 'Awards::award_view', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
