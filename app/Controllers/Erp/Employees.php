@@ -233,11 +233,16 @@ class Employees extends BaseController {
 		$user_id = $this->request->getGet('user_id');
 		
 		$res = $JobcandidatesModel->update($user_id,['application_status' => $status]);
-		
+		if($res){
 		$output = array(
-               "error" => '',
 			   "result" => 'Status Changed'
             );
+		}else{
+			$output = array(
+               "error" => 'something went wrong.',
+			   
+            );
+		}
           echo json_encode($output);
           exit();
 		
