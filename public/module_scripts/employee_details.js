@@ -1003,7 +1003,7 @@ $(document).ready(function() {
 		}
     });	
 	
-	$("#app_status").change(function(){
+	$(".app_status").change(function(){
 		
 		var status = $(this).val();
 			
