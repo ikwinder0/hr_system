@@ -360,15 +360,23 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 							<div class="col-md-12">
 								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i>><span class="p-l-5">Schedule Interview</span></h5>
 								
-								<form class="form-inline">
+								<form class="">
+								<div class="row">
+							        <div class="col-md-6">
 								    <div class="form-group">
 										<label>Interview Date</label>
 										<input type="text" name="interview_date" class="form-control">
 									</div>
+									</div>
+								</div>
+								<div class="row">
+							        <div class="col-md-6">
 									<div class="form-group">
 										<label>Interview Time</label>
 										<input type="text" name="interview_time" class="form-control">
 									</div>
+									</div>
+								<div>
 									<div class="form-group">
 										
 										<input type="submit" name="interview_time" class="btn btn-primary" value="Schedule">
