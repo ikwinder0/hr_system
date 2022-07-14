@@ -1008,7 +1008,7 @@ $(document).ready(function() {
 		var status = $(this).val();
 			
 		$.ajax({
-			url: main_url+"erp/employees/application_status",
+			url: main_url+"employees/application_status",
 			type: "GET",
 			data:  {'status':status, 'user_id':$('#user_id').val()},
 			success: function(JSON)
