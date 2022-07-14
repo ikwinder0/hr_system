@@ -358,7 +358,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 						
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i>><span class="p-l-5">Schedule Interview</span></h5>
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Schedule Interview</span></h5>
 								
 								<form class="">
 								<div class="row">
@@ -377,10 +377,14 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 									</div>
 									</div>
 								<div>
+								<div class="row">
+							        <div class="col-md-6">
 									<div class="form-group">
 										
 										<input type="submit" name="interview_time" class="btn btn-primary" value="Schedule">
 									</div>
+									</div>
+								<div>
 								</form>
 							</div>
 						</div>
