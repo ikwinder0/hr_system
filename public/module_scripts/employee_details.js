@@ -1009,7 +1009,7 @@ $(document).ready(function() {
 			
 		$.ajax({
 			url: main_url+"erp/employees/application_status",
-			type: "POST",
+			type: "GET",
 			data:  {'status':status, 'user_id':$('#user_id').val()},
 			success: function(JSON)
 			{
