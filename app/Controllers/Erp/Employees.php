@@ -225,7 +225,7 @@ class Employees extends BaseController {
 	
 	// status
 	public function application_status() {
-		
+		$Return = [];
 		$JobcandidatesModel = new JobcandidatesModel();
 		
 		$status = $this->request->getGet('status');
@@ -234,17 +234,13 @@ class Employees extends BaseController {
 		
 		$res = $JobcandidatesModel->update($user_id,['application_status' => $status]);
 		if($res){
-		$output = array(
-			   "result" => 'Status Changed'
-            );
+		$Return['result'] = 'Status Changed';
+		
 		}else{
-			$output = array(
-               "error" => 'something went wrong.',
-			   
-            );
+			$Return['error'] = 'Something went wrong !';
 		}
-          echo json_encode($output);
-          exit();
+          $this->output($Return);
+          exit;
 		
 	}
 	
