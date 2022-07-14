@@ -354,6 +354,27 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 						
 						<?php if($application['application_status'] == 1): ?>
 						<hr>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h5>Schedule Interview</h5>
+								
+								<form>
+								    <div class="form-group">
+										<label>Interview Date</label>
+										<input type="text" name="interview_date" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Interview Time</label>
+										<input type="text" name="interview_time" class="form-control">
+									</div>
+									<div class="form-group">
+										
+										<input type="submit" name="interview_time" class="btn btn-primary" value="Schedule">
+									</div>
+								</form>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<label class = "checkbox-inline mr-4">
