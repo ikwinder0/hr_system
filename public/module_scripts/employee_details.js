@@ -1019,6 +1019,7 @@ $(document).ready(function() {
 					Ladda.stopAll();
 				} else {
 					toastr.success(JSON.result);
+					window.location.reload();
 				}
 			},
 			error: function() 

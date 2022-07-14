@@ -40,6 +40,7 @@ use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
 
+
 class Employees extends BaseController {
 
 	public function index()
@@ -224,9 +225,22 @@ class Employees extends BaseController {
 	
 	// status
 	public function application_status() {
+		
+		$JobcandidatesModel = new JobcandidatesModel();
+		
 		$status = $this->request->getGet('status');
+		
 		$user_id = $this->request->getGet('user_id');
-		echo $user_id;
+		
+		$res = $JobcandidatesModel->update($user_id,['application_status' => $status]);
+		
+		$output = array(
+               "error" => '',
+			   "result" => 'Status Changed'
+            );
+          echo json_encode($output);
+          exit();
+		
 	}
 	
 	// list
