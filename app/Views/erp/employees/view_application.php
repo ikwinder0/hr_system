@@ -376,7 +376,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 										<input type="text" name="interview_time" class="form-control">
 									</div>
 									</div>
-								<div>
+								</div>
 								<div class="row">
 							        <div class="col-md-6">
 									<div class="form-group">
@@ -384,10 +384,11 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 										<input type="submit" name="interview_time" class="btn btn-primary" value="Schedule">
 									</div>
 									</div>
-								<div>
+								</div>
 								</form>
 							</div>
 						</div>
+						
 						<hr>
 						<div class="row">
 							<div class="col-md-12">
