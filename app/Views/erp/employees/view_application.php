@@ -12,6 +12,7 @@ use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
+use App\Models\JobinterviewsModel;
 use CodeIgniter\HTTP\RequestInterface;
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
@@ -27,6 +28,7 @@ $Moduleattributes = new Moduleattributes();
 $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
 $JobcandidatesModel = new JobcandidatesModel();
+$JobinterviewsModel = new JobinterviewsModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -52,7 +54,7 @@ $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->firs
 // user designation
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
-
+$interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first();
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
@@ -388,7 +390,10 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								</form>
 							</div>
 						</div>
+						<?php endif; ?>
 						
+						
+						<?php if($interview): ?>
 						<hr>
 						<div class="row">
 							<div class="col-md-12">
