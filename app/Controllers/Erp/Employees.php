@@ -224,8 +224,8 @@ class Employees extends BaseController {
 	
 	// status
 	public function application_status() {
-		$status = $this->request->get('status');
-		$user_id = $this->request->get('user_id');
+		$status = $this->request->getGet('status');
+		$user_id = $this->request->getGet('user_id');
 		echo $user_id;
 	}
 	
