@@ -222,6 +222,13 @@ class Employees extends BaseController {
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	
+	// status
+	public function application_status() {
+		$status = $this->request->getPost('status');
+		$user_id = $this->request->getPost('user_id');
+		echo $user_id;
+	}
+	
 	// list
 	public function employees_list() {
 

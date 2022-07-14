@@ -1002,6 +1002,33 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();          
 		}
     });	
+	
+	$("#app_status").change(function(){
+		
+		var status = $(this).val();
+			
+		$.ajax({
+			url: main_url+"erp/employees/application_status",
+			type: "POST",
+			data:  {'status':status, 'user_id':$('#user_id').val()},
+			success: function(JSON)
+			{
+				if (JSON.error != '') {
+					toastr.error(JSON.error);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+				} else {
+					toastr.success(JSON.result);
+				}
+			},
+			error: function() 
+			{
+				toastr.error(JSON.error);
+				$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+			} 	        
+	   });
+	});
 		
 });
 $( document ).on( "click", ".delete", function() {
