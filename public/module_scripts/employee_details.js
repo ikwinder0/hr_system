@@ -1014,12 +1014,17 @@ $(document).ready(function() {
 			success: function(JSON)
 			{
 				if (JSON.error != '') {
+					
 					toastr.error(JSON.error);
-					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					
 					Ladda.stopAll();
+					
 				} else {
+					
 					toastr.success(JSON.result);
+					
 					window.location.reload();
+					
 				}
 			},
 			error: function() 
