@@ -337,6 +337,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
               <?= lang('Main.xin_application_status');?>
               </span></h5>
+			 </div>
 				<div class="card-body pb-2">
 					<div class="box-body">
 					    <div class="row">
@@ -357,9 +358,9 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 						
 						<div class="row">
 							<div class="col-md-12">
-								<h5><i class="fas fa-clock wid-20"></i>Schedule Interview</h5>
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i>><span class="p-l-5">Schedule Interview</span></h5>
 								
-								<form>
+								<form class="form-inline">
 								    <div class="form-group">
 										<label>Interview Date</label>
 										<input type="text" name="interview_date" class="form-control">
@@ -375,6 +376,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 								</form>
 							</div>
 						</div>
+						<hr>
 						<div class="row">
 							<div class="col-md-12">
 								<label class = "checkbox-inline mr-4">
