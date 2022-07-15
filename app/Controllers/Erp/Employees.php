@@ -653,199 +653,199 @@ class Employees extends BaseController {
 			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			$employee_id = generate_random_employeeid();
 			// set rules
-			$validation->setRules([
-					'applied_for' => 'required',
-					'first_name' => 'required',
-					'last_name' => 'required',
-					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
-					'contact_number' => 'required|numeric',
-					'dob' => 'required',
-					'gender' => 'required',
-					'country' => 'required',
-					'marital_status' => 'required',
-					'religion' => 'required',
-					'state' => 'required',
-					'city' => 'required',
-					'zipcode' => 'required',
-				],
-				[   // Errors
-				    'applied_for' => [
-						'required' => lang('Employees.xin_employee_error_applied'),
-					],
-					'first_name' => [
-						'required' => lang('Main.xin_employee_error_first_name'),
-					],
-					'last_name' => [
-						'required' => lang('Main.xin_employee_error_last_name'),
-					],
-					'email' => [
-						'required' => lang('Main.xin_employee_error_email'),
-						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
-						'is_unique' => lang('Main.xin_already_exist_error_email'),
-					],
-					'contact_number' => [
-						'required' => lang('Main.xin_error_contact_field'),
-						'numeric' => lang('Main.xin_error_contact_numeric'),
-					],
-					'dob' => [
-						'required' => lang('Employees.xin_error_dob'),
-					],
-					'gender' => [
-						'required' => lang('Employees.xin_error_gender'),
-					],
-					'country' => [
-						'required' => lang('Employees.xin_error_nationality'),
-					],
-					'marital_status' => [
-						'required' => lang('Employees.xin_error_marital_status'),
-					],
-					'religion' => [
-						'required' => lang('Employees.xin_error_religion'),
-					],
-					'state' => [
-						'required' => lang('Main.xin_error_state_field'),
-					],
-					'city' => [
-						'required' => lang('Main.xin_error_city_field'),
-					],
-					'zipcode' => [
-						'required' => lang('Main.xin_error_zipcode_field'),
-					],
-				]
-			);
+			// $validation->setRules([
+					// 'applied_for' => 'required',
+					// 'first_name' => 'required',
+					// 'last_name' => 'required',
+					// 'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
+					// 'contact_number' => 'required|numeric',
+					// 'dob' => 'required',
+					// 'gender' => 'required',
+					// 'country' => 'required',
+					// 'marital_status' => 'required',
+					// 'religion' => 'required',
+					// 'state' => 'required',
+					// 'city' => 'required',
+					// 'zipcode' => 'required',
+				// ],
+				// [   // Errors
+				    // 'applied_for' => [
+						// 'required' => lang('Employees.xin_employee_error_applied'),
+					// ],
+					// 'first_name' => [
+						// 'required' => lang('Main.xin_employee_error_first_name'),
+					// ],
+					// 'last_name' => [
+						// 'required' => lang('Main.xin_employee_error_last_name'),
+					// ],
+					// 'email' => [
+						// 'required' => lang('Main.xin_employee_error_email'),
+						// 'valid_email' => lang('Main.xin_employee_error_invalid_email'),
+						// 'is_unique' => lang('Main.xin_already_exist_error_email'),
+					// ],
+					// 'contact_number' => [
+						// 'required' => lang('Main.xin_error_contact_field'),
+						// 'numeric' => lang('Main.xin_error_contact_numeric'),
+					// ],
+					// 'dob' => [
+						// 'required' => lang('Employees.xin_error_dob'),
+					// ],
+					// 'gender' => [
+						// 'required' => lang('Employees.xin_error_gender'),
+					// ],
+					// 'country' => [
+						// 'required' => lang('Employees.xin_error_nationality'),
+					// ],
+					// 'marital_status' => [
+						// 'required' => lang('Employees.xin_error_marital_status'),
+					// ],
+					// 'religion' => [
+						// 'required' => lang('Employees.xin_error_religion'),
+					// ],
+					// 'state' => [
+						// 'required' => lang('Main.xin_error_state_field'),
+					// ],
+					// 'city' => [
+						// 'required' => lang('Main.xin_error_city_field'),
+					// ],
+					// 'zipcode' => [
+						// 'required' => lang('Main.xin_error_zipcode_field'),
+					// ],
+				// ]
+			// );
 			
-			$validation->withRequest($this->request)->run();
-			//check error
-			if ($validation->hasError('applied_for')) {
-				$Return['error'] = $validation->getError('applied_for');
-			} elseif ($validation->hasError('first_name')) {
-				$Return['error'] = $validation->getError('first_name');
-			} elseif($validation->hasError('last_name')){
-				$Return['error'] = $validation->getError('last_name');
-			} elseif($validation->hasError('email')){
-				$Return['error'] = $validation->getError('email');
-			} elseif($validation->hasError('contact_number')){
-				$Return['error'] = $validation->getError('contact_number');
-			} elseif($validation->hasError('dob')){
-				$Return['error'] = $validation->getError('dob');
-			} elseif($validation->hasError('gender')){
-				$Return['error'] = $validation->getError('gender');
-			} elseif($validation->hasError('country')){
-				$Return['error'] = $validation->getError('country');
-			} elseif($validation->hasError('marital_status')){
-				$Return['error'] = $validation->getError('marital_status');
-			} elseif($validation->hasError('religion')) {
-				$Return['error'] = $validation->getError('religion');
-			} elseif($validation->hasError('state')) {
-				$Return['error'] = $validation->getError('state');
-			} elseif($validation->hasError('city')) {
-				$Return['error'] = $validation->getError('city');
-			} elseif($validation->hasError('zipcode')) {
-				$Return['error'] = $validation->getError('zipcode');
-			}
+			// $validation->withRequest($this->request)->run();
 			
-			if($Return['error']!=''){
-				$Return['type'] = 'info';
-				$this->output($Return);
-			}
+			// if ($validation->hasError('applied_for')) {
+				// $Return['error'] = $validation->getError('applied_for');
+			// } elseif ($validation->hasError('first_name')) {
+				// $Return['error'] = $validation->getError('first_name');
+			// } elseif($validation->hasError('last_name')){
+				// $Return['error'] = $validation->getError('last_name');
+			// } elseif($validation->hasError('email')){
+				// $Return['error'] = $validation->getError('email');
+			// } elseif($validation->hasError('contact_number')){
+				// $Return['error'] = $validation->getError('contact_number');
+			// } elseif($validation->hasError('dob')){
+				// $Return['error'] = $validation->getError('dob');
+			// } elseif($validation->hasError('gender')){
+				// $Return['error'] = $validation->getError('gender');
+			// } elseif($validation->hasError('country')){
+				// $Return['error'] = $validation->getError('country');
+			// } elseif($validation->hasError('marital_status')){
+				// $Return['error'] = $validation->getError('marital_status');
+			// } elseif($validation->hasError('religion')) {
+				// $Return['error'] = $validation->getError('religion');
+			// } elseif($validation->hasError('state')) {
+				// $Return['error'] = $validation->getError('state');
+			// } elseif($validation->hasError('city')) {
+				// $Return['error'] = $validation->getError('city');
+			// } elseif($validation->hasError('zipcode')) {
+				// $Return['error'] = $validation->getError('zipcode');
+			// }
 			
-			$validation->setRules([
-					'experience_1' => 'required',
-					'high_school' => 'required',
-					'degree' => 'required',
-				],
-				[   // Errors
-					'experience_1' => [
-						'required' => lang('Employees.xin_employee_error_ex1'),
-					],
-					'high_school' => [
-						'required' => lang('Employees.xin_employee_error_school'),
-					],
-					'degree' => [
-						'required' => lang('Employees.xin_employee_error_degree'),
-					],
-				]
-			);
+			// if($Return['error']!=''){
+				// $Return['type'] = 'info';
+				// $this->output($Return);
+			// }
 			
-			$validation->withRequest($this->request)->run();
-			//check error
-			if ($validation->hasError('experience_1')) {
-				$Return['error'] = $validation->getError('experience_1');
-			} elseif($validation->hasError('high_school')){
-				$Return['error'] = $validation->getError('high_school');
-			} elseif($validation->hasError('degree')){
-				$Return['error'] = $validation->getError('degree');
-			}
-			if($Return['error']!=''){
-				$Return['type'] = 'educ';
-				$this->output($Return);
-			}
+			// $validation->setRules([
+					// 'experience_1' => 'required',
+					// 'high_school' => 'required',
+					// 'degree' => 'required',
+				// ],
+				// [   // Errors
+					// 'experience_1' => [
+						// 'required' => lang('Employees.xin_employee_error_ex1'),
+					// ],
+					// 'high_school' => [
+						// 'required' => lang('Employees.xin_employee_error_school'),
+					// ],
+					// 'degree' => [
+						// 'required' => lang('Employees.xin_employee_error_degree'),
+					// ],
+				// ]
+			// );
 			
-			$validation->setRules([
-					'resume' => 'uploaded[resume]|mime_in[resume,image/jpg,image/jpeg,image/gif,image/png]|max_size[resume,4096]',
-					'passport' => 'uploaded[passport]|mime_in[passport,image/jpg,image/jpeg,image/gif,image/png]|max_size[passport,4096]',
-					'education_certificate' => 'uploaded[education_certificate]|mime_in[education_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[education_certificate,4096]',
-					'experience_certificate' => 'uploaded[experience_certificate]|mime_in[experience_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[experience_certificate,4096]',
-					'police_clearance_certificate' => 'uploaded[police_clearance_certificate]|mime_in[police_clearance_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[police_clearance_certificate,4096]',
-				],
-				[   // Errors
-					'resume' => [
-						'uploaded' => lang('Employees.xin_error_resume_field'),
-						'mime_in' => lang('Employees.xin_error_resume_format_field'),
-						'max_size' => lang('Employees.xin_error_resume_size'),
-					],
-					'passport' => [
-						'uploaded' => lang('Employees.xin_error_passport_field'),
-						'mime_in' => lang('Employees.xin_error_passport_format_field'),
-						'max_size' => lang('Employees.xin_error_passport_size'),
-					],
-					'education_certificate' => [
-						'uploaded' => lang('Employees.xin_error_education_certificate_field'),
-						'mime_in' => lang('Employees.xin_error_education_certificate_format_field'),
-						'max_size' => lang('Employees.xin_error_education_certificate_size'),
-					],
-					'experience_certificate' => [
-						'uploaded' => lang('Main.xin_error_experience_certificate_field'),
-						'mime_in' => lang('Main.xin_error_experience_certificate_format'),
-						'max_size' => lang('Main.xin_error_experience_certificate_size'),
-					],
-					'police_clearance_certificate' => [
-						'uploaded' => lang('Main.xin_error_police_clearance_field'),
-						'mime_in' => lang('Main.xin_error_police_clearance_format'),
-						'max_size' => lang('Main.xin_error_police_clearance_size'),
-					],
-				]
-			);
+			// $validation->withRequest($this->request)->run();
 			
-			$validation->withRequest($this->request)->run();
-			//check error
-			if ($validation->hasError('resume')) {
-				$Return['error'] = $validation->getError('resume');
-			} elseif($validation->hasError('passport')){
-				$Return['error'] = $validation->getError('passport');
-			} elseif($validation->hasError('education_certificate')){
-				$Return['error'] = $validation->getError('education_certificate');
-			} elseif($validation->hasError('experience_certificate')){
-				$Return['error'] = $validation->getError('experience_certificate');
-			} elseif($validation->hasError('police_clearance_certificate')){
-				$Return['error'] = $validation->getError('police_clearance_certificate');
-			}
-			if($Return['error']!=''){
-				$Return['type'] = 'attach';
-				$this->output($Return);
-			}
+			// if ($validation->hasError('experience_1')) {
+				// $Return['error'] = $validation->getError('experience_1');
+			// } elseif($validation->hasError('high_school')){
+				// $Return['error'] = $validation->getError('high_school');
+			// } elseif($validation->hasError('degree')){
+				// $Return['error'] = $validation->getError('degree');
+			// }
+			// if($Return['error']!=''){
+				// $Return['type'] = 'educ';
+				// $this->output($Return);
+			// }
+			
+			// $validation->setRules([
+					// 'resume' => 'uploaded[resume]|mime_in[resume,image/jpg,image/jpeg,image/gif,image/png]|max_size[resume,4096]',
+					// 'passport' => 'uploaded[passport]|mime_in[passport,image/jpg,image/jpeg,image/gif,image/png]|max_size[passport,4096]',
+					// 'education_certificate' => 'uploaded[education_certificate]|mime_in[education_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[education_certificate,4096]',
+					// 'experience_certificate' => 'uploaded[experience_certificate]|mime_in[experience_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[experience_certificate,4096]',
+					// 'police_clearance_certificate' => 'uploaded[police_clearance_certificate]|mime_in[police_clearance_certificate,image/jpg,image/jpeg,image/gif,image/png]|max_size[police_clearance_certificate,4096]',
+				// ],
+				// [   // Errors
+					// 'resume' => [
+						// 'uploaded' => lang('Employees.xin_error_resume_field'),
+						// 'mime_in' => lang('Employees.xin_error_resume_format_field'),
+						// 'max_size' => lang('Employees.xin_error_resume_size'),
+					// ],
+					// 'passport' => [
+						// 'uploaded' => lang('Employees.xin_error_passport_field'),
+						// 'mime_in' => lang('Employees.xin_error_passport_format_field'),
+						// 'max_size' => lang('Employees.xin_error_passport_size'),
+					// ],
+					// 'education_certificate' => [
+						// 'uploaded' => lang('Employees.xin_error_education_certificate_field'),
+						// 'mime_in' => lang('Employees.xin_error_education_certificate_format_field'),
+						// 'max_size' => lang('Employees.xin_error_education_certificate_size'),
+					// ],
+					// 'experience_certificate' => [
+						// 'uploaded' => lang('Main.xin_error_experience_certificate_field'),
+						// 'mime_in' => lang('Main.xin_error_experience_certificate_format'),
+						// 'max_size' => lang('Main.xin_error_experience_certificate_size'),
+					// ],
+					// 'police_clearance_certificate' => [
+						// 'uploaded' => lang('Main.xin_error_police_clearance_field'),
+						// 'mime_in' => lang('Main.xin_error_police_clearance_format'),
+						// 'max_size' => lang('Main.xin_error_police_clearance_size'),
+					// ],
+				// ]
+			// );
+			
+			// $validation->withRequest($this->request)->run();
+			
+			// if ($validation->hasError('resume')) {
+				// $Return['error'] = $validation->getError('resume');
+			// } elseif($validation->hasError('passport')){
+				// $Return['error'] = $validation->getError('passport');
+			// } elseif($validation->hasError('education_certificate')){
+				// $Return['error'] = $validation->getError('education_certificate');
+			// } elseif($validation->hasError('experience_certificate')){
+				// $Return['error'] = $validation->getError('experience_certificate');
+			// } elseif($validation->hasError('police_clearance_certificate')){
+				// $Return['error'] = $validation->getError('police_clearance_certificate');
+			// }
+			// if($Return['error']!=''){
+				// $Return['type'] = 'attach';
+				// $this->output($Return);
+			// }
 			
 			$image = \Config\Services::image();
-			$validated = $this->validate([
-				'file' => [
-					'uploaded[file]',
-					'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
-					'max_size[file,4096]',
-				],
-			]);
-			if (!$validated) {
-				$Return['error'] = lang('Employees.xin_staff_picture_field_error');
-			} else {
+			// $validated = $this->validate([
+				// 'file' => [
+					// 'uploaded[file]',
+					// 'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
+					// 'max_size[file,4096]',
+				// ],
+			// ]);
+			// if (!$validated) {
+				// $Return['error'] = lang('Employees.xin_staff_picture_field_error');
+			// } else {
 				
 				$user_image = $this->request->getFile('file');
 				$file_name = $user_image->getName();
@@ -853,11 +853,11 @@ class Employees extends BaseController {
 				$image->withFile(filesrc($file_name))
 				->fit(100, 100, 'center')
 				->save('public/uploads/users/thumb/'.$file_name);
-			}
-			if($Return['error']!=''){
-				$Return['type'] = 'info';
-				$this->output($Return);
-			}
+			// }
+			// if($Return['error']!=''){
+				// $Return['type'] = 'info';
+				// $this->output($Return);
+			// }
 			
 			
 			$applied_for = $this->request->getPost('applied_for',FILTER_SANITIZE_STRING);

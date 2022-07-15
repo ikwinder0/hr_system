@@ -195,7 +195,7 @@ var v = $(".add_employee_form").validate({
         },
         file: {
           required: true,
-		  accept: "image/jpeg,image/png"
+		  accept: "image/jpeg,image/png,image/jpg"
         },
         first_name: {
           required: true,
@@ -257,18 +257,23 @@ var v = $(".add_employee_form").validate({
         },
 		resume: {
           required: true,
+		  extension: "jpg|png|docx|doc|pdf"
         },
 		passport: {
           required: true,
+		  extension: "jpg|png|docx|doc|pdf"
         },
 		education_certificate: {
           required: true,
+		  extension: "jpg|png|docx|doc|pdf"
         },
 		experience_certificate: {
           required: true,
+		  extension: "jpg|png|docx|doc|pdf"
         },
 		police_clearance_certificate: {
           required: true,
+		  extension: "jpg|png|docx|doc|pdf"
         }
 		
         
