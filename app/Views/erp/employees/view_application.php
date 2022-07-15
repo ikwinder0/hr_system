@@ -54,7 +54,7 @@ $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->firs
 // user designation
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
-$interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first();
+$interview = $JobinterviewsModel->where('candiate_id', $result['user_id'])->first();
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
@@ -355,7 +355,7 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
 						</div>
 						
 						
-						<?php if($application['application_status'] == 1): ?>
+						<?php if($application['application_status'] == 1 && !$interview): ?>
 						<hr>
 						
 						<div class="row">
@@ -396,6 +396,13 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
 						
 						
 						<?php if($interview): ?>
+						<div class="row">
+							<div class="col-md-12">
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
+								<br>
+								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?> </p>
+							</div>
+						</div>
 						<hr>
 						<div class="row">
 							<div class="col-md-12">

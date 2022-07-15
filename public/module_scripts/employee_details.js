@@ -1062,6 +1062,7 @@ $(document).ready(function() {
 				if (JSON.error != '') {
 					toastr.error(JSON.error);
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					
 					Ladda.stopAll();
 				} else {
 					
@@ -1069,7 +1070,7 @@ $(document).ready(function() {
 					toastr.success(JSON.result);
 					
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
-					
+					window.location.reload();
 					Ladda.stopAll();
 				}
 			}
