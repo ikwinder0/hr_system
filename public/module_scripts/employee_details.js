@@ -1035,6 +1035,13 @@ $(document).ready(function() {
 			} 	        
 	   });
 	});
+	
+	$('input[type=file]').change(function(){
+		if ($(this).val()!="")
+		{
+			$(this).valid();
+		}
+	});
 		
 });
 $( document ).on( "click", ".delete", function() {
