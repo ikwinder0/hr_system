@@ -67,6 +67,7 @@ $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->firs
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
 $app_status = $application['application_status'];
+$interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->first();
 ?>
 <?php if($app_status=='0'): $_status = '<span class="badge badge-light-info">Pending</span>'; endif; ?>
 <?php if($app_status=='1'): $_status = '<span class="badge badge-light-success">Selected</span>'; endif; ?>
@@ -370,15 +371,23 @@ $app_status = $application['application_status'];
         </div>
       </div>
       <?php }?>
-	  <?php if($application['application_status']=='1'): ?>
+	  <?php if($application['application_status']=='1' && $interview): ?>
 	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
         <div class="card">
 			<div class="card-header">
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
               <?= lang('Main.xin_application_status');?>
               </span></h5>
+			</div>
 				<div class="card-body pb-2">
 					<div class="box-body">
+					    <div class="row mt-5">
+							<div class="col-md-12">
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
+								<br>
+								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?></p>
+							</div>
+						</div>
 						<div class="row bs-wizard" style="border-bottom:0;">
                 
 							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
@@ -413,7 +422,6 @@ $app_status = $application['application_status'];
 				</div>
 			</div>
 		</div>
-	  </div>
 	  <?php endif; ?>
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade" id="user-set-document" role="tabpanel" aria-labelledby="user-set-document-tab">

@@ -400,7 +400,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<div class="col-md-12">
 								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
 								<br>
-								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  <span><i class="fas fa-edit ml-5" role="button"></i></span></p>
+								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  <span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span></p>
 							</div>
 						</div>
 						<hr>
