@@ -272,6 +272,7 @@ class Employees extends BaseController {
 		}else{
 			$staff = $UsersModel->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
 		}
+		
 		$xin_system = $SystemModel->where('setting_id', 1)->first();
 		
 		$data = array();
@@ -300,14 +301,27 @@ class Employees extends BaseController {
 					}
 				$application = $JobcandidatesModel->where('candidate_id', $r['user_id'])->first();
                 $app_status = $application['application_status'];
-			if($r['is_active'] == 1){
-				$status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
-		    } elseif($r['is_active'] == 2){
-				$status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>';
+				if($app_status == 0){
+					
+					$status = '<span class="badge badge-light-info">pending</span>';
+					
+				} elseif($app_status == 1){
+					
+					$status = '<span class="badge badge-light-success">Selected</span>';
+				
+				} else {
+					
+					$status = '<span class="badge badge-light-danger">Rejected</span>';
+				}
 			
-			} else {
-				$status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>';
-			}
+			// if($r['is_active'] == 1){
+				// $status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>';
+		    // } elseif($r['is_active'] == 2){
+				// $status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>';
+			
+			// } else {
+				// $status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>';
+			// }
 			if($r['gender'] == 1){
 				$gender = lang('Main.xin_gender_male');
 			} else {
