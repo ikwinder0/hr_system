@@ -362,6 +362,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
         </div>
       </div>
       <?php }?>
+	  <?php if($application['application_status']=='1'): ?>
 	  <div class="tab-pane fade" id="user-application-status" role="tabpanel" aria-labelledby="user-application-status-tab">
         <div class="card">
 			<div class="card-header">
@@ -405,6 +406,7 @@ $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->f
 			</div>
 		</div>
 	  </div>
+	  <?php endif; ?>
       <?php if(in_array('staff4',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
       <div class="tab-pane fade" id="user-set-document" role="tabpanel" aria-labelledby="user-set-document-tab">
         <div class="card user-profile-list">
