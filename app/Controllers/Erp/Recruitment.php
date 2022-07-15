@@ -821,35 +821,13 @@ class Recruitment extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');	
-		if ($this->request->getPost('type') === 'edit_record') {
+		
 			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 			$Return['csrf_hash'] = csrf_hash();
-			if($this->request->getPost('status') == 3){
-				$status = $this->request->getPost('status',FILTER_SANITIZE_STRING);		
-				$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
-							
-				$Return['csrf_hash'] = csrf_hash();	
-					$data2 = [
-					'application_status'  => $status,
-					];
-				$JobcandidatesModel = new JobcandidatesModel();
-				$result = $JobcandidatesModel->update($id,$data2);
-				if ($result == TRUE) {
-					$Return['result'] = lang('Success.ci_candidate_updated_msg');
-				} else {
-					$Return['error'] = lang('Main.xin_error_msg');
-				}
-				$this->output($Return);
-				exit;
-			} else {
+		
 				// set rules
 				$rules = [
-					'status' => [
-						'rules'  => 'required',
-						'errors' => [
-							'required' => lang('Main.xin_error_field_text')
-						]
-					],
+					
 					'interview_date' => [
 						'rules'  => 'required',
 						'errors' => [
@@ -862,33 +840,16 @@ class Recruitment extends BaseController {
 							'required' => lang('Main.xin_error_field_text')
 						]
 					],
-					'interview_place' => [
-						'rules'  => 'required',
-						'errors' => [
-							'required' => lang('Main.xin_error_field_text')
-						]
-					],
-					'interviewer_id' => [
-						'rules'  => 'required',
-						'errors' => [
-							'required' => lang('Success.xin_interviewer_field_error')
-						]
-					],
-					'description' => [
-						'rules'  => 'required',
-						'errors' => [
-							'required' => lang('Main.xin_error_field_text')
-						]
-					]
+					
+					
+			
 				];
+				
 				if(!$this->validate($rules)){
 					$ruleErrors = [
-						"status" => $validation->getError('status'),
+					
 						"interview_date" => $validation->getError('interview_date'),
 						"interview_time" => $validation->getError('interview_time'),
-						"interview_place" => $validation->getError('interview_place'),
-						"interviewer_id" => $validation->getError('interviewer_id'),
-						"description" => $validation->getError('description')
 					];
 					foreach($ruleErrors as $err){
 						$Return['error'] = $err;
@@ -897,35 +858,29 @@ class Recruitment extends BaseController {
 						}
 					}
 				} else {
+					
 					$interview_date = $this->request->getPost('interview_date',FILTER_SANITIZE_STRING);
 					$interview_time = $this->request->getPost('interview_time',FILTER_SANITIZE_STRING);
-					$interview_place = $this->request->getPost('interview_place',FILTER_SANITIZE_STRING);
-					$interviewer_id = $this->request->getPost('interviewer_id',FILTER_SANITIZE_STRING);
-					$description = $this->request->getPost('description',FILTER_SANITIZE_STRING);
-					$status = $this->request->getPost('status',FILTER_SANITIZE_STRING);		
+					
+					$status = 1;		
 					$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
 						
 					$UsersModel = new UsersModel();
 					$JobsModel = new JobsModel();
 					$JobcandidatesModel = new JobcandidatesModel();
 					$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-					if($user_info['user_type'] == 'staff'){
-						$company_id = $user_info['company_id'];
-					} else {
-						$company_id = $usession['sup_user_id'];
-					}
+					
+					$company_id = $usession['sup_user_id'];
+					
 					$job_opt = $JobcandidatesModel->where('candidate_id', $id)->first();
 					$data = [
-						'company_id'  => $company_id,
+						'candidate_id'  => $id,
+						'company_id'  => $job_opt['company_id'],
 						'job_id' => $job_opt['job_id'],
 						'staff_id'  => $job_opt['staff_id'],
 						'designation_id'  => $job_opt['designation_id'],
-						'interview_place'  => $interview_place,
 						'interview_date'  => $interview_date,
 						'interview_time'  => $interview_time,
-						'interviewer_id'  => $interviewer_id,
-						'description'  => $description,
-						'interview_remarks'  => 'interview marks goes here',
 						'status'  => $status,
 						'created_at' => date('d-m-Y h:i:s')
 					];
@@ -933,11 +888,11 @@ class Recruitment extends BaseController {
 					$result = $JobinterviewsModel->insert($data);
 					$Return['csrf_hash'] = csrf_hash();	
 					if ($result == TRUE) {
-						$data2 = [
-						'application_status'  => $status,
-					];
-					$JobcandidatesModel = new JobcandidatesModel();
-					$result = $JobcandidatesModel->update($id,$data2);
+						// $data2 = [
+						// 'application_status'  => $status,
+					// ];
+					// $JobcandidatesModel = new JobcandidatesModel();
+					// $result = $JobcandidatesModel->update($id,$data2);
 						$Return['result'] = lang('Success.ci_candidate_updated_msg');
 					} else {
 						$Return['error'] = lang('Main.xin_error_msg');
@@ -945,12 +900,8 @@ class Recruitment extends BaseController {
 				}
 				$this->output($Return);
 				exit;
-			}
-		} else {
-			$Return['error'] = lang('Main.xin_error_msg');
-			$this->output($Return);
-			exit;
-		}
+			
+		
 	}
 	// |||update record|||
 	public function update_interview_status() {

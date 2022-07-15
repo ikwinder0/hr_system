@@ -362,12 +362,14 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
 							<div class="col-md-12">
 								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Schedule Interview</span></h5>
 								
-								<form class="">
+								<?php $attributes = array('name' => 'update_candidate_status', 'id' => 'update_candidate_status', 'autocomplete' => 'off', 'class'=>'m-b-1');?>
+								<?php $hidden = array('_method' => 'EDIT', 'token' => $segment_id);?>
+								<?= form_open('erp/recruitment/update_candidate_status', $attributes, $hidden);?>
 								<div class="row">
 							        <div class="col-md-6">
 								    <div class="form-group">
 										<label>Interview Date</label>
-										<input type="text" name="interview_date" class="form-control date" required>
+										<input type="text" name="interview_date" class="form-control edate" required>
 									</div>
 									</div>
 								</div>
@@ -375,7 +377,7 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
 							        <div class="col-md-6">
 									<div class="form-group">
 										<label>Interview Time</label>
-										<input type="text" name="interview_time" class="form-control timepicker" required>
+										<input type="text" name="interview_time" class="form-control etimepicker" required>
 									</div>
 									</div>
 								</div>
@@ -383,11 +385,11 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
 							        <div class="col-md-6">
 									<div class="form-group">
 										
-										<input type="submit" name="interview_time" class="btn btn-primary" value="Schedule">
+										<input type="submit" class="btn btn-primary" value="Schedule">
 									</div>
 									</div>
 								</div>
-								</form>
+								<?= form_close(); ?>
 							</div>
 						</div>
 						<?php endif; ?>
@@ -450,3 +452,47 @@ $interview = $JobinterviewsModel->where('staff_id', $result['user_id'])->first()
   </div>
   <!-- [] end --> 
 </div>
+<script type="text/javascript">
+$(document).ready(function(){ 
+
+	$('.edate').bootstrapMaterialDatePicker({
+		weekStart: 0,
+		time: false,
+		clearButton: false,
+		format: 'YYYY-MM-DD',
+		cancelText: 'Cancelll', okText: 'Okk',clearText: 'Clearr',nowText: 'Noww'
+	});
+	// Clock
+	$('.etimepicker').bootstrapMaterialDatePicker({
+		date: false,
+		shortTime: true,
+		format: 'HH:mm'
+	});
+	
+	$("#update_candidate_status").submit(function(e){
+	e.preventDefault();
+		var obj = $(this), action = obj.attr('name');		
+		$.ajax({
+			type: "POST",
+			url: e.target.action,
+			data: obj.serialize()+"&form="+action,
+			cache: false,
+			success: function (JSON) {
+				if (JSON.error != '') {
+					toastr.error(JSON.error);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+				} else {
+					
+					
+					toastr.success(JSON.result);
+					
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					
+					Ladda.stopAll();
+				}
+			}
+		});
+	});
+
+});
