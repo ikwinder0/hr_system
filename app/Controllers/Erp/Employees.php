@@ -636,10 +636,12 @@ class Employees extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');
+		
 		if(!$session->has('sup_username')){ 
 			return redirect()->to(site_url('erp/login'));
 		}	
 		if ($this->request->getPost('type') === 'add_record') {
+			$JobcandidatesModel = new JobcandidatesModel();
 			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 			$Return['csrf_hash'] = csrf_hash();
 			$UsersModel = new UsersModel();
