@@ -396,7 +396,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						
 						
 						<?php if($interview): ?>
-						<div class="row">
+						<div class="row mt-5">
 							<div class="col-md-12">
 								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
 								<br>
