@@ -12,7 +12,9 @@ use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
+use App\Models\JobinterviewsModel;
 use CodeIgniter\HTTP\RequestInterface;
+
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
 $SystemModel = new SystemModel();
@@ -27,6 +29,7 @@ $Moduleattributes = new Moduleattributes();
 $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
 $JobcandidatesModel = new JobcandidatesModel();
+$JobinterviewsModel = new JobinterviewsModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
