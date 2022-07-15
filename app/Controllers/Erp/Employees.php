@@ -1052,13 +1052,13 @@ class Employees extends BaseController {
 				'contact_address' => '',
 				'created_at' => date('d-m-Y h:i:s')
 			];
-			
+			$StaffdetailsModel->insert($data2);
 			$data3 = [
 				'candidate_id' => $user_id,
 				'company_id' => $company_id,
-				'designation_id' => $designation_id	
+				'designation_id' => $applied_for	
 			];
-			$StaffdetailsModel->insert($data2);
+			
 			$JobcandidatesModel->insert($data3);
 			
 			$Return['csrf_hash'] = csrf_hash();	
