@@ -1054,7 +1054,7 @@ class Employees extends BaseController {
 			$data3 = [
 				'candidate_id' => $user_id,
 				'company_id' => $company_id,
-				'designation_id', => $designation_id	
+				'designation_id' => $designation_id	
 			];
 			$StaffdetailsModel->insert($data2);
 			$JobcandidatesModel->insert($data3);
