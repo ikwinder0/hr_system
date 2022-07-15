@@ -1036,6 +1036,46 @@ $(document).ready(function() {
 	   });
 	});
 	
+	$('.edate').bootstrapMaterialDatePicker({
+		weekStart: 0,
+		time: false,
+		clearButton: false,
+		format: 'YYYY-MM-DD',
+		cancelText: 'Cancelll', okText: 'Okk',clearText: 'Clearr',nowText: 'Noww'
+	});
+	// Clock
+	$('.etimepicker').bootstrapMaterialDatePicker({
+		date: false,
+		shortTime: true,
+		format: 'HH:mm'
+	});
+	
+	$("#update_candidate_status").submit(function(e){
+	e.preventDefault();
+		var obj = $(this), action = obj.attr('name');		
+		$.ajax({
+			type: "POST",
+			url: e.target.action,
+			data: obj.serialize()+"&form="+action,
+			cache: false,
+			success: function (JSON) {
+				if (JSON.error != '') {
+					toastr.error(JSON.error);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+				} else {
+					
+					
+					toastr.success(JSON.result);
+					
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					
+					Ladda.stopAll();
+				}
+			}
+		});
+	});
+	
 	$('input[type="file"]').change(function(e){
         var fileName = e.target.files[0].name;
         $(this).next('.custom-file-label').html(fileName);
