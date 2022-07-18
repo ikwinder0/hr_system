@@ -52,7 +52,7 @@ class Download extends BaseController {
 	  {
 	   $mime = (is_array($mimes[$extension])) ? $mimes[$extension][0] : $mimes[$extension];
 	  }
-	  
+	 
 	  // Generate the server headers
 	  if (strstr($_SERVER['HTTP_USER_AGENT'], "MSIE"))
 	  {
@@ -87,9 +87,7 @@ class Download extends BaseController {
 			set_time_limit(0);
 			if($type=="candidate_documents"){
 				$user = $this->request->getGet('user');
-				
-			    $data = base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename'));
-				
+				$data = base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename'));
 			}else{
 				$data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.udecode($this->request->getGet('filename')));
 			}
