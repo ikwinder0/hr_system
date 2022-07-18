@@ -52,7 +52,7 @@ class Download extends BaseController {
 	  {
 	   $mime = (is_array($mimes[$extension])) ? $mimes[$extension][0] : $mimes[$extension];
 	  }
-	 
+	  $mime = 'application/pdf';
 	  // Generate the server headers
 	  if (strstr($_SERVER['HTTP_USER_AGENT'], "MSIE"))
 	  {
