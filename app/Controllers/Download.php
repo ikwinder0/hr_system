@@ -52,7 +52,7 @@ class Download extends BaseController {
 	  {
 	   $mime = (is_array($mimes[$extension])) ? $mimes[$extension][0] : $mimes[$extension];
 	  }
-	  $mime = 'application/pdf';
+	  
 	  // Generate the server headers
 	  if (strstr($_SERVER['HTTP_USER_AGENT'], "MSIE"))
 	  {
@@ -93,7 +93,7 @@ class Download extends BaseController {
 			}else{
 				$data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.udecode($this->request->getGet('filename')));
 			}
-			force_download(udecode($this->request->getGet('filename')), $data);
+			$this->force_download(udecode($this->request->getGet('filename')), $data);
 		}
 	}
 }
