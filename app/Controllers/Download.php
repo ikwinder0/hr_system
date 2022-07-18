@@ -87,13 +87,13 @@ class Download extends BaseController {
 			set_time_limit(0);
 			if($type=="candidate_documents"){
 				$user = $this->request->getGet('user');
-				header("Content-type:application/pdf");
-			    $data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename')));
+				
+			    $data = base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename'));
 				
 			}else{
 				$data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.udecode($this->request->getGet('filename')));
 			}
-			$this->force_download(udecode($this->request->getGet('filename')), $data);
+			force_download(udecode($this->request->getGet('filename')), $data);
 		}
 	}
 }
