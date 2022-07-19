@@ -639,7 +639,8 @@ class Employees extends BaseController {
 				$edit =$r['document_name'];
 				$delete ='';
 			}
-			$download_link = '<a href="'.site_url().'download?user='.$id.'&type=candidate_documents&filename='.uencode($r['document_file']).'">'.lang('Main.xin_download').'</a>';
+			$d = base_url().'/public/uploads/candidate_documents/'.$id.'/'.$r['document_file'];
+			$download_link = '<a href="'.$d.'" download="'.$r['document_file'].'">'.lang('Main.xin_download').'</a>';
 			$combhr = $edit.$delete;
 			$salary_option = '
 				'.$r['document_name'].'
