@@ -65,7 +65,7 @@ class Employees extends BaseController {
 		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'employees';
 		$data['breadcrumbs'] = lang('Dashboard.dashboard_employees');
-        if($user_info['user_type'] != 'company'){
+        if($user_info['user_type'] == 'company'){
 			$data['subview'] = view('erp/employees/staff_list', $data);
 		}else{
 			$data['subview'] = view('erp/employees/staff_list-admin', $data);
