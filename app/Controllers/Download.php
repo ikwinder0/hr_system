@@ -75,7 +75,28 @@ class Download extends BaseController {
 	  }
 	 
 	  exit($data);
-	}	
+	}
+	
+	public function download($name) {
+		
+        $file = $nama;
+
+        if (file_exists($file)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename='.basename($file));
+            header('Content-Transfer-Encoding: binary');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($file));
+            ob_clean();
+            flush();
+            readfile($file);
+            exit;
+        }
+    }
+	
 	public function index() {	
 		
 		$request = \Config\Services::request();
@@ -88,6 +109,7 @@ class Download extends BaseController {
 			if($type=="candidate_documents"){
 				$user = $this->request->getGet('user');
 				$data = base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename'));
+				$this->download($data);
 			}else{
 				$data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.udecode($this->request->getGet('filename')));
 			}
