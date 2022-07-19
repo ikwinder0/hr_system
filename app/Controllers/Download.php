@@ -109,6 +109,8 @@ class Download extends BaseController {
 			if($type=="candidate_documents"){
 				$user = $this->request->getGet('user');
 				$data = base_url().'/public/uploads/'.$type.'/'.$user.'/'.udecode($this->request->getGet('filename'));
+				print_r($data);
+				die;
 				$this->download($data);
 			}else{
 				$data = file_get_contents(base_url().'/public/uploads/'.$type.'/'.udecode($this->request->getGet('filename')));
