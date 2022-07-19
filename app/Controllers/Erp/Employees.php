@@ -65,8 +65,11 @@ class Employees extends BaseController {
 		$data['title'] = lang('Dashboard.dashboard_employees').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'employees';
 		$data['breadcrumbs'] = lang('Dashboard.dashboard_employees');
-
-		$data['subview'] = view('erp/employees/staff_list', $data);
+        if($user_info['user_type'] != 'company'){
+			$data['subview'] = view('erp/employees/staff_list', $data);
+		}else{
+			$data['subview'] = view('erp/employees/staff_list-admin', $data);
+		}
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	
@@ -268,7 +271,7 @@ class Employees extends BaseController {
 		
 		if($user_info['user_type'] == 'company') { 
 		
-			$staff = $UsersModel->where('company_id',$usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
+			$staff = $UsersModel->where('company_id', $usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
 		}else{
 			$staff = $UsersModel->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
 		}
@@ -353,7 +356,8 @@ class Employees extends BaseController {
 					'.$combhr.'
 				</div>
 			';
-									 			  				
+			if($user_info['user_type'] == 'company') {
+				
 			$data[] = array(
 				$links,
 				$designation_name,
@@ -363,6 +367,20 @@ class Employees extends BaseController {
 				$status,
 				$app_status
 			);
+			
+			}else{
+				$company = $UsersModel->where('user_id', $r['company_id'])->first();
+				$data[] = array(
+					$links,
+					$company['company_name'],
+					$designation_name,
+					$r['contact_number'],
+					$gender,
+					$country_info['country_name'],
+					$status,
+					$app_status
+			    );
+			}
 		}
           $output = array(
                //"draw" => $draw,
