@@ -84,7 +84,7 @@ class Download extends BaseController {
         if (file_exists($file)) {
             header('Content-Description: File Transfer');
             header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment; filename='.basename($file));
+            header('Content-Disposition: attachment; filename="'.basename($file).'"');
             header('Content-Transfer-Encoding: binary');
 			header('Accept-Ranges: bytes');
             header('Expires: 0');
