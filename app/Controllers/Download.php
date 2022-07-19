@@ -82,16 +82,13 @@ class Download extends BaseController {
         $file = $name;
 
         if (file_exists($file)) {
-            header('Content-Description: File Transfer');
-            header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment; filename="'.basename($file).'"');
-            header('Content-Transfer-Encoding: binary');
-			header('Accept-Ranges: bytes');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
-            header('Content-Length: ' . filesize($file));
-            ob_clean();
-            flush();
+            header("Content-Type: application/octet-stream");
+
+            header('Content-Disposition: attachment; filename="'.urlencode($file).'"');
+            header("Content-Type: application/download");
+            header("Content-Description: File Transfer");            
+            header("Content-Length: " . filesize($file));
+            
 			$fp = fopen($file, "r");
 			while (!feof($fp)) {
 				echo fread($fp, 65536);
