@@ -86,6 +86,7 @@ class Download extends BaseController {
             header('Content-Type: application/pdf');
             header('Content-Disposition: attachment; filename='.basename($file));
             header('Content-Transfer-Encoding: binary');
+			header('Accept-Ranges: bytes');
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
             header('Content-Length: ' . filesize($file));
