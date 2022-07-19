@@ -79,7 +79,7 @@ class Download extends BaseController {
 	
 	public function download($name) {
 		
-        $file = $nama;
+        $file = $name;
 
         if (file_exists($file)) {
             header('Content-Description: File Transfer');
