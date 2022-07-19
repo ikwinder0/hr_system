@@ -85,7 +85,7 @@ class Download extends BaseController {
             header("Content-Type: application/octet-stream");
 
             header('Content-Disposition: attachment; filename="'.urlencode($file).'"');
-            header("Content-Type: application/download");
+           
             header("Content-Description: File Transfer");            
             header("Content-Length: " . filesize($file));
             
