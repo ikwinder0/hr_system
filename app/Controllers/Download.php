@@ -92,8 +92,15 @@ class Download extends BaseController {
             header('Content-Length: ' . filesize($file));
             ob_clean();
             flush();
-            readfile($file);
-            exit;
+			$fp = fopen($file, "r");
+			while (!feof($fp)) {
+				echo fread($fp, 65536);
+				flush(); // This is essential for large downloads
+			} 
+  
+			fclose($fp); 
+            // readfile($file);
+            // exit;
         }
     }
 	
