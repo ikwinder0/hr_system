@@ -312,9 +312,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         </div>
 		</div>
 	</div>
-	
+	<?php if($user_info['user_type'] == 'super_user'){ ?>
 	<div class="row">
-        <div class="col-md-12">\
+        <div class="col-md-12">
 		        <div class="card">
 			<div class="card-header">
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
@@ -438,5 +438,5 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			</div>
 		</div>
     </div>
-	
+	<?php } ?>
   <!-- [] end --> 
