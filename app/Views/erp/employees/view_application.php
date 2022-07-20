@@ -312,4 +312,3 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 		</div>
 	</div>
   <!-- [] end --> 
-</div>
