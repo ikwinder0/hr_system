@@ -119,12 +119,28 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			  <div class="inner-div">
                 <div class="h5_heading">
                   <h1><?= $result['first_name'];?> <span class="color"><?= $result['last_name'];?></span></h1>
-                  <h6>#<?= $employee_detail['employee_id'];?></h6>
+                  <h6><span class="color">APPLIED FOR :</span><?= $idesignations['designation_name'];?></h6>
                 </div>
                 <div class="second-part">
-                <h6>PROFILE</h6>
+                <h6>BASIC INFO</h6>
                 <hr>
-                <p></p>
+				<h5>Candidate ID:</h5>
+                  <p><?= $employee_detail['employee_id'];?></p>
+                  <hr>
+                <h5>Gender</h5>
+                  <p><?= ($result['gender']==1) ? 'Male' : 'Female'; ?></p>
+                <hr>
+				<h5>DOB</h5>
+                  <p><?= $employee_detail['date_of_birth'];?></p>
+                <hr>
+				<h5>Marital Status</h5>
+                  <p>
+					<?php if($employee_detail['marital_status']==0): echo 'Single';  endif; ?>
+					<?php if($employee_detail['marital_status']==1): echo 'Married';  endif; ?>
+				    <?php if($employee_detail['marital_status']==2): echo 'Widowed';  endif; ?>
+					<?php if($employee_detail['marital_status']==3): echo 'Divorced';  endif; ?>
+				  </p>
+                <hr>
                 </div>
                 
                   <div class="h5_heading">
