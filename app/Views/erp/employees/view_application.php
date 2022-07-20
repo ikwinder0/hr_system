@@ -312,4 +312,131 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         </div>
 		</div>
 	</div>
+	
+	<div class="row">
+        <div class="col-md-12">\
+		        <div class="card">
+			<div class="card-header">
+            <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
+              <?= lang('Main.xin_application_status');?>
+              </span></h5>
+			 </div>
+				<div class="card-body pb-2">
+					<div class="box-body">
+					    <div class="row">
+							<div class="col-md-6">
+								<select class="form-control app_status form-select" data-plugin="select_hrm">
+								
+									<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
+									<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
+									<option value="3"<?= ($application['application_status'] == 3) ? 'selected' : ''; ?>>Reject</option>
+									
+								</select>
+							</div>
+						</div>
+						
+						
+						<?php if($application['application_status'] == 1 && !$interview): ?>
+						<hr>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Schedule Interview</span></h5>
+								
+								<?php $attributes = array('name' => 'update_candidate_status', 'id' => 'update_candidate_status', 'autocomplete' => 'off', 'class'=>'m-b-1');?>
+								<?php $hidden = array('_method' => 'EDIT', 'token' => $segment_id);?>
+								<?= form_open('erp/recruitment/update_candidate_status', $attributes, $hidden);?>
+								<div class="row">
+							        <div class="col-md-6">
+								    <div class="form-group">
+										<label>Interview Date</label>
+										<input type="text" name="interview_date" class="form-control edate" required>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+							        <div class="col-md-6">
+									<div class="form-group">
+										<label>Interview Time</label>
+										<input type="text" name="interview_time" class="form-control etimepicker" required>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+							        <div class="col-md-6">
+									<div class="form-group">
+										
+										<input type="submit" class="btn btn-primary" value="Schedule">
+									</div>
+									</div>
+								</div>
+								<?= form_close(); ?>
+							</div>
+						</div>
+						<?php endif; ?>
+						
+						
+						<?php if($interview): ?>
+						<div class="row mt-5">
+							<div class="col-md-12">
+								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
+								<br>
+								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  <span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span></p>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-md-12">
+								<label class = "checkbox-inline mr-4">
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox1" value = "1"> Pre-Screening
+								 </label>
+								 <label class = "checkbox-inline mr-4">
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" value = "2"> Interview
+								 </label>
+								 <label class = "checkbox-inline mr-4">
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" value = "3"> Feedback
+								 </label>
+								 <label class = "checkbox-inline">
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" value = "4"> Result
+								 </label>
+							</div>
+						</div>
+						
+						<!--div class="row bs-wizard" style="border-bottom:0;">
+                
+							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
+							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
+							  <div class="text-center bs-wizard-stepnum">Interview</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled /*active*/">
+							  <div class="text-center bs-wizard-stepnum">Feedback</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
+							</div>
+							
+							<div class="col-md-3 bs-wizard-step disabled">
+							  <div class="text-center bs-wizard-stepnum">Result</div>
+							  <div class="progress"><div class="progress-bar"></div></div>
+							  <a href="#" class="bs-wizard-dot"></a>
+							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
+							</div>
+						</div-->
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
   <!-- [] end --> 
