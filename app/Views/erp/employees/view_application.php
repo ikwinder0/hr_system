@@ -235,7 +235,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 
                 
               </div>
-              <div class="third-left right-side-color px-3">
+              <!--div class="third-left right-side-color px-3">
                   <h6>SKILLS</h6>
                   <h5>Languages</h5>
                   <p>English,Spanish,German,Japanese</p>
@@ -243,7 +243,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                   <h5>Interpersonal</h5>
                   <p>skill</p>
                   <hr>
-                </div>
+                </div-->
            
           </div>
         </div>
