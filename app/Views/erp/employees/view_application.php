@@ -110,6 +110,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 
       
     </style>
+ <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
 <div class="row">
         <div class="col-md-12">
         <div class="card">
