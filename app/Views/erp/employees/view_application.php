@@ -61,7 +61,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
     <style type="text/css">
      
-    .h5_heading h6:after{
+.h5_heading h6:after {
       background: #1f8ebe;
       content: "";
       display: block;
@@ -99,7 +99,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
     margin-bottom: 22px
  
      
-  
+  }
 
       
     </style>
@@ -188,7 +188,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
               <div class="photo-section">
                 <img class="img-radius img-fluid wid-80" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
               </div>
-                <div class="right-second right-side-color px-3">
+                <div class="right-second right-side-color">
                   <h6>CONTACT</h6>
                   <div class="row">
 
