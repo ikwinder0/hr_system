@@ -60,402 +60,139 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
 <?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
 
-<div class="row"> 
-  <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
-  <div class="col-md-12 col-lg-12">
+<div class="row">
+        <div class="col-md-12 m-2">
         <div class="card">
-          <div class="card-header">
-            <h5><i data-feather="file-text" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Main.xin_employee_basic_title');?>
-              </span></h5>
-          </div>
-          <div class="card-body pb-2">
-            <div class="box-body">
-              <div class="form-body">
-			    <div class="row">
-                  <div class="col-md-6">
-					<h6 class="mb-0">ID</h6>
-				  </div>
-				  <div class="col-md-6">
-					<p class="mb-0 text-muted">
-					  #<?= $employee_detail['employee_id'];?>
-					</p>
-				  </div>
-				</div>
-				<hr>
-			    <div class="row">
-                  <div class="col-md-6">
-					<h6 class="mb-0"><?= lang('Main.xin_position_applied_for');?></h6>
-				  </div>
-				  <div class="col-md-6">
-					<p class="mb-0 text-muted">
-					  <?= $idesignations['designation_name'];?>
-					</p>
-				  </div>
-				</div>
-			    <hr class="">
-                <div class="row">
-				  <div class="col-md-6">
-					<h6 class="mb-0"><?= lang('Main.xin_employee_first_name');?></h6>
-				  </div>
-				  <div class="col-md-6">
-					<p class="mb-0 text-muted">
-					  <?= $result['first_name'];?>
-					</p>
-				  </div>
-                </div>
-				<hr class="">
-				<div class="row">
-				  <div class="col-md-6">
-					<h6 class="mb-0"><?= lang('Main.xin_employee_last_name');?></h6>
-				  </div>
-				  <div class="col-md-6">
-					<p class="mb-0 text-muted">
-					  <?= $result['last_name'];?>
-					</p>
-				  </div>
-                </div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Main.xin_contact_number');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= $result['contact_number'];?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Main.xin_employee_gender');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= ($result['gender']==1) ? 'Male' : 'Female'; ?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Employees.xin_employee_dob');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= $employee_detail['date_of_birth'];?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Employees.xin_employee_mstatus');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?php if($employee_detail['marital_status']==0): echo 'Single';  endif; ?>
-							<?php if($employee_detail['marital_status']==1): echo 'Married';  endif; ?>
-							<?php if($employee_detail['marital_status']==2): echo 'Widowed';  endif; ?>
-							<?php if($employee_detail['marital_status']==3): echo 'Divorced';  endif; ?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Employees.xin_ethnicity_type_title');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-						    
-							<?php foreach($religion as $ireligion) {
-							
-								if($ireligion['constants_id']==$employee_detail['religion_id']){
-								
-									echo $ireligion['category_name'];
-								
-					
-					
-						 } } ?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Main.xin_state');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= $result['state'];?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Main.xin_city');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= $result['city'];?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Main.xin_zipcode');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?= $result['zipcode'];?>
-						</p>
-					</div>
-				</div>
-				<hr class="">
-				<div class="row">
-					<div class="col-md-6">
-                        <h6 class="mb-0"><?= lang('Employees.xin_nationality');?></h6>
-					</div>
-					<div class="col-md-6">
-					    <p class="mb-0 text-muted">
-							<?php foreach($all_countries as $country) {
-								
-								if($country['country_id'] == $result['country']):?> 
-								<?= $country['country_name'];?>
-								<?php endif;
-								
-							} ?>
-						</p>
-					</div>
-				</div>
-                
-               
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-right">
-            
-          </div>
-         
-        </div>
-        <div class="card">
-			<div class="card-header">
-            <h5><i class="fas fa-laptop-code wid-20"></i><span class="p-l-5">
-              Employee Education & Experience
-              </span></h5>
-				<div class="card-body pb-2">
-					<div class="box-body">
-						
-					<h4>Education</h4>
-					<hr class="border-light m-0 mb-3">
-					<div class="row">
-						<div class="col-md-6">
-							Hight School
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['high_school']) ? $employee_detail['high_school'] : 'N/A';?>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-md-6">
-							Degree
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-md-6">
-							Others
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['other_education']) ? $employee_detail['other_education'] : 'N/A';?>
-						</div>
-					</div>
-					
-					<hr>
-					<h4>Experience</h4>
-					<hr class="border-light m-0 mb-3">
-					<div class="row">
-						<div class="col-md-6">
-							Experience 1
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['experience_1']) ? $employee_detail['experience_1'] : 'N/A';?>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-md-6">
-							Experience 2
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['experience_2']) ? $employee_detail['experience_2'] : 'N/A';?>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-md-6">
-							Experience 3
-						</div>
-						<div class="col-md-6">
-							<?= ($employee_detail['experience_3']) ? $employee_detail['experience_3'] : 'N/A';?>
-						</div>
-					</div>		
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	    <div class="card user-profile-list">
-          <div class="card-header">
-            <h5><i data-feather="file-plus" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Employees.xin_documents');?>
-              </span></h5>
-          </div>
           <div class="card-body">
-            <div class="box-datatable table-responsive">
-              <table class="table table-striped table-bordered dataTable" id="xin_table_document" style="width:100%;">
-                <thead>
-                  <tr>
-                    <th><?= lang('Employees.xin_document_name');?></th>
-                    <th><?= lang('Employees.xin_document_type');?></th>
-                    <th><?= lang('Employees.xin_document_file');?></th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-          </div>
-          
-        </div>
-        <div class="card">
-			<div class="card-header">
-            <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Main.xin_application_status');?>
-              </span></h5>
-			 </div>
-				<div class="card-body pb-2">
-					<div class="box-body">
-					    <div class="row">
-							<div class="col-md-6">
-								<select class="form-control app_status form-select" data-plugin="select_hrm">
-								
-									<option value="0" <?= ($application['application_status'] == 0) ? 'selected' : ''; ?>>Pending</option>
-									<option value="1" <?= ($application['application_status'] == 1) ? 'selected' : ''; ?>>Select</option>
-									<option value="3"<?= ($application['application_status'] == 3) ? 'selected' : ''; ?>>Reject</option>
-									
-								</select>
-							</div>
-						</div>
-						
-						
-						<?php if($application['application_status'] == 1 && !$interview): ?>
-						<hr>
-						
-						<div class="row">
-							<div class="col-md-12">
-								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Schedule Interview</span></h5>
-								
-								<?php $attributes = array('name' => 'update_candidate_status', 'id' => 'update_candidate_status', 'autocomplete' => 'off', 'class'=>'m-b-1');?>
-								<?php $hidden = array('_method' => 'EDIT', 'token' => $segment_id);?>
-								<?= form_open('erp/recruitment/update_candidate_status', $attributes, $hidden);?>
-								<div class="row">
-							        <div class="col-md-6">
-								    <div class="form-group">
-										<label>Interview Date</label>
-										<input type="text" name="interview_date" class="form-control edate" required>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-									<div class="form-group">
-										<label>Interview Time</label>
-										<input type="text" name="interview_time" class="form-control etimepicker" required>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-									<div class="form-group">
-										
-										<input type="submit" class="btn btn-primary" value="Schedule">
-									</div>
-									</div>
-								</div>
-								<?= form_close(); ?>
-							</div>
-						</div>
-						<?php endif; ?>
-						
-						
-						<?php if($interview): ?>
-						<div class="row mt-5">
-							<div class="col-md-12">
-								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
-								<br>
-								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  <span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span></p>
-							</div>
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-md-12">
-								<label class = "checkbox-inline mr-4">
-									<input type = "checkbox" id = "inlineCheckbox1" value = "1"> Pre-Screening
-								 </label>
-								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" id = "inlineCheckbox2" value = "2"> Interview
-								 </label>
-								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" id = "inlineCheckbox3" value = "3"> Feedback
-								 </label>
-								 <label class = "checkbox-inline">
-									<input type = "checkbox" id = "inlineCheckbox4" value = "4"> Result
-								 </label>
-							</div>
-						</div>
-						
-						<!--div class="row bs-wizard" style="border-bottom:0;">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="h5_heading">
+                  <h1>AMIT <span class="color">SINHA</span></h1>
+                  <h6>ACCOUNTS EXECUTIVE</h6>
+                </div>
+                <div class="second-part">
+                <h6>PROFILE</h6>
+                <hr>
+                <p>Accurate and immensely motivated Finance student. Highly skilled at generating and analyzing financial reports,leading cash flow analysis,and refining tax plans.</p>
+                </div>
                 
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
-							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Lorem ipsum dolor sit amet.</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
-							  <div class="text-center bs-wizard-stepnum">Interview</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled /*active*/">
-							  <div class="text-center bs-wizard-stepnum">Feedback</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">Integer semper dolor ac auctor rutrum. Duis porta ipsum vitae mi bibendum bibendum</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled">
-							  <div class="text-center bs-wizard-stepnum">Result</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
-							</div>
-						</div-->
-						<?php endif; ?>
-					</div>
-				</div>
-			</div>
-		</div>
-  </div>
+                  <div class="h5_heading">
+                  <h6>WORK EXPERIENCE</h6>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <p>2020-present</p>
+
+                    </div>
+                    <div class="col-md-8">
+                      <h5>Jr.Accounts Executive</h5>
+                      <p>Joy 4 Us Toys, Noida,UP</p>
+                      <ul class="margin">
+                        <li>Collect,interpret and review financial information</li>
+                        <li>Predict financial trends</li>
+                        <li>Reports for management and stakeholders</li>
+                        <hr>
+                      </ul>
+                      
+                    </div>
+                    <div class="col-md-4">
+                      <p>May-Dec,2019</p>
+                    </div>
+                    <div class="col-md-8">
+                      <h5>Accounting intership</h5>
+                      <p>Tire universe,Muzaffarnagar, UP, india</p>
+                      <ul class="margin">
+                        <li>Daily report preparation</li>
+                        <li>Target analysis and adjudication</li>
+                        <li>Department meeting initiations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="h5_heading">
+                  <h6>EDUCATION</h6>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <p>2017 to 2018</p>
+
+                    </div>
+                    <div class="col-md-8">
+                      <h5>MA in economics</h5>
+                      <p>Batch Topper(gold medalist & Rank 1,Northern University.</p>
+                      <p>CGPA:9.4/10</p>
+                      <hr>
+                      
+                    </div>
+                    <div class="col-md-4">
+                      <p>2014 to 2016</p>
+                    </div>
+                    <div class="col-md-8">
+                      <h5>BSc.Mathematics</h5>
+                      <p>Batch Topper(Silver medalist & Rank 2,Northern University.</p>
+                       <p>CGPA:99%</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="h5_heading">
+                  <h6>CERTIFICATIONS</h6>
+                  <p>Chartered Financial Analyst(CFA)certification Financial Risk Manager(FRM) certification.</p>
+                </div>
+
+            
+              
+            </div>
+            
+            <div class="col-md-4 right-div">
+              <div class="photo-section">
+                <img src="stevejobs.jpg" class="photo">
+              </div>
+                <div class="right-second right-side-color px-3">
+                  <h6>CONTACT</h6>
+                  <div class="row">
+
+                    <div class="col-md-2 col-sm-6" >
+
+                   <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="col-md-9 col-sm-6">
+                    <h5>Address</h5>
+                    <p>E2345,cleo country,noida</p>
+                    </div>
+                    <div class="col-md-2 " >
+
+                    <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="col-md-9">
+                    <h5>Phone</h5>
+                    <p>909 090 9090</p>
+                    </div>
+                     <div class="col-md-2" >
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="col-md-9">
+                    <h5>Email</h5>
+                    <p>amritsinha@abc.com</p>
+                    </div>
+                </div>
+                
+
+                
+              </div>
+              <div class="third-left right-side-color px-3">
+                  <h6>SKILLS</h6>
+                  <h5>Languages</h5>
+                  <p>English,Spanish,German,Japanese</p>
+                  <hr>
+                  <h5>Interpersonal</h5>
+                  <p>skill</p>
+                  <hr>
+                </div>
+           
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    </div>
   <!-- [] end --> 
 </div>

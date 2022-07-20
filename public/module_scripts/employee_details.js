@@ -1095,6 +1095,42 @@ $(document).ready(function() {
 	});
 		
 });
+
+$( document ).on( "click", ".process_interview", function() {
+	if($(this).is(":checked"){
+		var id = 
+	}else{
+		
+	}
+}
+
+function processInterview(){
+	
+	$.ajax({
+			type: "POST",
+			url: e.target.action,
+			data: obj.serialize()+"&form="+action,
+			cache: false,
+			success: function (JSON) {
+				if (JSON.error != '') {
+					toastr.error(JSON.error);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					
+					Ladda.stopAll();
+				} else {
+					
+					
+					toastr.success(JSON.result);
+					
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					window.location.reload();
+					Ladda.stopAll();
+				}
+			}
+		});
+	
+}
+
 $( document ).on( "click", ".delete", function() {
 	$('input[name=_token]').val($(this).data('record-id'));
 	$('input[name=token_type]').val($(this).data('field_type'));
