@@ -209,7 +209,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                     <div class="col-md-8">
                       <h5><?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?></h5>
-                      
+                      <hr>
                     </div>
 					 <div class="col-md-4">
                       <p>Other</p>
