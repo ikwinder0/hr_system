@@ -119,12 +119,12 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			  <div class="inner-div">
                 <div class="h5_heading">
                   <h1><?= $result['first_name'];?> <span class="color"><?= $result['last_name'];?></span></h1>
-                  <h6><span class="color">APPLIED FOR :</span><?= $idesignations['designation_name'];?></h6>
+                  <h6><span class="color">APPLIED FOR : </span><?= $idesignations['designation_name'];?></h6>
                 </div>
                 <div class="second-part">
                 <h6>BASIC INFO</h6>
                 <hr>
-				<h5>Candidate ID:</h5>
+				<h5>Candidate ID</h5>
                   <p><?= $employee_detail['employee_id'];?></p>
                   <hr>
                 <h5>Gender</h5>
@@ -141,68 +141,86 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 					<?php if($employee_detail['marital_status']==3): echo 'Divorced';  endif; ?>
 				  </p>
                 <hr>
+				<h5>Religion</h5>
+                  <p>
+					<?php foreach($religion as $ireligion) {
+							
+								if($ireligion['constants_id']==$employee_detail['religion_id']){
+								
+									echo $ireligion['category_name'];
+								
+					
+					
+						 } } ?>
+				  </p>
+                <hr>
                 </div>
                 
                   <div class="h5_heading">
                   <h6>WORK EXPERIENCE</h6>
+				  
                   <div class="row">
+				  <?php if($employee_detail['experience_1']){ ?>
                     <div class="col-md-4">
-                      <p>2020-present</p>
+                      <p>Experience 1</p>
 
                     </div>
                     <div class="col-md-8">
-                      <h5>Jr.Accounts Executive</h5>
-                      <p>Joy 4 Us Toys, Noida,UP</p>
-                      <ul class="margin">
-                        <li>Collect,interpret and review financial information</li>
-                        <li>Predict financial trends</li>
-                        <li>Reports for management and stakeholders</li>
-                        <hr>
-                      </ul>
+                      <h5><?= $employee_detail['experience_1']; ?></h5>
+                      
                       
                     </div>
+				  <?php } ?>
+				  <?php if($employee_detail['experience_2']){ ?>
                     <div class="col-md-4">
-                      <p>May-Dec,2019</p>
+                      <p>Experience 2</p>
                     </div>
                     <div class="col-md-8">
-                      <h5>Accounting intership</h5>
-                      <p>Tire universe,Muzaffarnagar, UP, india</p>
-                      <ul class="margin">
-                        <li>Daily report preparation</li>
-                        <li>Target analysis and adjudication</li>
-                        <li>Department meeting initiations</li>
-                      </ul>
+                      <h5><?= $employee_detail['experience_2']; ?></h5>
+                      
                     </div>
+					<?php } ?>
+					<?php if($employee_detail['experience_3']){ ?>
+                    <div class="col-md-4">
+                      <p>Experience 3</p>
+                    </div>
+                    <div class="col-md-8">
+                      <h5><?= $employee_detail['experience_3']; ?></h5>
+                     
+                    </div>
+					<?php } ?>
                   </div>
                 </div>
                 <div class="h5_heading">
                   <h6>EDUCATION</h6>
                   <div class="row">
                     <div class="col-md-4">
-                      <p>2017 to 2018</p>
+                      <p>High School</p>
 
                     </div>
                     <div class="col-md-8">
-                      <h5>MA in economics</h5>
-                      <p>Batch Topper(gold medalist & Rank 1,Northern University.</p>
-                      <p>CGPA:9.4/10</p>
+                      <h5><?= ($employee_detail['high_school']) ? $employee_detail['high_school'] : 'N/A';?></h5>
+                   
                       <hr>
                       
                     </div>
                     <div class="col-md-4">
-                      <p>2014 to 2016</p>
+                      <p>Graduation/Degree</p>
                     </div>
                     <div class="col-md-8">
-                      <h5>BSc.Mathematics</h5>
-                      <p>Batch Topper(Silver medalist & Rank 2,Northern University.</p>
-                       <p>CGPA:99%</p>
+                      <h5><?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?></h5>
+                      
+                    </div>
+					 <div class="col-md-4">
+                      <p>Other</p>
+                    </div>
+                    <div class="col-md-8">
+                      <h5><?= ($employee_detail['other_education']) ? $employee_detail['other_education'] : 'N/A';?></h5>
+                      
                     </div>
                   </div>
                 </div>
-                <div class="h5_heading">
-                  <h6>CERTIFICATIONS</h6>
-                  <p>Chartered Financial Analyst(CFA)certification Financial Risk Manager(FRM) certification.</p>
-                </div>
+               
 
             
               

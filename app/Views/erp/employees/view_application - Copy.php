@@ -282,6 +282,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 					<hr>
 					<h4>Experience</h4>
 					<hr class="border-light m-0 mb-3">
+					<?php if($employee_detail['experience_1']){ ?>
 					<div class="row">
 						<div class="col-md-6">
 							Experience 1
@@ -291,6 +292,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 					</div>
 					<hr>
+					<?php } ?>
+					<?php if($employee_detail['experience_2']){ ?>
 					<div class="row">
 						<div class="col-md-6">
 							Experience 2
@@ -300,6 +303,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 					</div>
 					<hr>
+					<?php } ?>
+					<?php if($employee_detail['experience_3']){ ?>
 					<div class="row">
 						<div class="col-md-6">
 							Experience 3
@@ -308,7 +313,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<?= ($employee_detail['experience_3']) ? $employee_detail['experience_3'] : 'N/A';?>
 						</div>
 					</div>		
-						
+					<?php } ?>	
 					</div>
 				</div>
 			</div>
