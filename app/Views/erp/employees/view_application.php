@@ -79,7 +79,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
   
   .right-div{
     background-color: #014c83;
-    color: #fff;
+    color: #fff !important;
   }
   .photo-section{
     text-align: center;
