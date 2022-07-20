@@ -59,7 +59,50 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
 <?php if($result['is_active']=='2'): $_status = '<span class="badge badge-light-info">'.lang('Main.xin_employees_new').'</span>'; endif; ?>
+    <style type="text/css">
+     
+    .h5_heading h6:after{
+      background: #1f8ebe;
+      content: "";
+      display: block;
+      width: 240px;
+      height: 3px;
+      margin-top: 10px;
+    margin-bottom: 22px;
+}
+  .color{
+    color: #1f8ebe;
+  }
+  .margin li{
+    margin-left: -22px;
+  }
+  
+  .right-div{
+    background-color: #014c83;
+    color: #fff;
+  }
+  .photo-section{
+    text-align: center;
+    margin: 30px auto;
+  }
+  .photo{
+    border-radius: 50%;
+    border: 5px solid #1f8ebe;
+  }
+  .right-side-color h6:after{
+      background: white;
+      content: "";
+      display: block;
+      width: 240px;
+      height: 3px;
+      margin-top: 10px;
+    margin-bottom: 22px
+ 
+     
+  
 
+      
+    </style>
 <div class="row">
         <div class="col-md-12 m-2">
         <div class="card">
