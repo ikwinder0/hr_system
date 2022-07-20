@@ -118,13 +118,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
               <div class="col-md-8">
 			  <div class="inner-div">
                 <div class="h5_heading">
-                  <h1>AMIT <span class="color">SINHA</span></h1>
-                  <h6>ACCOUNTS EXECUTIVE</h6>
+                  <h1><?= $result['first_name'];?> <span class="color"><?= $result['last_name'];?></span></h1>
+                  <h6>#<?= $employee_detail['employee_id'];?></h6>
                 </div>
                 <div class="second-part">
                 <h6>PROFILE</h6>
                 <hr>
-                <p>Accurate and immensely motivated Finance student. Highly skilled at generating and analyzing financial reports,leading cash flow analysis,and refining tax plans.</p>
+                <p></p>
                 </div>
                 
                   <div class="h5_heading">
@@ -207,7 +207,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                     <div class="col-md-9 col-sm-6">
                     <h5>Address</h5>
-                    <p>E2345,cleo country,noida</p>
+                    <p><?= $result['city'];?>,<?= $result['state'];?>,<?php foreach($all_countries as $country) {
+								
+								if($country['country_id'] == $result['country']):?> 
+								<?= $country['country_name'];?>
+								<?php endif;
+								
+							} ?> ,<?= $result['zipcode'];?></p>
                     </div>
                     <div class="col-md-2 " >
 
@@ -215,14 +221,14 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                     <div class="col-md-9">
                     <h5>Phone</h5>
-                    <p>909 090 9090</p>
+                    <p><?= $result['contact_number'];?></p>
                     </div>
                      <div class="col-md-2" >
                       <i class="fas fa-envelope"></i>
                     </div>
                     <div class="col-md-9">
                     <h5>Email</h5>
-                    <p>amritsinha@abc.com</p>
+                    <p><?= $result['email'];?></p>
                     </div>
                 </div>
                 
