@@ -89,7 +89,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
     border-radius: 50%;
     border: 5px solid #1f8ebe;
   }
-  .right-side-color h6{
+  .right-side-color h6, .right-side-color h5{
 	  color:#fff;
   }
   .right-side-color h6:after{
