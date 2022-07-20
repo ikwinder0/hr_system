@@ -1096,13 +1096,13 @@ $(document).ready(function() {
 		
 });
 
-$( document ).on( "click", ".process_interview", function() {
-	if($(this).is(":checked"){
-		var id = 
-	}else{
+// $( document ).on( "click", ".process_interview", function() {
+	// if($(this).is(":checked"){
+		// var id = 
+	// }else{
 		
-	}
-}
+	// }
+// }
 
 function processInterview(){
 	
