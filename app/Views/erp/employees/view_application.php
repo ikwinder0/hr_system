@@ -109,9 +109,10 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div class="row">
         <div class="col-md-12 m-2">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body p-0">
             <div class="row">
               <div class="col-md-8">
+			  <div class="inner-div">
                 <div class="h5_heading">
                   <h1>AMIT <span class="color">SINHA</span></h1>
                   <h6>ACCOUNTS EXECUTIVE</h6>
@@ -186,6 +187,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
             
               
             </div>
+			</div>
             
             <div class="col-md-4 right-div">
               <div class="photo-section">
