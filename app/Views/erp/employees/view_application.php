@@ -186,7 +186,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
             
             <div class="col-md-4 right-div">
               <div class="photo-section">
-                <img src="stevejobs.jpg" class="photo">
+                <img class="img-radius img-fluid wid-80" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
               </div>
                 <div class="right-second right-side-color px-3">
                   <h6>CONTACT</h6>
