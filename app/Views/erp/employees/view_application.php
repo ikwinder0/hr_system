@@ -113,6 +113,16 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
   .inner-div{
 	  margin: 35px;
   }
+  
+  .stepper {
+  .line {
+    width: 2px;
+    background-color: lightgrey !important;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+}
 
       
     </style>
