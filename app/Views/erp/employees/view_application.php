@@ -120,7 +120,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
     background-color: lightgrey !important;
   }
    .lead {
-    font-size: 1.1rem;
+        font-size: 14px;
   }
 
 
@@ -429,39 +429,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						
 						<?php } ?>
 						
+						
 						<?php if($interview): ?>
-						<div class="row bs-wizard" style="border-bottom:0;">
-                
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
-							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">N/A</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
-							  <div class="text-center bs-wizard-stepnum">Interview</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">N/A</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled /*active*/">
-							  <div class="text-center bs-wizard-stepnum">Feedback</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">N/A</div>
-							</div>
-							
-							<div class="col-md-3 bs-wizard-step disabled">
-							  <div class="text-center bs-wizard-stepnum">Result</div>
-							  <div class="progress"><div class="progress-bar"></div></div>
-							  <a href="#" class="bs-wizard-dot"></a>
-							  <div class="bs-wizard-info text-center">N/A</div>
-							</div>
-						</div>
-						<?php endif; ?>
-						 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="stepper d-flex flex-column mt-5 ml-2">
@@ -508,7 +477,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								  </div>
 							</div>
 						</div>
-						
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
