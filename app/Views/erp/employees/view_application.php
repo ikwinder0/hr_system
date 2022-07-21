@@ -434,7 +434,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						
 						<hr>
 						<?php if($user_info['user_type'] == 'super_user'){ ?>
-						<div class="row">
+						
 						<div class="row">
 							<div class="col-md-12">
 								<label class = "checkbox-inline mr-4">
