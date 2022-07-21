@@ -937,7 +937,8 @@ class Recruitment extends BaseController {
 				$value = $this->request->getGet('value');		
 				
 				$data = [
-					'result'  => $value
+					'result'  => $value,
+					'status' => 4
 				];
 				$JobinterviewsModel = new JobinterviewsModel();
 				$job_int = $JobinterviewsModel->where('candidate_id', $user_id)->first();
@@ -963,7 +964,8 @@ class Recruitment extends BaseController {
 				$value = $this->request->getGet('value');		
 				
 				$data = [
-					'feedback'  => $value
+					'feedback'  => $value,
+					'status'  => 5
 				];
 				$JobinterviewsModel = new JobinterviewsModel();
 				$job_int = $JobinterviewsModel->where('candidate_id', $user_id)->first();
