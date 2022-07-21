@@ -905,7 +905,7 @@ class Recruitment extends BaseController {
 	}
 	// |||update record|||
 	public function update_interview_status() {
-		
+		        $Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
 				$user_id = $this->request->getGet('user_id');
 				$status = $this->request->getGet('status');		
 				
