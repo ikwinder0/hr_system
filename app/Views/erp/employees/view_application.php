@@ -466,8 +466,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
-										<div class="line h-100"></div>
+										<div class="rounded-circle py-2 px-3 bg-light-gray text-muted mb-1"><i class="fas fa-check"></i></div>
+										<div class="line h-100 d-none"></div>
 									  </div>
 									  <div>
 										<h5 class="text-dark">Result</h5>
