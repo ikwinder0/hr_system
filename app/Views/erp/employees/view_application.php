@@ -453,11 +453,11 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 w-200">
+							<div class="col-md-12">
 								<div class="result_div">
 									 <div class="form-group">
 										<label>Select Result</label>
-										<select class="form-control result">
+										<select class="form-control result" style="width:150px">
 											<option value="pass">Pass</option>
 											<option value="fail">Fail</option>
 										</select>
