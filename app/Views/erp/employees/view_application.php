@@ -397,6 +397,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								</p>
 							</div>
 						</div>
+						<?php endif; ?>
 						<hr>
 						<?php if($user_info['user_type'] == 'super_user'){ ?>
 						<div class="row">
