@@ -509,7 +509,21 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									  </div>
 									  <div>
 										<h5 class="text-dark">Result</h5>
-										<p class="lead <?php echo ($interview['result'] && $interview['result'] == 'pass') ? 'text-success' : 'text-danger' ?>  pb-3"><?php echo($interview['status'] > 3 ) ? strtoupper($interview['result']) : 'N/A';  ?></p>
+										<?php 
+										    $class="text-muted";
+											if($interview['result']){
+											
+												if($interview['result'] == 'pass'){
+													$class="text-success";
+												}elseif($interview['result'] == 'fail'){
+													$class="text-danger";
+												}else{
+													$class="text-muted";
+												}
+											
+											}
+									    ?>
+										<p class="lead <?php echo $class; ?>  pb-3"><?php echo($interview['status'] > 3 ) ? strtoupper($interview['result']) : 'N/A';  ?></p>
 									  </div>
 									</div>
 									<div class="d-flex mb-1">
