@@ -340,6 +340,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			 </div>
 				<div class="card-body pb-2">
 					<div class="box-body">
+					<?php if($user_info['user_type'] == 'super_user'){ ?>
 					    <div class="row">
 							<div class="col-md-6">
 								<select class="form-control app_status form-select" data-plugin="select_hrm">
@@ -352,7 +353,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 						
-						<?php if($user_info['user_type'] == 'super_user'){ ?>
+						
 						<?php if($application['application_status'] == 1 && !$interview): ?>
 						<hr>
 						
