@@ -1132,16 +1132,16 @@ $('.process_interview').click(function(){
 
 $('.process_result').click(function(){
 	
-	$('.result_div').show();
+	$('.result_div').toggle();
 	
-}
+});
 
 $('.process_feedback').click(function(){
 	
 	
-	$('.feedback_div').show();
+	$('.feedback_div').toggle();
 	
-}
+});
 
 
 $( document ).on( "click", ".delete", function() {
