@@ -417,13 +417,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									<input type = "checkbox" class="process_interview" id = "inlineCheckbox1" value = "1"> Pre-Screening
 								 </label>
 								 <label class = "checkbox-inline mr-4"> 
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" value = "2" disabled> Interview
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" value = "2" <?php echo($interview['status'] > 2 && $interview['status'] < 4) ? '' : 'disabled';  ?>> Interview
 								 </label>
 								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" value = "3" disabled> Feedback
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" value = "3" <?php echo($interview['status'] > 3 && $interview['status'] < 5) ? '' : 'disabled';  ?> > Feedback
 								 </label>
 								 <label class = "checkbox-inline">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" value = "4" disabled> Result
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" value = "4" <?php echo($interview['status'] > 4 ) ? '' : 'disabled';  ?> > Result
 								 </label>
 							</div>
 						</div>
