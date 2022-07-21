@@ -396,15 +396,21 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<label class = "checkbox-inline mr-4">
 									<input type = "checkbox" class="process_interview" id = "inlineCheckbox1" value = "1"> Pre-Screening
 								 </label>
-								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" value = "2"> Interview
+								 <label class = "checkbox-inline mr-4"> 
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" value = "2" disabled> Interview
 								 </label>
 								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" value = "3"> Feedback
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" value = "3" disabled> Feedback
 								 </label>
 								 <label class = "checkbox-inline">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" value = "4"> Result
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" value = "4" disabled> Result
 								 </label>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<textarea
 							</div>
 						</div>
 						
