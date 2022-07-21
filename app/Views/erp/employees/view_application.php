@@ -118,6 +118,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
   .line {
     width: 2px;
     background-color: lightgrey !important;
+	height: 100px;
   }
    .lead {
         font-size: 14px;
@@ -436,8 +437,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<div class="stepper d-flex flex-column mt-5 ml-2">
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
-										<div class="line h-100"></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview > 1 && $interview < 3) ? 'bg-primary text-white' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="line"></div>
 									  </div>
 									  <div>
 										<h5 class="text-dark">Pre-Screening</h5>
@@ -446,8 +447,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
-										<div class="line h-100"></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview > 2 && $interview < 4) ? 'bg-primary text-white' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="line"></div>
 									  </div>
 									  <div>
 										<h5 class="text-dark">Interview</h5>
@@ -456,8 +457,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
-										<div class="line h-100"></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview > 3 && $interview < 5) ? 'bg-primary text-white' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="line"></div>
 									  </div>
 									  <div>
 										<h5 class="text-dark">Feedback</h5>
@@ -466,8 +467,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-light-gray text-muted mb-1"><i class="fas fa-check"></i></div>
-										<div class="line h-100 d-none"></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview > 4) ? 'bg-primary text-white' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="line d-none"></div>
 									  </div>
 									  <div>
 										<h5 class="text-dark">Result</h5>
