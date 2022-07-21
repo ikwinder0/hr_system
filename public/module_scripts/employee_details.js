@@ -1095,7 +1095,19 @@ $(document).ready(function() {
 	});
 		
 });
-
+$('.process_interview').click(function(){
+	
+	var user_id = $(this).data('id');
+	
+	if($('#inlineCheckbox'+user_id).is(':checked'))
+	{
+	  
+	}else
+	{
+	 $('#inlineCheckbox'+user_id).prop('checked',true);
+	}
+	
+});
 
 
 $( document ).on( "click", ".delete", function() {
