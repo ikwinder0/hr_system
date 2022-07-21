@@ -297,6 +297,7 @@ $routes->get('erp/jobs-list/', 'Recruitment::jobs', ['namespace' => 'App\Control
 $routes->get('erp/view-job/(:segment)', 'Recruitment::job_details', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/candidates-list/', 'Recruitment::candidates', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/jobs-interviews/', 'Recruitment::interviews', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+$routes->get('erp/interview-status/', 'Recruitment::update_interview_status', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 $routes->get('erp/promotion-list/', 'Recruitment::promotions', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/create-new-job/', 'Recruitment::create_job', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/edit-a-job/(:segment)', 'Recruitment::edit_job', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);

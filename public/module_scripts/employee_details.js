@@ -1098,15 +1098,35 @@ $(document).ready(function() {
 $('.process_interview').click(function(){
 	
 	var user_id = $(this).data('id');
-	console.log(user_id);
-	if($('#inlineCheckbox'+user_id).not(':checked'))
-	{
-	  $('#inlineCheckbox'+user_id).prop('checked');
-	}else{
-		
-		alert();
-		
-	}
+	var number = $(this).val();
+	$.ajax({
+			url: main_url+"interview-status",
+			type: "GET",
+			data:  {'status':number, 'user_id':user_id},
+			success: function(JSON)
+			{
+				if (JSON.error != '') {
+					
+					toastr.error(JSON.error);
+					
+					Ladda.stopAll();
+					
+				} else {
+					
+					toastr.success(JSON.result);
+					
+					window.location.reload();
+					
+				}
+			},
+			error: function() 
+			{
+				toastr.error(JSON.error);
+				$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+			} 	        
+	   });
+	
 	
 });
 

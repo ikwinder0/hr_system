@@ -905,82 +905,29 @@ class Recruitment extends BaseController {
 	}
 	// |||update record|||
 	public function update_interview_status() {
-			
-		$validation =  \Config\Services::validation();
-		$session = \Config\Services::session();
-		$request = \Config\Services::request();
-		$usession = $session->get('sup_username');	
-		if ($this->request->getPost('type') === 'edit_record') {
-			$Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
-			$Return['csrf_hash'] = csrf_hash();
-			// set rules
-			$rules = [
-				'status' => [
-					'rules'  => 'required',
-					'errors' => [
-						'required' => lang('Main.xin_error_field_text')
-					]
-				],
-				'description' => [
-					'rules'  => 'required',
-					'errors' => [
-						'required' => lang('Success.xin_interview_remarks_field_error')
-					]
-				]
-			];
-			if(!$this->validate($rules)){
-				$ruleErrors = [
-                    "status" => $validation->getError('status'),
-					"description" => $validation->getError('description')
-                ];
-				foreach($ruleErrors as $err){
-					$Return['error'] = $err;
-					if($Return['error']!=''){
-						$this->output($Return);
-					}
-				}
-			} else {
-				$description = $this->request->getPost('description',FILTER_SANITIZE_STRING);
-				$status = $this->request->getPost('status',FILTER_SANITIZE_STRING);		
-				$id = udecode($this->request->getPost('token',FILTER_SANITIZE_STRING));
-					
-				$UsersModel = new UsersModel();
-				$JobcandidatesModel = new JobcandidatesModel();
-				$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-				if($user_info['user_type'] == 'staff'){
-					$company_id = $user_info['company_id'];
-				} else {
-					$company_id = $usession['sup_user_id'];
-				}
+		
+				$user_id = $this->request->getGet('user_id');
+				$status = $this->request->getGet('status');		
+				
 				$data = [
-					'status'  => $status,
-					'interview_remarks'  => $description
+					'status'  => $status
 				];
 				$JobinterviewsModel = new JobinterviewsModel();
-				$job_int = $JobinterviewsModel->where('job_interview_id', $id)->first();
+				$job_int = $JobinterviewsModel->where('candidate_id', $user_id)->first();
+				$id = $job_int['job_interview_id'];
 				$result = $JobinterviewsModel->update($id,$data);
-				$Return['csrf_hash'] = csrf_hash();	
+				
 				if ($result == TRUE) {
 					// employee details
-					if($status == 2){
-						$data2 = [
-							'designation_id' => $job_int['designation_id'],
-						];
-						$MainModel = new MainModel();
-						$MainModel->update_employee_record($data2,$job_int['staff_id']);
-					}
+					
 					$Return['result'] = lang('Success.ci_interview_updated_msg');
 				} else {
 					$Return['error'] = lang('Main.xin_error_msg');
 				}
 				$this->output($Return);
 				exit;
-			}
-		} else {
-			$Return['error'] = lang('Main.xin_error_msg');
-			$this->output($Return);
-			exit;
-		}
+			
+		
 	}
 	 // |||add record|||
 	public function apply_job() {
