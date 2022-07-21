@@ -437,7 +437,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<div class="stepper d-flex flex-column mt-5 ml-2">
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 1 && $interview['status'] < 3) ? 'bg-primary text-white' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 1 && $interview['status'] < 3) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
 										<div class="line"></div>
 									  </div>
 									  <div>
@@ -447,7 +447,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 2 && $interview['status'] < 4) ? 'bg-primary text-light' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 2 && $interview['status'] < 4) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
 										<div class="line"></div>
 									  </div>
 									  <div>
@@ -457,7 +457,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 3 && $interview['status'] < 5) ? 'bg-primary text-light' : 'bg-light text-muted';  ?> mb-1"><i class="fas fa-check"></i></div>
+										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 3 && $interview['status'] < 5) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
 										<div class="line"></div>
 									  </div>
 									  <div>
