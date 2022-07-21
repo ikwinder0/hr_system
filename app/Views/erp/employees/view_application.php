@@ -84,6 +84,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
   .photo-section{
     text-align: center;
     margin: 30px auto;
+	width: 130px;
 	
   }
   
