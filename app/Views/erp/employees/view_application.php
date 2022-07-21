@@ -115,11 +115,11 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
   }
   
  
-  .stepper .line {
+  .line {
     width: 2px;
     background-color: lightgrey !important;
   }
-  .stepper .lead {
+   .lead {
     font-size: 1.1rem;
   }
 
