@@ -1132,14 +1132,14 @@ $('.process_interview').click(function(){
 
 $('.process_result').click(function(){
 	
-	$('.result_div').toggle();
+	$('.result_div').show();
 	
 }
 
 $('.process_feedback').click(function(){
 	
 	
-	$('.feedback_div').toggle();
+	$('.feedback_div').show();
 	
 }
 
