@@ -1099,13 +1099,13 @@ $('.process_interview').click(function(){
 	
 	var user_id = $(this).data('id');
 	console.log(user_id);
-	if($('#inlineCheckbox'+user_id).is(':checked'))
+	if($('#inlineCheckbox'+user_id).not(':checked'))
 	{
-	  console.log($(this).val());
-	}else
-	{
-	 $('#inlineCheckbox'+user_id).prop('checked');
-	 console.log('test');
+	  $('#inlineCheckbox'+user_id).prop('checked');
+	}else{
+		
+		alert();
+		
 	}
 	
 });
