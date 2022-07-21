@@ -366,6 +366,18 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<div class="row">
 							        <div class="col-md-6">
 								    <div class="form-group">
+										<label>Interviewer</label>
+										<select class="form-control" name="interviewer_id" data-plugin="select_hrm" data-placeholder="Select Interviewer">
+										<option>interviewer 1</option>
+										<option>interviewer 2</option>
+										<option>interviewer 3</option>
+										</select>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+							        <div class="col-md-6">
+								    <div class="form-group">
 										<label>Interview Date</label>
 										<input type="text" name="interview_date" class="form-control edate" required>
 									</div>
@@ -414,16 +426,16 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="row">
 							<div class="col-md-12">
 								<label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" data-id="<?= $user_id ?>" value = "2" <?php echo($interview['status'] > 1 && $interview['status'] < 3) ? 'checked' : '';  ?>> Pre-Screening
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" data-id="<?= $user_id ?>" value = "2" <?php echo($interview['status'] > 1 && $interview['status'] < 3) ? 'checked disabled' : '';  ?>> Pre-Screening
 								 </label>
 								 <label class = "checkbox-inline mr-4"> 
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" data-id="<?= $user_id ?>" value = "3" <?php echo($interview['status'] > 2 && $interview['status'] < 4) ? 'checked' : '';  ?>> Interview
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" data-id="<?= $user_id ?>" value = "3" <?php echo($interview['status'] > 2 && $interview['status'] < 4) ? 'checked disabled' : '';  ?>> Interview
 								 </label>
 								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "4" <?php echo($interview['status'] > 3  && $interview['status'] < 5) ? 'checked' : '';  ?> > Feedback
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "4" <?php echo($interview['status'] > 3  && $interview['status'] < 5) ? 'checked disabled' : '';  ?> > Feedback
 								 </label>
 								 <label class = "checkbox-inline">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "5" <?php echo($interview['status'] == 5) ? 'checked' : '';  ?> > Result
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "5" <?php echo($interview['status'] == 5) ? 'checked disabled' : '';  ?> > Result
 								 </label>
 							</div>
 						</div>
