@@ -1130,6 +1130,77 @@ $('.process_interview').click(function(){
 	
 });
 
+
+$('.result_save').click(function(){
+	
+	var user_id = $(this).data('id');
+	var value = $('.result').val();
+	$.ajax({
+			url: main_url+"result-save",
+			type: "GET",
+			data:  {'value':value, 'user_id':user_id},
+			success: function(JSON)
+			{
+				if (JSON.error != '') {
+					
+					toastr.error(JSON.error);
+					
+					Ladda.stopAll();
+					
+				} else {
+					
+					toastr.success(JSON.result);
+					
+					window.location.reload();
+					
+				}
+			},
+			error: function() 
+			{
+				toastr.error(JSON.error);
+				$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+			} 	        
+	   });
+	
+	
+});
+
+$('.feedback_save').click(function(){
+	
+	var user_id = $(this).data('id');
+	var value = $('.feedback_text').val();
+	$.ajax({
+			url: main_url+"feedback-save",
+			type: "GET",
+			data:  {'value':value, 'user_id':user_id},
+			success: function(JSON)
+			{
+				if (JSON.error != '') {
+					
+					toastr.error(JSON.error);
+					
+					Ladda.stopAll();
+					
+				} else {
+					
+					toastr.success(JSON.result);
+					
+					window.location.reload();
+					
+				}
+			},
+			error: function() 
+			{
+				toastr.error(JSON.error);
+				$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+			} 	        
+	   });
+	
+	
+});
+
 $('.process_result').click(function(){
 	
 	$('.result_div').toggle();

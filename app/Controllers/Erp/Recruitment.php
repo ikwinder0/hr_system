@@ -929,6 +929,59 @@ class Recruitment extends BaseController {
 			
 		
 	}
+	
+	
+	public function result_save() {
+		        $Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
+				$user_id = $this->request->getGet('user_id');
+				$value = $this->request->getGet('value');		
+				
+				$data = [
+					'result'  => $value
+				];
+				$JobinterviewsModel = new JobinterviewsModel();
+				$job_int = $JobinterviewsModel->where('candidate_id', $user_id)->first();
+				$id = $job_int['job_interview_id'];
+				$result = $JobinterviewsModel->update($id,$data);
+				
+				if ($result == TRUE) {
+					// employee details
+					
+					$Return['result'] = lang('Success.ci_interview_updated_msg');
+				} else {
+					$Return['error'] = lang('Main.xin_error_msg');
+				}
+				$this->output($Return);
+				exit;
+			
+		
+	}
+	
+	public function feedback_save() {
+		        $Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
+				$user_id = $this->request->getGet('user_id');
+				$value = $this->request->getGet('value');		
+				
+				$data = [
+					'feedback'  => $value
+				];
+				$JobinterviewsModel = new JobinterviewsModel();
+				$job_int = $JobinterviewsModel->where('candidate_id', $user_id)->first();
+				$id = $job_int['job_interview_id'];
+				$result = $JobinterviewsModel->update($id,$data);
+				
+				if ($result == TRUE) {
+					// employee details
+					
+					$Return['result'] = lang('Success.ci_interview_updated_msg');
+				} else {
+					$Return['error'] = lang('Main.xin_error_msg');
+				}
+				$this->output($Return);
+				exit;
+			
+		
+	}
 	 // |||add record|||
 	public function apply_job() {
 			
