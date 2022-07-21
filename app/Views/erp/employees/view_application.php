@@ -462,7 +462,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 											<option value="fail">Fail</option>
 										</select>
 									</div>
-									<button class="btn btn-primary result_save" data-id="<?= $user_id ?>">Save</button>
+									<button class="btn btn-primary result_save" data-id="<?= $user_id ?>">Save Result</button>
 									 
 								</div>
 								<div class="feedback_div" style="display:none">
@@ -470,7 +470,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 										<label>Feedback</label>
 										<textarea class="form-control feedback_text" rows="10"></textarea>
 									</div>
-									<button class="btn btn-primary feedback_save" data-id="<?= $user_id ?>">Save</button>
+									<button class="btn btn-primary feedback_save" data-id="<?= $user_id ?>">Save Feedback</button>
 									 
 								</div>
 							</div>
