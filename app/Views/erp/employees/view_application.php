@@ -378,6 +378,17 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<div class="row">
 							        <div class="col-md-6">
 								    <div class="form-group">
+										<label>Mode of Interview</label>
+										<select class="form-control" name="mode_of_interview" data-plugin="select_hrm" data-placeholder="Select Interviewer">
+										<option>Only One </option>
+										<option>Two</option>
+										</select>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+							        <div class="col-md-6">
+								    <div class="form-group">
 										<label>Interview Date</label>
 										<input type="text" name="interview_date" class="form-control edate" required>
 									</div>
@@ -420,7 +431,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								</p>
 							</div>
 						</div>
-						<?php endif; ?>
+						
 						<hr>
 						<?php if($user_info['user_type'] == 'super_user'){ ?>
 						<div class="row">
@@ -441,7 +452,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 						
 						<?php } ?>
-						
+						<?php endif; ?>
 						
 						<?php if($interview): ?>
 						<div class="row">
