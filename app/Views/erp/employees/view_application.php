@@ -449,7 +449,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
 							</div>
 						</div>
-						<?php } ?>
+						<?php endif; ?>
 						
 					</div>
 				</div>
