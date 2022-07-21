@@ -318,7 +318,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         </div>
 		</div>
 	</div>
-	<?php if($user_info['user_type'] == 'super_user'){ ?>
+	
 	<div class="row">
         <div class="col-md-12">
 		        <div class="card">
@@ -341,7 +341,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 						
-						
+						<?php if($user_info['user_type'] == 'super_user'){ ?>
 						<?php if($application['application_status'] == 1 && !$interview): ?>
 						<hr>
 						
@@ -379,7 +379,10 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<?= form_close(); ?>
 							</div>
 						</div>
-						<?php endif; ?>
+						<?php 
+						endif; 
+						}
+						?>
 						
 						
 						<?php if($interview): ?>
@@ -387,10 +390,15 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<div class="col-md-12">
 								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
 								<br>
-								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  <span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span></p>
+								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  
+								<?php if($user_info['user_type'] == 'super_user'){ ?>
+								<span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span>
+								<?php } ?>
+								</p>
 							</div>
 						</div>
 						<hr>
+						<?php if($user_info['user_type'] == 'super_user'){ ?>
 						<div class="row">
 							<div class="col-md-12">
 								<label class = "checkbox-inline mr-4">
@@ -408,13 +416,10 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 						
-						<div class="row">
-							<div class="col-md-12">
-								<textarea
-							</div>
-						</div>
+						<?php } ?>
 						
-						<!--div class="row bs-wizard" style="border-bottom:0;">
+						<?php if($interview): ?>
+						<div class="row bs-wizard" style="border-bottom:0;">
                 
 							<div class="col-md-3 bs-wizard-step disabled /*complete*/">
 							  <div class="text-center bs-wizard-stepnum">Pre-Screening</div>
@@ -443,8 +448,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							  <a href="#" class="bs-wizard-dot"></a>
 							  <div class="bs-wizard-info text-center"> Curabitur mollis magna at blandit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>
 							</div>
-						</div-->
-						<?php endif; ?>
+						</div>
+						<?php } ?>
+						
 					</div>
 				</div>
 			</div>
