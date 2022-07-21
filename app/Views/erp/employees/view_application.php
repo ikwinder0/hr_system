@@ -443,12 +443,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								 <label class = "checkbox-inline mr-4"> 
 									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" data-id="<?= $user_id ?>" value = "3" <?php echo($interview && $interview['status'] > 2) ? 'checked disabled' : '';  ?>> Interview
 								 </label>
-								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "4" <?php echo($interview && $interview['status'] > 3) ? 'checked disabled' : '';  ?> > Feedback
-								 </label>
 								 <label class = "checkbox-inline">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "5" <?php echo($interview && $interview['status'] > 4) ? 'checked disabled' : '';  ?> > Result
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "4" <?php echo($interview && $interview['status'] > 3) ? 'checked disabled' : '';  ?> > Result
 								 </label>
+								 <label class = "checkbox-inline mr-4">
+									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "5" <?php echo($interview && $interview['status'] > 4) ? 'checked disabled' : '';  ?> > Feedback
+								 </label>
+								 
 							</div>
 						</div>
 						
@@ -482,10 +483,10 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
 										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 3 ) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
-										<div class="line"></div>
+										<div class="line "></div>
 									  </div>
 									  <div>
-										<h5 class="text-dark">Feedback</h5>
+										<h5 class="text-dark">Result</h5>
 										<p class="lead text-muted pb-3">N/A</p>
 									  </div>
 									</div>
@@ -495,7 +496,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 										<div class="line d-none"></div>
 									  </div>
 									  <div>
-										<h5 class="text-dark">Result</h5>
+										<h5 class="text-dark">Feedback</h5>
 										<p class="lead text-muted pb-3">N/A</p>
 									  </div>
 									</div>
