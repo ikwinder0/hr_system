@@ -467,32 +467,42 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<div class="stepper d-flex flex-column mt-5 ml-2">
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">1</div>
+										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
 										<div class="line h-100"></div>
 									  </div>
 									  <div>
-										<h5 class="text-dark">Create your application respository</h5>
-										<p class="lead text-muted pb-3">Choose your website name & create repository</p>
+										<h5 class="text-dark">Pre-Screening</h5>
+										<p class="lead text-muted pb-3">N/A</p>
 									  </div>
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">2</div>
+										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
 										<div class="line h-100"></div>
 									  </div>
 									  <div>
-										<h5 class="text-dark">Clone application respository</h5>
-										<p class="lead text-muted pb-3">Go to your dashboard and clone Git respository from the url in the dashboard of your application</p>
+										<h5 class="text-dark">Interview</h5>
+										<p class="lead text-muted pb-3">N/A</p>
 									  </div>
 									</div>
 									<div class="d-flex mb-1">
 									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">3</div>
+										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
 										<div class="line h-100 d-none"></div>
 									  </div>
 									  <div>
-										<h5 class="text-dark">Make changes and push!</h5>
-										<p class="lead text-muted pb-3">Now make changes to your application source code, test it then commit &amp; push</p>
+										<h5 class="text-dark">Feedback</h5>
+										<p class="lead text-muted pb-3">N/A</p>
+									  </div>
+									</div>
+									<div class="d-flex mb-1">
+									  <div class="d-flex flex-column pr-4 align-items-center">
+										<div class="rounded-circle py-2 px-3 bg-primary text-white mb-1"><i class="fas fa-check"></i></div>
+										<div class="line h-100 d-none"></div>
+									  </div>
+									  <div>
+										<h5 class="text-dark">Result</h5>
+										<p class="lead text-muted pb-3">N/A</p>
 									  </div>
 									</div>
 								  </div>
