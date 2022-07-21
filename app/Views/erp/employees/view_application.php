@@ -444,17 +444,17 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" data-id="<?= $user_id ?>" value = "3" <?php echo($interview && $interview['status'] > 2) ? 'checked disabled' : '';  ?>> Interview
 								 </label>
 								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "4" <?php echo($interview && $interview['status'] > 3) ? 'checked disabled' : '';  ?> > Result
+									<input type = "checkbox" class="process_result" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "4" <?php echo($interview && $interview['status'] > 3) ? 'checked disabled' : '';  ?> > Result
 								 </label>
 								 <label class = "checkbox-inline ">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "5" <?php echo($interview && $interview['status'] > 4) ? 'checked disabled' : '';  ?> > Feedback
+									<input type = "checkbox" class="process_feedback" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "5" <?php echo($interview && $interview['status'] > 4) ? 'checked disabled' : '';  ?> > Feedback
 								 </label>
 								 
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="result_div">
+								<div class="result_div" style="display:none">
 									 <div class="form-group">
 										<label>Select Result</label>
 										<select class="form-control result" style="width:150px">
@@ -462,7 +462,15 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 											<option value="fail">Fail</option>
 										</select>
 									</div>
-									<button class="btn btn-primary">Save</button>
+									<button class="btn btn-primary result_save">Save</button>
+									 
+								</div>
+								<div class="feedback_div" style="display:none">
+									 <div class="form-group">
+										<label>Feedback</label>
+										<textarea class="form-control feedback_input" rows="10"></textarea>
+									</div>
+									<button class="btn btn-primary feedback_save">Save</button>
 									 
 								</div>
 							</div>
