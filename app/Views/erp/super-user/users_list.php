@@ -21,7 +21,7 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
 
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
-    <?php if(in_array('6',super_user_role_resource())) { ?>
+
     <li class="nav-item active"> <a href="<?= site_url('erp/super-users');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-user-plus"></span>
       <?= lang('Main.xin_super_users');?>
       <div class="text-muted small">
@@ -29,8 +29,8 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
         <?= lang('Main.xin_super_users');?>
       </div>
       </a> </li>
-    <?php } ?>
-    <?php if(in_array('7',super_user_role_resource())) { ?>
+
+
     <li class="nav-item clickable"> <a href="<?= site_url('erp/users-role');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-unlock"></span>
       <?= lang('Users.xin_hr_report_user_roles');?>
       <div class="text-muted small">
@@ -38,7 +38,7 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
         <?= lang('Users.xin_hr_report_user_roles');?>
       </div>
       </a> </li>
-    <?php } ?>
+   
   </ul>
 </div>
 <hr class="border-light m-0 mb-3">
