@@ -23,7 +23,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://thecodehub.tech/';
+	public $baseURL = 'http://hr.logic-brew.com/';
 
 	/*
 	|--------------------------------------------------------------------------
