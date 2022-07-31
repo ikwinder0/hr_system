@@ -42,7 +42,7 @@ class Users extends BaseController {
 		$data['title'] = lang('Users.xin_super_users').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'users';
 		$data['breadcrumbs'] = lang('Users.xin_super_users');
-		$data['subview'] = view('erp/users/users_list', $data);
+		$data['subview'] = view('erp/super-user/users_list', $data);
 		return view('erp/layout/layout_main', $data); //page load
 		
 	}
