@@ -44,6 +44,7 @@ $routes->get('erp/my-profile/', 'Profile::index', ['namespace' => 'App\Controlle
 $routes->get('erp/system-logout/', 'Logout::index', ['namespace' => 'App\Controllers\Erp']);
 /////Super User Modules
 $routes->get('erp/super-user/', 'Superusers::index', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+$routes->get('erp/super-user/detail/(:segment)', 'Superusers::user_details', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 //4: Languages
 $routes->get('erp/all-languages/', 'Languages::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin',]);
 $routes->match(['get', 'post'],'erp/languages/add_language/', 'Languages::add_language', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin',]);
