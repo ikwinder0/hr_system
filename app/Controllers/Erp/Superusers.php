@@ -263,11 +263,11 @@ class Superusers extends BaseController {
 			$EmailtemplatesModel = new EmailtemplatesModel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			
-			$company_name = $user_info['company_name'];
-			$company_type = $user_info['company_type'];
-			$xin_gtax = $user_info['xin_gtax'];
-			$trading_name = $user_info['trading_name'];
-			$registration_no = $user_info['registration_no'];
+			// $company_name = $user_info['company_name'];
+			// $company_type = $user_info['company_type'];
+			// $xin_gtax = $user_info['xin_gtax'];
+			// $trading_name = $user_info['trading_name'];
+			// $registration_no = $user_info['registration_no'];
 			
 			$options = array('cost' => 12);
 			$password_hash = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -289,11 +289,11 @@ class Superusers extends BaseController {
 				'state'  => $state,
 				'zipcode' => $zipcode,
 				'gender' => $gender,
-				'company_name' => $company_name,
-				'trading_name' => $trading_name,
-				'registration_no' => $registration_no,
-				'government_tax' => $xin_gtax,
-				'company_type_id'  => $company_type,
+				// 'company_name' => $company_name,
+				// 'trading_name' => $trading_name,
+				// 'registration_no' => $registration_no,
+				// 'government_tax' => $xin_gtax,
+				// 'company_type_id'  => $company_type,
 				'last_login_date' => '0',
 				'last_logout_date' => '0',
 				'last_login_ip' => '0',
@@ -310,11 +310,11 @@ class Superusers extends BaseController {
 				$Return['result'] = lang('Users.xin_success_user_added');
 				if($xin_system['enable_email_notification'] == 1){
 					// Send mail start
-					$itemplate = $EmailtemplatesModel->where('template_id', 5)->first();
-					$isubject = $itemplate['subject'];
-					$ibody = html_entity_decode($itemplate['message']);
-					$fbody = str_replace(array("{site_name}","{user_password}","{user_username}","{site_url}"),array($xin_system['company_name'],$password,$username,site_url()),$ibody);
-					timehrm_mail_data($xin_system['email'],$xin_system['company_name'],$email,$isubject,$fbody);
+					// $itemplate = $EmailtemplatesModel->where('template_id', 5)->first();
+					// $isubject = $itemplate['subject'];
+					// $ibody = html_entity_decode($itemplate['message']);
+					// $fbody = str_replace(array("{site_name}","{user_password}","{user_username}","{site_url}"),array($xin_system['company_name'],$password,$username,site_url()),$ibody);
+					// timehrm_mail_data($xin_system['email'],$xin_system['company_name'],$email,$isubject,$fbody);
 					// Send mail end
 				}
 			} else {
