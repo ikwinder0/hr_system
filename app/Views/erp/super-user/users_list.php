@@ -19,29 +19,6 @@ $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 $xin_system = $SystemModel->where('setting_id', 1)->first();
 ?>
 
-<div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
-  <ul class="nav nav-tabs step-anchor">
-
-    <li class="nav-item active"> <a href="<?= site_url('erp/super-users');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-user-plus"></span>
-      <?= lang('Main.xin_super_users');?>
-      <div class="text-muted small">
-        <?= lang('Main.xin_set_up');?>
-        <?= lang('Main.xin_super_users');?>
-      </div>
-      </a> </li>
-
-
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/users-role');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-unlock"></span>
-      <?= lang('Users.xin_hr_report_user_roles');?>
-      <div class="text-muted small">
-        <?= lang('Main.xin_set_up');?>
-        <?= lang('Users.xin_hr_report_user_roles');?>
-      </div>
-      </a> </li>
-   
-  </ul>
-</div>
-<hr class="border-light m-0 mb-3">
 <div id="add_form" class="collapse add-form" data-parent="#accordion" style="">
   <?php $attributes = array('name' => 'add_user', 'id' => 'xin-form', 'autocomplete' => 'off');?>
   <?php $hidden = array('user_id' => 0);?>
