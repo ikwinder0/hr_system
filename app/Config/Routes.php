@@ -1,7 +1,7 @@
 <?php namespace Config;
 
 // Create a new instance of our RouteCollection class.
-$routes = Services::routes();
+$routes = Services:: ();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
@@ -43,6 +43,8 @@ $routes->match(['get', 'post'],'erp/auth/unlock/', 'Auth::unlock', ['namespace' 
 $routes->get('erp/my-profile/', 'Profile::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/system-logout/', 'Logout::index', ['namespace' => 'App\Controllers\Erp']);
 /////Super User Modules
+
+$routes->get('erp/super-users/', 'Superusers::index', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 //4: Languages
 $routes->get('erp/all-languages/', 'Languages::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin',]);
 $routes->match(['get', 'post'],'erp/languages/add_language/', 'Languages::add_language', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin',]);
