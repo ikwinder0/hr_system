@@ -29,7 +29,7 @@ use App\Models\ConstantsModel;
 use App\Models\SuperroleModel;
 use App\Models\EmailtemplatesModel;
 
-class Users extends BaseController {
+class Superusers extends BaseController {
 	
 	public function index()
 	{		
