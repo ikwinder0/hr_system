@@ -33,7 +33,7 @@ class Superusers extends BaseController {
 	
 	public function index()
 	{		
-		
+		die('here');
 		$session = \Config\Services::session();
 		$SystemModel = new SystemModel();
 		$UsersModel = new UsersModel();
