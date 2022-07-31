@@ -55,7 +55,7 @@ class Superusers extends BaseController {
 		$usession = $session->get('sup_username');
 		$UsersModel = new UsersModel();
 		$request = \Config\Services::request();
-		$ifield_id = udecode($request->uri->getSegment(3));
+		$ifield_id = udecode($request->uri->getSegment(4));
 		$isegment_val = $UsersModel->where('user_id', $ifield_id)->first();
 		if(!$isegment_val){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
@@ -66,7 +66,7 @@ class Superusers extends BaseController {
 		$data['path_url'] = 'user_details';
 		$data['breadcrumbs'] = lang('Users.xin_view_user');
 
-		$data['subview'] = view('erp/users/users_detail', $data);
+		$data['subview'] = view('erp/super-user/users_detail', $data);
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	public function role()
