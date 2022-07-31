@@ -9,7 +9,7 @@ $UsersModel = new UsersModel();
 $request = \Config\Services::request();
 
 $roles = $SuperroleModel->orderBy('role_id', 'ASC')->findAll();
-$segment_id = $request->uri->getSegment(3);
+$segment_id = $request->uri->getSegment(4);
 $user_id = udecode($segment_id);
 $result = $UsersModel->where('user_id', $user_id)->first();
 /////
