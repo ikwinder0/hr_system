@@ -22,7 +22,7 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
 <div id="add_form" class="collapse add-form" data-parent="#accordion" style="">
   <?php $attributes = array('name' => 'add_user', 'id' => 'xin-form', 'autocomplete' => 'off');?>
   <?php $hidden = array('user_id' => 0);?>
-  <?= form_open_multipart('erp/users/add_user', $attributes, $hidden);?>
+  <?= form_open_multipart('erp/superusers/add_user', $attributes, $hidden);?>
   <div id="accordion">
     <div class="row">
       <div class="col-md-8">
