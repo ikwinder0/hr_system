@@ -43,6 +43,7 @@ class Superusers extends BaseController {
 		$data['path_url'] = 'users';
 		$data['breadcrumbs'] = lang('Users.xin_super_users');
 		$data['subview'] = view('erp/super-user/users_list', $data);
+		
 		return view('erp/layout/layout_main', $data); //page load
 		
 	}
