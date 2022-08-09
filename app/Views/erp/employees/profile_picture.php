@@ -41,6 +41,11 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+// department head
+$idepartment = $DepartmentModel->where('department_id',$employee_detail['department_id'])->first();
+$dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->first();
+// user designation
+$idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
 $app_status = $application['application_status'];
 $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->first();
