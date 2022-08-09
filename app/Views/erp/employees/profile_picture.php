@@ -55,6 +55,15 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <?php if($app_status=='3'): $_status = '<span class="badge badge-light-danger">Rejected</span>'; endif; ?>
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
+  <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/employee-details/'.$segment_id);?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user"></span>
+      Basic Info
+      <div class="text-muted small">
+        <?= lang('Main.xin_set_up');?>
+        Basic Info
+      </div>
+      </a> </li>
+    <?php } ?>
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
     <li class="nav-item active"> <a href="<?= site_url('erp/profile-picture/'.$segment_id);?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-image"></span>
       Profile Picture
