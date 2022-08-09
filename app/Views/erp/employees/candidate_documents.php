@@ -87,32 +87,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 
 <div class="row"> 
   <!-- [] start -->
-  <div class="col-lg-4">
-    <div class="card user-card user-card-1">
-      <div class="card-body pb-0">
-        <div class="float-right">
-          <?= $_status?>
-        </div>
-        <div class="media user-about-block align-items-center mt-0 mb-3">
-          <div class="position-relative d-inline-block"> <img class="img-radius img-fluid wid-80" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
-		   <?php if($result['is_active']=='1'): ?>
-            <div class="certificated-badge"> <i class="fas fa-certificate text-primary bg-icon"></i> <i class="fas fa-check front-icon text-white"></i> </div>
-			<?php endif; ?>
-          </div>
-          <div class="media-body ml-3">
-            <h6 class="mb-1">
-              <?= $result['first_name'].' '.$result['last_name']; ?>
-            </h6>
-            <p class="mb-0 text-muted">
-              <?= $idesignations['designation_name'];?>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <input type="hidden" id="user_id" value="<?= udecode($segment_id);?>" />
-  <div class="col-lg-8">
+  <div class="col-lg-12">
     <div class="tab-content" id="user-set-tabContent">
         <div class="tab-pane fade show active" id="user-set-basicinfo" role="tabpanel" aria-labelledby="user-set-basicinfo-tab">
         <div class="card user-profile-list">
