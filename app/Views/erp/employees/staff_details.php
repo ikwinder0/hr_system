@@ -87,7 +87,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item active"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-friends"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-friends"></span>
       Profile Picture
       <div class="text-muted small">
         <?= lang('Main.xin_set_up');?>
@@ -96,30 +96,21 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </a> </li>
     <?php } ?>
 	<?php if($user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/set-roles');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-lock"></span>
-      <?= lang('Main.xin_roles_privileges');?>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/show-documents');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-lock"></span>
+      Documents
       <div class="text-muted small">
-        <?= lang('Dashboard.left_set_roles');?>
+       Set Documents
       </div>
       </a> </li>
     <?php } ?>
 	<?php if(in_array('shift1',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/office-shifts');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-clock"></span>
-      <?= lang('Dashboard.left_office_shifts');?>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-clock"></span>
+      Other Info
       <div class="text-muted small">
-        <?= lang('Dashboard.xin_manage_shifts');?>
+        Set up other info
       </div>
       </a> </li>
     <?php } ?>
-	<?php if(in_array('staffexit1',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/employee-exit');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-log-out"></span>
-      <?= lang('Dashboard.left_employees_exit');?>
-      <div class="text-muted small">
-        <?= lang('Main.xin_set_up');?>
-        <?= lang('Dashboard.left_employees_exit');?>
-      </div>
-      </a> </li>
-     <?php } ?>
   </ul>
 </div>
 <hr class="border-light m-0 mb-3">
