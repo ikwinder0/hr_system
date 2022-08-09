@@ -41,6 +41,19 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+if($user_info['user_type'] == 'super_user'){
+	$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
+	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
+	$office_shifts = '';
+	$leave_types = '';
+	$roles = '';
+} else {
+	$departments = $DepartmentModel->where('company_id',$usession['sup_user_id'])->orderBy('department_id', 'ASC')->findAll();
+	$designations = $DesignationModel->orderBy('designation_id', 'ASC')->findAll();
+	$office_shifts = $ShiftModel->where('company_id',$usession['sup_user_id'])->orderBy('office_shift_id', 'ASC')->findAll();
+	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
+	$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
+}
 // department head
 $idepartment = $DepartmentModel->where('department_id',$employee_detail['department_id'])->first();
 $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->first();
