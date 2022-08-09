@@ -87,7 +87,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-image"></span> <span class="sw-icon fas fa-user-friends"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-image"></span>
       Profile Picture
       <div class="text-muted small">
         <?= lang('Main.xin_set_up');?>
@@ -96,7 +96,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </a> </li>
     <?php } ?>
 	<?php if($user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/show-documents');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-file-plus"></span> <span class="sw-icon fas fa-user-lock"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/show-documents');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-document"></span>
       Documents
       <div class="text-muted small">
        Set Documents
@@ -104,13 +104,14 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </a> </li>
     <?php } ?>
 	<?php if(in_array('shift1',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon feather icon-clock"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-info"></span>
       Other Info
       <div class="text-muted small">
         Set up other info
       </div>
       </a> </li>
     <?php } ?>
+	
   </ul>
 </div>
 <hr class="border-light m-0 mb-3">
