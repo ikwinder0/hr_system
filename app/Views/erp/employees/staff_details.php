@@ -96,7 +96,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </a> </li>
     <?php } ?>
 	<?php if($user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/show-documents');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-document"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/show-documents');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-file"></span>
       Documents
       <div class="text-muted small">
        Set Documents
