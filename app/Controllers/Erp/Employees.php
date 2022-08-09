@@ -268,7 +268,7 @@ class Employees extends BaseController {
 		$StaffdetailsModel = new StaffdetailsModel();
 		$JobcandidatesModel = new JobcandidatesModel();
 		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-		
+	
 		if($user_info['user_type'] == 'company') { 
 		
 			$staff = $UsersModel->where('company_id', $usession['sup_user_id'])->where('user_type','staff')->orderBy('user_id', 'ASC')->findAll();
@@ -284,9 +284,9 @@ class Employees extends BaseController {
 		  			
 			        if($user_info['user_type'] == 'company') {
 						
-						// $edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-details').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
+						$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-details').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-edit"></i></button></a></span>';
 						
-						$edit = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-application').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
+						$detail = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view_details').'"><a href="'.site_url('erp/employee-application').'/'.uencode($r['user_id']).'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
 					
 					
 						$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
@@ -298,6 +298,8 @@ class Employees extends BaseController {
 					
 					
 						    $delete = '';
+						    
+						    	$detail = "";
 							
 							
 						
@@ -332,8 +334,8 @@ class Employees extends BaseController {
 			} else {
 				$gender = lang('Main.xin_gender_female');
 			}
-			
-			$country_info['country_name'] = 'india';
+			$country_info = $CountryModel->where('country_id', $r['country'])->first();
+		
 			$name = $r['first_name'].' '.$r['last_name'];
 			//designation
 			$employee_detail = $StaffdetailsModel->where('user_id', $r['user_id'])->first();
@@ -351,7 +353,7 @@ class Employees extends BaseController {
 					<p class="m-b-0">'.$r['email'].'</p>
 				</div>
 			</div>';
-			$combhr = $edit.$delete;
+			$combhr = $detail.$edit.$delete;
 			$links = '
 				'.$uname.'
 				<div class="overlay-edit">
@@ -2013,9 +2015,9 @@ class Employees extends BaseController {
 			        'applied_for' => 'required',
 					'first_name' => 'required',
 					'last_name' => 'required',
-					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
+				// 	'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
 					'contact_number' => 'required|numeric',
-					'dob' => 'required',
+					'date_of_birth' => 'required',
 					'gender' => 'required',
 					'country' => 'required',
 					'marital_status' => 'required',
@@ -2035,16 +2037,16 @@ class Employees extends BaseController {
 					'last_name' => [
 						'required' => lang('Main.xin_employee_error_last_name'),
 					],
-					'email' => [
-						'required' => lang('Main.xin_employee_error_email'),
-						'valid_email' => lang('Main.xin_employee_error_invalid_email'),
-						'is_unique' => lang('Main.xin_already_exist_error_email'),
-					],
+				// 	'email' => [
+				// 		'required' => lang('Main.xin_employee_error_email'),
+				// 		'valid_email' => lang('Main.xin_employee_error_invalid_email'),
+				// 		'is_unique' => lang('Main.xin_already_exist_error_email'),
+				// 	],
 					'contact_number' => [
 						'required' => lang('Main.xin_error_contact_field'),
 						'numeric' => lang('Main.xin_error_contact_numeric'),
 					],
-					'dob' => [
+					'date_of_birth' => [
 						'required' => lang('Employees.xin_error_dob'),
 					],
 					'gender' => [
@@ -2083,8 +2085,8 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('email');
 			} elseif($validation->hasError('contact_number')){
 				$Return['error'] = $validation->getError('contact_number');
-			} elseif($validation->hasError('dob')){
-				$Return['error'] = $validation->getError('dob');
+			} elseif($validation->hasError('date_of_birth')){
+				$Return['error'] = $validation->getError('date_of_birth');
 			} elseif($validation->hasError('gender')){
 				$Return['error'] = $validation->getError('gender');
 			} elseif($validation->hasError('country')){
@@ -2110,7 +2112,7 @@ class Employees extends BaseController {
 			$last_name = $this->request->getPost('last_name',FILTER_SANITIZE_STRING);
 			$email = $this->request->getPost('email',FILTER_SANITIZE_STRING);
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
-			$dob = $this->request->getPost('dob',FILTER_SANITIZE_STRING);
+			$dob = $this->request->getPost('date_of_birth',FILTER_SANITIZE_STRING);
 			$gender = $this->request->getPost('gender',FILTER_SANITIZE_STRING);
 			$country = $this->request->getPost('country',FILTER_SANITIZE_STRING);
 			$marital_status = $this->request->getPost('marital_status',FILTER_SANITIZE_STRING);

@@ -40,7 +40,7 @@ $xin_system = $SystemModel->where('setting_id', 1)->first();
     <?= lang('Membership.xin_membership');?>
     </span></a></li>
   <!-- Super Users -->
-  <li class="pc-item <?php if(!empty($arr_mod['users_active']))echo $arr_mod['users_active'];?>"><a href="<?= site_url('erp/super-user');?>" class="pc-link "><span class="pc-micon"><i data-feather="user-plus"></i></span><span class="pc-mtext">
+  <li class="pc-item <?php if(!empty($arr_mod['users_active']))echo $arr_mod['users_active'];?>"><a href="<?= site_url('erp/super-users');?>" class="pc-link "><span class="pc-micon"><i data-feather="user-plus"></i></span><span class="pc-mtext">
     <?= lang('Main.xin_super_users');?>
     </span></a></li>
   <!-- User Roles -->

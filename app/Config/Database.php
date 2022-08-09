@@ -33,7 +33,7 @@ class Database extends \CodeIgniter\Database\Config
 		'DSN'      => 'mysql:host=localhost;dbname=u935443259_hr',
 		'hostname' => 'localhost',
 		'username' => 'u935443259_hr',
-		'password' => '2022@HrDB',
+		'password' => 'Wkmnis1313!',
 		'database' => 'u935443259_hr',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',

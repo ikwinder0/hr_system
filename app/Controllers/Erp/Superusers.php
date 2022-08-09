@@ -29,11 +29,11 @@ use App\Models\ConstantsModel;
 use App\Models\SuperroleModel;
 use App\Models\EmailtemplatesModel;
 
-class Superusers extends BaseController {
+class Users extends BaseController {
 	
 	public function index()
 	{		
-	
+		
 		$session = \Config\Services::session();
 		$SystemModel = new SystemModel();
 		$UsersModel = new UsersModel();
@@ -42,8 +42,7 @@ class Superusers extends BaseController {
 		$data['title'] = lang('Users.xin_super_users').' | '.$xin_system['application_name'];
 		$data['path_url'] = 'users';
 		$data['breadcrumbs'] = lang('Users.xin_super_users');
-		$data['subview'] = view('erp/super-user/users_list', $data);
-		
+		$data['subview'] = view('erp/users/users_list', $data);
 		return view('erp/layout/layout_main', $data); //page load
 		
 	}
@@ -56,7 +55,7 @@ class Superusers extends BaseController {
 		$usession = $session->get('sup_username');
 		$UsersModel = new UsersModel();
 		$request = \Config\Services::request();
-		$ifield_id = udecode($request->uri->getSegment(4));
+		$ifield_id = udecode($request->uri->getSegment(3));
 		$isegment_val = $UsersModel->where('user_id', $ifield_id)->first();
 		if(!$isegment_val){
 			$session->setFlashdata('unauthorized_module',lang('Dashboard.xin_error_unauthorized_module'));
@@ -67,7 +66,7 @@ class Superusers extends BaseController {
 		$data['path_url'] = 'user_details';
 		$data['breadcrumbs'] = lang('Users.xin_view_user');
 
-		$data['subview'] = view('erp/super-user/users_detail', $data);
+		$data['subview'] = view('erp/users/users_detail', $data);
 		return view('erp/layout/layout_main', $data); //page load
 	}
 	public function role()
@@ -104,7 +103,7 @@ class Superusers extends BaseController {
 		
           foreach($users as $r) {						
 		  			
-				$view = '<a href="'.site_url('erp/super-user/detail/'). uencode($r['user_id']) . '"><span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></span></a>';
+				$view = '<a href="'.site_url('erp/user-detail/'). uencode($r['user_id']) . '"><span data-toggle="tooltip" data-placement="top" data-state="primary" title="'.lang('Main.xin_view').'"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></span></a>';
 				if($r['user_id']!=1){
 					$delete = '<span data-toggle="tooltip" data-placement="top" data-state="danger" title="'.lang('Main.xin_delete').'"><button type="button" class="btn icon-btn btn-sm btn-light-danger waves-effect waves-light delete" data-toggle="modal" data-target=".delete-modal" data-record-id="'. uencode($r['user_id']) . '"><i class="feather icon-trash-2"></i></button></span>';
 				} else {
@@ -264,11 +263,11 @@ class Superusers extends BaseController {
 			$EmailtemplatesModel = new EmailtemplatesModel();
 			$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			
-			// $company_name = $user_info['company_name'];
-			// $company_type = $user_info['company_type'];
-			// $xin_gtax = $user_info['xin_gtax'];
-			// $trading_name = $user_info['trading_name'];
-			// $registration_no = $user_info['registration_no'];
+			$company_name = $user_info['company_name'];
+			$company_type = $user_info['company_type'];
+			$xin_gtax = $user_info['xin_gtax'];
+			$trading_name = $user_info['trading_name'];
+			$registration_no = $user_info['registration_no'];
 			
 			$options = array('cost' => 12);
 			$password_hash = password_hash($password, PASSWORD_BCRYPT, $options);
@@ -290,11 +289,11 @@ class Superusers extends BaseController {
 				'state'  => $state,
 				'zipcode' => $zipcode,
 				'gender' => $gender,
-				// 'company_name' => $company_name,
-				// 'trading_name' => $trading_name,
-				// 'registration_no' => $registration_no,
-				// 'government_tax' => $xin_gtax,
-				// 'company_type_id'  => $company_type,
+				'company_name' => $company_name,
+				'trading_name' => $trading_name,
+				'registration_no' => $registration_no,
+				'government_tax' => $xin_gtax,
+				'company_type_id'  => $company_type,
 				'last_login_date' => '0',
 				'last_logout_date' => '0',
 				'last_login_ip' => '0',
@@ -311,11 +310,11 @@ class Superusers extends BaseController {
 				$Return['result'] = lang('Users.xin_success_user_added');
 				if($xin_system['enable_email_notification'] == 1){
 					// Send mail start
-					// $itemplate = $EmailtemplatesModel->where('template_id', 5)->first();
-					// $isubject = $itemplate['subject'];
-					// $ibody = html_entity_decode($itemplate['message']);
-					// $fbody = str_replace(array("{site_name}","{user_password}","{user_username}","{site_url}"),array($xin_system['company_name'],$password,$username,site_url()),$ibody);
-					// timehrm_mail_data($xin_system['email'],$xin_system['company_name'],$email,$isubject,$fbody);
+					$itemplate = $EmailtemplatesModel->where('template_id', 5)->first();
+					$isubject = $itemplate['subject'];
+					$ibody = html_entity_decode($itemplate['message']);
+					$fbody = str_replace(array("{site_name}","{user_password}","{user_username}","{site_url}"),array($xin_system['company_name'],$password,$username,site_url()),$ibody);
+					timehrm_mail_data($xin_system['email'],$xin_system['company_name'],$email,$isubject,$fbody);
 					// Send mail end
 				}
 			} else {
