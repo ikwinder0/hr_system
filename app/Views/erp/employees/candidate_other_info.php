@@ -145,6 +145,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 						</div>
 				  </div>
+				  <div class="col-md-6">
+           
+                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="company_name">
@@ -182,19 +185,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="gender" class="control-label">
-                        <?= lang('Main.xin_employee_gender');?>
-                      </label>
-                      <select class="form-control" name="gender" data-plugin="select_hrm" data-placeholder="<?= lang('Main.xin_employee_gender');?>">
-                        <option value="1" <?php if($result['gender']==1):?> selected="selected"<?php endif;?>>
-                        <?= lang('Main.xin_gender_male');?>
-                        </option>
-                        <option value="2" <?php if($result['gender']==2):?> selected="selected"<?php endif;?>>
-                        <?= lang('Main.xin_gender_female');?>
-                        </option>
-                      </select>
-                    </div>
+           
                   </div>
                 </div>
                 <div class="row">
