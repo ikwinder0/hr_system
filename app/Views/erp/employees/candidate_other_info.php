@@ -54,6 +54,14 @@ if($user_info['user_type'] == 'super_user'){
 	$leave_types = $ConstantsModel->where('company_id',$usession['sup_user_id'])->where('type','leave_type')->orderBy('constants_id', 'ASC')->findAll();
 	$roles = $RolesModel->where('company_id',$usession['sup_user_id'])->orderBy('role_id', 'ASC')->findAll();
 }
+$company_id = $usession['sup_user_id'];
+
+
+$all_countries = $CountryModel->orderBy('country_id', 'ASC')->findAll();
+$religion = $ConstantsModel->where('type','religion')->orderBy('constants_id', 'ASC')->findAll();
+
+$selected_shift = $ShiftModel->where('office_shift_id', $employee_detail['office_shift_id'])->first();
+$xin_system = erp_company_settings();
 // department head
 $idepartment = $DepartmentModel->where('department_id',$employee_detail['department_id'])->first();
 $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->first();
