@@ -180,6 +180,106 @@ class Employees extends BaseController {
 		$data['subview'] = view('erp/employees/staff_details', $data);
 		return view('erp/layout/layout_main', $data); //page load
 	}
+
+	public function profile_picture()
+	{
+		$UsersModel = new UsersModel();
+		$SystemModel = new SystemModel();
+		$request = \Config\Services::request();
+		$session = \Config\Services::session();
+		
+		$usession = $session->get('sup_username');
+		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+		if(!$session->has('sup_username')){ 
+			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
+			return redirect()->to(site_url('erp/login'));
+		}
+		
+		$iuser_id = udecode($request->uri->getSegment(3));
+		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
+	
+		if(!$user_val){
+			$session->setFlashdata('unauthorized_module','Candidate not available.');
+			return redirect()->to(site_url('erp/desk'));
+		}
+		
+		
+		$usession = $session->get('sup_username');
+		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$data['title'] = 'Candidate Profile Picture | '.$xin_system['application_name'];
+		$data['path_url'] = 'employee_details';
+		$data['breadcrumbs'] = 'Edit Candidate Profile Picture';
+
+		$data['subview'] = view('erp/employees/profile_picture', $data);
+		return view('erp/layout/layout_main', $data); //page load
+	}
+
+	public function update_docs()
+	{
+		$UsersModel = new UsersModel();
+		$SystemModel = new SystemModel();
+		$request = \Config\Services::request();
+		$session = \Config\Services::session();
+		
+		$usession = $session->get('sup_username');
+		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+		if(!$session->has('sup_username')){ 
+			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
+			return redirect()->to(site_url('erp/login'));
+		}
+		
+		$iuser_id = udecode($request->uri->getSegment(3));
+		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
+	
+		if(!$user_val){
+			$session->setFlashdata('unauthorized_module','Candidate not available.');
+			return redirect()->to(site_url('erp/desk'));
+		}
+		
+		
+		$usession = $session->get('sup_username');
+		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$data['title'] = 'Candidate Documents | '.$xin_system['application_name'];
+		$data['path_url'] = 'employee_details';
+		$data['breadcrumbs'] = 'Edit Candidate Documents';
+
+		$data['subview'] = view('erp/employees/candidate_documents', $data);
+		return view('erp/layout/layout_main', $data); //page load
+	}
+
+	public function candidate_other_info()
+	{
+		$UsersModel = new UsersModel();
+		$SystemModel = new SystemModel();
+		$request = \Config\Services::request();
+		$session = \Config\Services::session();
+		
+		$usession = $session->get('sup_username');
+		$user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
+		if(!$session->has('sup_username')){ 
+			$session->setFlashdata('err_not_logged_in',lang('Dashboard.err_not_logged_in'));
+			return redirect()->to(site_url('erp/login'));
+		}
+		
+		$iuser_id = udecode($request->uri->getSegment(3));
+		$user_val = $UsersModel->where('user_id', $iuser_id)->first();
+	
+		if(!$user_val){
+			$session->setFlashdata('unauthorized_module','Candidate not available.');
+			return redirect()->to(site_url('erp/desk'));
+		}
+		
+		
+		$usession = $session->get('sup_username');
+		$xin_system = $SystemModel->where('setting_id', 1)->first();
+		$data['title'] = 'Candidate Info | '.$xin_system['application_name'];
+		$data['path_url'] = 'employee_details';
+		$data['breadcrumbs'] = 'Edit Candidate Other Info';
+
+		$data['subview'] = view('erp/employees/candidate_other_info', $data);
+		return view('erp/layout/layout_main', $data); //page load
+	}
+
 	
 	
 	public function view_application()

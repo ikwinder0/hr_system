@@ -138,6 +138,9 @@ $routes->get('erp/organization-chart/', 'Employees::staff_chart', ['namespace' =
 $routes->get('erp/employee-details/(:segment)', 'Employees::staff_details', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/employee-application/(:segment)', 'Employees::view_application', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/application-status', 'Employees::application_status', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+$routes->get('erp/profile-picture', 'Employees::profile_picture', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+$routes->get('erp/update-documents', 'Employees::update_docs', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+$routes->get('erp/candidate-other-info', 'Employees::candidate_other_info', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 // awards
 $routes->get('erp/awards-list/', 'Awards::index', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/award-view/(:segment)', 'Awards::award_view', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
