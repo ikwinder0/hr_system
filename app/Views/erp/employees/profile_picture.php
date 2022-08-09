@@ -41,7 +41,7 @@ $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
-
+?>
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
@@ -108,5 +108,3 @@ $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
     </div>
   </div>
 </div>
-
-?>
