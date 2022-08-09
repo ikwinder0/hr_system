@@ -87,11 +87,11 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item active"> <a href="<?= site_url('erp/staff-list');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-friends"></span>
-      <?= lang('Dashboard.dashboard_employees');?>
+    <li class="nav-item active"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-user-friends"></span>
+      Profile Picture
       <div class="text-muted small">
         <?= lang('Main.xin_set_up');?>
-        <?= lang('Dashboard.dashboard_employees');?>
+        Profile Picture
       </div>
       </a> </li>
     <?php } ?>
