@@ -87,7 +87,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div id="smartwizard-2" class="border-bottom smartwizard-example sw-main sw-theme-default mt-2">
   <ul class="nav nav-tabs step-anchor">
     <?php if(in_array('staff2',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/profile-picture');?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-image"></span>
+    <li class="nav-item clickable"> <a href="<?= site_url('erp/profile-picture/'.udecode($segment_id));?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-image"></span>
       Profile Picture
       <div class="text-muted small">
         <?= lang('Main.xin_set_up');?>
