@@ -391,7 +391,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				</div>
 			</div>
 		</div>
-	<div class="row">
+	
+	
         <div class="col-md-12">
 			<div class="card user-profile-list">
           <div class="card-header">
@@ -415,11 +416,11 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
           
         </div>
 		</div>
-	</div>
+	
 	<?php if($user_info['user_type'] == 'super_user'){
 		
 	?>
-	<div class="row">
+	
         <div class="col-md-12">
 		        <div class="card">
 			<div class="card-header">
@@ -445,16 +446,15 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				</div>
 			</div>
 		</div>
-    </div>
+    
 	<?php }else{ ?>
 		
-		<div class="row mt-3 mb-5">
+		
 			<div class="col-md-12">
 				<a href="<?= site_url('erp/employee-details/'.$segment_id);?>" class="btn btn-success">Edit Candidate</a>
 			</div>
-		</div>
+		
 		
 	<?php } ?>
-	
-</div>
+</div>	
   <!-- [] end --> 
