@@ -222,13 +222,50 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			<div class="card">
 				<div class="card-body p-3">
 					<div class="row align-items-center h-100">
-						<div class="col-md-4 mx-auto">
+					    <div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Candidate ID</p>
+								<p class="p2"><?= ($result['gender']==1) ? 'Male' : 'Female'; ?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Marital Status</p>
+								<p class="p2">
+									<?php if($employee_detail['marital_status']==0): echo 'Single';  endif; ?>
+									<?php if($employee_detail['marital_status']==1): echo 'Married';  endif; ?>
+									<?php if($employee_detail['marital_status']==2): echo 'Widowed';  endif; ?>
+									<?php if($employee_detail['marital_status']==3): echo 'Divorced';  endif; ?>
+								</p>
+							</div>
+							
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Religion</p>
+								<p class="p2">
+									<?php foreach($religion as $ireligion) {
+							
+											if($ireligion['constants_id']==$employee_detail['religion_id']){
+											
+												echo $ireligion['category_name'];
+											
+								
+								
+									 } } ?>
+								</p>
+							</div>
+							
+						</div>
+						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Gender</p>
 								<p class="p2"><?= ($result['gender']==1) ? 'Male' : 'Female'; ?></p>
 							</div>
 						</div>
-						<div class="col-md-4 mx-auto">
+						<div class="col-md-4">
 							
 							<div class="p_div">
 								<p class="text-muted">Date of Birth</p>
@@ -236,7 +273,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 							
 						</div>
-						<div class="col-md-4 mx-auto">
+						<div class="col-md-4">
 							
 							<div class="p_div">
 								<p class="text-muted">Nationality</p>
