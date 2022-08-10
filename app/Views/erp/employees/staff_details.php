@@ -474,7 +474,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Type
 						  </label>
-						  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="<?= ($visa_detail['passport_type']) ? $visa_detail['passport_type'] : '';?>">
+						  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="<?= isset($visa_detail['passport_type']) ? $visa_detail['passport_type'] : '';?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -482,7 +482,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Number
 						  </label>
-						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= ($visa_detail['passport_number']) ? $visa_detail['passport_number'] : '';?>">
+						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= isset($visa_detail['passport_number']) ? $visa_detail['passport_number'] : '';?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -490,7 +490,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Expiry Date
 						  </label>
-						  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="<?= ($visa_detail['passport_expiry']) ? $visa_detail['passport_expiry'] : '' ;?>">
+						  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="<?= isset($visa_detail['passport_expiry']) ? $visa_detail['passport_expiry'] : '' ;?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -498,7 +498,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Issuing Country on Passport
 						  </label>
-						  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="<?= ($visa_detail['passport_issue_country']) ? $visa_detail['passport_issue_country'] : '';?>">
+						  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="<?= isset($visa_detail['passport_issue_country']) ? $visa_detail['passport_issue_country'] : '';?>">
 						</div>
 					</div>
 				</div>
