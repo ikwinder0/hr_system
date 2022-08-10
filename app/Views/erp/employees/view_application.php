@@ -332,14 +332,14 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Experience 1</p>
-								<p class="p2"><?= $employee_detail['experience_1']; ?></p>
+								<p class="p2"><?= ($employee_detail['experience_1']) ? $employee_detail['experience_1'] : 'N/A' ; ?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							
 							<div class="p_div">
 								<p class="text-muted">Experience 2</p>
-								<p class="p2"><?= $employee_detail['experience_2']; ?></p>
+								<p class="p2"><?= ($employee_detail['experience_2']) ? $employee_detail['experience_2'] : 'N/A' ; ?></p>
 							</div>
 							
 						</div>
@@ -348,7 +348,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<div class="p_div">
 								<p class="text-muted">Experience 3</p>
 								<p class="p2">
-									<?= $employee_detail['experience_3']; ?>
+									<?= ($employee_detail['experience_3']) ? $employee_detail['experience_3'] : 'N/A' ; ?>
 								</p>
 							</div>
 							
