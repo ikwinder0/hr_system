@@ -88,7 +88,7 @@ $get_animate='';
                     </div>
                     <div class="card-body"> 
                         <div class="row">
-						    <div class="col-md-4">
+						    <div class="col-md-6">
                                 <label for="logo">
                                     <?= lang('Main.xin_position_applied_for');?>
                                     <span class="text-danger">*</span>
@@ -110,7 +110,7 @@ $get_animate='';
 									<div class="error-applied_for"></div> 
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label for="logo">
                                     <?= lang('Main.xin_e_details_profile_picture');?>
                                     <span class="text-danger">*</span>
@@ -128,7 +128,7 @@ $get_animate='';
                             </div>
 						</div>
 						<div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="company_name">
                                         <?= lang('Main.xin_employee_first_name');?>
@@ -148,7 +148,7 @@ $get_animate='';
 									<div class="error-first_name"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="last_name" class="control-label">
                                         <?= lang('Main.xin_employee_last_name');?>
@@ -167,7 +167,7 @@ $get_animate='';
 									<div class="error-last_name"></div>
                                 </div>
                             </div>
-							<div class="col-md-4">
+							<div class="col-md-6">
 								<div class="form-group">
 									<label for="logo">
 										Family name/Last name
@@ -181,7 +181,7 @@ $get_animate='';
 									</div>
 									</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Third given name
@@ -189,7 +189,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Third given name" name="third_given_name" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Fourth & any other given name(s)
@@ -197,7 +197,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Fourth & any other given name(s)" name="fourth_given_name" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Given name (in Arabic characters)
