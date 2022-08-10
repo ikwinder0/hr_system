@@ -177,7 +177,7 @@ $get_animate='';
 									     <div class="input-group-prepend">
                                             <span class="input-group-text">
                                                 <i class="fas fa-user"></i></span></div>
-										 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" value="<?= $result['first_name'];?>">
+										 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" >
 									</div>
 									</div>
 							</div>
