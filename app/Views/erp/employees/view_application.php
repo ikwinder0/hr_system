@@ -391,7 +391,6 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				</div>
 			</div>
 		</div>
-    </div>
 	<div class="row">
         <div class="col-md-12">
 			<div class="card user-profile-list">
@@ -456,4 +455,6 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 		</div>
 		
 	<?php } ?>
+	
+</div>
   <!-- [] end --> 
