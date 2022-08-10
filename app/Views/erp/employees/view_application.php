@@ -150,19 +150,26 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 		</div>
 		<div class="col-md-12">
 			<div class="card">
-				<div class="card-body p-0">
+				<div class="card-body p-1">
 					<div class="row">
 						<div class="col-md-4">
-							<h3>Name in English</h3>
+							<h4>Name in English</h4>
+							<p class="text-muted">Last name</p>
+							<p>Test</p>
+							<p></p>
 						</div>
 						<div class="col-md-4">
-							<h3>Name in Arabic</h3>
-							 
+							<h4>Name in Arabic</h4>
+							<p class="text-muted">Given Name in Arabic</p>
+							<p>Test</p>
+							<p></p> 
 							
 						</div>
 						<div class="col-md-4">
-							<h3>Preferred Name</h3>
-							  
+							<h4>Preferred Name</h4>
+							<p class="text-muted">Given preferred name</p>
+							<p>Test</p>
+							<p></p> 
 							
 						</div>
 					</div>
