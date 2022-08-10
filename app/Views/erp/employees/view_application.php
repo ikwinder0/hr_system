@@ -124,7 +124,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         font-size: 14px;
   }
   .p_div .p2{
-	  margin-top:-8px;
+	  margin-top:-15px;
   }
 
       
@@ -133,7 +133,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 <div class="row">
         <div class="col-md-12">
 			<div class="card">
-				<div class="card-body p-0">
+				<div class="card-body p-3">
 					<div class="row align-items-center h-100">
 						<div class="col-md-4">
 							<div class="photo-section">
@@ -161,9 +161,22 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<p class="p2">Test</p>
 							</div>
 							<div class="p_div">
-								<p class="text-muted">Last name</p>
+								<p class="text-muted">First given name</p>
 								<p class="p2">Test</p>
 							</div>
+							<div class="p_div">
+								<p class="text-muted">Second given name</p>
+								<p class="p2">Test</p>
+							</div>
+							<div class="p_div">
+								<p class="text-muted">Third given name</p>
+								<p class="p2">Test</p>
+							</div>
+							<div class="p_div">
+								<p class="text-muted">Fourth given name</p>
+								<p class="p2">Test</p>
+							</div>
+							
 						</div>
 						<div class="col-md-4">
 							<h4>Name in Arabic</h4>
