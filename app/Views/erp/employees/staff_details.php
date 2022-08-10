@@ -42,7 +42,8 @@ $user_id = udecode($segment_id);
 $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 $visa_detail = $VisadetailModel->where('user_id', $result['user_id'])->first();
-
+print_r($visa_detail);
+die;
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 if($user_info['user_type'] == 'super_user'){
 	$departments = $DepartmentModel->orderBy('department_id', 'ASC')->findAll();
