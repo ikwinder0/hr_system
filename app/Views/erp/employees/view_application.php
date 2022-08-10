@@ -141,7 +141,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="col-md-8 mx-auto">
 							
 							  <h2><?= strtoupper($result['first_name']);?> <span class="color"><?= strtoupper($result['last_name']);?></span></h2> 
-							  <h6><span class="color">APPLIED FOR : </span><?= $idesignations['designation_name'];?></h6>
+							  <h6><span class="color">DESIGNATION : </span><?= $idesignations['designation_name'];?></h6>
 							
 						</div>
 					</div>

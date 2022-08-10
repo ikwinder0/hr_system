@@ -167,6 +167,20 @@ $get_animate='';
 									<div class="error-last_name"></div>
                                 </div>
                             </div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="logo">
+										Family name/Last name
+										<span class="text-danger">*</span>
+									</label>
+									<div class="input-group">
+									     <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-user"></i></span></div>
+										 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" value="<?= $result['first_name'];?>">
+									</div>
+									</div>
+							</div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="email">
