@@ -175,32 +175,11 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="company_name">
-                        <?= lang('Main.xin_employee_first_name');?>
-                        <span class="text-danger">*</span> </label>
-                      <div class="input-group">
-              
-                        <input class="form-control" placeholder="<?= lang('Main.xin_employee_first_name');?>" name="first_name" type="text" value="<?= $result['first_name'];?>">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="last_name" class="control-label">
-                        <?= lang('Main.xin_employee_last_name');?>
-                        <span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        
-                        <input class="form-control" placeholder="<?= lang('Main.xin_employee_last_name');?>" name="last_name" type="text" value="<?= $result['last_name'];?>">
-                      </div>
-                    </div>
-                  </div>
-				  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="company_name">
                         First given name
                         <span class="text-danger">*</span> </label>
                       <div class="input-group">
-                        <input class="form-control" placeholder="First given name" name="first_given_name" type="text" value="<?= $result['first_name'];?>">
+              
+                        <input class="form-control" placeholder="First given name" name="first_name" type="text" value="<?= $result['first_name'];?>">
                       </div>
                     </div>
                   </div>
@@ -210,7 +189,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         Second given name
                         <span class="text-danger">*</span></label>
                       <div class="input-group">
-                        <input class="form-control" placeholder="Second given name" name="second_given_name" type="text" value="<?= $result['last_name'];?>">
+                        
+                        <input class="form-control" placeholder="Second given name" name="last_name" type="text" value="<?= $result['last_name'];?>">
                       </div>
                     </div>
                   </div>
