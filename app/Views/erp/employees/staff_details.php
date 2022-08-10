@@ -113,12 +113,12 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </a> </li>
     <?php } ?>
 	<?php if(in_array('shift1',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info/'.$segment_id);?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-info"></span>
+    <!--li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info/'.$segment_id);?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-info"></span>
       Other Info
       <div class="text-muted small">
         Set up other info
       </div>
-      </a> </li>
+      </a> </li-->
     <?php } ?>
 	
   </ul>
@@ -149,7 +149,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                   <div class="col-md-6">
 				    <div class="form-group">
 						<label for="logo">
-							<?= lang('Main.xin_position_applied_for');?>
+							Job Title ( Designation)
 							<span class="text-danger">*</span>
 						</label>
 						<div class="input-group">
@@ -192,6 +192,90 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
                         <input class="form-control" placeholder="<?= lang('Main.xin_employee_last_name');?>" name="last_name" type="text" value="<?= $result['last_name'];?>">
                       </div>
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="company_name">
+                        First given name
+                        <span class="text-danger">*</span> </label>
+                      <div class="input-group">
+                        <input class="form-control" placeholder="First given name" name="first_given_name" type="text" value="<?= $result['first_name'];?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="last_name" class="control-label">
+                        Second given name
+                        <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <input class="form-control" placeholder="Second given name" name="second_given_name" type="text" value="<?= $result['last_name'];?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Third given name
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Third given name" name="third_given_name" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Fourth & any other given name(s)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Fourth & any other given name(s)" name="fourth_given_name" type="text" value="">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Given name (in Arabic characters)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Given name (in Arabic characters)" name="given_name_arabic" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Father's name (in Arabic characters)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Father's name (in Arabic characters)" name="father_name_arabic" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Grandfather's name (in Arabic characters)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Great-grandfather's name (in Arabic characters)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Preferred family name /last name
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Preferred given name(s)
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="">
                     </div>
                   </div>
                   <div class="col-md-6">
