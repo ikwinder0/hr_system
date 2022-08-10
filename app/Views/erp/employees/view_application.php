@@ -231,13 +231,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Email</p>
-								<p class="p2"><?= $employee_detail['email'];?></p>
+								<p class="p2"><?= $result['email'];?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Phone</p>
-								<p class="p2"><?= $employee_detail['contact_number'];?></p>
+								<p class="p2"><?= $result['contact_number'];?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
