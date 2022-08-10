@@ -154,22 +154,29 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 					<div class="row">
 						<div class="col-md-4">
 							<h4>Name in English</h4>
-							<p class="text-muted">Last name</p>
-							<p>Test</p>
-							<p></p>
+							<div class="p_div">
+								<p class="text-muted">Last name</p>
+								<p>Test</p>
+							</div>
+							<div class="p_div">
+								<p class="text-muted">Last name</p>
+								<p>Test</p>
+							</div>
 						</div>
 						<div class="col-md-4">
 							<h4>Name in Arabic</h4>
-							<p class="text-muted">Given Name in Arabic</p>
-							<p>Test</p>
-							<p></p> 
+							<div class="p_div">
+								<p class="text-muted">Last name</p>
+								<p>Test</p>
+							</div> 
 							
 						</div>
 						<div class="col-md-4">
 							<h4>Preferred Name</h4>
-							<p class="text-muted">Given preferred name</p>
-							<p>Test</p>
-							<p></p> 
+							<div class="p_div">
+								<p class="text-muted">Last name</p>
+								<p>Test</p>
+							</div>
 							
 						</div>
 					</div>
