@@ -132,13 +132,13 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         <div class="col-md-12">
 			<div class="card">
 				<div class="card-body p-0">
-					<div class="row ">
+					<div class="row align-items-center h-100">
 						<div class="col-md-4">
 							<div class="photo-section">
 								<img class="img-radius img-fluid" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
 							</div>
 						</div>
-						<div class="col-md-6 mx-auto">
+						<div class="col-md-4 mx-auto">
 							
 							  <h2><?= strtoupper($result['first_name']);?> <span class="color"><?= strtoupper($result['last_name']);?></span></h2> 
 							  <h6><span class="color">APPLIED FOR : </span><?= $idesignations['designation_name'];?></h6>
