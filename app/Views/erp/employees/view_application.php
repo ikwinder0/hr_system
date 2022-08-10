@@ -152,7 +152,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 		</div>
 		<div class="col-md-12">
 			<div class="card">
-				<div class="card-body p-1">
+				<div class="card-body p-4">
 					<div class="row">
 						<div class="col-md-4">
 							<h4>Name in English</h4>
@@ -181,16 +181,36 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="col-md-4">
 							<h4>Name in Arabic</h4>
 							<div class="p_div">
-								<p class="text-muted">Last name</p>
-								<p class="p2">Test</p>
+								<p class="text-muted">Given name in Arabic</p>
+								<p class="p2"></p>
 							</div> 
+							<div class="p_div">
+								<p class="text-muted">Father name in Arabic</p>
+								<p class="p2"></p>
+							</div> 
+							<div class="p_div">
+								<p class="text-muted">Grand Father name in Arabic</p>
+								<p class="p2"></p>
+							</div>
+                            <div class="p_div">
+								<p class="text-muted">Great Grand Father name in Arabic</p>
+								<p class="p2"></p>
+							</div>							
 							
 						</div>
 						<div class="col-md-4">
 							<h4>Preferred Name</h4>
 							<div class="p_div">
-								<p class="text-muted">Last name</p>
-								<p>Test</p>
+								<p class="text-muted">Preferred Last name</p>
+								<p></p>
+							</div>
+							<div class="p_div">
+								<p class="text-muted">Preferred Given name</p>
+								<p></p>
+							</div>
+							<div class="p_div">
+								<p class="text-muted">Preferred Language</p>
+								<p></p>
 							</div>
 							
 						</div>
