@@ -229,6 +229,18 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Email</p>
+								<p class="p2"><?= $employee_detail['email'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Phone</p>
+								<p class="p2"><?= $employee_detail['contact_number'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
 							
 							<div class="p_div">
 								<p class="text-muted">Marital Status</p>
@@ -306,7 +318,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						<div class="col-md-4">
 							
 							<div class="p_div">
-								<p class="text-muted">Graduation</p>
+								<p class="text-muted">Graduation/Degree</p>
 								<p class="p2"><?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?></p>
 							</div>
 							
@@ -353,6 +365,28 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 							
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body p-3">
+					<div class="row align-items-center h-100">
+						<div class="col-md-6">
+							<div class="p_div">
+								<p class="text-muted">Address</p>
+								<p class="p2"><?= $result['city'];?>,<?= $result['state'];?>,<?php foreach($all_countries as $country) {
+								
+								if($country['country_id'] == $result['country']):?> 
+								<?= $country['country_name'];?>
+								<?php endif;
+								
+							} ?> ,<?= $result['zipcode'];?></p>
+							</div>
+						</div>
+			
 					</div>
 				</div>
 			</div>
