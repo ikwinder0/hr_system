@@ -560,7 +560,7 @@ $get_animate='';
 									Passport Expiry Date
 								  </label>
 								  <div class="input-group">
-								  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="">
+								  <input class="form-control date" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="">
 								  </div>
 								  <div class="error-passport_expiry"></div>
 								</div>
