@@ -132,7 +132,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         <div class="col-md-12">
 			<div class="card">
 				<div class="card-body p-0">
-					<div class="row align-items-center h-100">
+					<div class="row ">
 						<div class="col-md-4">
 							<div class="photo-section">
 								<img class="img-radius img-fluid" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
