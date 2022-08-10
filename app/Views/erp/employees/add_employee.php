@@ -760,6 +760,86 @@ $get_animate='';
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="contact_number">
+										Vaccine certificate
+                                    </label>
+										<div class="custom-file">
+											<input
+												class="custom-file-input"
+												name="vaccine_certificate"
+												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
+											<div class="error-vaccine_certificate"></div>
+										</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										Contract
+                                    </label>
+										<div class="custom-file">
+											<input
+												class="custom-file-input"
+												name="contract"
+												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
+									
+										</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										Medical Reference Check
+                                    </label>
+										<div class="custom-file">
+											<input
+												class="custom-file-input"
+												name="medical_reference_check"
+												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
+									
+										</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
+										NDA
+                                    </label>
+										<div class="custom-file">
+											<input
+												class="custom-file-input"
+												name="nda"
+												type="file">
+											<label class="custom-file-label">
+												<?= lang('Main.xin_choose_file');?>
+											</label>
+											<small>
+												<?= lang('Main.xin_company_file_type');?>
+											</small>
+									
+										</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="contact_number">
 										<?= lang('Main.xin_passport');?>
 									</label>
 											<div class="custom-file">
