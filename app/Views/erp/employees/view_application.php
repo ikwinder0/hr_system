@@ -417,7 +417,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
         </div>
 		</div>
 	</div>
-	
+	<?php if($user_info['user_type'] == 'super_user'){
+		
+	?>
 	<div class="row">
         <div class="col-md-12">
 		        <div class="card">
@@ -428,7 +430,6 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 			 </div>
 				<div class="card-body pb-2">
 					<div class="box-body">
-					<?php if($user_info['user_type'] == 'super_user'){ ?>
 					    <div class="row">
 							<div class="col-md-6">
 								<select class="form-control app_status form-select" data-plugin="select_hrm">
@@ -440,199 +441,19 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								</select>
 							</div>
 						</div>
-						
-						
-						<?php if($application['application_status'] == 1 && !$interview): ?>
-						<hr>
-						
-						<div class="row">
-							<div class="col-md-12">
-								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Schedule Interview</span></h5>
-								
-								<?php $attributes = array('name' => 'update_candidate_status', 'id' => 'update_candidate_status', 'autocomplete' => 'off', 'class'=>'m-b-1');?>
-								<?php $hidden = array('_method' => 'EDIT', 'token' => $segment_id);?>
-								<?= form_open('erp/recruitment/update_candidate_status', $attributes, $hidden);?>
-								<div class="row">
-							        <div class="col-md-6">
-								    <div class="form-group">
-										<label>Interviewer</label>
-										<select class="form-control" name="interviewer_id" data-plugin="select_hrm" data-placeholder="Select Interviewer">
-										<option>interviewer 1</option>
-										<option>interviewer 2</option>
-										<option>interviewer 3</option>
-										</select>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-								    <div class="form-group">
-										<label>Mode of Interview</label>
-										<select class="form-control" name="mode_of_interview" data-plugin="select_hrm" data-placeholder="Select Interviewer">
-										<option>Only One </option>
-										<option>Two</option>
-										</select>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-								    <div class="form-group">
-										<label>Interview Date</label>
-										<input type="text" name="interview_date" class="form-control edate" required>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-									<div class="form-group">
-										<label>Interview Time</label>
-										<input type="text" name="interview_time" class="form-control etimepicker" required>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-							        <div class="col-md-6">
-									<div class="form-group">
-										
-										<input type="submit" class="btn btn-primary" value="Schedule">
-									</div>
-									</div>
-								</div>
-								<?= form_close(); ?>
-							</div>
-						</div>
-						<?php 
-						endif; 
-						}
-						?>
-						
-						
-						<?php if($interview): ?>
-						<div class="row mt-5">
-							<div class="col-md-12">
-								<h5 class="mb-4"><i class="fas fa-clock wid-20"></i><span class="p-l-5">Interview Scheduled:</span></h5>
-								<br>
-								<p><b>Date & Time : </b> <?= $interview['interview_date'] .' '. $interview['interview_time']; ?>  
-								<?php if($user_info['user_type'] == 'super_user'){ ?>
-								<span><i class="fas fa-edit ml-5 edit_interview" role="button"></i></span>
-								<?php } ?>
-								</p>
-							</div>
-						</div>
-						
-						<hr>
-						<?php if($user_info['user_type'] == 'super_user'){ ?>
-						
-						<div class="row">
-							<div class="col-md-12">
-								<label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox2" data-id="<?= $user_id ?>" value = "2" <?php echo($interview && $interview['status'] > 1) ? 'checked disabled' : '';  ?>> Pre-Screening
-								 </label>
-								 <label class = "checkbox-inline mr-4"> 
-									<input type = "checkbox" class="process_interview" id = "inlineCheckbox3" data-id="<?= $user_id ?>" value = "3" <?php echo($interview && $interview['status'] > 2) ? 'checked disabled' : '';  ?>> Interview
-								 </label>
-								 <label class = "checkbox-inline mr-4">
-									<input type = "checkbox" class="process_result" id = "inlineCheckbox5" data-id="<?= $user_id ?>" value = "4" <?php echo($interview && $interview['status'] > 3) ? 'checked disabled' : '';  ?> > Result
-								 </label>
-								 <label class = "checkbox-inline ">
-									<input type = "checkbox" class="process_feedback" id = "inlineCheckbox4" data-id="<?= $user_id ?>" value = "5" <?php echo($interview && $interview['status'] > 4) ? 'checked disabled' : '';  ?> > Feedback
-								 </label>
-								 
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="result_div" style="display:none">
-									 <div class="form-group">
-										<label>Select Result</label>
-										<select class="form-control result" style="width:150px">
-											<option value="pass">Pass</option>
-											<option value="fail">Fail</option>
-										</select>
-									</div>
-									<button class="btn btn-primary result_save" data-id="<?= $user_id ?>">Save Result</button>
-									 
-								</div>
-								<div class="feedback_div" style="display:none">
-									 <div class="form-group">
-										<label>Feedback</label>
-										<textarea class="form-control feedback_text" rows="10"></textarea>
-									</div>
-									<button class="btn btn-primary feedback_save" data-id="<?= $user_id ?>">Save Feedback</button>
-									 
-								</div>
-							</div>
-						</div>
-						<?php } ?>
-						<?php endif; ?>
-						
-						<?php if($interview): ?>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="stepper d-flex flex-column mt-5 ml-2">
-									<div class="d-flex mb-1">
-									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 1 ) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
-										<div class="line"></div>
-									  </div>
-									  <div>
-										<h5 class="text-dark">Pre-Screening</h5>
-										<p class="lead text-muted pb-3"><?php echo($interview['status'] > 1 ) ? 'DONE' : 'N/A';  ?></p>
-									  </div>
-									</div>
-									<div class="d-flex mb-1">
-									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 2 ) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
-										<div class="line"></div>
-									  </div>
-									  <div>
-										<h5 class="text-dark">Interview</h5>
-										<p class="lead text-muted pb-3"><?php echo($interview['status'] > 2 ) ? 'DONE' : 'N/A';  ?></p>
-									  </div>
-									</div>
-									<div class="d-flex mb-1">
-									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 3 ) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
-										<div class="line "></div>
-									  </div>
-									  <div>
-										<h5 class="text-dark">Result</h5>
-										<?php 
-										    $class="text-muted";
-											if($interview['result']){
-											
-												if($interview['result'] == 'pass'){
-													$class="text-success";
-												}elseif($interview['result'] == 'fail'){
-													$class="text-danger";
-												}else{
-													$class="text-muted";
-												}
-											
-											}
-									    ?>
-										<p class="lead <?php echo $class; ?>  pb-3"><?php echo($interview['status'] > 3 ) ? strtoupper($interview['result']) : 'N/A';  ?></p>
-									  </div>
-									</div>
-									<div class="d-flex mb-1">
-									  <div class="d-flex flex-column pr-4 align-items-center">
-										<div class="rounded-circle py-2 px-3 <?php echo($interview['status'] > 4 ) ? 'bg-primary text-white' : 'bg-light text-light';  ?> mb-1"><i class="fas fa-check"></i></div>
-										<div class="line d-none"></div>
-									  </div>
-									  <div>
-										<h5 class="text-dark">Feedback</h5>
-										<p class="lead text-muted pb-3"><?php echo($interview['status'] > 4 ) ? $interview['feedback'] : 'N/A';  ?></p>
-									  </div>
-									</div>
-								  </div>
-							</div>
-						</div>
-						<?php endif; ?>
+					
 					</div>
 				</div>
 			</div>
 		</div>
     </div>
-	
+	<?php }else{ ?>
+		
+		<div class="row mt-3">
+			<div class="col-md-12">
+				<a href="<?= site_url('erp/employee-details/'.$segment_id);?>" class="btn btn-success">Edit Candidate</a>
+			</div>
+		</div>
+		
+	<?php } ?>
   <!-- [] end --> 
