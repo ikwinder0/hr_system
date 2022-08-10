@@ -326,26 +326,16 @@ var v = $(".add_employee_form").validate({
 		degree: {
           required: true,
         },
-		resume: {
-          required: true,
-		  extension: "jpg|png|docx|doc|pdf"
-        },
+		
 		passport: {
           required: true,
 		  extension: "jpg|png|docx|doc|pdf"
         },
-		education_certificate: {
+		vaccine_certificate: {
           required: true,
 		  extension: "jpg|png|docx|doc|pdf"
         },
-		experience_certificate: {
-          required: true,
-		  extension: "jpg|png|docx|doc|pdf"
-        },
-		police_clearance_certificate: {
-          required: true,
-		  extension: "jpg|png|docx|doc|pdf"
-        }
+		
 		
         
       },
