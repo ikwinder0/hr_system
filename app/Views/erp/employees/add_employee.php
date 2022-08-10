@@ -131,7 +131,7 @@ $get_animate='';
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="company_name">
-                                        <?= lang('Main.xin_employee_first_name');?>
+                                        First given name
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
@@ -141,7 +141,7 @@ $get_animate='';
                                         <input
                                             type="text"
                                             class="form-control"
-                                            placeholder="<?= lang('Main.xin_employee_first_name');?>"
+                                            placeholder="First given name"
                                             name="first_name">
 										
                                     </div>
@@ -151,7 +151,7 @@ $get_animate='';
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="last_name" class="control-label">
-                                        <?= lang('Main.xin_employee_last_name');?>
+                                        Second given name
                                         <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -160,7 +160,7 @@ $get_animate='';
                                         <input
                                             type="text"
                                             class="form-control"
-                                            placeholder="<?= lang('Main.xin_employee_last_name');?>"
+                                            placeholder="Second given name"
                                             name="last_name">
 										
                                     </div>
@@ -174,9 +174,7 @@ $get_animate='';
 										<span class="text-danger">*</span>
 									</label>
 									<div class="input-group">
-									     <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-user"></i></span></div>
+									  
 										 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" >
 									</div>
 									</div>
