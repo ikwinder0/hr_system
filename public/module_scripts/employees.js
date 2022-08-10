@@ -286,6 +286,7 @@ var v = $(".add_employee_form").validate({
         },
 		emergency_contact_number: {
           required: true,
+		  digits: true
         },
 		state: {
           required: true,
