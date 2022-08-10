@@ -2220,6 +2220,22 @@ class Employees extends BaseController {
 			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
 			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
 			$zipcode = $this->request->getPost('zipcode');
+			$first_given_name = $this->request->getPost('first_given_name');
+			$second_given_name = $this->request->getPost('second_given_name');
+			$family_name = $this->request->getPost('family_name');
+			$third_given_name = $this->request->getPost('third_given_name');
+			$fourth_given_name = $this->request->getPost('fourth_given_name');
+			$given_name_arabic = $this->request->getPost('given_name_arabic');
+			$father_name_arabic = $this->request->getPost('father_name_arabic');
+			$grandfather_name_arabic = $this->request->getPost('grandfather_name_arabic');
+			$greatfather_name_arabic = $this->request->getPost('greatfather_name_arabic');
+			$preferred_family_name = $this->request->getPost('preferred_family_name');
+			$preferred_given_name = $this->request->getPost('preferred_given_name');
+			$home_country_address = $this->request->getPost('home_country_address');
+			$emergency_contact_name = $this->request->getPost('emergency_contact_name');
+			$emergency_contact_number	 = $this->request->getPost('emergency_contact_number');
+			$preferred_language = $this->request->getPost('preferred_language');
+			
 			
 			if(empty($country)){
 				$country = 0;
@@ -2253,6 +2269,7 @@ class Employees extends BaseController {
 					$this->output($Return);
 				}	
 			}
+			
 			$data = [
 				'first_name' => $first_name,
 				'last_name'  => $last_name,
@@ -2262,7 +2279,19 @@ class Employees extends BaseController {
 				'state'  => $state,
 				'zipcode' => $zipcode,
 				'gender' => $gender,
+				'first_given_name' => $first_given_name,
+				'second_given_name' => $second_given_name,
+				'family_name' => $family_name,
+				'third_given_name' => $third_given_name,
+				'fourth_given_name' => $fourth_given_name,
+				'father_name_arabic' => $father_name_arabic,
+				'grandfather_name_arabic' => $grandfather_name_arabic,
+				'greatfather_name_arabic' => $greatfather_name_arabic,
+				'preferred_family_name' => $preferred_family_name,
+				'preferred_given_name' => $preferred_given_name,
+				'given_name_arabic' => $given_name_arabic
 			];
+			
 			$result = $UsersModel->update($id, $data);
 			// employee details
 			$data2 = [
@@ -2270,6 +2299,10 @@ class Employees extends BaseController {
 				'date_of_birth' => $dob,
 				'marital_status' => $marital_status,
 				'religion_id' => $religion,
+				'preferred_language' => $preferred_language,
+				'home_country_address' => $home_country_address,
+				'emergency_contact_name' => $emergency_contact_name,
+				'emergency_contact_number' => $emergency_contact_number,
 			];
 			
 			$Return['csrf_hash'] = csrf_hash();	

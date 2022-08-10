@@ -142,10 +142,10 @@ $get_animate='';
                                             type="text"
                                             class="form-control"
                                             placeholder="First given name"
-                                            name="first_name">
+                                            name="first_given_name">
 										
                                     </div>
-									<div class="error-first_name"></div>
+									<div class="error-first_given_name"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -161,10 +161,10 @@ $get_animate='';
                                             type="text"
                                             class="form-control"
                                             placeholder="Second given name"
-                                            name="last_name">
+                                            name="second_given_name">
 										
                                     </div>
-									<div class="error-last_name"></div>
+									<div class="error-second_given_name"></div>
                                 </div>
                             </div>
 							<div class="col-md-6">
@@ -177,14 +177,18 @@ $get_animate='';
 									  
 										 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" >
 									</div>
-									</div>
+									<div class="error-family_name"></div>
+								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Third given name
 									<span class="text-danger">*</span></label>
+								<div class="input-group">
 								  <input class="form-control" placeholder="Third given name" name="third_given_name" type="text" value="">
+								 </div>
+								 <div class="error-third_given_name"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -192,7 +196,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Fourth & any other given name(s)
 									<span class="text-danger">*</span></label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Fourth & any other given name(s)" name="fourth_given_name" type="text" value="">
+								  </div>
+								  <div class="error-fourth_given_name"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -200,7 +207,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Given name (in Arabic characters)
 									<span class="text-danger">*</span></label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Given name (in Arabic characters)" name="given_name_arabic" type="text" value="">
+								  </div>
+								  <div class="error-given_name_arabic"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -208,7 +218,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Father's name (in Arabic characters)
 									<span class="text-danger">*</span></label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Father's name (in Arabic characters)" name="father_name_arabic" type="text" value="">
+								  </div>
+								   <div class="error-father_name_arabic"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -216,7 +229,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Grandfather's name (in Arabic characters)
 									<span class="text-danger">*</span></label>
-								  <input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="">
+								  <div class="input-group">
+									<input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="">
+								  </div>
+								  <div class="error-grandfather_name_arabic"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -224,7 +240,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Great-grandfather's name (in Arabic characters)
 									<span class="text-danger">*</span></label>
-								  <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="">
+									<div class="input-group">
+								     <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="">
+									</div>
+								  <div class="error-greatfather_name_arabic"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -232,7 +251,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Preferred family name /last name
 									<span class="text-danger">*</span></label>
-								  <input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="">
+								  <div class="input-group">
+									<input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="">
+								  </div>
+								  <div class="error-preferred_family_name"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -240,7 +262,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Preferred given name(s)
 									<span class="text-danger">*</span></label>
-								  <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="">
+								  <div class="input-group">
+								   <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="">
+								  </div>
+								  <div class="error-preferred_given_name"></div>
 								</div>
 							  </div>
                             <div class="col-md-6">
@@ -450,7 +475,10 @@ $get_animate='';
 								  <label for="estate">
 									Document Type
 								  </label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Document Type" name="document_type" type="text" value="">
+								  </div>
+								  <div class="error-document_type"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -458,7 +486,10 @@ $get_animate='';
 								  <label for="estate">
 									Passport Type
 								  </label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="">
+								  </div>
+								  <div class="error-passport_type"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -466,7 +497,10 @@ $get_animate='';
 								  <label for="estate">
 									Passport Number
 								  </label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="">
+								  </div>
+								  <div class="error-passport_number"></div>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -474,7 +508,10 @@ $get_animate='';
 								  <label for="estate">
 									Passport Expiry Date
 								  </label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="">
+								  </div>
+								  <div class="error-passport_expiry"></div>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -482,7 +519,10 @@ $get_animate='';
 								  <label for="estate">
 									Issuing Country on Passport
 								  </label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="">
+								  </div>
+								  <div class="error-passport_issue_country"></div>
 								</div>
 							</div>
 					</div>
