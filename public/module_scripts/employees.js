@@ -206,6 +206,50 @@ var v = $(".add_employee_form").validate({
           required: true,
 		  lettersonly:true
         },
+		first_given_name: {
+          required: true,
+		  lettersonly:true
+        },
+		second_given_name: {
+          required: true,
+		  lettersonly:true
+        },
+		family_name: {
+          required: true,
+		  lettersonly:true
+        },
+		third_given_name: {
+          required: true,
+		  lettersonly:true
+        },
+		fourth_given_name: {
+          required: true,
+		  lettersonly:true
+        },
+		given_name_arabic: {
+          required: true,
+		  lettersonly:true
+        },
+		father_name_arabic: {
+          required: true,
+		  lettersonly:true
+        },
+		grandfather_name_arabic: {
+          required: true,
+		  lettersonly:true
+        },
+		greatfather_name_arabic: {
+          required: true,
+		  lettersonly:true
+        },
+		preferred_family_name: {
+          required: true,
+		  lettersonly:true
+        },
+		preferred_given_name: {
+          required: true,
+		  lettersonly:true
+        },
 		email: {
           required: true,
 		  
@@ -244,6 +288,21 @@ var v = $(".add_employee_form").validate({
           required: true,
         },
 		country: {
+          required: true,
+        },
+		document_type: {
+          required: true,
+        },
+		passport_type: {
+          required: true,
+        },
+		passport_number: {
+          required: true,
+        },
+		passport_expiry: {
+          required: true,
+        },
+		passport_issue_country: {
           required: true,
         },
 		experience_1: {
