@@ -205,7 +205,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Given name (in Arabic characters)" name="given_name_arabic" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Father's name (in Arabic characters)
@@ -213,7 +213,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Father's name (in Arabic characters)" name="father_name_arabic" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Grandfather's name (in Arabic characters)
@@ -221,7 +221,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Great-grandfather's name (in Arabic characters)
@@ -229,7 +229,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Preferred family name /last name
@@ -237,7 +237,7 @@ $get_animate='';
 								  <input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="">
 								</div>
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-6">
 								<div class="form-group">
 								  <label for="contact_number">
 									Preferred given name(s)
