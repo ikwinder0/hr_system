@@ -450,7 +450,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 	<?php }else{ ?>
 		
 		
-			<div class="col-md-12">
+			<div class="col-md-12 mb-5">
 				<a href="<?= site_url('erp/employee-details/'.$segment_id);?>" class="btn btn-success">Edit Candidate</a>
 			</div>
 		
