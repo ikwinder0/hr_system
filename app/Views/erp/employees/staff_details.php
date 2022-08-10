@@ -336,7 +336,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row mb-3">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="estate">
@@ -395,7 +395,8 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                   </div>
                 </div>
-				<h1>Passport Details</h1>
+				<h2>Passport Details</h2>
+				<hr>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
