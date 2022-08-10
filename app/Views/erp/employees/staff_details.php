@@ -169,9 +169,46 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 						</div>
 					</div>
+					<div class="col-md-6">
+						<label for="logo">
+							<?= lang('Main.xin_e_details_profile_picture');?>
+							<span class="text-danger">*</span>
+						</label>
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" name="file">
+							<label class="custom-file-label">
+								<?= lang('Main.xin_choose_file');?>
+							</label>
+							<small>
+								<?= lang('Main.xin_company_file_type');?>
+							</small>
+						</div>
+					</div>
 				</div>
 			
                 <div class="row">
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="company_name">
+                        First name
+                        <span class="text-danger">*</span> </label>
+                      <div class="input-group">
+              
+                        <input class="form-control" placeholder="First name" name="first_name" type="text" value="<?= $result['first_name'];?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="last_name" class="control-label">
+                        Last name
+                        <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        
+                        <input class="form-control" placeholder="Last name" name="last_name" type="text" value="<?= $result['last_name'];?>">
+                      </div>
+                    </div>
+                  </div>
 				  <div class="col-md-6">
 				    <div class="form-group">
 						<label for="logo">
@@ -179,11 +216,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<span class="text-danger">*</span>
 						</label>
 						<div class="input-group">
-							 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" value="<?= $result['first_name'];?>">
+							 <input class="form-control" placeholder="Family name/Last name" name="family_name" type="text" value="<?= $result['family_name'];?>">
 						</div>
 						</div>
-				  </div>
-				  <div class="col-md-6">
 				  </div>
                   <div class="col-md-6">
                     <div class="form-group">
@@ -192,7 +227,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         <span class="text-danger">*</span> </label>
                       <div class="input-group">
               
-                        <input class="form-control" placeholder="First given name" name="first_name" type="text" value="<?= $result['first_name'];?>">
+                        <input class="form-control" placeholder="First given name" name="first_given_name" type="text" value="<?= $result['first_given_name'];?>">
                       </div>
                     </div>
                   </div>
@@ -203,7 +238,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         <span class="text-danger">*</span></label>
                       <div class="input-group">
                         
-                        <input class="form-control" placeholder="Second given name" name="last_name" type="text" value="<?= $result['last_name'];?>">
+                        <input class="form-control" placeholder="Second given name" name="second_given_name" type="text" value="<?= $result['second_given_name'];?>">
                       </div>
                     </div>
                   </div>
@@ -212,7 +247,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Third given name
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Third given name" name="third_given_name" type="text" value="">
+                      <input class="form-control" placeholder="Third given name" name="third_given_name" type="text" value="<?= $result['third_given_name'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -220,7 +255,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Fourth & any other given name(s)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Fourth & any other given name(s)" name="fourth_given_name" type="text" value="">
+                      <input class="form-control" placeholder="Fourth & any other given name(s)" name="fourth_given_name" type="text" value="<?= $result['fourth_given_name'];?>">
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -228,7 +263,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Given name (in Arabic characters)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Given name (in Arabic characters)" name="given_name_arabic" type="text" value="">
+                      <input class="form-control" placeholder="Given name (in Arabic characters)" name="given_name_arabic" type="text" value="<?= $result['given_name_arabic'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -236,7 +271,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Father's name (in Arabic characters)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Father's name (in Arabic characters)" name="father_name_arabic" type="text" value="">
+                      <input class="form-control" placeholder="Father's name (in Arabic characters)" name="father_name_arabic" type="text" value="<?= $result['father_name_arabic'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -244,7 +279,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Grandfather's name (in Arabic characters)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="">
+                      <input class="form-control" placeholder="Grandfather's name (in Arabic characters)" name="grandfather_name_arabic" type="text" value="<?= $result['grandfather_name_arabic'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -252,7 +287,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Great-grandfather's name (in Arabic characters)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="">
+                      <input class="form-control" placeholder="Great-grandfather's name (in Arabic characters)" name="greatfather_name_arabic" type="text" value="<?= $result['greatfather_name_arabic'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -260,7 +295,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Preferred family name /last name
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="">
+                      <input class="form-control" placeholder="Preferred family name /last name" name="preferred_family_name" type="text" value="<?= $result['preferred_family_name'];?>">
                     </div>
                   </div>
 				  <div class="col-md-6">
@@ -268,7 +303,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       <label for="contact_number">
                         Preferred given name(s)
                         <span class="text-danger">*</span></label>
-                      <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="">
+                      <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="<?= $result['preferred_given_name'];?>">
                     </div>
                   </div>
                   <div class="col-md-6">
