@@ -466,7 +466,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Document Type
 						  </label>
-						  <input class="form-control" placeholder="Passport Type" name="document_type" type="text" value="<?php echo($visa_detail['document_type']) ? $visa_detail['document_type'] : '';?>">
+						  <input class="form-control" placeholder="Passport Type" name="document_type" type="text" value="<?= isset($visa_detail['document_type']) ? $visa_detail['document_type'] : '';?>">
 						</div>
 					</div>
 					<div class="col-md-6">
