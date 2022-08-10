@@ -372,9 +372,9 @@ var animating;
 $(document).on('click','.next',function () {
 	
 
-	current_fs = $(this).parent().parent().parent().parent().parent();
+	current_fs = $(this).parent().parent().parent().parent().parent().parent();
 	console.log(current_fs);
-	next_fs = $(this).parent().parent().parent().parent().next();
+	next_fs = $(this).parent().parent().parent().parent().parent().parent().next();
 	if (v.form()) {
 	$(".step-anchor li").eq($("fieldset").index(next_fs)).addClass("active");
 	
