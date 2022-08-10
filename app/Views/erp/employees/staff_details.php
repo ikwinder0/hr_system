@@ -2,6 +2,7 @@
 use App\Models\RolesModel;
 use App\Models\UsersModel;
 use App\Models\ShiftModel;
+use App\Models\VisadetailModel;
 use App\Models\SystemModel;
 use App\Models\CountryModel;
 use App\Models\ConstantsModel;
@@ -30,6 +31,7 @@ $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
 $JobcandidatesModel = new JobcandidatesModel();
 $JobinterviewsModel = new JobinterviewsModel();
+$VisadetailModel = new VisadetailModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -39,6 +41,7 @@ $segment_id = $request->uri->getSegment(3);
 $user_id = udecode($segment_id);
 $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
+$visa_detail = $VisadetailModel->where('user_id', $result['user_id'])->first();
 
 $user_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 if($user_info['user_type'] == 'super_user'){
@@ -458,12 +461,20 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				<h2>Passport Details</h2>
 				<hr>
 				<div class="row">
+				    <div class="col-md-6">
+						<div class="form-group">
+						  <label for="estate">
+							Document Type
+						  </label>
+						  <input class="form-control" placeholder="Passport Type" name="document_type" type="text" value="<?= $visa_detail['document_type'];?>">
+						</div>
+					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 						  <label for="estate">
 							Passport Type
 						  </label>
-						  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="<?= $result['state'];?>">
+						  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="<?= $visa_detail['passport_type'];?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -471,7 +482,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Number
 						  </label>
-						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= $result['state'];?>">
+						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= $visa_detail['passport_number'];?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -479,7 +490,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Expiry Date
 						  </label>
-						  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="<?= $result['state'];?>">
+						  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="<?= $visa_detail['passport_expiry'];?>">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -487,7 +498,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Issuing Country on Passport
 						  </label>
-						  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="<?= $result['state'];?>">
+						  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="<?= $visa_detail['passport_issue_country'];?>">
 						</div>
 					</div>
 				</div>
