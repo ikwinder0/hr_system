@@ -81,14 +81,6 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
       </div>
       </a> </li>
     <?php } ?>
-	<?php if(in_array('shift1',staff_role_resource()) || $user_info['user_type'] == 'company') { ?>
-    <li class="nav-item clickable"> <a href="<?= site_url('erp/candidate-other-info/'.$segment_id);?>" class="mb-3 nav-link"> <span class="sw-done-icon feather icon-check-circle"></span> <span class="sw-icon fas fa-info"></span>
-      Other Info
-      <div class="text-muted small">
-        Set up other info
-      </div>
-      </a> </li>
-    <?php } ?>
 	
   </ul>
 </div>
