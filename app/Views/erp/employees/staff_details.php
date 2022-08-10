@@ -178,7 +178,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         <?= lang('Main.xin_employee_first_name');?>
                         <span class="text-danger">*</span> </label>
                       <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
+              
                         <input class="form-control" placeholder="<?= lang('Main.xin_employee_first_name');?>" name="first_name" type="text" value="<?= $result['first_name'];?>">
                       </div>
                     </div>
@@ -189,7 +189,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                         <?= lang('Main.xin_employee_last_name');?>
                         <span class="text-danger">*</span></label>
                       <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
+                        
                         <input class="form-control" placeholder="<?= lang('Main.xin_employee_last_name');?>" name="last_name" type="text" value="<?= $result['last_name'];?>">
                       </div>
                     </div>
@@ -395,6 +395,41 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                     </div>
                   </div>
                 </div>
+				<h1>Passport Details</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="estate">
+							Passport Type
+						  </label>
+						  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="<?= $result['state'];?>">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="estate">
+							Passport Number
+						  </label>
+						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= $result['state'];?>">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="estate">
+							Passport Expiry Date
+						  </label>
+						  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="<?= $result['state'];?>">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+						  <label for="estate">
+							Issuing Country on Passport
+						  </label>
+						  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="<?= $result['state'];?>">
+						</div>
+					</div>
+				</div>
               </div>
             </div>
           </div>
