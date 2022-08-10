@@ -482,7 +482,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						  <label for="estate">
 							Passport Number
 						  </label>
-						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= ($visa_detail['passport_number']) ? $visa_detail['passport_number'];?>">
+						  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="<?= ($visa_detail['passport_number']) ? $visa_detail['passport_number'] : '';?>">
 						</div>
 					</div>
 					<div class="col-md-6">
