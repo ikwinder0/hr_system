@@ -372,7 +372,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Home Country Address
 									<span class="text-danger">*</span></label>
+								  <div class="input-group">
 								  <input class="form-control" placeholder="Home Country Address" name="home_country_address" type="text" value="">
+								  </div>
+								  <div class="error-home_country_address"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -380,7 +383,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Emergency Contact Name 
 									<span class="text-danger">*</span></label>
+								<div class="input-group">
 								  <input class="form-control" placeholder="Emergency Contact Name" name="emergency_contact_name" type="text" value="">
+								  </div>
+								  <div class="error-emergency_contact_name"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -388,7 +394,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Emergency Contact number 
 									<span class="text-danger">*</span></label>
+									<div class="input-group">
 								  <input class="form-control" placeholder="Emergency Contact number" name="emergency_contact_number" type="text" value="">
+								  </div>
+								  <div class="error-emergency_contact_number"></div>
 								</div>
 							  </div>
 							  <div class="col-md-6">
@@ -396,7 +405,10 @@ $get_animate='';
 								  <label for="contact_number">
 									Preferred Language
 									<span class="text-danger">*</span></label>
+									<div class="input-group">
 								  <input class="form-control" placeholder="Preferred Language" name="preferred_language" type="text" value="">
+								  </div>
+								  <div class="error-preferred_language"></div>
 								</div>
 							  </div>
 							<div class="col-md-4">

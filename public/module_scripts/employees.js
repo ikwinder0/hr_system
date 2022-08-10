@@ -275,6 +275,18 @@ var v = $(".add_employee_form").validate({
 		marital_status: {
           required: true,
         },
+		home_country_address: {
+          required: true,
+        },
+		emergency_contact_name: {
+          required: true,
+        },
+		preferred_language: {
+          required: true,
+        },
+		emergency_contact_number: {
+          required: true,
+        },
 		state: {
           required: true,
         },
