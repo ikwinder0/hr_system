@@ -261,7 +261,7 @@ $get_animate='';
 									<div class="error-email"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="contact_number">
                                         <?= lang('Main.xin_contact_number');?>
@@ -280,7 +280,7 @@ $get_animate='';
 									<div class="error-contact_number"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="contact_number">
                                         <?= lang('Main.xin_dob');?>
@@ -299,7 +299,7 @@ $get_animate='';
 									<div class="error-dob"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="gender" class="control-label">
                                         <?= lang('Main.xin_employee_gender');?>
@@ -320,7 +320,7 @@ $get_animate='';
                                 </div>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="contact_number">
                                         <?= lang('Main.xin_marital_status');?>
@@ -342,6 +342,38 @@ $get_animate='';
 									<div class="error-marital_status"></div>
                                 </div>
                             </div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  <label for="contact_number">
+									Home Country Address
+									<span class="text-danger">*</span></label>
+								  <input class="form-control" placeholder="Home Country Address" name="home_country_address" type="text" value="">
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="contact_number">
+									Emergency Contact Name 
+									<span class="text-danger">*</span></label>
+								  <input class="form-control" placeholder="Emergency Contact Name" name="emergency_contact_name" type="text" value="">
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="contact_number">
+									Emergency Contact number 
+									<span class="text-danger">*</span></label>
+								  <input class="form-control" placeholder="Emergency Contact number" name="emergency_contact_number" type="text" value="">
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="contact_number">
+									Preferred Language
+									<span class="text-danger">*</span></label>
+								  <input class="form-control" placeholder="Preferred Language" name="preferred_language" type="text" value="">
+								</div>
+							  </div>
 							<div class="col-md-4">
 							<div class="form-group">
 							  <label for="estate">
