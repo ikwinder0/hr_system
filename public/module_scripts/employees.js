@@ -371,10 +371,12 @@ var left, opacity, scale;
 var animating;
 $(document).on('click','.next',function () {
 	
-
-	current_fs = $(this).parent().parent().parent().parent().parent().parent();
+     var id = $(this).data('id');
+	//current_fs = $(this).parent().parent().parent().parent().parent();
+	current_fs = $('.fieldset_'+id);
 	console.log(current_fs);
-	next_fs = $(this).parent().parent().parent().parent().parent().parent().next();
+	next_fs = $('.fieldset_'+id).next();
+	//next_fs = $(this).parent().parent().parent().parent().parent().next();
 	if (v.form()) {
 	$(".step-anchor li").eq($("fieldset").index(next_fs)).addClass("active");
 	
@@ -401,9 +403,11 @@ $(document).on('click','.next',function () {
 	}
 });
 $(".previous").click(function () {
-	
-	current_fs = $(this).parent().parent().parent().parent().parent().parent();
-	previous_fs = $(this).parent().parent().parent().parent().parent().parent().prev();
+	var id = $(this).data('id');
+	//current_fs = $(this).parent().parent().parent().parent().parent();
+	current_fs = $('.fieldset_'+id);
+	//previous_fs = $(this).parent().parent().parent().parent().prev();
+	previous_fs = $('.fieldset_'+id).prev();
 	$(".step-anchor li").eq($("fieldset").index(current_fs)).removeClass("active");
 	previous_fs.show();
 	current_fs.animate({

@@ -578,7 +578,7 @@ $get_animate='';
 							</div>
 					</div>
 					<div class="card-footer text-right">
-						<button type="button" class="btn btn-primary next">
+						<button type="button" class="btn btn-primary next" data-id="1">
 							<?= lang('Main.next');?>
 						</button>
 					</div>
@@ -713,11 +713,11 @@ $get_animate='';
 					<div class="card-footer text-right">
 					    <button
 							type="button"
-							class="btn btn-light previous">
+							class="btn btn-light previous" data-id="2">
 							<?= lang('Main.back');?>
 						</button>
 						&nbsp;
-						<button type="button" class="btn btn-primary next">
+						<button type="button" class="btn btn-primary next" data-id="2">
 							<?= lang('Main.next');?>
 						</button>
 					</div>
@@ -842,7 +842,7 @@ $get_animate='';
 					<div class="card-footer text-right">
 					    <button
 							type="button"
-							class="btn btn-light previous">
+							class="btn btn-light previous" data-id="3">
 							<?= lang('Main.back');?>
 						</button>
 						&nbsp;
