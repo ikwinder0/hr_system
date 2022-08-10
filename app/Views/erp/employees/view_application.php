@@ -182,19 +182,19 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<h4>Name in Arabic</h4>
 							<div class="p_div">
 								<p class="text-muted">Given name in Arabic</p>
-								<p class="p2"></p>
+								<p class="p2">N/A</p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Father name in Arabic</p>
-								<p class="p2"></p>
+								<p class="p2">N/A</p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Grand Father name in Arabic</p>
-								<p class="p2"></p>
+								<p class="p2">N/A</p>
 							</div>
                             <div class="p_div">
 								<p class="text-muted">Great Grand Father name in Arabic</p>
-								<p class="p2"></p>
+								<p class="p2">N/A</p>
 							</div>							
 							
 						</div>
@@ -202,15 +202,15 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<h4>Preferred Name</h4>
 							<div class="p_div">
 								<p class="text-muted">Preferred Last name</p>
-								<p></p>
+								<p class="p2">N/A</p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred Given name</p>
-								<p></p>
+								<p class="p2">N/A</p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred Language</p>
-								<p></p>
+								<p class="p2">N/A</p>
 							</div>
 							
 						</div>
