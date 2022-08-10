@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 	
-class UsersModel extends Model {
+class VisadetailModel extends Model {
  
     protected $table = 'ci_visa_details';
 
