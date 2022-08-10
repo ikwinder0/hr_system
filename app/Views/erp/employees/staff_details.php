@@ -335,6 +335,38 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
                       </select>
                     </div>
                   </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Home Country Address
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Home Country Address" name="home_country_address" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Emergency Contact Name 
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Emergency Contact Name" name="emergency_contact_name" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Emergency Contact number 
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Emergency Contact number" name="emergency_contact_number" type="text" value="">
+                    </div>
+                  </div>
+				  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contact_number">
+                        Preferred Language
+                        <span class="text-danger">*</span></label>
+                      <input class="form-control" placeholder="Preferred Language" name="preferred_language" type="text" value="">
+                    </div>
+                  </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-4">
