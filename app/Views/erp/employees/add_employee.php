@@ -128,6 +128,45 @@ $get_animate='';
                             </div>
 						</div>
 						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        First name
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-user"></i></span></div>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="First name"
+                                            name="first_name">
+										
+                                    </div>
+									<div class="error-first_name"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Last Name
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-user"></i></span></div>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Last name"
+                                            name="last_name">
+										
+                                    </div>
+									<div class="error-last_name"></div>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="company_name">
