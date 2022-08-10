@@ -127,7 +127,7 @@ $get_animate='';
                                 </div>
                             </div>
 						</div>
-						<div class="row">
+						<div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="company_name">
@@ -245,16 +245,14 @@ $get_animate='';
 								  <input class="form-control" placeholder="Preferred given name(s)" name="preferred_given_name" type="text" value="">
 								</div>
 							  </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email">
                                         <?= lang('Main.xin_email');?>
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-envelope"></i></span></div>
+                                       
                                         <input
                                             class="form-control"
                                             placeholder="<?= lang('Main.xin_email');?>"
@@ -414,6 +412,49 @@ $get_animate='';
                                 </div>
                             </div>
                         </div>
+						<h2>Passport Details</h2>
+						<hr>
+						<div class="row">
+						    <div class="col-md-4">
+								<div class="form-group">
+								  <label for="estate">
+									Document Type
+								  </label>
+								  <input class="form-control" placeholder="Document Type" name="document_type" type="text" value="">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+								  <label for="estate">
+									Passport Type
+								  </label>
+								  <input class="form-control" placeholder="Passport Type" name="passport_type" type="text" value="">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+								  <label for="estate">
+									Passport Number
+								  </label>
+								  <input class="form-control" placeholder="Passport Number" name="passport_number" type="text" value="">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  <label for="estate">
+									Passport Expiry Date
+								  </label>
+								  <input class="form-control" placeholder="Passport Expiry Date" name="passport_expiry" type="text" value="">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+								  <label for="estate">
+									Issuing Country on Passport
+								  </label>
+								  <input class="form-control" placeholder="Issuing Country on Passport" name="passport_issue_country" type="text" value="">
+								</div>
+							</div>
 					</div>
 					<div class="card-footer text-right">
 						<button type="button" class="btn btn-primary next">
