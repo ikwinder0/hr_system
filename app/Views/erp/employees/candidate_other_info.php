@@ -148,6 +148,26 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				  <div class="col-md-6">
            
                   </div>
+				   <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="company_name">
+                        First name
+                        <span class="text-danger">*</span> </label>
+                      <div class="input-group">
+                        <input class="form-control" placeholder="First given name" name="first_name" type="text" value="<?= $result['first_name'];?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="last_name" class="control-label">
+                        Second name
+                        <span class="text-danger">*</span></label>
+                      <div class="input-group">
+                        <input class="form-control" placeholder="Second given name" name="last_name" type="text" value="<?= $result['last_name'];?>">
+                      </div>
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="company_name">

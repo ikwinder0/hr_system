@@ -218,6 +218,44 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				</div>
 			</div>
 		</div>
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body p-3">
+					<div class="row align-items-center h-100">
+						<div class="col-md-4 mx-auto">
+							<div class="p_div">
+								<p class="text-muted">Gender</p>
+								<p class="p2"><?= ($result['gender']==1) ? 'Male' : 'Female'; ?></p>
+							</div>
+						</div>
+						<div class="col-md-4 mx-auto">
+							
+							<div class="p_div">
+								<p class="text-muted">Date of Birth</p>
+								<p class="p2"><?= $employee_detail['date_of_birth'];?></p>
+							</div>
+							
+						</div>
+						<div class="col-md-4 mx-auto">
+							
+							<div class="p_div">
+								<p class="text-muted">Nationality</p>
+								<p class="p2">
+									<?php foreach($all_countries as $country) {
+								
+										if($country['country_id'] == $result['country']):?> 
+										<?= $country['country_name'];?>
+										<?php endif;
+										
+									} ?>
+								</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="col-md-12">
         <div class="card">
           <div class="card-body p-0">
