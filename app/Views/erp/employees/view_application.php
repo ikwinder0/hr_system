@@ -138,6 +138,12 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 								<img class="img-radius img-fluid" src="<?= base_url().'/public/uploads/users/'.$result['profile_photo'];?>" alt="<?= $result['first_name'].' '.$result['last_name']; ?>">
 							</div>
 						</div>
+						<div class="col-md-4">
+							<div class="h5_heading">
+							  <h1><?= strtoupper($result['first_name']);?> <span class="color"><?= strtoupper($result['last_name']);?></span></h1>
+							  <h6><span class="color">APPLIED FOR : </span><?= $idesignations['designation_name'];?></h6>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
