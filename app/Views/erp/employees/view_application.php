@@ -225,7 +225,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 					    <div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Candidate ID</p>
-								<p class="p2"><?= ($result['gender']==1) ? 'Male' : 'Female'; ?></p>
+								<p class="p2"><?= $employee_detail['employee_id'];?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -293,6 +293,71 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 				</div>
 			</div>
 		</div>
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body p-3">
+					<div class="row align-items-center h-100">
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">High School</p>
+								<p class="p2"><?= ($employee_detail['high_school']) ? $employee_detail['high_school'] : 'N/A';?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Graduation</p>
+								<p class="p2"><?= ($employee_detail['degree']) ? $employee_detail['degree'] : 'N/A';?></p>
+							</div>
+							
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Other</p>
+								<p class="p2">
+									<?= ($employee_detail['other_education']) ? $employee_detail['other_education'] : 'N/A';?>
+								</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body p-3">
+					<div class="row align-items-center h-100">
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Experience 1</p>
+								<p class="p2"><?= $employee_detail['experience_1']; ?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Experience 2</p>
+								<p class="p2"><?= $employee_detail['experience_2']; ?></p>
+							</div>
+							
+						</div>
+						<div class="col-md-4">
+							
+							<div class="p_div">
+								<p class="text-muted">Experience 3</p>
+								<p class="p2">
+									<?= $employee_detail['experience_3']; ?>
+								</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
         <div class="col-md-12">
         <div class="card">
           <div class="card-body p-0">
