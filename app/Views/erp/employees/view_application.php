@@ -123,7 +123,9 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
    .lead {
         font-size: 14px;
   }
-
+  .p_div .p2{
+	  margin-top:-8px;
+  }
 
       
     </style>
@@ -156,18 +158,18 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<h4>Name in English</h4>
 							<div class="p_div">
 								<p class="text-muted">Last name</p>
-								<p>Test</p>
+								<p class="p2">Test</p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Last name</p>
-								<p>Test</p>
+								<p class="p2">Test</p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<h4>Name in Arabic</h4>
 							<div class="p_div">
 								<p class="text-muted">Last name</p>
-								<p>Test</p>
+								<p class="p2">Test</p>
 							</div> 
 							
 						</div>
