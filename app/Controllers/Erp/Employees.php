@@ -2430,7 +2430,7 @@ class Employees extends BaseController {
 			if($visa){
 				$VisadetailModel->update($id, $vidsdetails);
 			}else{
-				$VisadetailModel->create($vidsdetails);
+				$VisadetailModel->insert($vidsdetails);
 			}
 			
 			$result = $UsersModel->update($id, $data);
