@@ -1119,7 +1119,7 @@ class Employees extends BaseController {
 					'user_id' => $user_id,
 					'document_name'  => 'Vaccine Certificate',
 					'document_type'  => 'image/file',
-					'document_file'  => $rs_file,
+					'document_file'  => $vc_file,
 					'created_at' => date('d-m-Y h:i:s')
 				];
 				
