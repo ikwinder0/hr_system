@@ -2394,6 +2394,17 @@ class Employees extends BaseController {
 				}	
 			}
 			
+			$image = \Config\Services::image();
+			$uu = $UsersModel->where('user_id', $id)->first();
+			$file_name = $uu['profile_photo'];
+			if(!empty($this->request->getFile('file')->getName())){	
+				$user_image = $this->request->getFile('file');
+				$file_name = $user_image->getName();
+				$user_image->move('public/uploads/users/');
+				$image->withFile(filesrc($file_name))
+				->fit(100, 100, 'center')
+				->save('public/uploads/users/thumb/'.$file_name);
+			}
 			$data = [
 				'first_name' => $first_name,
 				'last_name'  => $last_name,
@@ -2403,6 +2414,7 @@ class Employees extends BaseController {
 				'state'  => $state,
 				'zipcode' => $zipcode,
 				'gender' => $gender,
+				'profile_photo'  => $file_name,
 				'first_given_name' => $first_given_name,
 				'second_given_name' => $second_given_name,
 				'family_name' => $family_name,
