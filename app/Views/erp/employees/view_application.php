@@ -166,19 +166,19 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							</div>
 							<div class="p_div">
 								<p class="text-muted">First given name</p>
-								<p class="p2"><?= $result['first_given_name']; ?></p>
+								<p class="p2"><?= ($result['first_given_name']) ? $result['first_given_name'] :'N/A'  ; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Second given name</p>
-								<p class="p2"><?= $result['second_given_name']; ?></p>
+								<p class="p2"><?= ($result['second_given_name']) ? $result['second_given_name'] :'N/A'; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Third given name</p>
-								<p class="p2"><?= $result['third_given_name']; ?></p>
+								<p class="p2"><?= ($result['third_given_name']) ? $result['third_given_name'] :'N/A'; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Fourth given name</p>
-								<p class="p2"><?= $result['fourth_given_name']; ?></p>
+								<p class="p2"><?= ($result['fourth_given_name']) ? $result['fourth_given_name'] :'N/A'; ?></p>
 							</div>
 							
 						</div>
@@ -186,19 +186,19 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							<h4>Name in Arabic</h4>
 							<div class="p_div">
 								<p class="text-muted">Given name in Arabic</p>
-								<p class="p2"><?= $result['given_name_arabic']; ?></p>
+								<p class="p2"><?= ($result['given_name_arabic']) ? $result['given_name_arabic'] :'N/A'; ?></p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Father name in Arabic</p>
-								<p class="p2"><?= $result['father_name_arabic']; ?></p>
+								<p class="p2"><?= ($result['father_name_arabic']) ? $result['father_name_arabic'] :'N/A'; ?></p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Grand Father name in Arabic</p>
-								<p class="p2"><?= $result['grandfather_name_arabic']; ?></p>
+								<p class="p2"><?= ($result['grandfather_name_arabic']) ? $result['grandfather_name_arabic'] :'N/A'; ?></p>
 							</div>
                             <div class="p_div">
 								<p class="text-muted">Great Grand Father name in Arabic</p>
-								<p class="p2"><?= $result['greatfather_name_arabic']; ?></p>
+								<p class="p2"><?= ($result['greatfather_name_arabic']) ? $result['greatfather_name_arabic'] :'N/A'; ?></p>
 							</div>							
 							
 						</div>
@@ -206,15 +206,15 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							<h4>Preferred Name</h4>
 							<div class="p_div">
 								<p class="text-muted">Preferred family name /last name</p>
-								<p class="p2"><?= $result['preferred_family_name']; ?></p>
+								<p class="p2"><?= ($result['preferred_family_name']) ? $result['preferred_family_name'] :'N/A'; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred given name(s)</p>
-								<p class="p2"><?= $result['preferred_given_name']; ?></p>
+								<p class="p2"><?= ($result['preferred_given_name']) ? $result['preferred_given_name'] :'N/A'; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred Language</p>
-								<p class="p2"><?= $employee_detail['preferred_language']; ?></p>
+								<p class="p2"><?= ($employee_detail['preferred_language']) ? $result['preferred_language'] :'N/A'; ?></p>
 							</div>
 							
 						</div>
