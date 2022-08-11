@@ -402,31 +402,31 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Document Type</p>
-								<p class="p2"><?= $visa_detail['document_type'];?></p>
+								<p class="p2"><?= isset($visa_detail['document_type']) ? $visa_detail['document_type'] : 'N/A' ;?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Passport Type</p>
-								<p class="p2"><?= $visa_detail['passport_type'];?></p>
+								<p class="p2"><?= isset($visa_detail['passport_type']) ? $visa_detail['passport_type'] : 'N/A' ;?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Issuing Country</p>
-								<p class="p2"><?= $visa_detail['passport_issue_country'];?></p>
+								<p class="p2"><?= isset($visa_detail['passport_issue_country']) ? $visa_detail['passport_issue_country'] : 'N/A' ;?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Passport Expiry</p>
-								<p class="p2"><?= $visa_detail['passport_expiry'];?></p>
+								<p class="p2"><?= isset($visa_detail['passport_expiry']) ? $visa_detail['passport_expiry'] : 'N/A' ;?></p>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="p_div">
 								<p class="text-muted">Passport Number</p>
-								<p class="p2"><?= $visa_detail['passport_number'];?></p>
+								<p class="p2"><?= isset($visa_detail['passport_number']) ? $visa_detail['passport_number'] : 'N/A' ;?></p>
 							</div>
 						</div>
 						
