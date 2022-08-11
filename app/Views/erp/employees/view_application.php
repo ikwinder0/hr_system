@@ -162,23 +162,23 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							<h4>Name in English</h4>
 							<div class="p_div">
 								<p class="text-muted">Last name</p>
-								<p class="p2">Test</p>
+								<p class="p2"><?= $result['last_name']; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">First given name</p>
-								<p class="p2">Test</p>
+								<p class="p2"><?= $result['first_given_name']; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Second given name</p>
-								<p class="p2">Test</p>
+								<p class="p2"><?= $result['second_given_name']; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Third given name</p>
-								<p class="p2">Test</p>
+								<p class="p2"><?= $result['third_given_name']; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Fourth given name</p>
-								<p class="p2">Test</p>
+								<p class="p2"><?= $result['fourth_given_name']; ?></p>
 							</div>
 							
 						</div>
@@ -186,35 +186,35 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							<h4>Name in Arabic</h4>
 							<div class="p_div">
 								<p class="text-muted">Given name in Arabic</p>
-								<p class="p2">N/A</p>
+								<p class="p2"><?= $result['given_name_arabic']; ?></p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Father name in Arabic</p>
-								<p class="p2">N/A</p>
+								<p class="p2"><?= $result['father_name_arabic']; ?></p>
 							</div> 
 							<div class="p_div">
 								<p class="text-muted">Grand Father name in Arabic</p>
-								<p class="p2">N/A</p>
+								<p class="p2"><?= $result['grandfather_name_arabic']; ?></p>
 							</div>
                             <div class="p_div">
 								<p class="text-muted">Great Grand Father name in Arabic</p>
-								<p class="p2">N/A</p>
+								<p class="p2"><?= $result['greatfather_name_arabic']; ?></p>
 							</div>							
 							
 						</div>
 						<div class="col-md-4">
 							<h4>Preferred Name</h4>
 							<div class="p_div">
-								<p class="text-muted">Preferred Last name</p>
-								<p class="p2">N/A</p>
+								<p class="text-muted">Preferred family name /last name</p>
+								<p class="p2"><?= $result['preferred_family_name']; ?></p>
 							</div>
 							<div class="p_div">
-								<p class="text-muted">Preferred Given name</p>
-								<p class="p2">N/A</p>
+								<p class="text-muted">Preferred given name(s)</p>
+								<p class="p2"><?= $result['preferred_given_name']; ?></p>
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred Language</p>
-								<p class="p2">N/A</p>
+								<p class="p2"><?= $employee_detail['preferred_language']; ?></p>
 							</div>
 							
 						</div>
