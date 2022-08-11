@@ -39,7 +39,7 @@ use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
-use App\Models\VisaDetailModel;
+use App\Models\VisadetailModel;
 
 
 class Employees extends BaseController {
@@ -774,7 +774,7 @@ class Employees extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');
-		$VisaDetailModel = new VisaDetailModel();
+		$VisaDetailModel = new VisadetailModel();
 		if(!$session->has('sup_username')){ 
 			return redirect()->to(site_url('erp/login'));
 		}	
