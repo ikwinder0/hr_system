@@ -2221,6 +2221,7 @@ class Employees extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');
+		$VisadetailModel = new VisadetailModel();
 		if(!$session->has('sup_username')){ 
 			return redirect()->to(site_url('erp/login'));
 		}	
@@ -2353,6 +2354,11 @@ class Employees extends BaseController {
 			$emergency_contact_name = $this->request->getPost('emergency_contact_name');
 			$emergency_contact_number	 = $this->request->getPost('emergency_contact_number');
 			$preferred_language = $this->request->getPost('preferred_language');
+			$document_type = $this->request->getPost('document_type');
+			$passport_type = $this->request->getPost('passport_type');
+			$passport_number = $this->request->getPost('passport_number');
+			$passport_expiry = $this->request->getPost('passport_expiry');
+			$passport_issue_country = $this->request->getPost('passport_issue_country');
 			
 			
 			if(empty($country)){
@@ -2409,6 +2415,23 @@ class Employees extends BaseController {
 				'preferred_given_name' => $preferred_given_name,
 				'given_name_arabic' => $given_name_arabic
 			];
+			
+			$vidsdetails = [
+			    'user_id' => $id,
+				'document_type' => $document_type,
+				'passport_type' => $passport_type,
+				'passport_number' => $passport_number,
+				'passport_expiry' => $passport_expiry,
+				'passport_issue_country' => $passport_issue_country
+			
+			];
+			
+			$visa = $VisadetailModel->where()->first();
+			if($visa){
+				$VisadetailModel->update($id, $vidsdetails);
+			}else{
+				$VisadetailModel->create($vidsdetails);
+			}
 			
 			$result = $UsersModel->update($id, $data);
 			// employee details
