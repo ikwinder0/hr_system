@@ -214,7 +214,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 							</div>
 							<div class="p_div">
 								<p class="text-muted">Preferred Language</p>
-								<p class="p2"><?= ($employee_detail['preferred_language']) ? $result['preferred_language'] :'N/A'; ?></p>
+								<p class="p2"><?= ($employee_detail['preferred_language']) ? $employee_detail['preferred_language'] :'N/A'; ?></p>
 							</div>
 							
 						</div>
