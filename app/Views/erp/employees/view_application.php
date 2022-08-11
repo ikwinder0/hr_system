@@ -13,6 +13,7 @@ use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
 use App\Models\JobinterviewsModel;
+use App\Models\VisadetailModel;
 use CodeIgniter\HTTP\RequestInterface;
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
@@ -29,6 +30,7 @@ $Moduleattributesval = new Moduleattributesval();
 $Moduleattributesvalsel = new Moduleattributesvalsel();
 $JobcandidatesModel = new JobcandidatesModel();
 $JobinterviewsModel = new JobinterviewsModel();
+$VisadetailModel = new VisadetailModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -55,6 +57,7 @@ $dep_user = $UsersModel->where('user_id', $idepartment['department_head'])->firs
 $idesignations = $DesignationModel->where('designation_id',$employee_detail['designation_id'])->first();
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
 $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->first();
+$visa_detail = $VisadetailModel->where('user_id', $result['user_id'])->first();
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
 <?php if($result['is_active']=='1'): $_status = '<span class="badge badge-light-success">'.lang('Main.xin_employees_active').'</span>'; endif; ?>
@@ -387,6 +390,45 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							</div>
 						</div>
 			
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body p-3">
+					<div class="row align-items-center h-100">
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Document Type</p>
+								<p class="p2"><?= $visa_detail['document_type'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Passport Type</p>
+								<p class="p2"><?= $visa_detail['passport_type'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Issuing Country</p>
+								<p class="p2"><?= $visa_detail['passport_issue_country'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Passport Expiry</p>
+								<p class="p2"><?= $visa_detail['passport_expiry'];?></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="p_div">
+								<p class="text-muted">Passport Number</p>
+								<p class="p2"><?= $visa_detail['passport_number'];?></p>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
