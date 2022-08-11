@@ -2426,7 +2426,7 @@ class Employees extends BaseController {
 			
 			];
 			
-			$visa = $VisadetailModel->where()->first();
+			$visa = $VisadetailModel->where('user_id', $id)->first();
 			if($visa){
 				$VisadetailModel->update($id, $vidsdetails);
 			}else{
