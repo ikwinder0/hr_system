@@ -39,6 +39,7 @@ use App\Models\Moduleattributes;
 use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
+use App\Models\VisaDetailModel;
 
 
 class Employees extends BaseController {
@@ -773,7 +774,7 @@ class Employees extends BaseController {
 		$session = \Config\Services::session();
 		$request = \Config\Services::request();
 		$usession = $session->get('sup_username');
-		
+		$VisaDetailModel = new VisaDetailModel();
 		if(!$session->has('sup_username')){ 
 			return redirect()->to(site_url('erp/login'));
 		}	
@@ -1016,6 +1017,26 @@ class Employees extends BaseController {
 			$city = $this->request->getPost('city',FILTER_SANITIZE_STRING);
 			$state = $this->request->getPost('state',FILTER_SANITIZE_STRING);
 			$zipcode = $this->request->getPost('zipcode');
+			$first_given_name = $this->request->getPost('first_given_name');
+			$second_given_name = $this->request->getPost('second_given_name');
+			$family_name = $this->request->getPost('family_name');
+			$third_given_name = $this->request->getPost('third_given_name');
+			$fourth_given_name = $this->request->getPost('fourth_given_name');
+			$given_name_arabic = $this->request->getPost('given_name_arabic');
+			$father_name_arabic = $this->request->getPost('father_name_arabic');
+			$grandfather_name_arabic = $this->request->getPost('grandfather_name_arabic');
+			$greatfather_name_arabic = $this->request->getPost('greatfather_name_arabic');
+			$preferred_family_name = $this->request->getPost('preferred_family_name');
+			$preferred_given_name = $this->request->getPost('preferred_given_name');
+			$home_country_address = $this->request->getPost('home_country_address');
+			$emergency_contact_name = $this->request->getPost('emergency_contact_name');
+			$emergency_contact_number	 = $this->request->getPost('emergency_contact_number');
+			$preferred_language = $this->request->getPost('preferred_language');
+			$document_type = $this->request->getPost('document_type');
+			$passport_type = $this->request->getPost('passport_type');
+			$passport_number = $this->request->getPost('passport_number');
+			$passport_expiry = $this->request->getPost('passport_expiry');
+			$passport_issue_country = $this->request->getPost('passport_issue_country');
 			
 			
 			
@@ -1049,7 +1070,18 @@ class Employees extends BaseController {
 				'is_logged_in' => '0',
 				'is_active'  => 1,
 				'company_id'  => $company_id,
-				'created_at' => date('d-m-Y h:i:s')
+				'created_at' => date('d-m-Y h:i:s'),
+				'first_given_name' => $first_given_name,
+				'second_given_name' => $second_given_name,
+				'family_name' => $family_name,
+				'third_given_name' => $third_given_name,
+				'fourth_given_name' => $fourth_given_name,
+				'father_name_arabic' => $father_name_arabic,
+				'grandfather_name_arabic' => $grandfather_name_arabic,
+				'greatfather_name_arabic' => $greatfather_name_arabic,
+				'preferred_family_name' => $preferred_family_name,
+				'preferred_given_name' => $preferred_given_name,
+				'given_name_arabic' => $given_name_arabic
 			];
 			$StaffdetailsModel = new StaffdetailsModel();
 			$result = $UsersModel->insert($data);
@@ -1077,6 +1109,75 @@ class Employees extends BaseController {
 				$UserdocumentsModel->insert($doc2);	
 				
 			}
+			
+			if(!empty($this->request->getFile('vaccine_certificate')->getName())){
+				$vc = $this->request->getFile('vaccine_certificate');
+				$vc_file = time().'-'.$vc->getName();
+				$vc->move('public/uploads/candidate_documents/'.$user_id.'/',$vc_file);
+				$docvc = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Vaccine Certificate',
+					'document_type'  => 'image/file',
+					'document_file'  => $rs_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($docvc);	
+				
+			}
+			
+			if(!empty($this->request->getFile('contract')->getName())){
+				$contract = $this->request->getFile('contract');
+				$contract_file = time().'-'.$contract->getName();
+				$contract->move('public/uploads/candidate_documents/'.$user_id.'/',$contract_file);
+				$doccontract = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Contract',
+					'document_type'  => 'image/file',
+					'document_file'  => $contract_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($doccontract);	
+				
+			}
+			
+			if(!empty($this->request->getFile('medical_reference_check')->getName())){
+				$mrc = $this->request->getFile('medical_reference_check');
+				$mrc_file = time().'-'.$mrc->getName();
+				$mrc->move('public/uploads/candidate_documents/'.$user_id.'/',$mrc_file);
+				$docmrc = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'Medical Reference Check',
+					'document_type'  => 'image/file',
+					'document_file'  => $mrc_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($docmrc);	
+				
+			}
+			
+			if(!empty($this->request->getFile('nda')->getName())){
+				$nda = $this->request->getFile('nda');
+				$nda_file = time().'-'.$nda->getName();
+				$nda->move('public/uploads/candidate_documents/'.$user_id.'/',$nda_file);
+				$docnda = [
+					'company_id' => $company_id,
+					'user_id' => $user_id,
+					'document_name'  => 'NDA',
+					'document_type'  => 'image/file',
+					'document_file'  => $nda_file,
+					'created_at' => date('d-m-Y h:i:s')
+				];
+				
+				$UserdocumentsModel->insert($docnda);	
+				
+			}
+			
 			if(!empty($this->request->getFile('passport')->getName())){
 				$ps = $this->request->getFile('passport');
 				$ps_file = time().'-'.$ps->getName();
@@ -1085,7 +1186,7 @@ class Employees extends BaseController {
 					'company_id' => $company_id,
 					'user_id' => $user_id,
 					'document_name'  => 'Passport',
-					'document_type'  => 'image/file',
+					'document_type'  => $document_type,
 					'document_file'  => $ps_file,
 					'created_at' => date('d-m-Y h:i:s')
 				];
@@ -1187,9 +1288,26 @@ class Employees extends BaseController {
 				'contact_phone_no' => '',
 				'contact_email' => '',
 				'contact_address' => '',
-				'created_at' => date('d-m-Y h:i:s')
+				'created_at' => date('d-m-Y h:i:s'),
+				'preferred_language' => $preferred_language,
+				'home_country_address' => $home_country_address,
+				'emergency_contact_name' => $emergency_contact_name,
+				'emergency_contact_number' => $emergency_contact_number,
 			];
 			$StaffdetailsModel->insert($data2);
+			
+			$vidsdetails = [
+			    'user_id' => $user_id,
+				'document_type' => $document_type,
+				'passport_type' => $passport_type,
+				'passport_number' => $passport_number,
+				'passport_expiry' => $passport_expiry,
+				'passport_issue_country' => $passport_issue_country
+			
+			];
+			
+			$VisaDetailModel->insert($vidsdetails);
+			
 			$data3 = [
 				'candidate_id' => $user_id,
 				'company_id' => $company_id,
