@@ -174,7 +174,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 					</div>
 					<div class="col-md-6">
 						<label for="logo">
-							<?= lang('Main.xin_e_details_profile_picture');?>
+							Profile Picture
 							<span class="text-danger">*</span>
 						</label>
 						<div class="custom-file">
