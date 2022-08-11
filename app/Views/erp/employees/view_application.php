@@ -58,6 +58,8 @@ $idesignations = $DesignationModel->where('designation_id',$employee_detail['des
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
 $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->first();
 $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
+
+print_r($user_id);
 print_r($visa_detail);
 die;
 ?>
