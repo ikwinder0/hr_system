@@ -790,6 +790,10 @@ class Employees extends BaseController {
 			$company_id = $usession['sup_user_id'];
 			$company_info = $UsersModel->where('user_id', $usession['sup_user_id'])->first();
 			$employee_id = generate_random_employeeid();
+			$c_words = '';
+			foreach (explode(' ', $str) as $word){
+				$c_words .= strtoupper($word[0]);
+			}
 			// set rules
 			// $validation->setRules([
 					// 'applied_for' => 'required',
@@ -1245,11 +1249,12 @@ class Employees extends BaseController {
 				
 			}
 			
-			
+			$gen_id = $c_words.$user_id;
 			// employee details
 			$designation = $DesignationModel->where('designation_id', $applied_for)->first();
 			$data2 = [
 				'user_id' => $user_id,
+				'gen_id' =>  $gen_id,
 				'employee_id'  => $employee_id,
 				'department_id'  => $designation['department_id'],
 				'designation_id'  => $applied_for,
