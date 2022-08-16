@@ -3370,9 +3370,11 @@ class Employees extends BaseController {
 			// Store file in public/csvfile/ folder
 			$file->move('public/importfile', $newName);
 			// Reading file
-			$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
+			//$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
+			$data = new Spreadsheet_Excel_Reader();
+			$data->read("public/importfile/".$newName);
 			echo"<pre>";
-			print_r($data->dump(true,true));
+			print_r($data);
 			die; 
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
