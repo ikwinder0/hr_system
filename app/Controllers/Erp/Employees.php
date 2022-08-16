@@ -3371,8 +3371,8 @@ class Employees extends BaseController {
 			$file->move('public/importfile', $newName);
 			// Reading file
 			//$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
-			$data = new Spreadsheet_Excel_Reader();
-			$data->read("public/importfile/".$newName);
+			$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
+			
 			echo"<pre>";
 			print_r($data);
 			die; 
