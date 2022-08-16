@@ -469,8 +469,8 @@ class Employees extends BaseController {
 				
 			$data[] = array(
 				$links,
-				$gen_id,
 				$designation_name,
+				$gen_id,
 				$r['contact_number'],
 				$gender,
 				$country_info['country_name'],
@@ -482,9 +482,9 @@ class Employees extends BaseController {
 				$company = $UsersModel->where('user_id', $r['company_id'])->first();
 				$data[] = array(
 					$links,
-					$gen_id,
 					$company['company_name'],
 					$designation_name,
+					$gen_id,
 					$r['contact_number'],
 					$gender,
 					$country_info['country_name'],
