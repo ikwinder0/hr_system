@@ -3376,7 +3376,7 @@ class Employees extends BaseController {
 			// echo"<pre>";
 			// print_r($data);
 			// die; 
-			$file = fopen(base_url().'/public/importfile/example.xlsx',"r");
+			$file = fopen(base_url().'/public/importfile/example.xls',"r");
 			$i = 0;
 			$numberOfFields = 4; // Total number of fields
 			$importData_arr = array();
