@@ -3370,7 +3370,7 @@ class Employees extends BaseController {
 			// Reading file
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
-			$numberOfFields = 20; // Total number of fields
+			$numberOfFields = 4; // Total number of fields
 			$importData_arr = array();
 			
 			// Initialize $importData_arr Array
@@ -3379,7 +3379,7 @@ class Employees extends BaseController {
 			
 			$num = count($filedata);
 			// Skip first row & check number of fields
-			if($i > 0 && $num >= $numberOfFields){ 
+			if($i > 0 && $num > $numberOfFields){ 
 			// Key names are the insert table field names - name, email, city, and status
 			$importData_arr[$i]['name'] = $filedata;
 			$importData_arr[$i]['email'] = $filedata[1];
