@@ -3372,7 +3372,7 @@ class Employees extends BaseController {
 			$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
 			echo"<pre>";
 			print_r($data->dump(true,true));
-			die;
+			die; 
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
 			$numberOfFields = 4; // Total number of fields
