@@ -3374,7 +3374,7 @@ class Employees extends BaseController {
 			$data = new Spreadsheet_Excel_Reader(base_url().'/public/importfile/1660667674_95308aae71fdcdc8d37a.xlsx');
 			
 			echo"<pre>";
-			print_r($data);
+			print_r(base_url().'/public/importfile/1660667674_95308aae71fdcdc8d37a.xlsx');
 			die; 
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
