@@ -173,7 +173,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 						</div>
 					</div>
 					<div class="col-md-6">
-						<!--label for="logo">
+						<label for="logo">
 							Profile Picture
 							<span class="text-danger">*</span>
 						</label>
@@ -185,7 +185,7 @@ $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->fir
 							<small>
 								<?= lang('Main.xin_company_file_type');?>
 							</small>
-						</div-->
+						</div>
 					</div>
 				</div>
 			
