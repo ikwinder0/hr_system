@@ -3358,4 +3358,50 @@ class Employees extends BaseController {
 			$this->output($Return);
 		}
 	}
+	
+	public function importfile(){
+		
+		if($file = $this->request->getFile('import_file')) {
+			if ($file->isValid() && ! $file->hasMoved()) {
+			// Get random file name
+			$newName = $file->getRandomName();
+			// Store file in public/csvfile/ folder
+			$file->move('public/importfile', $newName);
+			// Reading file
+			$file = fopen("public/importfile/".$newName,"r");
+			$i = 0;
+			$numberOfFields = 4; // Total number of fields
+			$importData_arr = array();
+			echo"<pre>";
+			print_r(fgetcsv($file, 1000, ","));
+			die;
+			// Initialize $importData_arr Array
+			while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+			$num = count($filedata);
+			// Skip first row & check number of fields
+			if($i > 0 && $num == $numberOfFields){ 
+			// Key names are the insert table field names - name, email, city, and status
+			$importData_arr[$i]['name'] = $filedata[0];
+			$importData_arr[$i]['email'] = $filedata[1];
+			$importData_arr[$i]['city'] = $filedata[2];
+			$importData_arr[$i]['status'] = $filedata[3];
+			}
+			$i++;
+			}
+			fclose($file);
+			// Insert data
+			$count = 0;
+			foreach($importData_arr as $userdata){
+			$users = new Users();
+			// Check record
+			$checkrecord = $users->where('email',$userdata['email'])->countAllResults();
+			if($checkrecord == 0){
+			## Insert Record
+			if($users->insert($userdata)){
+			$count++;
+			}
+			}
+			}
+		
+	}
 }

@@ -86,7 +86,9 @@ $get_animate='';
 							  <span aria-hidden="true">&times;</span>
 							</button> 
 						  </div>
-						  <form>
+						  <?php $attributes = array();?>
+                          <?php $hidden = array('user_id' => 0);?>
+						  <?= form_open_multipart('erp/employees/importfile', $attributes, $hidden);?>
 						  <div class="modal-body">
 							<div class="form-group">
 								<label>Select Excel file</label>
