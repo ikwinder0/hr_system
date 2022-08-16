@@ -3368,10 +3368,10 @@ class Employees extends BaseController {
 			// Get random file name
 			$newName = $file->getRandomName();
 			// Store file in public/csvfile/ folder
-			$file->move('public/importfile', $newName);
+			//$file->move('public/importfile', $newName);
 			// Reading file
 			//$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
-			$data = new Spreadsheet_Excel_Reader(base_url().'/public/importfile/'.$newName);
+			$data = new Spreadsheet_Excel_Reader(base_url().'/public/importfile/1660667674_95308aae71fdcdc8d37a.xlsx');
 			
 			echo"<pre>";
 			print_r($data);
