@@ -3371,10 +3371,10 @@ class Employees extends BaseController {
 			//$file->move('public/importfile', $newName);
 			// Reading file
 			//$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
-			$data = new Spreadsheet_Excel_Reader(base_url().'/public/importfile/1660667674_95308aae71fdcdc8d37a.xlsx');
+			$data = new Spreadsheet_Excel_Reader(base_url().'/public/importfile/example.xlsx');
 			
 			echo"<pre>";
-			print_r(base_url().'/public/importfile/1660667674_95308aae71fdcdc8d37a.xlsx');
+			print_r($data);
 			die; 
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
