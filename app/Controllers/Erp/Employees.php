@@ -3361,7 +3361,7 @@ class Employees extends BaseController {
 	}
 	
 	public function importfile(){
-		$this->load->library('excel_reader2');
+		
 		
 		if($file = $this->request->getFile('import_file')) {
 			if ($file->isValid() && ! $file->hasMoved()) {
