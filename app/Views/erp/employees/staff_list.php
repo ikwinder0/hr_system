@@ -413,6 +413,7 @@ $get_animate='';
                                 id="xin_table">
                                 <thead>
                                     <tr>
+									    <th>ID</th>
                                         <th><?= lang('Main.xin_name');?></th>
                                         <th><?= lang('Dashboard.left_designation');?></th>
                                         <th><?= lang('Main.xin_contact_number');?></th>

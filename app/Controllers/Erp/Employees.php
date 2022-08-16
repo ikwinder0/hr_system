@@ -446,7 +446,11 @@ class Employees extends BaseController {
 			} else {
 				$designation_name = '--';
 			}
-			
+			if($employee_detail['gen_id']){
+				$gen_id = $employee_detail['gen_id'];
+			}else{
+				$gen_id = '--';
+			}
 			$uname = '<div class="d-inline-block align-middle">
 				<img src="'.staff_profile_photo($r['user_id']).'" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
 				<div class="d-inline-block">
@@ -465,6 +469,7 @@ class Employees extends BaseController {
 				
 			$data[] = array(
 				$links,
+				$gen_id,
 				$designation_name,
 				$r['contact_number'],
 				$gender,
@@ -477,6 +482,7 @@ class Employees extends BaseController {
 				$company = $UsersModel->where('user_id', $r['company_id'])->first();
 				$data[] = array(
 					$links,
+					$gen_id,
 					$company['company_name'],
 					$designation_name,
 					$r['contact_number'],
