@@ -3360,6 +3360,7 @@ class Employees extends BaseController {
 	}
 	
 	public function importfile(){
+		$this->load->library('excel_reader2');
 		
 		if($file = $this->request->getFile('import_file')) {
 			if ($file->isValid() && ! $file->hasMoved()) {
@@ -3368,6 +3369,10 @@ class Employees extends BaseController {
 			// Store file in public/csvfile/ folder
 			$file->move('public/importfile', $newName);
 			// Reading file
+			$data = new Spreadsheet_Excel_Reader("public/importfile/".$newName);
+			echo"<pre>";
+			print_r($data->dump(true,true));
+			die;
 			$file = fopen("public/importfile/".$newName,"r");
 			$i = 0;
 			$numberOfFields = 4; // Total number of fields
