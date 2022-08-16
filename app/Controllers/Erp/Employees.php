@@ -3372,9 +3372,7 @@ class Employees extends BaseController {
 			$i = 0;
 			$numberOfFields = 4; // Total number of fields
 			$importData_arr = array();
-			echo"<pre>";
-			print_r(fgetcsv($file, 1000, ","));
-			die;
+			
 			// Initialize $importData_arr Array
 			while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
 			$num = count($filedata);
@@ -3389,6 +3387,9 @@ class Employees extends BaseController {
 			$i++;
 			}
 			fclose($file);
+			echo"<pre>";
+			print_r($importData_arr);
+			die;
 			// Insert data
 			$count = 0;
 			foreach($importData_arr as $userdata){
