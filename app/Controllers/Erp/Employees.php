@@ -3375,11 +3375,13 @@ class Employees extends BaseController {
 			
 			// Initialize $importData_arr Array
 			while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+				echo"<pre>";
+			print_r($filedata);
 			$num = count($filedata);
 			// Skip first row & check number of fields
 			if($i > 0 && $num > $numberOfFields){ 
 			// Key names are the insert table field names - name, email, city, and status
-			$importData_arr[$i]['name'] = $filedata[0];
+			$importData_arr[$i]['name'] = $filedata;
 			$importData_arr[$i]['email'] = $filedata[1];
 			$importData_arr[$i]['city'] = $filedata[2];
 			$importData_arr[$i]['status'] = $filedata[3];
