@@ -169,6 +169,7 @@ $(document).ready(function() {
 					$('input[name="csrf_token"]').val(JSON.csrf_hash);
 					$('#xin-form')[0].reset(); // To reset form fields
 					$('.add-form').removeClass('show');
+					window.location.href = main_url+'erp/staff-list';
 					Ladda.stopAll();
 				}
 			},
