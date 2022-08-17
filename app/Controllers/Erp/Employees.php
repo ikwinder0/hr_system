@@ -3460,74 +3460,74 @@ class Employees extends BaseController {
 				],
 				[   // Errors
 					'project_code' => [
-						'required' => 'This field is required',
+						'required' => 'Project Code field is required',
 					],
 					'staff_number' => [
-						'required' => 'This field is required',
+						'required' => 'Staff Number field is required',
 					],
 					'line_manager' => [
-						'required' => 'This field is required',
+						'required' => 'Line Manager field is required',
 					],
 					'duty_timing' => [
-						'required' => 'This field is required',
+						'required' => 'Duty Timing field is required',
 					],
 					'division_name' => [
-						'required' => 'This field is required',
+						'required' => 'Division name field is required',
 					],
 					'stadium_allocation' => [
-						'required' => 'This field is required',
+						'required' => 'Stadium allocation field is required',
 					],
 					'joining_date' => [
-						'required' => 'This field is required',
+						'required' => 'joining date field is required',
 					],
 					'last_working_day' => [
-						'required' => 'This field is required',
+						'required' => 'Last working day field is required',
 					],
 					'employment_type' => [
-						'required' => 'This field is required',
+						'required' => 'Employment type field is required',
 					],
 					'qid_number' => [
-						'required' => 'This field is required',
+						'required' => 'QID Number field is required',
 					],
 					'qid_expiry_date' => [
-						'required' => 'This field is required',
+						'required' => 'QID expiry date field is required',
 					],
 					'cc_email_address' => [
-						'required' => 'This field is required',
+						'required' => 'CC Email address field is required',
 					],
 					'local_contact_number' => [
-						'required' => 'This field is required',
+						'required' => 'Local Contact Number field is required',
 					],
 					'local_address' => [
-						'required' => 'This field is required',
+						'required' => 'Local Address/Company Accommodation field is required',
 					],
 					'person_type' => [
-						'required' => 'This field is required',
+						'required' => 'Person Type field is required',
 					],
 					'reject_code' => [
-						'required' => 'This field is required',
+						'required' => 'Reject Code field is required',
 					],
 					
 					'reject_message' => [
-						'required' => 'This field is required',
+						'required' => 'Reject Message field is required',
 					],
 					'acc_local_address' => [
-						'required' => 'This field is required',
+						'required' => 'Accommodation Local Address field is required',
 					],
 					'building_no' => [
-						'required' => 'This field is required',
+						'required' => 'Building No field is required',
 					],
 					'zone_no' => [
-						'required' => 'This field is required',
+						'required' => 'Zone No. field is required',
 					],
 					'street_no' => [
-						'required' => 'This field is required',
+						'required' => 'Street No. field is required',
 					],
 					'flat_no' => [
-						'required' => 'This field is required',
+						'required' => 'Flat No. field is required',
 					],
 					'room_no' => [
-						'required' => 'This field is required',
+						'required' => 'Room No. field is required',
 					],
 					
 				]
