@@ -626,7 +626,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control date"
                                             placeholder="Last working day"
-                                            name="last_working_days">
+                                            name="last_working_day">
 										
                                     </div>
 									<div class="error-last_working_day"></div>
@@ -661,7 +661,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="QID Number"
                                             name="qid_number">
 										
