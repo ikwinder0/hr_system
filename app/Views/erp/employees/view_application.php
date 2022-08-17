@@ -15,6 +15,7 @@ use App\Models\JobcandidatesModel;
 use App\Models\JobinterviewsModel;
 use App\Models\VisadetailModel;
 use CodeIgniter\HTTP\RequestInterface;
+use App\Models\CandidatejobdetailsModel;
 //$encrypter = \Config\Services::encrypter();
 $ShiftModel = new ShiftModel();
 $SystemModel = new SystemModel();
@@ -31,6 +32,7 @@ $Moduleattributesvalsel = new Moduleattributesvalsel();
 $JobcandidatesModel = new JobcandidatesModel();
 $JobinterviewsModel = new JobinterviewsModel();
 $VisadetailModel = new VisadetailModel();
+$CandidatejobdetailsModel = new CandidatejobdetailsModel();
 
 $session = \Config\Services::session();
 $usession = $session->get('sup_username');
@@ -58,6 +60,7 @@ $idesignations = $DesignationModel->where('designation_id',$employee_detail['des
 $application = $JobcandidatesModel->where('candidate_id', $result['user_id'])->first();
 $interview = $JobinterviewsModel->where('candidate_id', $result['user_id'])->first();
 $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
+$candidatejobdetail = $CandidatejobdetailsModel->where('candidate_id', $user_id)->first();
 
 ?>
 <?php if($result['is_active']=='0'): $_status = '<span class="badge badge-light-danger">'.lang('Main.xin_employees_inactive').'</span>'; endif; ?>
@@ -507,7 +510,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="input-group">
-									<input type="text" name="project_code" class="form-control" placeholder="Project Code">
+									<input type="text" name="project_code" value="<?= isset($candidatejobdetail['project_code']) ? $candidatejobdetail['project_code'] : ''; ?>" class="form-control" placeholder="Project Code">
 									<div class="error-project_code"></div> 
                                 </div>
                             </div>
@@ -517,7 +520,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                     <span class="text-danger">*</span>
                                 </label>
                                  <div class="input-group">
-									<input type="text" name="staff_number" class="form-control" placeholder="Staff Number">
+									<input type="text" name="staff_number" value="<?= isset($candidatejobdetail['staff_number']) ? $candidatejobdetail['staff_number'] : ''; ?>" class="form-control" placeholder="Staff Number">
 									<div class="error-staff_number"></div> 
                                 </div>
                             </div>
@@ -535,7 +538,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Line Manager"
-                                            name="line_manager">
+                                            name="line_manager" value="<?= isset($candidatejobdetail['line_manager']) ? $candidatejobdetail['line_manager'] : ''; ?>">
 										
                                     </div>
 									<div class="error-line_manager"></div>
@@ -552,7 +555,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Duty Timing"
-                                            name="duty_timing">
+                                            name="duty_timing" value="<?= isset($candidatejobdetail['duty_timing']) ? $candidatejobdetail['duty_timing'] : ''; ?>">
 										
                                     </div>
 									<div class="error-duty_timing"></div>
@@ -572,7 +575,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Division Name"
-                                            name="division_name">
+                                            name="division_name" value="<?= isset($candidatejobdetail['division_name']) ? $candidatejobdetail['division_name'] : ''; ?>">
 										
                                     </div>
 									<div class="error-division_name"></div>
@@ -589,7 +592,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Stadium Allocation "
-                                            name="stadium_allocation">
+                                            name="stadium_allocation" value="<?= isset($candidatejobdetail['stadium_allocation']) ? $candidatejobdetail['stadium_allocation'] : ''; ?>">
 										
                                     </div>
 									<div class="error-stadium_allocation"></div>
@@ -609,7 +612,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control date"
                                             placeholder="Joining Date"
-                                            name="joining_date">
+                                            name="joining_date" value="<?= isset($candidatejobdetail['joining_date']) ? $candidatejobdetail['joining_date'] : ''; ?>">
 										
                                     </div>
 									<div class="error-joining_date"></div>
@@ -626,7 +629,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control date"
                                             placeholder="Last working day"
-                                            name="last_working_day">
+                                            name="last_working_day" value="<?= isset($candidatejobdetail['last_working_day']) ? $candidatejobdetail['last_working_day'] : ''; ?>">
 										
                                     </div>
 									<div class="error-last_working_day"></div>
@@ -646,7 +649,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Employment Type"
-                                            name="employment_type">
+                                            name="employment_type" value="<?= isset($candidatejobdetail['employment_type']) ? $candidatejobdetail['employment_type'] : ''; ?>">
 										
                                     </div>
 									<div class="error-employment_type"></div>
@@ -663,7 +666,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="QID Number"
-                                            name="qid_number">
+                                            name="qid_number" value="<?= isset($candidatejobdetail['qid_number']) ? $candidatejobdetail['qid_number'] : ''; ?>">
 										
                                     </div>
 									<div class="error-qid_number"></div>
@@ -683,7 +686,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control date"
                                             placeholder="QID Expiry Date"
-                                            name="qid_expiry_date">
+                                            name="qid_expiry_date" value="<?= isset($candidatejobdetail['qid_expiry_date']) ? $candidatejobdetail['qid_expiry_date'] : ''; ?>">
 										
                                     </div>
 									<div class="error-employment_type"></div>
@@ -700,7 +703,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="CC Email Address"
-                                            name="cc_email_address">
+                                            name="cc_email_address" value="<?= isset($candidatejobdetail['cc_email_address']) ? $candidatejobdetail['cc_email_address'] : ''; ?>">
 										
                                     </div>
 									<div class="error-cc_email_address"></div>
@@ -720,7 +723,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Local Contact Number (Qatari)"
-                                            name="local_contact_number">
+                                            name="local_contact_number" value="<?= isset($candidatejobdetail['local_contact_number']) ? $candidatejobdetail['local_contact_number'] : ''; ?>">
 										
                                     </div>
 									<div class="error-local_contact_number"></div>
@@ -737,7 +740,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Local Address"
-                                            name="local_address">
+                                            name="local_address" value="<?= isset($candidatejobdetail['local_address']) ? $candidatejobdetail['local_address'] : ''; ?>">
 										
                                     </div>
 									<div class="error-local_address"></div>
@@ -757,7 +760,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Person Type"
-                                            name="person_type">
+                                            name="person_type" value="<?= isset($candidatejobdetail['person_type']) ? $candidatejobdetail['person_type'] : ''; ?>">
 										
                                     </div>
 									<div class="error-person_type"></div>
@@ -774,7 +777,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Reject Code"
-                                            name="reject_code">
+                                            name="reject_code" value="<?= isset($candidatejobdetail['reject_code']) ? $candidatejobdetail['reject_code'] : ''; ?>">
 										
                                     </div>
 									<div class="error-reject_code"></div>
@@ -794,7 +797,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Reject Message"
-                                            name="reject_message">
+                                            name="reject_message" value="<?= isset($candidatejobdetail['reject_message']) ? $candidatejobdetail['reject_message'] : ''; ?>">
 										
                                     </div>
 									<div class="error-reject_message"></div>
@@ -811,7 +814,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Remarks"
-                                            name="remarks">
+                                            name="remarks" value="<?= isset($candidatejobdetail['remarks']) ? $candidatejobdetail['remarks'] : ''; ?>">
 										
                                     </div>
 									<div class="error-remarks"></div>
@@ -836,7 +839,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Local Address"
-                                            name="acc_local_address">
+                                            name="acc_local_address" value="<?= isset($candidatejobdetail['acc_local_address']) ? $candidatejobdetail['acc_local_address'] : ''; ?>">
 										
                                     </div>
 									<div class="error-acc_local_address"></div>
@@ -853,7 +856,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Building No"
-                                            name="building_no">
+                                            name="building_no" value="<?= isset($candidatejobdetail['building_no']) ? $candidatejobdetail['building_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-building_no"></div>
@@ -873,7 +876,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Zone No"
-                                            name="zone_no">
+                                            name="zone_no" value="<?= isset($candidatejobdetail['zone_no']) ? $candidatejobdetail['zone_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-zone_no"></div>
@@ -890,7 +893,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Street No"
-                                            name="street_no">
+                                            name="street_no" value="<?= isset($candidatejobdetail['street_no']) ? $candidatejobdetail['street_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-street_no"></div>
@@ -910,7 +913,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Floor No"
-                                            name="floor_no">
+                                            name="floor_no" value="<?= isset($candidatejobdetail['floor_no']) ? $candidatejobdetail['floor_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-floor_no"></div>
@@ -927,7 +930,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Flat No"
-                                            name="flat_no">
+                                            name="flat_no" value="<?= isset($candidatejobdetail['flat_no']) ? $candidatejobdetail['flat_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-flat_no"></div>
@@ -947,7 +950,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                             type="text"
                                             class="form-control"
                                             placeholder="Room No"
-                                            name="room_no">
+                                            name="room_no" value="<?= isset($candidatejobdetail['room_no']) ? $candidatejobdetail['room_no'] : ''; ?>">
 										
                                     </div>
 									<div class="error-room_no"></div>
