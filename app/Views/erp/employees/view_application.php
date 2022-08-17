@@ -40,6 +40,7 @@ $request = \Config\Services::request();
 ///
 $segment_id = $request->uri->getSegment(3);
 $user_id = udecode($segment_id);
+print_r($user_id); die;
 $result = $UsersModel->where('user_id', $user_id)->first();
 $employee_detail = $StaffdetailsModel->where('user_id', $result['user_id'])->first();
 
