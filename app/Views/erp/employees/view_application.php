@@ -895,6 +895,70 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 </div>
                             </div>
 					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Floor No
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Floor No"
+                                            name="floor_no">
+										
+                                    </div>
+									<div class="error-floor_no"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Flat No
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Flat No"
+                                            name="flat_no">
+										
+                                    </div>
+									<div class="error-flat_no"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Room No
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Room No"
+                                            name="room_no">
+										
+                                    </div>
+									<div class="error-room_no"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>
