@@ -3618,6 +3618,7 @@ class Employees extends BaseController {
 			$floor_no = $this->request->getPost('floor_no',FILTER_SANITIZE_STRING);
 			$flat_no = $this->request->getPost('flat_no',FILTER_SANITIZE_STRING);
 			$room_no = $this->request->getPost('room_no',FILTER_SANITIZE_STRING);
+			$remarks = $this->request->getPost('remarks',FILTER_SANITIZE_STRING);
 			
 			
 			$data = [
@@ -3646,6 +3647,7 @@ class Employees extends BaseController {
 					'floor_no' => $floor_no,
 					'flat_no' => $flat_no,
 					'room_no' => $room_no,
+					'remarks' => $remarks,
 			];
 			
 			$model = new CandidatejobdetailsModel();

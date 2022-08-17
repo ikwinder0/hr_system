@@ -493,6 +493,7 @@ $candidatejobdetail = $CandidatejobdetailsModel->where('candidate_id', $user_id)
 				</div>
 			</div>
 		</div>
+		<?php if($application['application_status'] == 1){ ?>
 		<?php $attributes = array('name' => 'selected_employee', 'id' => 'selected_employee', 'class' => 'selected_employee_form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => $segment_id);?>
         <?= form_open_multipart('erp/employee/selected-details', $attributes, $hidden);?>
@@ -970,6 +971,8 @@ $candidatejobdetail = $CandidatejobdetailsModel->where('candidate_id', $user_id)
 		</div>
 		
         <?= form_close(); ?>
+		
+	<?php } ?>
 	<?php }else{ ?>
 		
 		
