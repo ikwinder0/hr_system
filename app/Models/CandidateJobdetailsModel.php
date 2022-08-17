@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 
 class CandidatejobdetailsModel extends Model {
  
-    protected $table = 'candidate_job_details';
+    protected $table = 'candidate_job_details'; 
 
     protected $primaryKey = 'id';
     
