@@ -3649,7 +3649,7 @@ class Employees extends BaseController {
 			];
 			
 			$model = new CandidatejobdetailsModel();
-			$result = $model->insert($data)
+			$result = $model->insert($data);
 			
 			$Return['csrf_hash'] = csrf_hash();	
 			if ($result == TRUE) {
