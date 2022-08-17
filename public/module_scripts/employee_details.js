@@ -29,6 +29,94 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();          
 		}
     });
+	
+		/* Add data */ /*Form Submit*/
+	$("#selected_employee").submit(function(e){
+		var fd = new FormData(this);
+		var obj = $(this), action = obj.attr('name');
+		fd.append("is_ajax", 1);
+		fd.append("type", 'add_record');
+		fd.append("form", action);
+		e.preventDefault();		
+		$.ajax({
+			url: e.target.action,
+			type: "POST",
+			data:  fd,
+			contentType: false,
+			cache: false,
+			processData:false,
+			success: function(JSON)
+			{
+				if (JSON.error != '') {
+					
+					if(JSON.type == 'info'){
+						$('ul.step-anchor').find('.nav-item').removeClass('active');
+						$('ul.step-anchor').find('li.step1').addClass('active');
+						$('fieldset.fieldset_2').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
+						$('fieldset.fieldset_3').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
+						$('fieldset.fieldset_1').css({
+							'display': 'block', 
+							'transform': 'scale(1)', 
+							'position': 'absolute',
+							'opacity': 1
+						});
+					}
+					if(JSON.type == 'educ'){
+						$('ul.step-anchor').find('li.step3').removeClass('active');
+						$('ul.step-anchor').find('li.step2').addClass('active');
+						$('fieldset.fieldset_1').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
+						$('fieldset.fieldset_3').css({
+							'display': 'none', 
+							'opacity': 0,
+							'transform': 'scale(1)',
+							'position': 'absolute'
+						});
+						$('fieldset.fieldset_2').css({
+							'display': 'block', 
+							'transform': 'scale(1)', 
+							'position': 'absolute',
+							'opacity': 1
+						});
+					}
+					
+					toastr.error(JSON.error);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+				} else {
+					xin_table.api().ajax.reload(function(){ 
+						toastr.success(JSON.result);
+					}, true);
+					$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					$('#xin-form')[0].reset(); // To reset form fields
+					$('.add-form').removeClass('show');
+					window.location.reload();
+					Ladda.stopAll();
+				}
+			},
+			error: function() 
+			{
+				toastr.error(JSON.error);
+				$('input[name="csrf_token"]').val(JSON.csrf_hash);
+					Ladda.stopAll();
+			} 	        
+	   });
+	});
+	
 	// On page load 
 	var xin_table_allowances_ad = $('#xin_table_all_allowances').dataTable({
         "bDestroy": true,
