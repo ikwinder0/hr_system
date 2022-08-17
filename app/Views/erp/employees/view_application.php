@@ -468,7 +468,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 		        <div class="card">
 			<div class="card-header">
             <h5><i data-feather="image" class="icon-svg-primary wid-20"></i><span class="p-l-5">
-              <?= lang('Main.xin_application_status');?>
+              Change Status
               </span></h5>
 			 </div>
 				<div class="card-body pb-2">
@@ -489,6 +489,338 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 				</div>
 			</div>
 		</div>
+		
+            <div class="col-md-12">
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h5>
+                            <?= lang('Main.xin_add');?>
+                            <?= lang('Main.xin_personal_info');?>
+                        </h5>
+                    </div>
+                    <div class="card-body"> 
+                        <div class="row">
+						    <div class="col-md-6">
+                                <label for="logo">
+                                    Project Code
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+									<input type="text" name="project_code" class="form-control" placeholder="Project Code">
+									<div class="error-project_code"></div> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="logo">
+                                    Staff Number
+                                    <span class="text-danger">*</span>
+                                </label>
+                                 <div class="input-group">
+									<input type="text" name="staff_number" class="form-control" placeholder="Staff Number">
+									<div class="error-staff_number"></div> 
+                                </div>
+                            </div>
+						</div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Line Manager
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Line Manager"
+                                            name="line_manager">
+										
+                                    </div>
+									<div class="error-line_manager"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Duty Timing
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Duty Timing"
+                                            name="duty_timing">
+										
+                                    </div>
+									<div class="error-duty_timing"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Division Name (Project team, FOH, BOH, line staff)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Division Name"
+                                            name="division_name">
+										
+                                    </div>
+									<div class="error-division_name"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Stadium Allocation 
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Stadium Allocation "
+                                            name="stadium_allocation">
+										
+                                    </div>
+									<div class="error-stadium_allocation"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Joining Date ( contract start date)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Joining Date"
+                                            name="joining_date">
+										
+                                    </div>
+									<div class="error-joining_date"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Last working day (contract ends date)
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Last working day"
+                                            name="last_working_days">
+										
+                                    </div>
+									<div class="error-last_working_day"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Employment Type (Temp contract, ABA staff, Agency Staff, Manpower, Secondment)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Employment Type"
+                                            name="employment_type">
+										
+                                    </div>
+									<div class="error-employment_type"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        QID Number
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="QID Number"
+                                            name="qid_number">
+										
+                                    </div>
+									<div class="error-qid_number"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        QID Expiry Date
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="QID Expiry Date"
+                                            name="qid_expiry_date">
+										
+                                    </div>
+									<div class="error-employment_type"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        CC Email Address ( generic email for the company)
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="CC Email Address"
+                                            name="cc_email_address">
+										
+                                    </div>
+									<div class="error-cc_email_address"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Local Contact Number (Qatari)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Local Contact Number (Qatari)"
+                                            name="local_contact_number">
+										
+                                    </div>
+									<div class="error-local_contact_number"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Local Address/Company Accommodation (company provided - mention locations) (Own Accommodation give option to write the location as per the national address)
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Local Address"
+                                            name="local_address">
+										
+                                    </div>
+									<div class="error-local_address"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Person Type
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Person Type"
+                                            name="person_type">
+										
+                                    </div>
+									<div class="error-person_type"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Reject Code
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Reject Code"
+                                            name="reject_code">
+										
+                                    </div>
+									<div class="error-reject_code"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Reject Message
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Reject Message"
+                                            name="reject_message">
+										
+                                    </div>
+									<div class="error-reject_message"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Remarks
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control date"
+                                            placeholder="Remarks"
+                                            name="remarks">
+										
+                                    </div>
+									<div class="error-remarks"></div>
+                                </div>
+                            </div>
+					    </div>
+				</div>
+			</div>
+		</div>
+		
     
 	<?php }else{ ?>
 		
