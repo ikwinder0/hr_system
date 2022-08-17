@@ -494,7 +494,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                 <div class="card mb-2">
                     <div class="card-header">
                         <h5>
-                            Add Candidate Info
+                            Add Candidate Info & Accommodation
                         </h5>
                     </div>
                     <div class="card-body"> 
