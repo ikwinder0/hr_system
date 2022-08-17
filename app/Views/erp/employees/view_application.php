@@ -491,7 +491,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 		</div>
 		<?php $attributes = array('name' => 'selected_employee', 'id' => 'selected_employee', 'class' => 'selected_employee_form', 'autocomplete' => 'off');?>
         <?php $hidden = array('user_id' => $segment_id);?>
-        <?= form_open_multipart('erp/employees/selected-details', $attributes, $hidden);?>
+        <?= form_open_multipart('erp/employee/selected-details', $attributes, $hidden);?>
         <div class="col-md-12">
                 <div class="card mb-2">
                     <div class="card-header">

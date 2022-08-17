@@ -137,6 +137,9 @@ $routes->get('erp/staff-dashboard/', 'Employees::staff_dashboard', ['namespace' 
 $routes->get('erp/organization-chart/', 'Employees::staff_chart', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/employee-details/(:segment)', 'Employees::staff_details', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/employee-application/(:segment)', 'Employees::view_application', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
+
+$routes->get('erp/employee/selected-details', 'Employees::selected_employee_detail', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
+
 $routes->get('erp/application-status', 'Employees::application_status', ['namespace' => 'App\Controllers\Erp','filter' => 'superauth']);
 $routes->get('erp/profile-picture/(:segment)', 'Employees::profile_picture', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);
 $routes->get('erp/update-documents/(:segment)', 'Employees::update_docs', ['namespace' => 'App\Controllers\Erp','filter' => 'checklogin']);

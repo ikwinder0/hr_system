@@ -3419,4 +3419,176 @@ class Employees extends BaseController {
 	    }
      }
 	}
+	public function selected_employee_detail(){
+		
+		$validation =  \Config\Services::validation();
+		$session = \Config\Services::session();
+		$request = \Config\Services::request();
+		$usession = $session->get('sup_username');
+		if(!$session->has('sup_username')){ 
+			return redirect()->to(site_url('erp/login'));
+		}
+		
+		    $Return = array('result'=>'', 'error'=>'', 'csrf_hash'=>'');
+			$Return['csrf_hash'] = csrf_hash();
+			// set rules
+			$validation->setRules([
+					'project_code' => 'required',
+					'staff_number' => 'required',
+					'line_manager' => 'required',
+					'duty_timing' => 'required',
+					'division_name' => 'required',
+					'stadium_allocation' => 'required',
+					'joining_date' => 'required',
+					'last_working_day' => 'required',
+					'employment_type' => 'required',					
+					'qid_number' => 'required',
+					'qid_expiry_date' => 'required',
+					'cc_email_address' => 'required',
+					'local_contact_number' => 'required',
+					'local_address' => 'required',
+					'person_type' => 'required',
+					'reject_code' => 'required',
+					'reject_message' => 'required',
+					'acc_local_address' => 'required',
+					'building_no' => 'required',
+					'zone_no' => 'required',
+					'street_no' => 'required',
+					'floor_no' => 'required',
+					'flat_no' => 'required',
+					'room_no' => 'required',
+				],
+				[   // Errors
+					'project_code' => [
+						'required' => 'This field is required',
+					],
+					'staff_number' => [
+						'required' => 'This field is required',
+					],
+					'line_manager' => [
+						'required' => 'This field is required',
+					],
+					'duty_timing' => [
+						'required' => 'This field is required',
+					],
+					'division_name' => [
+						'required' => 'This field is required',
+					],
+					'stadium_allocation' => [
+						'required' => 'This field is required',
+					],
+					'joining_date' => [
+						'required' => 'This field is required',
+					],
+					'last_working_day' => [
+						'required' => 'This field is required',
+					],
+					'employment_type' => [
+						'required' => 'This field is required',
+					],
+					'qid_number' => [
+						'required' => 'This field is required',
+					],
+					'qid_expiry_date' => [
+						'required' => 'This field is required',
+					],
+					'cc_email_address' => [
+						'required' => 'This field is required',
+					],
+					'local_contact_number' => [
+						'required' => 'This field is required',
+					],
+					'local_address' => [
+						'required' => 'This field is required',
+					],
+					'person_type' => [
+						'required' => 'This field is required',
+					],
+					'reject_code' => [
+						'required' => 'This field is required',
+					],
+					
+					'reject_message' => [
+						'required' => 'This field is required',
+					],
+					'acc_local_address' => [
+						'required' => 'This field is required',
+					],
+					'building_no' => [
+						'required' => 'This field is required',
+					],
+					'zone_no' => [
+						'required' => 'This field is required',
+					],
+					'street_no' => [
+						'required' => 'This field is required',
+					],
+					'flat_no' => [
+						'required' => 'This field is required',
+					],
+					'room_no' => [
+						'required' => 'This field is required',
+					],
+					
+				]
+			);
+					
+			$validation->withRequest($this->request)->run();
+			//check error
+			if ($validation->hasError('project_code')) {
+				$Return['error'] = $validation->getError('project_code');
+			} elseif($validation->hasError('staff_number')){
+				$Return['error'] = $validation->getError('staff_number');
+			} elseif($validation->hasError('line_manager')){
+				$Return['error'] = $validation->getError('line_manager');
+			} elseif($validation->hasError('duty_timing')){
+				$Return['error'] = $validation->getError('duty_timing');
+			} elseif($validation->hasError('division_name')){
+				$Return['error'] = $validation->getError('division_name');
+			} elseif($validation->hasError('stadium_allocation')){
+				$Return['error'] = $validation->getError('stadium_allocation');
+			} elseif($validation->hasError('joining_date')) {
+				$Return['error'] = $validation->getError('joining_date');
+			} elseif($validation->hasError('last_working_day')){
+				$Return['error'] = $validation->getError('last_working_day');
+			} elseif($validation->hasError('employment_type')) {
+				$Return['error'] = $validation->getError('employment_type');
+			} elseif($validation->hasError('qid_number')){
+				$Return['error'] = $validation->getError('qid_number');
+			} elseif($validation->hasError('qid_expiry_date')){
+				$Return['error'] = $validation->getError('qid_expiry_date');
+			} elseif($validation->hasError('cc_email_address')){
+				$Return['error'] = $validation->getError('cc_email_address');
+			} elseif($validation->hasError('local_contact_number')){
+				$Return['error'] = $validation->getError('local_contact_number');
+			} elseif($validation->hasError('local_address')){
+				$Return['error'] = $validation->getError('local_address');
+			} elseif($validation->hasError('person_type')){
+				$Return['error'] = $validation->getError('person_type');
+			} elseif($validation->hasError('reject_code')){
+				$Return['error'] = $validation->getError('reject_code');
+			} elseif($validation->hasError('reject_message')){
+				$Return['error'] = $validation->getError('reject_message');
+			} elseif($validation->hasError('acc_local_address')){
+				$Return['error'] = $validation->getError('acc_local_address');
+			} elseif($validation->hasError('building_no')){
+				$Return['error'] = $validation->getError('building_no');
+			} elseif($validation->hasError('zone_no')){
+				$Return['error'] = $validation->getError('zone_no');
+			} elseif($validation->hasError('street_no')){
+				$Return['error'] = $validation->getError('street_no');
+			} elseif($validation->hasError('floor_no')){
+				$Return['error'] = $validation->getError('floor_no');
+			} elseif($validation->hasError('flat_no')){
+				$Return['error'] = $validation->getError('flat_no');
+			} elseif($validation->hasError('room_no')){
+				$Return['error'] = $validation->getError('room_no');
+			}
+			
+			if($Return['error']!=''){
+				$this->output($Return);
+			}
+		
+		
+	}
 }
