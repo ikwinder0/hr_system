@@ -40,6 +40,7 @@ use App\Models\Moduleattributesval;
 use App\Models\Moduleattributesvalsel;
 use App\Models\JobcandidatesModel;
 use App\Models\VisadetailModel;
+use App\Models\CandidatejobdetailsModel;
 use App\Libraries\Spreadsheet_Excel_Reader;
 
 
@@ -3433,6 +3434,7 @@ class Employees extends BaseController {
 			$Return['csrf_hash'] = csrf_hash();
 			// set rules
 			$validation->setRules([
+			
 					'project_code' => 'required',
 					'staff_number' => 'required',
 					'line_manager' => 'required',
@@ -3589,6 +3591,76 @@ class Employees extends BaseController {
 				$this->output($Return);
 			}
 			
+			$user_id = $this->request->getPost('user_id');
+			$project_code = $this->request->getPost('project_code',FILTER_SANITIZE_STRING);
+			$staff_number = $this->request->getPost('staff_number',FILTER_SANITIZE_STRING);
+			$line_manager = $this->request->getPost('line_manager',FILTER_SANITIZE_STRING);
+			$duty_timing = $this->request->getPost('duty_timing',FILTER_SANITIZE_STRING);
+			$division_name = $this->request->getPost('division_name',FILTER_SANITIZE_STRING);
+			$stadium_allocation = $this->request->getPost('stadium_allocation',FILTER_SANITIZE_STRING);
+			$joining_date = $this->request->getPost('joining_date',FILTER_SANITIZE_STRING);
+			$last_working_day = $this->request->getPost('last_working_day',FILTER_SANITIZE_STRING);
+			$employment_type = $this->request->getPost('employment_type',FILTER_SANITIZE_STRING);
+			
+			$qid_number = $this->request->getPost('qid_number',FILTER_SANITIZE_STRING);
+			$qid_expiry_date = $this->request->getPost('qid_expiry_date',FILTER_SANITIZE_STRING);
+			$cc_email_address = $this->request->getPost('cc_email_address',FILTER_SANITIZE_STRING);
+			$local_contact_number = $this->request->getPost('local_contact_number',FILTER_SANITIZE_STRING);
+			$local_address = $this->request->getPost('local_address',FILTER_SANITIZE_STRING);
+			$person_type = $this->request->getPost('person_type',FILTER_SANITIZE_STRING);
+			$reject_code = $this->request->getPost('reject_code',FILTER_SANITIZE_STRING);
+			$reject_message = $this->request->getPost('reject_message',FILTER_SANITIZE_STRING);
+			$acc_local_address = $this->request->getPost('acc_local_address',FILTER_SANITIZE_STRING);
+			
+			$building_no = $this->request->getPost('building_no',FILTER_SANITIZE_STRING);
+			$zone_no = $this->request->getPost('zone_no',FILTER_SANITIZE_STRING);
+			$street_no = $this->request->getPost('street_no',FILTER_SANITIZE_STRING);
+			$floor_no = $this->request->getPost('floor_no',FILTER_SANITIZE_STRING);
+			$flat_no = $this->request->getPost('flat_no',FILTER_SANITIZE_STRING);
+			$room_no = $this->request->getPost('room_no',FILTER_SANITIZE_STRING);
+			
+			
+			$data = [
+				    'candidate_id' => $user_id,
+				    'project_code' => $project_code,
+					'staff_number' => $staff_number,
+					'line_manager' => $line_manager,
+					'duty_timing' => $duty_timing,
+					'division_name' => $division_name,
+					'stadium_allocation' => $stadium_allocation,
+					'joining_date' => $joining_date,
+					'last_working_day' => $last_working_day,
+					'employment_type' => $employment_type,					
+					'qid_number' => $qid_number,
+					'qid_expiry_date' => $qid_expiry_date,
+					'cc_email_address' => $cc_email_address,
+					'local_contact_number' => $local_contact_number,
+					'local_address' => $local_address,
+					'person_type' => $person_type,
+					'reject_code' => $reject_code,
+					'reject_message' => $reject_message,
+					'acc_local_address' => $acc_local_address,
+					'building_no' => $building_no,
+					'zone_no' => $zone_no,
+					'street_no' => $street_no,
+					'floor_no' => $floor_no,
+					'flat_no' => $flat_no,
+					'room_no' => $room_no,
+			];
+			
+			$model = new CandidatejobdetailsModel();
+			$result = $model->insert($data)
+			
+			$Return['csrf_hash'] = csrf_hash();	
+			if ($result == TRUE) {
+				$Return['result'] = 'Detail Inserted !';
+			
+			} else {
+				$Return['error'] = 'Something Went Wrong !';
+			}
+			
+			$this->output($Return);
+			exit;
 		
 		
 	}
