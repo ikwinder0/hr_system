@@ -416,6 +416,7 @@ $get_animate='';
                                         <th><?= lang('Main.xin_name');?></th>
                                         <th>Company Name</th>
                                         <th><?= lang('Dashboard.left_designation');?></th>
+                                        <th>ID</th>
                                         <th><?= lang('Main.xin_contact_number');?></th>
                                         <th><?= lang('Main.xin_employee_gender');?></th>
                                         <th><?= lang('Main.xin_country');?></th>
