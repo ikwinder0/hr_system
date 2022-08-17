@@ -642,7 +642,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                    
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Employment Type"
                                             name="employment_type">
 										
@@ -696,7 +696,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="CC Email Address"
                                             name="cc_email_address">
 										
@@ -716,7 +716,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                    
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Local Contact Number (Qatari)"
                                             name="local_contact_number">
 										
@@ -733,7 +733,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Local Address"
                                             name="local_address">
 										
@@ -753,7 +753,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                    
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Person Type"
                                             name="person_type">
 										
@@ -770,7 +770,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Reject Code"
                                             name="reject_code">
 										
@@ -790,7 +790,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                    
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Reject Message"
                                             name="reject_message">
 										
@@ -807,12 +807,91 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 
                                         <input
                                             type="text"
-                                            class="form-control date"
+                                            class="form-control"
                                             placeholder="Remarks"
                                             name="remarks">
 										
                                     </div>
 									<div class="error-remarks"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+								<h2>Accommodation</h2>
+							</div>
+						</div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Local Address
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Local Address"
+                                            name="acc_local_address">
+										
+                                    </div>
+									<div class="error-acc_local_address"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Building No
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Building No"
+                                            name="building_no">
+										
+                                    </div>
+									<div class="error-building_no"></div>
+                                </div>
+                            </div>
+					    </div>
+						<div class="row mb-3">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="company_name">
+                                        Zone No
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                   
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Zone No"
+                                            name="zone_no">
+										
+                                    </div>
+									<div class="error-zone_no"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="control-label">
+                                        Street No
+                                        <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Street No"
+                                            name="street_no">
+										
+                                    </div>
+									<div class="error-street_no"></div>
                                 </div>
                             </div>
 					    </div>
