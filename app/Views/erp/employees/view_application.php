@@ -498,9 +498,9 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                         </h5>
                     </div>
                     <div class="card-body"> 
-                        <div class="row">
+                        <div class="row mb-3">
 						    <div class="col-md-6">
-                                <label for="logo">
+                                <label for="logo" class="control-label">
                                     Project Code
                                     <span class="text-danger">*</span>
                                 </label>
@@ -510,7 +510,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="logo">
+                                <label for="logo" class="control-label">
                                     Staff Number
                                     <span class="text-danger">*</span>
                                 </label>
@@ -523,7 +523,7 @@ $visa_detail = $VisadetailModel->where('user_id', $user_id)->first();
 						<div class="row mb-3">
 						    <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="company_name">
+                                    <label for="company_name" >
                                         Line Manager
                                         <span class="text-danger">*</span>
                                     </label>
