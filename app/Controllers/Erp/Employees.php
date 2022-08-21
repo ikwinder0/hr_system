@@ -807,12 +807,12 @@ class Employees extends BaseController {
 			$image = \Config\Services::image();
 			
 				
-				$user_image = $this->request->getFile('file');
-				$file_name = $user_image->getName();
-				$user_image->move('public/uploads/users/');
-				$image->withFile(filesrc($file_name))
-				->fit(100, 100, 'center')
-				->save('public/uploads/users/thumb/'.$file_name);
+			$user_image = $this->request->getFile('file');
+			$file_name = $user_image->getName();
+			$user_image->move('public/uploads/users/');
+			$image->withFile(filesrc($file_name))
+			->fit(100, 100, 'center')
+			->save('public/uploads/users/thumb/'.$file_name);
 		
 			
 			
@@ -1072,17 +1072,17 @@ class Employees extends BaseController {
 				'employee_id'  => $employee_id,
 				'department_id'  => $designation['department_id'],
 				'designation_id'  => $applied_for,
-				'office_shift_id' => '',
+				'office_shift_id' => null,
 				'date_of_joining' => date('d-m-Y'),
-				'date_of_leaving' => '',
+				'date_of_leaving' => null,
 				'date_of_birth' => $dob,
 				'marital_status' => $marital_status,
 				'religion_id' => $religion,
-				'blood_group' => '',
+				'blood_group' => null,
 				'citizenship_id' => 0,
-				'basic_salary'  => '',
-				'hourly_rate'  => '',
-				'salay_type' => '',
+				'basic_salary'  => null,
+				'hourly_rate'  => null,
+				'salay_type' => null,
 				'leave_categories' => 0,
 				'role_description' => 'Enter role description here..',
 				'bio' => 'Enter staff bio here..',
@@ -1093,20 +1093,20 @@ class Employees extends BaseController {
 				'high_school' => $high_school,
 				'degree' => $degree,
 				'other_education' => $other_education,
-				'fb_profile' => '',
-				'twitter_profile' => '',
-				'gplus_profile' => '',
-				'linkedin_profile' => '',
-				'account_title' => '',
-				'account_number' => '',
-				'bank_name' => '',
-				'iban' => '',
-				'swift_code' => '',
-				'bank_branch' => '',
-				'contact_full_name' => '',
-				'contact_phone_no' => '',
-				'contact_email' => '',
-				'contact_address' => '',
+				'fb_profile' => null,
+				'twitter_profile' => null,
+				'gplus_profile' => null,
+				'linkedin_profile' => null,
+				'account_title' => null,
+				'account_number' => null,
+				'bank_name' => null,
+				'iban' => null,
+				'swift_code' => null,
+				'bank_branch' => null,
+				'contact_full_name' => null,
+				'contact_phone_no' => null,
+				'contact_email' => null,
+				'contact_address' => null,
 				'created_at' => date('d-m-Y h:i:s'),
 				'preferred_language' => $preferred_language,
 				'home_country_address' => $home_country_address,
